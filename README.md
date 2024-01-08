@@ -1,2 +1,2 @@
 # fedora
-Income & Expense Tracker
+Expense Tracker App
