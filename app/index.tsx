@@ -1,32 +1,27 @@
 import { useState } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
-// 
+import { Text, View } from "react-native";
+import { Link } from "expo-router";
+//
 import SafeAreaInsets from "@/components/SafeAreaInsets";
+import Sandbox from "@/components/Sandbox";
 import AppBar from "@/components/AppBar";
-import Hero from "@/components/Hero";
-// 
+import _Hero from "@/modules/home/Hero";
+import _TransactionList from "@/modules/home/TransactionList";
+//
 import COLOR from "@/constants/COLOR";
+import { styles_flex } from "@/styles/Flex.module";
 
 export default function HomeScreen() {
   const [x, y] = useState(-1);
   return (
     <SafeAreaInsets>
       <AppBar />
-      <Hero />
-      {/* <View style={{ flexDirection: "row" }}>
-        <View
-          style={{ backgroundColor: COLOR.text, width: 160, height: 160 }}
-        ></View>
-        <View
-          style={{ backgroundColor: COLOR.text_loud, width: 160, height: 160 }}
-        ></View>
-      </View> */}
-      {/* <TouchableOpacity
-        onPress={() => y((z) => z + 1)}
-        style={{ backgroundColor: "purple" }}
-      >
-        <Text style={{ color: "white" }}>{x}</Text>
-      </TouchableOpacity> */}
+      {/*  */}
+      <_Hero />
+      {/*  */}
+      <_TransactionList />
+      {/*  */}
+      {/* <Sandbox /> */}
     </SafeAreaInsets>
   );
 }

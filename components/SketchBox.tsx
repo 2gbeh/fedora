@@ -3,13 +3,13 @@ import { Image } from "react-native";
 import box from "@/assets/images/box.png";
 import box_dark from "@/assets/images/box-dark.png";
 
-type ISketchBox = {
+type TSketchBox = {
   as: string;
   size?: number;
   alt?: boolean;
 };
 
-const SketchBox = ({ as, size = 32, alt = false }: ISketchBox) => {
+const SketchBox = ({ as, size = 32, alt = false }: TSketchBox) => {
   const [width, height] = [size, size];
   //
   return (

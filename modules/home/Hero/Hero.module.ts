@@ -1,7 +1,7 @@
 import { StyleSheet, type ViewStyle } from "react-native";
 import COLOR from "@/constants/COLOR";
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create<ViewStyle | any>({
   container: {
     backgroundColor: COLOR.foreground,
     color: COLOR.text,
@@ -21,13 +21,11 @@ const styles = StyleSheet.create({
   label_group: { gap: 8 },
   label: { color: COLOR.subtext, fontSize: 12 },
   h1: { color: COLOR.accent, fontWeight: "bold", fontSize: 24 },
-  h2: (value?: number = 1) => {
-    return {
-      color: value < 1 ? COLOR.brand : COLOR.text,
-      fontWeight: "600",
-      fontSize: 18,
-    } as ViewStyle;
-  },
+  h2: (value: number = 0) => ({
+    color: value < 0 ? COLOR.brand : COLOR.text,
+    fontWeight: "600",
+    fontSize: 18,
+  }),
 });
 
 export default styles;

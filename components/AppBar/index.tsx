@@ -12,7 +12,7 @@ const AppBar = () => {
       {/* LEFT */}
       <View style={[styles_flex.row_center, styles.left_content]}>
         <SketchBox as="Avatar" alt />
-        <View>
+        <View style={styles.text_group}>
           <Text style={styles.greeting}>Hello,</Text>
           <Text style={styles.username}>Sterling</Text>
         </View>
