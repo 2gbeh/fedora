@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View } from "react-native";
 //
-import SketchBox from "../SketchBox";
+import SketchBox from "../../../components/SketchBox";
 //
 import { styles_flex } from "@/styles/Flex.module";
 import styles from "./Hero.module";
