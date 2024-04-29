@@ -1,16 +1,18 @@
-import { StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 //
 import SafeAreaInsets from "@/components/SafeAreaInsets";
 import Sandbox from "@/components/Sandbox";
 import AppBar from "@/components/AppBar";
 import SectionHeading from "@/components/SectionHeading";
 import TransactionItem from "@/components/TransactionItem";
+import AddFavorite from "@/components/AddFavorite";
 import Favorites from "@/components/Favorites";
 import _Hero from "@/modules/home/Hero";
 //
-import fakeTransactions from "@/data/fake-transactions";
+import COLOR from "@/constants/COLOR";
 import { styles_flex } from "@/styles/Flex.module";
 import SketchBox from "@/components/SketchBox";
+import fakeTransactions from "@/data/fake-transactions";
 
 export default function HomeScreen() {
   return (
@@ -19,31 +21,34 @@ export default function HomeScreen() {
       <_Hero />
 
       {/* TOP ACCOUNTS */}
-      <View style={styles.top_container}>
-        <SectionHeading
-          title="Favorites"
-          action={{ text: "See All", href: "#" }}
+      <SectionHeading
+        title="Favorites"
+        action={{ text: "See All", href: "#" }}
+        styles_props={{ container: styles.top_container }}
+      />
+      <View style={styles.top_wrapper}>
+        <FlatList
+          data={fakeTransactions}
+          keyExtractor={(item) => item.account.name}
+          horizontal
+          renderItem={({ item }) => <Favorites item={item.account} />}
+          ListHeaderComponent={() => <AddFavorite />}
         />
-        {/* LIST */}
-        <View style={[styles_flex.row_center, styles.top_wrapper]}>
-          {fakeTransactions.map((e, i) => (
-            <Favorites key={i} index={i} item={e.account} />
-          ))}
-        </View>
       </View>
 
       {/* RECENT TRANSACTIONS */}
       <View style={styles.bottom_container}>
-        <SectionHeading
-          title="Transactions"
-          action={{ text: "See All", href: "#" }}
-        />
-        {/* LIST */}
-        <View style={styles.bottom_wrapper}>
-          {fakeTransactions.map(
-            (e, i) => i != 3 && <TransactionItem key={i} index={i} item={e} />
+        <FlatList
+          data={fakeTransactions}
+          keyExtractor={(item) => item.account.name}
+          renderItem={({ item }) => <TransactionItem item={item} />}
+          ListHeaderComponent={() => (
+            <SectionHeading
+              title="Transactions"
+              action={{ text: "See All", href: "#" }}
+            />
           )}
-        </View>
+        />
       </View>
 
       {/* <Sandbox /> */}
@@ -53,7 +58,6 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   top_container: { paddingHorizontal: 25 },
-  top_wrapper: { marginVertical: 15, marginBottom: 10, gap: 20 },
+  top_wrapper: { marginTop: 15, marginBottom: 10, marginLeft: 25},
   bottom_container: { paddingHorizontal: 25 },
-  bottom_wrapper: { marginVertical: 15, gap: 20 },
 });
