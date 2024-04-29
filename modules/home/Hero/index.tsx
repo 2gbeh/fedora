@@ -1,12 +1,15 @@
 import React from "react";
 import { Text, View } from "react-native";
-//
-import SketchBox from "../../../components/SketchBox";
+import SketchBox from "@/components/SketchBox";
 //
 import { styles_flex } from "@/styles/Flex.module";
 import styles from "./Hero.module";
+import fakeTransactions from "@/data/fake-transactions";
+import { TransactionService } from "@/server/transactions/transaction.service";
 
 const Hero = () => {
+  const transactionService = new TransactionService(fakeTransactions)
+  // 
   return (
     <View style={styles.container}>
       {/* TOP */}
@@ -17,7 +20,7 @@ const Hero = () => {
             <SketchBox as="Credit" size={12} />
             <Text style={styles.label}>Gross Income</Text>
           </View>
-          <Text style={styles.h1}>$ 1,992.00</Text>
+          <Text style={styles.h1}>{transactionService.grossIncome.asMoney}</Text>
         </View>
         {/* RIGHT */}
         <View style={[styles_flex.row_center, styles.top_right_content]}>
@@ -32,9 +35,9 @@ const Hero = () => {
         <View style={styles.bottom_left_content}>
           <View style={[styles_flex.row_center, styles.label_group]}>
             <SketchBox as="Debit" size={12} />
-            <Text style={styles.label}>Total Expense</Text>
+            <Text style={styles.label}>Total Expenses</Text>
           </View>
-          <Text style={styles.h2(-1)}>$ -9.00</Text>
+          <Text style={styles.h2(-1)}>{transactionService.totalExpenses.asMoney}</Text>
         </View>
         {/* RIGHT */}
         <View style={styles.bottom_right_content}>
@@ -42,7 +45,7 @@ const Hero = () => {
             <SketchBox as="Savings" size={12} />
             <Text style={styles.label}>Net Income</Text>
           </View>
-          <Text style={styles.h2()}>$ 15.00</Text>
+          <Text style={styles.h2()}>{transactionService.netIncome.asMoney}</Text>
         </View>
       </View>
     </View>

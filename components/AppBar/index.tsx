@@ -12,9 +12,9 @@ const AppBar = () => {
       {/* LEFT */}
       <View style={[styles_flex.row_center, styles.left_content]}>
         <SketchBox as="Avatar" alt />
-        <View style={styles.text_group}>
-          <Text style={styles.greeting}>Hello,</Text>
-          <Text style={styles.username}>Sterling</Text>
+        <View style={styles.hgroup}>
+          <Text style={styles.p}>Hello,</Text>
+          <Text style={styles.h1}>Sterling</Text>
         </View>
       </View>
 

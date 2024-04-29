@@ -10,9 +10,9 @@ const styles = StyleSheet.create({
   },
   left_content: { gap: 12 },
   right_content: { gap: 12 },
-  text_group: { gap: 1 },
-  greeting: { color: COLOR.subtext, fontSize: 12 },
-  username: { color: COLOR.text, fontWeight: "600" },
+  hgroup: { gap: 1 },
+  p: { color: COLOR.subtext, fontSize: 13 },
+  h1: { color: COLOR.text, fontWeight: "600", fontSize: 16 },
 });
 
 export default styles;

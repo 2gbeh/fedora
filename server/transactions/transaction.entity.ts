@@ -1,7 +1,9 @@
+import { TAccount } from "../accounts/account.entity";
+
 export type TTransaction = {
-  avatar?: null | string;
-  account: string;
+  account: TAccount;
   amount: number;
+  narration?: string;
   date: string;
   type: string;
 };
