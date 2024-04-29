@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 //
 import COLOR from "@/constants/COLOR";
 
@@ -31,3 +31,7 @@ const Sandbox = () => {
 };
 
 export default React.memo(Sandbox);
+
+const styles = StyleSheet.create({
+  container: {},
+})

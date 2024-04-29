@@ -9,9 +9,22 @@ export const styles_flex = StyleSheet.create({
     flexDirection: "row",
     alignItems: "flex-end",
   },
+  col_end: {
+    flexDirection: "column",
+    alignItems: "flex-end",
+  },
   row_center: {
     flexDirection: "row",
     alignItems: "center",
+  },
+  col_center: {
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  row_center_center: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
   },
   row_start_between: {
     flexDirection: "row",
@@ -29,4 +42,3 @@ export const styles_flex = StyleSheet.create({
     justifyContent: "space-between",
   },
 });
-

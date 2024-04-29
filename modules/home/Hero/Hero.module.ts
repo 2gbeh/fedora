@@ -9,7 +9,7 @@ const styles = StyleSheet.create<ViewStyle | any>({
     margin: 20,
     paddingHorizontal: 25,
     paddingVertical: 20,
-    minHeight: 180,
+    minHeight: 160,
     justifyContent: "space-between",
   },
   top_content: { display: "flex" },
@@ -19,7 +19,7 @@ const styles = StyleSheet.create<ViewStyle | any>({
   bottom_left_content: { gap: 5 },
   bottom_right_content: { gap: 5, alignItems: "flex-end" },
   label_group: { gap: 8 },
-  label: { color: COLOR.subtext, fontSize: 12 },
+  label: { color: COLOR.subtext, fontSize: 14 },
   h1: { color: COLOR.accent, fontWeight: "bold", fontSize: 24 },
   h2: (value: number = 0) => ({
     color: value < 0 ? COLOR.brand : COLOR.text,

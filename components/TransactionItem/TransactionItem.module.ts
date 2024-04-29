@@ -6,13 +6,13 @@ const styles = StyleSheet.create<ViewStyle | any>({
   left_content: { gap: 15 },
   right_content: {},
   //
-  text_group: { gap: 4 },
-  account: { color: COLOR.text, fontWeight: "600", fontSize: 15 },
-  date: { color: COLOR.subtext, fontSize: 14 },
+  hgroup: { gap: 2 },
+  h1: { color: COLOR.text, fontWeight: "600", fontSize: 18 },
+  p: { color: COLOR.subtext, textTransform: "capitalize", fontSize: 14 },
   amount: (value: number = 0) => ({
+    ...styles.h1,
     color: value < 0 ? COLOR.brand : COLOR.accent,
-    fontWeight: "600",
-    fontSize: 16,
+    fontWeight: "bold",
   }),
 });
 
