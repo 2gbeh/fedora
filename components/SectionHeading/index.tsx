@@ -1,24 +1,22 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View, ViewStyle } from "react-native";
 import { Href, Link } from "expo-router";
 import SketchBox from "@/components/SketchBox";
 //
-import COLOR from "@/constants/COLOR";
 import { styles_flex } from "@/styles/Flex.module";
+import styles from "./SectionHeading.module";
 
 type TSectionHeading = {
   title: string;
   action?: { text: string; href?: string; handleClick?: () => void };
+  styles_props?: Record<string, ViewStyle | any>;
 };
 
-const SectionHeading = ({ title, action }: TSectionHeading) => {
+const SectionHeading = ({ title, action, styles_props }: TSectionHeading) => {
   return (
-    <View style={styles_flex.row_end_between}>
+    <View style={[styles_flex.row_end_between, styles_props?.container]}>
       <Text style={styles.title}>{title}</Text>
-      <Link
-        href={action?.href as Href<string>}
-        style={styles_flex.row_center}
-      >
+      <Link href={action?.href as Href<string>} style={styles_flex.row_center}>
         <Text style={styles.subtitle}>{action?.text}</Text>
         <SketchBox as="ChevronRight" size={12} alt />
       </Link>
@@ -26,13 +24,3 @@ const SectionHeading = ({ title, action }: TSectionHeading) => {
   );
 };
 export default React.memo(SectionHeading);
-
-const styles = StyleSheet.create({
-  title: { color: COLOR.text, fontWeight: "bold", fontSize: 20 },
-  subtitle: {
-    color: COLOR.subtext,
-    fontWeight: "600",
-    fontSize: 14,
-    marginRight: 10,
-  }
-});

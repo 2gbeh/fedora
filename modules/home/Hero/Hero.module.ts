@@ -7,6 +7,7 @@ const styles = StyleSheet.create<ViewStyle | any>({
     color: COLOR.text,
     borderRadius: 20,
     margin: 20,
+    // marginBottom: 0,
     paddingHorizontal: 25,
     paddingVertical: 20,
     minHeight: 160,
