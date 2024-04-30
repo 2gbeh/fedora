@@ -4,7 +4,7 @@ import COLOR from "@/constants/COLOR";
 const styles = StyleSheet.create<ViewStyle | any>({
   container: {
     // backgroundColor: "#000",
-    marginTop: 15,
+    marginBottom: 15,
   },
   left_content: { gap: 15 },
   right_content: {},
