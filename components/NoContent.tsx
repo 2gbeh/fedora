@@ -8,7 +8,7 @@ type TNoContent = { text: string; height: number };
 
 const NoContent = ({ text, height }: TNoContent) => {
   return (
-    <View style={[styles_flex.centered, { height: height as DimensionValue }]}>
+    <View style={[styles_flex.row_center_center, { height: height as DimensionValue }]}>
       <Text style={{ color: COLOR.text_muted, fontSize: 16 }}>{text}</Text>
     </View>
   );

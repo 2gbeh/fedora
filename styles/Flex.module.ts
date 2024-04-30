@@ -1,10 +1,17 @@
-import { StyleSheet } from "react-native";
+import { DimensionValue, StyleSheet } from "react-native";
 
 export const styles_flex = StyleSheet.create({
-  centered: {
+  row_centered: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
+    height: "100vh" as DimensionValue,
+  },
+  col_centered: {
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100vh" as DimensionValue,
   },
   row_start: {
     flexDirection: "row",
@@ -28,6 +35,11 @@ export const styles_flex = StyleSheet.create({
   },
   row_center_center: {
     flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  col_center_center: {
+    flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
   },

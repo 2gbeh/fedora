@@ -24,7 +24,7 @@ import styles from "@/modules/Home/Home.module";
 import { TTransaction } from "@/server/transactions/transaction.entity";
 import fakeTransactions from "@/data/fake-transactions";
 
-export default function Home() {
+export default function HomeScreen() {
   const { refetching, handleRefetch } = useHome();
   //
   return (
