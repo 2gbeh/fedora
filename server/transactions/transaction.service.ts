@@ -1,11 +1,11 @@
 import { $, NAIRA, wrap } from "@/utils";
 import date from "@/utils/phpDateFormat";
-// 
+//
 import { CommonService } from "../common/common.service";
-import { TTransaction } from "./transaction.entity";
+import { ITransaction } from "./transaction.dto";
 
 export class TransactionService {
-  constructor(private readonly transactions: TTransaction[]) {}
+  constructor(private readonly transactions: ITransaction[]) {}
   //  1,992.00
   get grossIncome() {
     let cr = this.transactions.reduce(

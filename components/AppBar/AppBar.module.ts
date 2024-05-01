@@ -3,7 +3,7 @@ import COLOR from "@/constants/COLOR";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLOR.hero,
+    backgroundColor: COLOR.background,
     color: COLOR.text,
     paddingHorizontal: 20,
     minHeight: 60,

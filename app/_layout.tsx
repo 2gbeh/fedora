@@ -17,7 +17,9 @@ export default function RootLayout() {
 
   return (
     <SafeAreaProvider>
-      <Slot />
+      <Stack>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      </Stack>
     </SafeAreaProvider>
   );
 }

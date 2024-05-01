@@ -1,11 +1,11 @@
 import { $, NAIRA, wrap } from "@/utils";
 import date from "@/utils/phpDateFormat";
-// 
+//
 import { AccountPipe } from "../accounts/account.pipe";
-import { TTransaction } from "./transaction.entity";
+import { ITransaction } from "./transaction.dto";
 
 export class TransactionPipe {
-  static transform(transaction: TTransaction) {
+  static transform(transaction: ITransaction) {
     return {
       ...transaction,
       account: AccountPipe.transform(transaction.account),

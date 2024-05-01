@@ -1,11 +1,4 @@
-import {
-  View,
-  Text,
-  FlatList,
-  RefreshControl,
-  ScrollView,
-  DimensionValue,
-} from "react-native";
+import { View, FlatList, RefreshControl, ScrollView, Text } from "react-native";
 //
 import SafeAreaInsets from "@/components/SafeAreaInsets";
 import Sandbox from "@/components/Sandbox";
@@ -21,7 +14,7 @@ import _Hero from "@/modules/Home/Hero";
 import { useHome } from "@/modules/Home/useHome";
 import { styles_flex } from "@/styles/Flex.module";
 import styles from "@/modules/Home/Home.module";
-import { TTransaction } from "@/server/transactions/transaction.entity";
+import { ITransaction } from "@/server/transactions/transaction.dto";
 import fakeTransactions from "@/data/fake-transactions";
 
 export default function HomeScreen() {
@@ -32,56 +25,50 @@ export default function HomeScreen() {
       {/* <Sandbox /> */}
       <AppBar />
       <_Hero />
-      {/* 
-      TOP ACCOUNTS */}
+
+      {/* TOP ACCOUNTS */}
       <SectionHeading
         title="Favorites"
-        action={{ text: "See All", href: "#" }}
+        action={{ text: "See All", href: "/home/" }}
         styles_props={{ container: styles.top_heading }}
       />
       <View style={styles.top_content}>
         <FlatList
           data={fakeTransactions}
-          keyExtractor={(item) => (item as TTransaction).account.name}
+          keyExtractor={(item) => (item as ITransaction).account.name}
           horizontal
           renderItem={({ item }) => (
-            <Favorites item={(item as TTransaction).account} />
+            <Favorites item={(item as ITransaction).account} />
           )}
           ListHeaderComponent={() => <AddFavorite />}
         />
       </View>
-      {/* 
-      RECENT TRANSACTIONS */}
+
+      {/* RECENT TRANSACTIONS */}
       <View style={styles.bottom_container}>
         <SectionHeading
           title="Transactions"
           action={{ text: "See All", href: "#" }}
           styles_props={{ container: styles.bottom_heading }}
         />
-        <ScrollView contentContainerStyle={{ flexGrow: 1, paddingBottom: 640 }}>
-          <View style={{ flex: 1 }}>
-            <FlatList
-              data={fakeTransactions}
-              keyExtractor={(item) => (item as TTransaction).account.name}
-              renderItem={({ item }) => {
-                return (
-                  <>
-                    <TransactionItem item={item} />
-                  </>
-                );
-              }}
-              refreshControl={
-                <RefreshControl
-                  refreshing={refetching}
-                  onRefresh={handleRefetch}
-                />
-              }
-              ListEmptyComponent={() => (
-                <NoContent text="No transactions this month" height={240} />
-              )}
-            />
-          </View>
-        </ScrollView>
+        <FlatList
+          contentContainerStyle={styles.bottom_content}
+          data={fakeTransactions}
+          keyExtractor={(item) => (item as ITransaction).account.name}
+          renderItem={({ item }) => {
+            return (
+              <>
+                <TransactionItem item={item} />
+              </>
+            );
+          }}
+          refreshControl={
+            <RefreshControl refreshing={refetching} onRefresh={handleRefetch} />
+          }
+          ListEmptyComponent={() => (
+            <NoContent text="No transactions this month" height={240} />
+          )}
+        />
       </View>
     </SafeAreaInsets>
   );
