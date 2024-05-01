@@ -4,12 +4,12 @@ import SketchBox from "@/components/SketchBox";
 //
 import { styles_flex } from "@/styles/Flex.module";
 import styles from "./TransactionItem.module";
-import { TTransaction } from "@/server/transactions/transaction.entity";
+import { ITransaction } from "@/server/transactions/transaction.dto";
 import { TransactionPipe } from "@/server/transactions/transaction.pipe";
 
-type TTransactionItem = { index?: number; item: TTransaction };
+type ITransactionItem = { index?: number; item: ITransaction };
 
-const TransactionItem = ({ index, item }: TTransactionItem) => {
+const TransactionItem = ({ index, item }: ITransactionItem) => {
   const transactionPipe = TransactionPipe.transform(item);
   //
   return (

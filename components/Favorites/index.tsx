@@ -4,10 +4,10 @@ import SketchBox from "@/components/SketchBox";
 //
 import { styles_flex } from "@/styles/Flex.module";
 import styles from "./Favorites.module";
-import { TAccount } from "@/server/accounts/account.entity";
+import { IAccount } from "@/server/accounts/account.dto";
 import { AccountPipe } from "@/server/accounts/account.pipe";
 
-type TFavorites = { index?: number; item: TAccount };
+type TFavorites = { index?: number; item: IAccount };
 
 const Favorites = ({ index, item }: TFavorites) => {
   const accountPipe = AccountPipe.transform(item);

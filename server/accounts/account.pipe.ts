@@ -1,9 +1,9 @@
 import { $, NAIRA, abbr, wrap } from "@/utils";
 //
-import { TAccount } from "./account.entity";
+import { IAccount } from "./account.dto";
 
 export class AccountPipe {
-  static transform(account: TAccount) {
+  static transform(account: IAccount) {
     return {
       ...account,
       name_f: wrap(account?.display_name || account.name, 25),
