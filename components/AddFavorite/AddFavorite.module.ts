@@ -1,8 +1,9 @@
 import { StyleSheet } from "react-native";
+import { styles_flex } from "@/styles/Flex.module";
 import COLOR from "@/constants/COLOR";
 
 const styles = StyleSheet.create({
-  container: { gap: 10, marginTop: -0 },
+  container: { marginTop: -0, ...styles_flex.col_center, gap: 10 },
   button: {
     borderWidth: 2,
     borderStyle: "dashed",
@@ -10,6 +11,7 @@ const styles = StyleSheet.create({
     borderRadius: 99,
     width: 45,
     height: 45,
+    ...styles_flex.row_center_center, 
   },
   button_text: {
     color: COLOR.text_muted,

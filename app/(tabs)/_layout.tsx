@@ -28,7 +28,7 @@ export default function DashboardLayout() {
             title,
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
-              <View style={[styles_flex.col_center_center, styles.menu_item]}>
+              <View style={styles.menu_item}>
                 <SketchBox as="TabIcon" size={12} alt={!focused} />
                 <Text style={{ color }}>{title}</Text>
               </View>
@@ -47,5 +47,5 @@ const styles = StyleSheet.create({
     borderTopColor: COLOR.border,
     minHeight: 60,
   },
-  menu_item: { gap: 5 },
+  menu_item: { ...styles_flex.col_center_center, gap: 5 },
 });

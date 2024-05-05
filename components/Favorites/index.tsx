@@ -2,7 +2,6 @@ import React from "react";
 import { View, Text } from "react-native";
 import SketchBox from "@/components/SketchBox";
 //
-import { styles_flex } from "@/styles/Flex.module";
 import styles from "./Favorites.module";
 import { IAccount } from "@/server/accounts/account.dto";
 import { AccountPipe } from "@/server/accounts/account.pipe";

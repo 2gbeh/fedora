@@ -4,20 +4,17 @@ import { Link, usePathname } from "expo-router";
 import SketchBox from "../SketchBox";
 import Logo from "../Logo";
 //
-import ASSET from "@/constants/ASSET";
-import COLOR from "@/constants/COLOR";
-import { styles_flex } from "@/styles/Flex.module";
 import styles from "./Tent.module";
 
 const Tent = () => {
   const pathname = usePathname();
   // console.log(pathname);
   return (
-    <View style={[styles_flex.col_center, styles.container]}>
-      <View style={[styles_flex.row_center_center, styles.figure]}>
+    <View style={styles.container}>
+      <View style={styles.figure}>
         <Logo width={48} />
       </View>
-      <View style={[styles_flex.col_center, styles.hgroup]}>
+      <View style={styles.hgroup}>
         <Text style={styles.h1}>404 Not Found</Text>
         <Text style={styles.p}>
           It appears the requested screen at

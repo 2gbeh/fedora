@@ -1,8 +1,3 @@
-export default function randomColor(n?: number) {
-  let i = n ? n - 1 : Math.floor(Math.random() * (COLOR.length - 0 + 1)) + 0;
-  return COLOR[i];
-}
-
 export const COLOR = Object.freeze([
   "#9c27b0",
   "#e91e63",
@@ -17,3 +12,9 @@ export const COLOR = Object.freeze([
   "#ffc107",
   "#795548",
 ]);
+
+export default function randomColor(n?: number) {
+  let i = n ? n - 1 : Math.floor(Math.random() * (COLOR.length - 0 + 1)) + 0;
+  return COLOR[i];
+}
+

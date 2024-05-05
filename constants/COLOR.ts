@@ -21,7 +21,7 @@ const COLOR = {
   text_muted: "#999",
   subtext: "#aaa",
   border: "#2c2c30",
-  hero: "#18181b",
+  panel: "#18181b",
   icon: "#97979b",
   input: {
     background: "#18181b",
