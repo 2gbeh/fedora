@@ -1,11 +1,11 @@
 import React from "react";
 import { View, Text } from "react-native";
 import SketchBox from "@/components/SketchBox";
+import AssetBox from "../AssetBox";
 //
 import styles from "./TransactionCard.module";
 import { ITransaction } from "@/server/transactions/transaction.dto";
 import { TransactionPipe } from "@/server/transactions/transaction.pipe";
-import AssetBox from "../AssetBox";
 
 type ITransactionCard = { index?: number; item: ITransaction };
 

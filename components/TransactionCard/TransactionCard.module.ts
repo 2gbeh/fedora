@@ -12,7 +12,7 @@ const styles = StyleSheet.create<ViewStyle | any>({
   right_content: { ...styles_flex.col_end, gap: 2 },
   //
   hgroup: { gap: 2 },
-  h1: { color: COLOR.text, fontWeight: "600", fontSize: 18 },
+  h1: { color: COLOR.text, fontWeight: "600", fontSize: 16 },
   p: { color: COLOR.subtext, textTransform: "capitalize", fontSize: 14 },
   amount: (value: number = 0) => ({
     ...styles.h1,
