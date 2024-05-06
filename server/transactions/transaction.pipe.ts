@@ -12,7 +12,7 @@ export class TransactionPipe {
       narration_f:
         transaction?.narration ||
         `${transaction.amount > -1 ? "credit" : "debit"} alert`,
-      date_f: date(transaction.date, "M j") as string,
+      date_f: date(transaction.date as string, "M j") as string,
     };
   }
 }

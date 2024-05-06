@@ -4,7 +4,7 @@ export interface ITransaction {
   account: IAccount;
   amount: number;
   narration?: null | string;
-  date: string;
+  date: string | Date;
   type: string;
 }
 

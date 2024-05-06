@@ -42,7 +42,7 @@ export default function WalletsScreen() {
               />
             )}
             ListEmptyComponent={() => (
-              <NoContent text="No wallets this month" height={240} />
+              <NoContent text="No wallet found" height={240} />
             )}
             refreshControl={
               <RefreshControl

@@ -1,10 +1,10 @@
 import { StyleSheet, type DimensionValue, type ViewStyle } from "react-native";
+import { styles_flex } from "@/styles/Flex.module";
 import COLOR from "@/constants/COLOR";
 
 const styles = StyleSheet.create({
-  top_content: { marginTop: 15, marginBottom: 10, marginLeft: 25 },
-  bottom_container: { paddingHorizontal: 25, flexGrow: 1 },
-  bottom_content: { flex: 1 },
+  container: { paddingHorizontal: 25, flexGrow: 1 },
+  wrapper: { gap: 20 },
 });
 
 export default styles;

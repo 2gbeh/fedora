@@ -1,25 +1,33 @@
 import React from "react";
 import { View, Text } from "react-native";
 import SketchBox from "@/components/SketchBox";
-//
-import { IBill } from "@/server/bills/bill.dto";
-import { BillPipe } from "@/server/bills/bill.pipe";
+import AssetBox from "../AssetBox";
 //
 import styles from "./AccountCard.module";
+import { IAccount } from "@/server/accounts/account.dto";
+import { AccountPipe } from "@/server/accounts/account.pipe";
 
-type ICreditorCard = { index?: number; item: IBill };
+type IAccountCard = { index?: number; item: IAccount };
 
-const CreditorCard = ({ index, item }: ICreditorCard) => {
-  const billPipe = BillPipe.transform(item);
+const AccountCard = ({ index, item }: IAccountCard) => {
+  const accountPipe = AccountPipe.transform(item);
   //
   return (
-    <View style={styles.container()}>
-      <SketchBox as="Avatar" />
-      <View style={styles.hgroup}>
-        <Text style={styles.h1}>{billPipe.account.name_f}</Text>
-        <Text style={styles.p}>{billPipe.bills_f}</Text>
+    <View style={styles.container}>
+      {/* LEFT */}
+      <View style={styles.left_content}>
+        <AssetBox as={accountPipe.avatar_f} size={45} radius={99} />
+        <View style={styles.hgroup}>
+          <Text style={styles.h1}>{accountPipe.name_f}</Text>
+          <Text style={styles.p}>{accountPipe.name}</Text>
+        </View>
+      </View>
+
+      {/* RIGHT */}
+      <View>
+        <SketchBox as="TabIcon" size={12} dark={!accountPipe.favorite} />
       </View>
     </View>
   );
 };
-export default React.memo(CreditorCard);
+export default React.memo(AccountCard);
