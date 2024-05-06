@@ -17,7 +17,7 @@ const SectionHeading = ({ title, action, margin }: TSectionHeading) => {
       <Text style={styles.title}>{title}</Text>
       <Link href={action?.path as Href<string>} style={styles.right_content}>
         <Text style={styles.icon_text}>{action?.text}</Text>
-        <SketchBox as="ChevronRight" size={12} alt />
+        <SketchBox as="ChevronRight" size={12} dark />
       </Link>
     </View>
   );

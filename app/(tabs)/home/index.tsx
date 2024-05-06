@@ -21,50 +21,57 @@ export default function HomeScreen() {
   const { refetching, handleRefetch } = useHome();
   //
   return (
-    <SafeAreaInsets>
+    <>
       {/* <Sandbox /> */}
-      <AppBar />
-      <Fab path="#" bottom={120} />
-      <_Hero />
+      <Fab path="#" />
+      <SafeAreaInsets>
+        <AppBar />
 
-      {/* TOP ACCOUNTS */}
-      <SectionHeading
-        title="Favorites"
-        action={{ text: "See All", path: "/home/" }}
-        margin={[0, 25]}
-      />
-      <View style={styles.top_content}>
-        <FlatList
-          horizontal
-          data={fakeTransactions}
-          keyExtractor={(item) => (item as ITransaction).account.name}
-          renderItem={({ item }) => (
-            <Favorites item={(item as ITransaction).account} />
-          )}
-          ListHeaderComponent={() => <AddFavorite />}
-        />
-      </View>
+        {/* HERO */}
+        <_Hero />
 
-      {/* RECENT TRANSACTIONS */}
-      <View style={styles.bottom_container}>
+        {/* TOP ACCOUNTS */}
         <SectionHeading
-          title="Recent Transactions"
-          action={{ text: "See All", path: "#" }}
-          margin={[0, 0, 15, 0]}
+          title="Favorites"
+          action={{ text: "See All", path: "/home/" }}
+          margin={[0, 25]}
         />
-        <FlatList
-          contentContainerStyle={styles.bottom_content}
-          data={fakeTransactions}
-          keyExtractor={(item) => (item as ITransaction).account.name}
-          renderItem={({ item }) => <TransactionCard item={item} />}
-          ListEmptyComponent={() => (
-            <NoContent text="No transactions this month" height={240} />
-          )}
-          refreshControl={
-            <RefreshControl refreshing={refetching} onRefresh={handleRefetch} />
-          }
-        />
-      </View>
-    </SafeAreaInsets>
+        <View style={styles.top_content}>
+          <FlatList
+            horizontal
+            data={fakeTransactions}
+            keyExtractor={(item) => (item as ITransaction).account.name}
+            renderItem={({ item }) => (
+              <Favorites item={(item as ITransaction).account} />
+            )}
+            ListHeaderComponent={() => <AddFavorite />}
+          />
+        </View>
+
+        {/* RECENT TRANSACTIONS */}
+        <View style={styles.bottom_container}>
+          <SectionHeading
+            title="Recent Transactions"
+            action={{ text: "See All", path: "#" }}
+            margin={[0, 0, 15, 0]}
+          />
+          <FlatList
+            contentContainerStyle={styles.bottom_content}
+            data={fakeTransactions}
+            keyExtractor={(item) => (item as ITransaction).account.name}
+            renderItem={({ item }) => <TransactionCard item={item} />}
+            ListEmptyComponent={() => (
+              <NoContent text="No transactions this month" height={240} />
+            )}
+            refreshControl={
+              <RefreshControl
+                refreshing={refetching}
+                onRefresh={handleRefetch}
+              />
+            }
+          />
+        </View>
+      </SafeAreaInsets>
+    </>
   );
 }

@@ -1,5 +1,4 @@
-import { $, NAIRA, abbr, wrap } from "@/utils";
-//
+import { $ } from "@/utils";
 import { AccountPipe } from "../accounts/account.pipe";
 import { IBill } from "./bill.dto";
 

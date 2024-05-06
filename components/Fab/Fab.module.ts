@@ -3,7 +3,7 @@ import { styles_flex } from "@/styles/Flex.module";
 import COLOR from "@/constants/COLOR";
 
 const styles = StyleSheet.create<ViewStyle | any>({
-  container: (value: number = 80) => ({
+  container: (value: number = 20) => ({
     backgroundColor: COLOR.brand,
     borderRadius: 12,
     width: 50,

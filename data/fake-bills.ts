@@ -42,7 +42,7 @@ export default [
       display_name: "Landlord",
     },
     bills: 1,
-    narration: "nepa for may",
+    narration: "6k nepa for may",
   },
   {
     account: {
@@ -51,6 +51,6 @@ export default [
       display_name: "The Wife",
     },
     bills: 2,
-    narration: "7.5k children church sew, 20k from sister",
+    narration: "7.5k children church sew, 16k from sister",
   },
 ];

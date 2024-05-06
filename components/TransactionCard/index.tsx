@@ -5,6 +5,7 @@ import SketchBox from "@/components/SketchBox";
 import styles from "./TransactionCard.module";
 import { ITransaction } from "@/server/transactions/transaction.dto";
 import { TransactionPipe } from "@/server/transactions/transaction.pipe";
+import AssetBox from "../AssetBox";
 
 type ITransactionCard = { index?: number; item: ITransaction };
 
@@ -15,7 +16,7 @@ const TransactionCard = ({ index, item }: ITransactionCard) => {
     <View style={styles.container}>
       {/* LEFT */}
       <View style={styles.left_content}>
-        <SketchBox as="Avatar" size={40} alt />
+        <AssetBox as={transactionPipe.account.avatar_f} size={45} radius={99} />
         <View style={styles.hgroup}>
           <Text style={styles.h1}>{transactionPipe.account.name_f}</Text>
           <Text style={styles.p}>{transactionPipe.narration_f}</Text>

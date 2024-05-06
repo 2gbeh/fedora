@@ -15,9 +15,9 @@ const Hero = () => {
       <View style={styles.top_content}>
         {/* LEFT */}
         <View style={styles.top_left_content}>
-          <View style={styles.label_group}>
+          <View style={styles.hgroup}>
             <SketchBox as="Credit" size={12} />
-            <Text style={styles.label}>Gross Income</Text>
+            <Text style={styles.p}>Gross Income</Text>
           </View>
           <Text style={styles.h1}>
             {transactionService.grossIncome.asMoney}
@@ -34,9 +34,9 @@ const Hero = () => {
       <View style={styles.bottom_content}>
         {/* LEFT */}
         <View style={styles.bottom_left_content}>
-          <View style={styles.label_group}>
+          <View style={styles.hgroup}>
             <SketchBox as="Debit" size={12} />
-            <Text style={styles.label}>Total Expenses</Text>
+            <Text style={styles.p}>Total Expenses</Text>
           </View>
           <Text style={styles.h2(-1)}>
             {transactionService.totalExpenses.asMoney}
@@ -44,9 +44,9 @@ const Hero = () => {
         </View>
         {/* RIGHT */}
         <View style={styles.bottom_right_content}>
-          <View style={styles.label_group}>
+          <View style={styles.hgroup}>
             <SketchBox as="Savings" size={12} />
-            <Text style={styles.label}>Net Income</Text>
+            <Text style={styles.p}>Net Income</Text>
           </View>
           <Text style={styles.h2()}>
             {transactionService.netIncome.asMoney}

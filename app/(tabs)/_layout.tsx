@@ -29,7 +29,7 @@ export default function DashboardLayout() {
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <View style={styles.menu_item}>
-                <SketchBox as="TabIcon" size={12} alt={!focused} />
+                <SketchBox as="TabIcon" size={12} dark={!focused} />
                 <Text style={{ color }}>{title}</Text>
               </View>
             ),

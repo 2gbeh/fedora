@@ -5,9 +5,10 @@ import COLOR from "@/constants/COLOR";
 const styles = StyleSheet.create({
   container: {
     backgroundColor: COLOR.foreground,
-    borderWidth: 1,
+    borderColor: COLOR.foreground,
+    borderBottomColor: COLOR.border,
+    borderWidth: 2,
     borderRadius: 10,
-    borderColor: COLOR.border,
     height: 150,
     ...styles_flex.col_center_center,
     flex: 1,

@@ -8,9 +8,9 @@ import styles from "./AppBar.module";
 const AppBar = ({ stack }: { stack?: string }) => {
   return stack ? (
     <View style={styles.container}>
-      <SketchBox as="Back" size={18} alt />
+      <SketchBox as="Back" size={18} dark />
       <Text style={styles.title}>{stack}</Text>
-      <SketchBox as="Options" size={18} alt />
+      <SketchBox as="Options" size={18} dark />
     </View>
   ) : (
     <View style={styles.container}>
@@ -25,8 +25,8 @@ const AppBar = ({ stack }: { stack?: string }) => {
 
       {/* RIGHT */}
       <View style={styles.right_content}>
-        <SketchBox as="Search" size={18} alt />
-        <SketchBox as="Notifications" size={18} alt />
+        <SketchBox as="Search" size={18} dark />
+        <SketchBox as="Notifications" size={18} dark />
       </View>
     </View>
   );

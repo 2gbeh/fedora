@@ -22,7 +22,7 @@ const SearchBar = () => {
 
       {/* BUTTON */}
       <TouchableOpacity onPress={handlePress} style={styles.button}>
-        <SketchBox as="SearchIcon" size={16} alt />
+        <SketchBox as="SearchIcon" size={16} dark />
       </TouchableOpacity>
     </View>
   );

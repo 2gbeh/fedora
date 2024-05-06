@@ -19,38 +19,43 @@ export default function CreditorsScreen() {
   const { refetching, handleRefetch } = useHome();
   //
   return (
-    <SafeAreaInsets>
-      <AppBar stack="Creditors" />
+    <>
       <Fab path="#" />
+      <SafeAreaInsets>
+        <AppBar stack="Creditors" />
 
-      {/* SEARCH BAR */}
-      <SearchBar />
+        {/* SEARCH BAR */}
+        <SearchBar />
 
-      {/* GRID CARDS */}
-      <View style={styles.container}>
-        <FlatList
-          contentContainerStyle={styles.content}
-          columnWrapperStyle={styles.wrapper}
-          numColumns={2}
-          //
-          data={fakeBills}
-          keyExtractor={(item) => (item as IBill).account.name}
-          renderItem={({ item }) => <CreditorCard item={item} />}
-          ListHeaderComponent={() => (
-            <SectionHeading
-              title="All creditors"
-              action={{ text: "Sort", path: "#" }}
-              margin={[5, 0, 0]}
-            />
-          )}
-          ListEmptyComponent={() => (
-            <NoContent text="No bills this month" height={240} />
-          )}
-          refreshControl={
-            <RefreshControl refreshing={refetching} onRefresh={handleRefetch} />
-          }
-        />
-      </View>
-    </SafeAreaInsets>
+        {/* GRID CARDS */}
+        <View style={styles.container}>
+          <FlatList
+            contentContainerStyle={styles.content}
+            columnWrapperStyle={styles.wrapper}
+            numColumns={2}
+            //
+            data={fakeBills}
+            keyExtractor={(item) => (item as IBill).account.name}
+            renderItem={({ item }) => <CreditorCard item={item} />}
+            ListHeaderComponent={() => (
+              <SectionHeading
+                title="All creditors"
+                action={{ text: "Sort", path: "#" }}
+                margin={[5, 0, 0]}
+              />
+            )}
+            ListEmptyComponent={() => (
+              <NoContent text="No bills this month" height={240} />
+            )}
+            refreshControl={
+              <RefreshControl
+                refreshing={refetching}
+                onRefresh={handleRefetch}
+              />
+            }
+          />
+        </View>
+      </SafeAreaInsets>
+    </>
   );
 }
