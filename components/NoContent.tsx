@@ -1,16 +1,22 @@
 import React from "react";
-import { View, Text, StyleSheet, type DimensionValue } from "react-native";
+import { View, Text, StyleSheet, type ViewStyle } from "react-native";
 //
 import COLOR from "@/constants/COLOR";
 import { styles_flex } from "@/styles/Flex.module";
 
-type TNoContent = { text: string; height: number };
-
-const NoContent = ({ text, height }: TNoContent) => {
+const NoContent = ({ text, height }: { text: string; height: number }) => {
   return (
-    <View style={[styles_flex.row_center_center, { height: height as DimensionValue }]}>
-      <Text style={{ color: COLOR.text_muted, fontSize: 16 }}>{text}</Text>
+    <View style={styles.container(height)}>
+      <Text style={styles.p}>{text}</Text>
     </View>
   );
 };
 export default React.memo(NoContent);
+
+const styles = StyleSheet.create<ViewStyle | any>({
+  container: (value: number = 0) => ({
+    height: value,
+    ...styles_flex.row_center_center,
+  }),
+  p: { color: COLOR.text_muted, fontSize: 16 },
+});

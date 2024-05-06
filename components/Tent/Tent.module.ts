@@ -1,8 +1,9 @@
 import { StyleSheet } from "react-native";
+import { styles_flex } from "@/styles/Flex.module";
 import COLOR from "@/constants/COLOR";
 
 const styles = StyleSheet.create({
-  container: { padding: 20, flex: 1 },
+  container: { padding: 20, ...styles_flex.col_center, flex: 1 },
   figure: {
     backgroundColor: COLOR.foreground,
     borderRadius: 99,
@@ -10,8 +11,9 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     height: 128,
     width: 128,
+    ...styles_flex.row_center_center, 
   },
-  hgroup: { gap: 10 },
+  hgroup: { ...styles_flex.col_center, gap: 10 },
   h1: { color: COLOR.text, fontSize: 24, fontWeight: "bold" },
   p: {
     color: COLOR.subtext,

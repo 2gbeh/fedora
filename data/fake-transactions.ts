@@ -1,7 +1,7 @@
 export default [
   {
     account: {
-      avatar: null,
+      avatar: "account-buzzbite.png",
       name: "Buzzbite Limted",
       display_name: "buzzbite.io",
     },
@@ -12,7 +12,7 @@ export default [
   },
   {
     account: {
-      avatar: null,
+      avatar: "account-excitepl.png",
       name: "Excite Panacea Limited",
       display_name: "Excite Panacea Ltd.",
     },
@@ -23,7 +23,18 @@ export default [
   },
   {
     account: {
-      avatar: null,
+      avatar: "account-semo23.png",
+      name: "Sandra Weds Emmanuel",
+      display_name: "SEMO23",
+    },
+    amount: 1497010,
+    narration: "Wedding Contributions",
+    date: "2023-12-04 12:00:00",
+    type: "CR",
+  },
+  {
+    account: {
+      avatar: "account-sehiaghe.png",
       name: "Sandra Ehiaghe Tugbeh",
       display_name: "The Wife",
     },
@@ -34,7 +45,7 @@ export default [
   },
   {
     account: {
-      avatar: null,
+      avatar: "account-skambia.png",
       name: "Stella Obiajuru Kambia",
       display_name: "🍑",
     },
@@ -45,7 +56,7 @@ export default [
   },
   {
     account: {
-      avatar: null,
+      avatar: "account-rtk.png",
       name: "Retinken Nigeria Limited",
       display_name: "Retinken Nig. Ltd.",
     },

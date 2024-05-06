@@ -3,7 +3,7 @@ import { IAccount } from "../accounts/account.dto";
 export interface ITransaction {
   account: IAccount;
   amount: number;
-  narration?: string;
+  narration?: null | string;
   date: string;
   type: string;
 }

@@ -2,21 +2,21 @@ import React from "react";
 import { View, Text } from "react-native";
 import SketchBox from "@/components/SketchBox";
 //
-import { styles_flex } from "@/styles/Flex.module";
-import styles from "./TransactionItem.module";
+import styles from "./TransactionCard.module";
 import { ITransaction } from "@/server/transactions/transaction.dto";
 import { TransactionPipe } from "@/server/transactions/transaction.pipe";
+import AssetBox from "../AssetBox";
 
-type ITransactionItem = { index?: number; item: ITransaction };
+type ITransactionCard = { index?: number; item: ITransaction };
 
-const TransactionItem = ({ index, item }: ITransactionItem) => {
+const TransactionCard = ({ index, item }: ITransactionCard) => {
   const transactionPipe = TransactionPipe.transform(item);
   //
   return (
-    <View style={[styles_flex.row_start_between, styles.container]}>
+    <View style={styles.container}>
       {/* LEFT */}
-      <View style={[styles_flex.row_center, styles.left_content]}>
-        <SketchBox as="Avatar" size={40} alt />
+      <View style={styles.left_content}>
+        <AssetBox as={transactionPipe.account.avatar_f} size={45} radius={99} />
         <View style={styles.hgroup}>
           <Text style={styles.h1}>{transactionPipe.account.name_f}</Text>
           <Text style={styles.p}>{transactionPipe.narration_f}</Text>
@@ -24,7 +24,7 @@ const TransactionItem = ({ index, item }: ITransactionItem) => {
       </View>
 
       {/* RIGHT */}
-      <View style={[styles_flex.col_end, styles.hgroup]}>
+      <View style={styles.right_content}>
         <Text style={styles.amount(item.amount)}>
           {transactionPipe.amount_f}
         </Text>
@@ -33,4 +33,4 @@ const TransactionItem = ({ index, item }: ITransactionItem) => {
     </View>
   );
 };
-export default React.memo(TransactionItem);
+export default React.memo(TransactionCard);
