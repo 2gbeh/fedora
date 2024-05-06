@@ -7,7 +7,7 @@ export default [
   },
   {
     avatar: "account-eloope.png",
-    name: "Eloope",
+    name: "Eloope ERP",
     display_name: null,
     favorite: true,
   },
