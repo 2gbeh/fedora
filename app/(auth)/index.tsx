@@ -1,5 +1,7 @@
 import { StyleSheet, View, Text, Pressable } from "react-native";
 import { router } from "expo-router";
+import Feather from "@expo/vector-icons/Feather";
+// 
 import { COLOR, FONT } from "@/constants/THEME";
 
 export default function LoginScreen() {
@@ -8,7 +10,7 @@ export default function LoginScreen() {
   return (
     <View style={s.container}>
       <Pressable onPress={() => router.back()}>
-        <Text style={s.h1}>Welcome</Text>
+        <Feather name="framer" size={32} color={COLOR.primary} />
       </Pressable>
     </View>
   );
@@ -17,7 +19,7 @@ export default function LoginScreen() {
 const s = StyleSheet.create({
   _: {},
   container: {
-    backgroundColor: COLOR.primary,
+    backgroundColor: COLOR.secondary,
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
@@ -25,8 +27,8 @@ const s = StyleSheet.create({
   },
   h1: {
     color: COLOR.secondary,
-    fontFamily: FONT.GilroyMedium,
+    fontFamily: FONT.RobotoMedium,
+    fontWeight: "500",
     fontSize: 18,
-    fontWeight: "600",
   },
 });
