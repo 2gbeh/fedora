@@ -12,8 +12,8 @@ export const fabStyles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     position: "absolute",
-    bottom: 20,
-    right: 20,
+    bottom: 16,
+    right: 16,
   },
   label: {
     color: COLOR.dark.onTertiary,

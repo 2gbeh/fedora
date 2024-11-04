@@ -21,8 +21,13 @@ export default function HomeScreen() {
 
       {/* MAIN */}
       <View style={s.main}>
+        {/* HERO */}
         <VirtualWallet />
+
+        {/* SECTION */}
         <SectionHeader title="Recent transactions" />
+
+        {/* LIST */}
         <FlatList
           data={[
             { id: 1 },
