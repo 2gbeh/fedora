@@ -20,8 +20,15 @@ export const FONTS = {
 
 // https://hexcolorpedia.com/color/?q=db1a5a
 export const COLOR = {
+  white: "#eee",
+  black: "#111",
   primary: "#db1a5a",
   secondary: "#131313",
   accent: "#19db9a",
   surface: "#1c1c21",
+  border: "",
+  text: "",
+  muted: "",
+  button: "",
+  disabled: "",
 };

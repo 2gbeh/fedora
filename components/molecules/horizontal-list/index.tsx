@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
-// 
+//
 import { horizontalListStyles as s } from "./styles";
 
 interface IProps {}
@@ -10,7 +10,8 @@ const HorizontalList: React.FC<IProps> = ({}) => {
   // renders
   return (
     <View style={s.container}>
-      <Text>HorizontalList</Text>
+      <View style={s.figure} />
+      <Text style={s.figcaption}>PL</Text>
     </View>
   );
 };

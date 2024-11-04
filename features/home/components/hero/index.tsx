@@ -10,7 +10,7 @@ const Hero: React.FC<IProps> = ({}) => {
   // renders
   return (
     <View style={s.container}>
-      <Text>Hero</Text>
+      <Text style={s.label}>Hero</Text>
     </View>
   );
 };
