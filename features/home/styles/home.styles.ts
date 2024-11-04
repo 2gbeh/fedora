@@ -11,5 +11,6 @@ export const homeStyles = StyleSheet.create({
     paddingBottom: 16,
     paddingHorizontal: 20,
     rowGap: 16,
+    flex: 1,
   },
 });

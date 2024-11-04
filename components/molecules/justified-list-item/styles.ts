@@ -23,9 +23,11 @@ export const justifiedListItemStyles = StyleSheet.create({
   },
   left_top: {
     ...textStyles.medium,
+    color: COLOR.dark.onSurface,
   },
   left_bottom: {
     ...textStyles.regular,
+    color: COLOR.dark.onSurface,
   },
   right: {
     alignItems: "flex-end",
@@ -33,8 +35,10 @@ export const justifiedListItemStyles = StyleSheet.create({
   },
   right_top: {
     ...textStyles.medium,
+    color: COLOR.dark.onSurface,
   },
   right_bottom: {
     ...textStyles.regular,
+    color: COLOR.dark.onSurface,
   },
 });

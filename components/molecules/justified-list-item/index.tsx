@@ -3,9 +3,11 @@ import { View, Text } from "react-native";
 //
 import { justifiedListItemStyles as s } from "./styles";
 
-interface IProps {}
+interface IProps {
+  id: number;
+}
 
-const JustifiedListItem: React.FC<IProps> = ({}) => {
+const JustifiedListItem: React.FC<IProps> = ({ id }) => {
   console.log("🚀 ~ JustifiedListItem");
   // renders
   return (
@@ -19,7 +21,7 @@ const JustifiedListItem: React.FC<IProps> = ({}) => {
       </View>
       <View style={s.right}>
         <Text style={s.left_top}>800,000</Text>
-        <Text style={s.left_bottom}>Nov 1</Text>
+        <Text style={s.left_bottom}>Nov {id}</Text>
       </View>
     </View>
   );

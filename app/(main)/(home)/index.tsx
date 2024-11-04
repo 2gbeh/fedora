@@ -19,10 +19,24 @@ export default function HomeScreen() {
       <Header />
       <View style={s.content}>
         <VirtualWallet />
-        {/* <SectionHeader title="Favorites" />
-        <HorizontalList /> */}
         <SectionHeader title="Transactions" />
-        <JustifiedListItem />
+        <FlatList
+          data={[
+            { id: 1 },
+            { id: 2 },
+            { id: 3 },
+            { id: 4 },
+            { id: 5 },
+            { id: 6 },
+            { id: 7 },
+            { id: 8 },
+            { id: 9 },
+            { id: 10 },
+          ]}
+          keyExtractor={(item) => String(item.id)}
+          renderItem={({ item }) => <JustifiedListItem {...item} />}
+          contentContainerStyle={{ flex: 1, rowGap: 24 }}
+        />
       </View>
       <FAB />
     </View>
