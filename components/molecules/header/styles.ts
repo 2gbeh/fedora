@@ -28,10 +28,12 @@ export const headerStyles = StyleSheet.create({
     rowGap: 4,
   },
   greeting: {
-    ...textStyles.regular
+    ...textStyles.regular,
+    color: COLOR.dark.onSurface,
   },
   name: {
-    ...textStyles.medium
+    ...textStyles.medium,
+    color: COLOR.dark.onSurface,
   },
   icon: {
     borderColor: COLOR.white,
