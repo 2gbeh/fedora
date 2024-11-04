@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { PackageIcon } from "lucide-react-native";
+import { ChevronRightIcon, PackageIcon } from "lucide-react-native";
 //
 import { COLOR } from "@/constants/THEME";
 //
@@ -18,7 +18,7 @@ const SectionHeader: React.FC<IProps> = ({ title }) => {
       <Text style={s.heading}>{title}</Text>
       <View style={s.right}>
         <Text style={s.link}>View all</Text>
-        <PackageIcon color={COLOR.white} />
+        <ChevronRightIcon color={COLOR.white} />
       </View>
     </View>
   );

@@ -19,8 +19,8 @@ export default function HomeScreen() {
       <Header />
       <View style={s.content}>
         <VirtualWallet />
-        <SectionHeader title="Favorites" />
-        <HorizontalList />
+        {/* <SectionHeader title="Favorites" />
+        <HorizontalList /> */}
         <SectionHeader title="Transactions" />
         <JustifiedListItem />
       </View>

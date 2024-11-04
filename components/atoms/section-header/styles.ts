@@ -12,9 +12,11 @@ export const sectionHeaderStyles = StyleSheet.create({
     columnGap: 8,
   },
   heading: {
-    ...textStyles.medium
+    ...textStyles.medium,
+    color: COLOR.dark.onSurface,
   },
   link: {
-    ...textStyles.regular
+    ...textStyles.regular,
+    color: COLOR.dark.onSurface,
   },
 });
