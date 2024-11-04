@@ -1,5 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native";
+// 
+import Avatar from "@/components/atoms/avatar";
 //
 import { justifiedListItemStyles as s } from "./styles";
 
@@ -13,7 +15,7 @@ const JustifiedListItem: React.FC<IProps> = ({ id }) => {
   return (
     <View style={s.container}>
       <View style={s.left}>
-        <View style={s.figure} />
+        <Avatar />
         <View style={s.figcaption}>
           <Text style={s.left_top}>Plateaumed.com</Text>
           <Text style={s.left_bottom}>October salary</Text>

@@ -6,8 +6,8 @@ export const homeStyles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  content: {
-    paddingTop: 8,
+  main: {
+    // paddingTop: 8,
     paddingBottom: 16,
     paddingHorizontal: 20,
     rowGap: 16,

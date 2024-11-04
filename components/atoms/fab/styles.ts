@@ -4,7 +4,7 @@ import { COLOR, FONT } from "@/constants/THEME";
 export const fabStyles = StyleSheet.create({
   _: {},
   button: {
-    backgroundColor: COLOR.primary,
+    backgroundColor: COLOR.dark.tertiary,
     borderWidth: 1,
     borderRadius: 16,
     width: 56,
@@ -16,7 +16,7 @@ export const fabStyles = StyleSheet.create({
     right: 20,
   },
   label: {
-    color: COLOR.white,
+    color: COLOR.dark.onTertiary,
     fontFamily: FONT.RobotoBold,
     fontWeight: "700",
     fontSize: 24,

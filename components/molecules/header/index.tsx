@@ -2,10 +2,10 @@ import React from "react";
 import { View, Text } from "react-native";
 import { BellIcon, PackageIcon } from "lucide-react-native";
 // 
+import Avatar from "@/components/atoms/avatar";
 import { COLOR } from "@/constants/THEME";
 //
 import { headerStyles as s } from "./styles";
-import Avatar from "@/components/atoms/avatar";
 
 interface IProps {}
 
