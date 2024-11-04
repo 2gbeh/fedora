@@ -16,7 +16,7 @@ export default function MainLayout() {
 const s = StyleSheet.create({
   _: {},
   container: {
-    backgroundColor: COLOR.secondary,
+    backgroundColor: COLOR.dark.surfaceContainerLowest,
     flex: 1,
   },
 });

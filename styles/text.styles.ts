@@ -20,7 +20,7 @@ export const textStyles = StyleSheet.create({
     color: COLOR.muted,
     fontFamily: FONT.RobotoRegular,
     fontWeight: "400",
-    fontSize: 14,
+    fontSize: 12,
   },
   light: {
     fontFamily: FONT.RobotoLight,

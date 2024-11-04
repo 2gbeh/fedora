@@ -15,7 +15,7 @@ const SectionHeader: React.FC<IProps> = ({ title }) => {
   // renders
   return (
     <View style={s.container}>
-      <Text style={s.title}>{title}</Text>
+      <Text style={s.heading}>{title}</Text>
       <View style={s.right}>
         <Text style={s.link}>View all</Text>
         <PackageIcon color={COLOR.white} />

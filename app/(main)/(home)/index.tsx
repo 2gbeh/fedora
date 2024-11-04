@@ -9,7 +9,7 @@ import JustifiedListItem from "@/components/molecules/justified-list-item";
 import FAB from "@/components/atoms/fab";
 import { COLOR, FONT } from "@/constants/THEME";
 //
-import { homeStyles as s, Hero } from "@/features/home";
+import { homeStyles as s, VirtualWallet } from "@/features/home";
 
 export default function HomeScreen() {
   console.log("🚀 ~ HomeScreen");
@@ -18,7 +18,7 @@ export default function HomeScreen() {
     <View style={s.container}>
       <Header />
       <View style={s.content}>
-        <Hero />
+        <VirtualWallet />
         <SectionHeader title="Favorites" />
         <HorizontalList />
         <SectionHeader title="Transactions" />

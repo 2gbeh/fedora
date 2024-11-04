@@ -1,16 +1,14 @@
 import { StyleSheet } from "react-native";
+import { viewStyles, textStyles } from "@/styles";
 import { COLOR, FONT } from "@/constants/THEME";
 
 export const justifiedListItemStyles = StyleSheet.create({
   _: {},
   container: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
+    ...viewStyles.row_center_between,
   },
   left: {
-    flexDirection: "row",
-    alignItems: "center",
+    ...viewStyles.row_center,
     columnGap: 16,
   },
   figure: {
@@ -24,31 +22,19 @@ export const justifiedListItemStyles = StyleSheet.create({
     rowGap: 4,
   },
   left_top: {
-    color: COLOR.white,
-    fontFamily: FONT.RobotoMedium,
-    fontWeight: "500",
-    fontSize: 16,
+    ...textStyles.medium,
   },
   left_bottom: {
-    color: COLOR.white,
-    fontFamily: FONT.RobotoRegular,
-    fontWeight: "400",
-    fontSize: 14,
+    ...textStyles.regular,
   },
   right: {
     alignItems: "flex-end",
     rowGap: 4,
   },
   right_top: {
-    color: COLOR.white,
-    fontFamily: FONT.RobotoMedium,
-    fontWeight: "500",
-    fontSize: 16,
+    ...textStyles.medium,
   },
   right_bottom: {
-    color: COLOR.white,
-    fontFamily: FONT.RobotoRegular,
-    fontWeight: "400",
-    fontSize: 14,
+    ...textStyles.regular,
   },
 });

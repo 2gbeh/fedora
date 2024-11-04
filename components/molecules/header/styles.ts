@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { viewStyles, textStyles } from "@/styles";
 import { COLOR, FONT } from "@/constants/THEME";
 
 export const headerStyles = StyleSheet.create({
@@ -6,18 +7,14 @@ export const headerStyles = StyleSheet.create({
   container: {
     paddingVertical: 16,
     paddingHorizontal: 20,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
+    ...viewStyles.row_center_between,
   },
   left: {
-    flexDirection: "row",
-    alignItems: "center",
+    ...viewStyles.row_center,
     columnGap: 16,
   },
   right: {
-    flexDirection: "row",
-    alignItems: "center",
+    ...viewStyles.row_center,
     columnGap: 16,
   },
   figure: {
@@ -31,16 +28,10 @@ export const headerStyles = StyleSheet.create({
     rowGap: 4,
   },
   greeting: {
-    color: COLOR.white,
-    fontFamily: FONT.RobotoRegular,
-    fontWeight: "400",
-    fontSize: 14,
+    ...textStyles.regular
   },
   name: {
-    color: COLOR.white,
-    fontFamily: FONT.RobotoMedium,
-    fontWeight: "500",
-    fontSize: 16,
+    ...textStyles.medium
   },
   icon: {
     borderColor: COLOR.white,

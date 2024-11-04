@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { viewStyles, textStyles } from "@/styles";
 import { COLOR, FONT } from "@/constants/THEME";
 
 export const horizontalListStyles = StyleSheet.create({
@@ -15,9 +16,6 @@ export const horizontalListStyles = StyleSheet.create({
     height: 48,
   },
   figcaption: {
-    color: COLOR.white,
-    fontFamily: FONT.RobotoMedium,
-    fontWeight: "500",
-    fontSize: 16,
+   ...textStyles.medium
   },
 });

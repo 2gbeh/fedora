@@ -1,3 +1,3 @@
 export { homeStyles } from "./styles/home.styles";
-// 
-export { default as Hero } from "./components/hero";
+//
+export { default as VirtualWallet } from "./components/virtual-wallet";
