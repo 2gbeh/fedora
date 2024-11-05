@@ -1,6 +1,10 @@
 import { StyleSheet } from "react-native";
 
 export const viewStyles = StyleSheet.create({
+  centered: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
   row_center: {
     flexDirection: "row",
     alignItems: "center",

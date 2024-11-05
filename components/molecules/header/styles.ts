@@ -37,10 +37,10 @@ export const headerStyles = StyleSheet.create({
     fontSize: 18,
   },
   icon: {
-    borderColor: COLOR.white,
-    borderWidth: 1,
-    borderRadius: 5,
-    width: 16,
-    height: 16,
+    backgroundColor: COLOR.dark.surfaceContainer,
+    borderRadius: 8,
+    width: 32,
+    height: 32,
+    ...viewStyles.centered
   },
 });
