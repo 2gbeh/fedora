@@ -1,9 +1,10 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { PieChartIcon } from "lucide-react-native";
+import { CalendarIcon, PieChartIcon } from "lucide-react-native";
 //
 import Avatar from "@/components/atoms/avatar";
 import { COLOR } from "@/constants/THEME";
+import { calendarUtil } from "@/utils/calendar/calendar.util";
 //
 import { headerStyles as s } from "./styles";
 
@@ -17,12 +18,14 @@ const Header: React.FC<IProps> = ({}) => {
       <View style={s.left}>
         <Avatar src="https://github.com/2gbeh.png" />
         <View style={s.figcaption}>
-          <Text style={s.greeting}>Hello,</Text>
+          <Text style={s.greeting}>{calendarUtil.greeting()}</Text>
           <Text style={s.name}>Emanuel</Text>
         </View>
       </View>
       <View style={s.right}>
-        <PieChartIcon color={COLOR.white} size={18} />
+        <View style={s.icon}>
+          <CalendarIcon color={COLOR.dark.onSurface} size={18} />
+        </View>
       </View>
     </View>
   );

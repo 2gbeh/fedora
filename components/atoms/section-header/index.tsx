@@ -17,7 +17,7 @@ const SectionHeader: React.FC<IProps> = ({ title }) => {
     <View style={s.container}>
       <Text style={s.heading}>{title}</Text>
       <View style={s.right}>
-        <Text style={s.link}>View all</Text>
+        <Text style={s.link}>See all</Text>
         <ChevronRightIcon color={COLOR.white} />
       </View>
     </View>

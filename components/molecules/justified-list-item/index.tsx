@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text } from "react-native";
 //
 import Avatar from "@/components/atoms/avatar";
+import { CurrencyHelper } from "@/utils/helpers/currency.helper";
 import { COLOR } from "@/constants/THEME";
 //
 import { justifiedListItemStyles as s } from "./styles";
@@ -29,7 +30,8 @@ const JustifiedListItem: React.FC<IProps> = ({ id }) => {
             { color: id % 3 > 0 ? COLOR.dark.error : COLOR.success_lighter },
           ]}
         >
-          800,000
+          {id % 3 > 0 ? "- " : ""}
+          {CurrencyHelper.transform(800000)}
         </Text>
         <Text style={s.right_bottom}>Nov {id}</Text>
       </View>

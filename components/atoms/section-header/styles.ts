@@ -5,6 +5,7 @@ import { COLOR, FONT } from "@/constants/THEME";
 export const sectionHeaderStyles = StyleSheet.create({
   _: {},
   container: {
+    paddingHorizontal: 16,
     ...viewStyles.row_center_between,
   },
   right: {

@@ -4,7 +4,7 @@ import Feather from "@expo/vector-icons/Feather";
 //
 import Header from "@/components/molecules/header";
 import SectionHeader from "@/components/atoms/section-header";
-import HorizontalList from "@/components/molecules/horizontal-list";
+import Favorites from "@/components/molecules/favorites";
 import JustifiedListItem from "@/components/molecules/justified-list-item";
 import FAB from "@/components/atoms/fab";
 import { COLOR, FONT } from "@/constants/THEME";
@@ -25,9 +25,11 @@ export default function HomeScreen() {
         <VirtualWallet />
 
         {/* SECTION */}
-        <SectionHeader title="Recent transactions" />
+        <SectionHeader title="Favorites" />
+        <Favorites />
 
         {/* LIST */}
+        <SectionHeader title="Recent transactions" />
         <FlatList
           data={[
             { id: 1 },
