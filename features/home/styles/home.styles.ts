@@ -7,9 +7,7 @@ export const homeStyles = StyleSheet.create({
     flex: 1,
   },
   main: {
-    // paddingTop: 8,
     paddingBottom: 16,
-    paddingHorizontal: 20,
     rowGap: 16,
     flex: 1,
   },

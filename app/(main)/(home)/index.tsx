@@ -45,7 +45,7 @@ export default function HomeScreen() {
           ]}
           keyExtractor={(item) => String(item.id)}
           renderItem={({ item }) => <JustifiedListItem {...item} />}
-          contentContainerStyle={{ rowGap: 24 }}
+          contentContainerStyle={{ rowGap: 16 }}
         />
       </View>
 

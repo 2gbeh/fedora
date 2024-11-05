@@ -5,8 +5,7 @@ import { COLOR, FONT } from "@/constants/THEME";
 export const headerStyles = StyleSheet.create({
   _: {},
   container: {
-    paddingVertical: 16,
-    paddingHorizontal: 20,
+    padding: 16,
     ...viewStyles.row_center_between,
   },
   left: {
@@ -25,11 +24,9 @@ export const headerStyles = StyleSheet.create({
     height: 48,
   },
   figcaption: {
-    // rowGap: 4,
   },
   greeting: {
     ...textStyles.regular,
-    // color: COLOR.dark.onSurface,
   },
   name: {
     ...textStyles.medium,

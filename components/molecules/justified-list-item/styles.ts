@@ -6,6 +6,7 @@ export const justifiedListItemStyles = StyleSheet.create({
   _: {},
   container: {
     ...viewStyles.row_center_between,
+    paddingHorizontal: 16,
   },
   left: {
     ...viewStyles.row_center,
@@ -18,28 +19,22 @@ export const justifiedListItemStyles = StyleSheet.create({
     width: 48,
     height: 48,
   },
-  figcaption: {
-    // rowGap: 4,
-  },
+  figcaption: {},
   left_top: {
     ...textStyles.medium,
     color: COLOR.dark.onSurface,
   },
   left_bottom: {
     ...textStyles.regular,
-    // color: COLOR.dark.onSurface,
   },
   right: {
     alignItems: "flex-end",
-    // rowGap: 4,
   },
   right_top: {
     ...textStyles.medium,
     color: COLOR.dark.onSurface,
-    // fontSize: 18,
   },
   right_bottom: {
     ...textStyles.regular,
-    // color: COLOR.dark.onSurface,
   },
 });

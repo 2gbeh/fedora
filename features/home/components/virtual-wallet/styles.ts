@@ -7,23 +7,22 @@ export const virtualWalletStyles = StyleSheet.create({
   container: {
     backgroundColor: COLOR.dark.surfaceContainer,
     borderRadius: 16,
-    padding: 20,
+    marginHorizontal: 16,
+    paddingVertical: 16,
+    paddingHorizontal: 20,
     justifyContent: "space-between",
     rowGap: 24,
   },
   top: {
     ...viewStyles.row_start_between,
   },
-  item: {
-    // rowGap: 4,
-  },
+  item: {},
   label_group: {
     ...viewStyles.row_center,
     columnGap: 8,
   },
   label: {
     ...textStyles.regular,
-    // color: COLOR.dark.secondary,
   },
   balance: {
     ...textStyles.medium,

@@ -1,8 +1,10 @@
 import React from "react";
 import { View, Text, FlatList } from "react-native";
 //
-import { favoritesStyles as s } from "./styles";
 import Avatar from "@/components/atoms/avatar";
+import { StringHelper } from "@/utils/helpers/common/string.helper";
+//
+import { favoritesStyles as s } from "./styles";
 
 interface IProps {}
 
@@ -29,10 +31,20 @@ const Favorites: React.FC<IProps> = ({}) => {
         renderItem={({ item }) => (
           <View style={s.item}>
             <Avatar />
-            <Text style={s.label}>PL</Text>
+            <Text style={s.label}>
+              {StringHelper.truncate("Plateaumed.com", 10)}
+            </Text>
           </View>
         )}
-        contentContainerStyle={{ columnGap: 24 }}
+        ListHeaderComponent={
+          <View style={s.header}>
+            <View style={s.button}>
+              <Text style={s.button_label}>+</Text>
+            </View>
+            <Text style={s.heading}>Add</Text>
+          </View>
+        }
+        contentContainerStyle={{ columnGap: 16 }}
       />
     </View>
   );
