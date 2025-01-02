@@ -1,0 +1,41 @@
+{
+  "accessToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjFhYWMyNzEwOTkwNDljMGRmYzA1OGUwNjEyZjA4ZDA2YzMwYTA0MTUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZmVkb3JhLWlvIiwiYXVkIjoiZmVkb3JhLWlvIiwiYXV0aF90aW1lIjoxNzM0MTEwNjQzLCJ1c2VyX2lkIjoiNXRFdHZVVER1S2Y2b3VVbWYzYzlBOWVtSU9EMyIsInN1YiI6IjV0RXR2VVREdUtmNm91VW1mM2M5QTllbUlPRDMiLCJpYXQiOjE3MzQxMTA2NDMsImV4cCI6MTczNDExNDI0MywiZW1haWwiOiJkZWhwaGFudG9tQHlhaG9vLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImRlaHBoYW50b21AeWFob28uY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.U_uRpe38boSAP2MbRyh2qnMxgjWPfNR-ZgBcWkhbe2IXJ1OSlareMzVFmcR9Q2cCix_dwKgsvFA5-73YxFU_w3s79ay9749R5B0gsK5_pYrUSnF_7zk9kwwQgkW-0KkwmXEJOQ-OJ3YCaDiRv9rRhraw6zjBN8gqd0tMxgalfBNrNKBYh5u4ES4VL7ObA6NfgKYzw1P004A-L8aQ5IvQQDNyT25cdCmmkYQg2zoy2Noc9wYHvBno_9blbSI7WkSCGp0rCtQiMWI4hpUMsDaDyWj3dPl48XUcguEAvZn4AzApEtO2gnZhVNvYsMtlcZBUmfh0csNK1QFcd7xlYCum3Q",
+  "auth": {},
+  "displayName": "Emanuel",
+  "email": "dehphantom@yahoo.com",
+  "emailVerified": true,
+  "isAnonymous": false,
+  "metadata": {
+    "createdAt": "1724785251110",
+    "creationTime": "Tue, 27 Aug 2024 19:00:51 GMT",
+    "lastLoginAt": "1734109639038",
+    "lastSignInTime": "Fri, 13 Dec 2024 17:24:03 GMT"
+  },
+  "phoneNumber": null,
+  "photoURL": "https://github.com/2gbeh.png",
+  "proactiveRefresh": {
+    "errorBackoff": 30000,
+    "isRunning": false,
+    "timerId": null
+  },
+  "providerData": [
+    {
+      "providerId": "password",
+      "uid": "dehphantom@yahoo.com",
+      "displayName": "Emanuel",
+      "email": "dehphantom@yahoo.com",
+      "phoneNumber": null,
+      "photoURL": "https://github.com/2gbeh.png"
+    }
+  ],
+  "providerId": "firebase",
+  "realodListener": null,
+  "realodUserInfo": null,
+  "stsTokenManager": {
+    "accessToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjFhYWMyNzEwOTkwNDljMGRmYzA1OGUwNjEyZjA4ZDA2YzMwYTA0MTUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZmVkb3JhLWlvIiwiYXVkIjoiZmVkb3JhLWlvIiwiYXV0aF90aW1lIjoxNzM0MTEwNjQzLCJ1c2VyX2lkIjoiNXRFdHZVVER1S2Y2b3VVbWYzYzlBOWVtSU9EMyIsInN1YiI6IjV0RXR2VVREdUtmNm91VW1mM2M5QTllbUlPRDMiLCJpYXQiOjE3MzQxMTA2NDMsImV4cCI6MTczNDExNDI0MywiZW1haWwiOiJkZWhwaGFudG9tQHlhaG9vLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImRlaHBoYW50b21AeWFob28uY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.U_uRpe38boSAP2MbRyh2qnMxgjWPfNR-ZgBcWkhbe2IXJ1OSlareMzVFmcR9Q2cCix_dwKgsvFA5-73YxFU_w3s79ay9749R5B0gsK5_pYrUSnF_7zk9kwwQgkW-0KkwmXEJOQ-OJ3YCaDiRv9rRhraw6zjBN8gqd0tMxgalfBNrNKBYh5u4ES4VL7ObA6NfgKYzw1P004A-L8aQ5IvQQDNyT25cdCmmkYQg2zoy2Noc9wYHvBno_9blbSI7WkSCGp0rCtQiMWI4hpUMsDaDyWj3dPl48XUcguEAvZn4AzApEtO2gnZhVNvYsMtlcZBUmfh0csNK1QFcd7xlYCum3Q",
+    "expirationTime": 1734113235273,
+    "refreshToken": "AMf-vBy5UDtenLxAYoqVrihP6jHVQJ7DQcJ7PdVqJGDEilBnLHYhanWM9dEURP4ATxd6o7u089sBGVT_oYe8trICCSU2DW4TuP8WxtV7hW3iC-FP99nLQS485TNu0Ejo4HTcMreq4rLxNcmGBzIm1_qYHFQ0kEbHi0kI2m-ufp1pmW8WWMhPjXnNsBFIBEHvzz3fqtmOLIo2"
+  },
+  "tenantId": null,
+  "uid": "5tEtvUTDuKf6ouUmf3c9A9emIOD3"
+}

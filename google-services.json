@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "446924659537",
+    "project_id": "fedora-io",
+    "storage_bucket": "fedora-io.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:446924659537:android:66f4c3d16c9681b5471170",
+        "android_client_info": {
+          "package_name": "com.hwplabs.fedora"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0pvsVeuaYedz2MJmV_q5m4Feogruo5T4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
