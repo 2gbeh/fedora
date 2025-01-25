@@ -4,10 +4,10 @@ import "react-native-reanimated";
 import { Slot, Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 //
-import ReduxProviderWrapper from "@/components/_providers/ReduxProviderWrapper";
-import PaperProviderWrapper from "@/components/_providers/PaperProviderWrapper";
-import DispatchNotice from "@/components/dispatch-notice";
+import PaperProviderWrapper from "@/components/providers/PaperProviderWrapper";
+import DispatchNotice from "@/components/atoms/dispatch-notice";
 import { useRootLayout } from "@/hooks/useRootLayout";
+import { ReduxProviderWrapper } from "@/components/providers/ReduxProviderWrapper";
 
 SplashScreen.preventAutoHideAsync();
 

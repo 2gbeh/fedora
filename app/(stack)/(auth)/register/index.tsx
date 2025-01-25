@@ -1,12 +1,12 @@
 import { Pressable, ScrollView, View } from "react-native";
 import { Button, Checkbox, Text } from "react-native-paper";
 //
-import FlexBox from "@/components/flex-box";
-import Hyperlink from "@/components/hyperlink";
+import FlexBox from "@/components/atoms/flex-box";
+import Hyperlink from "@/components/atoms/hyperlink";
 import {
   FilledTextField,
   FilledPasswordField,
-} from "@/components/form-controls";
+} from "@/components/atoms/form-controls";
 import { useAppSelector } from "@/store/store.config";
 import { selectTheme } from "@/store/theme/theme.slice";
 //

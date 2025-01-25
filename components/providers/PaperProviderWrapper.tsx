@@ -9,9 +9,11 @@ import { useAppSelector } from "@/store/store.config";
 import { selectTheme } from "@/store/theme/theme.slice";
 import { COLOR } from "@/constants/THEME";
 
-const PaperProviderWrapper: React.FC<{ children: React.ReactNode }> = ({
+export default function PaperProviderWrapper({
   children,
-}) => {
+}: {
+  children: React.ReactNode;
+}) {
   const theme = useAppSelector(selectTheme);
   const paperTheme = {
     ...DefaultTheme,
@@ -20,16 +22,11 @@ const PaperProviderWrapper: React.FC<{ children: React.ReactNode }> = ({
       ...COLOR[theme],
     },
   };
-  console.log("🚀 ~ PaperProviderWrapper");
   // RENDER
   return (
     <>
-      <PaperProvider theme={paperTheme}>
-        {children}
-      </PaperProvider>
+      <PaperProvider theme={paperTheme}>{children}</PaperProvider>
       <StatusBar style={theme === "light" ? "dark" : "light"} />
     </>
   );
-};
-
-export default React.memo(PaperProviderWrapper);
+}

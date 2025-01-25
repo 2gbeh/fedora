@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View, TextStyle, ViewStyle } from "react-native";
 import { Href } from "expo-router";
 //
-import Hyperlink from "@/components/hyperlink";
+import Hyperlink from "@/components/atoms/hyperlink";
 import { useAppSelector } from "@/store/store.config";
 import { ThemeType, selectTheme } from "@/store/theme/theme.slice";
 import { containerStyles } from "@/styles/container.styles";

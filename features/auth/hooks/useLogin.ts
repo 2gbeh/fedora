@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 //
-import { useDispatchNotice } from "@/components/dispatch-notice/hook";
+import { useDispatchNotice } from "@/components/atoms/dispatch-notice/hook";
 import { z, ZodPipe } from "@/lib/zod/zod.pipe";
 import { AuthService } from "@/store/auth/auth.service";
 import { mockApiCall } from "@/utils/mockApiCall";

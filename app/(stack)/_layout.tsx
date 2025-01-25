@@ -1,5 +1,5 @@
 import { Stack } from "expo-router";
-import Loader from "@/components/loader";
+import Loader from "@/components/atoms/loader";
 import { useAuthGuard } from "@/hooks/useAuthGuard";
 
 export default function StackLayout() {

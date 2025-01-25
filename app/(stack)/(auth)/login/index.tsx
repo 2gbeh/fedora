@@ -1,11 +1,11 @@
 import { View } from "react-native";
 import { Button } from "react-native-paper";
 //
-import Hyperlink from "@/components/hyperlink";
+import Hyperlink from "@/components/atoms/hyperlink";
 import {
   FilledTextField,
   FilledPasswordField,
-} from "@/components/form-controls";
+} from "@/components/atoms/form-controls";
 import { useAppSelector } from "@/store/store.config";
 import { selectTheme } from "@/store/theme/theme.slice";
 //
