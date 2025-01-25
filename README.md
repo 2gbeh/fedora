@@ -1,50 +1,46 @@
-# Welcome to your Expo app 👋
+<p align="center">
+  <a href="#" target="blank">
+    <img src="./assets/social-preview.png" width="100%" alt="" />
+  </a>
+</p>
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# Fedora
 
-## Get started
+Expense Tracker App
 
-1. Install dependencies
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
+[![React Native](https://img.shields.io/badge/React_Native-0.74-58c4dc.svg)](https://reactnative.dev/docs/environment-setup)
+[![Expo](https://img.shields.io/badge/Expo-51.x-000014.svg)](https://docs.expo.dev/tutorial/create-your-first-app/)
 
-   ```bash
-   npm install
-   ```
+![Expo](https://img.shields.io/badge/expo-1C1E24?style=for-the-badge&logo=expo&logoColor=#D04A37)
+![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
+![Play Store](https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white)
+![iOS](https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white) 
 
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## Setup
 
 ```bash
-npm run reset-project
+$ git clone https://github.com/2gbeh/fedora.git
+$ cd fedora
+$ npm cache clean --force
+$ npm install
+# OR npm install --legacy-peer-deps
+
+TODO: Copy .env credentials
+
+$ npx expo start -c
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Usage
 
-## Learn more
+> Local: http://localhost:8081
 
-To learn more about developing your project with Expo, look at the following resources:
+> Live: [Download APK](https://expo.dev/accounts/2gbeh/projects/fedora/builds/4485e7f8-90e1-4b31-b060-e94784dd7d9a)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Documentation
 
-## Join the community
+Coming soon
 
-Join our community of developers creating universal apps.
+## Screenshots
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+![Social Preview](./assets/screenshots/screenshot.png)
