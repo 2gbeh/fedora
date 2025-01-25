@@ -1,6 +1,6 @@
 <p align="center">
   <a href="#" target="blank">
-    <img src="./assets/social-preview.png" width="100%" alt="" />
+    <img src="./assets/fedora.png" width="100%" alt="" />
   </a>
 </p>
 
@@ -9,8 +9,8 @@
 Expense Tracker App
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
-[![React Native](https://img.shields.io/badge/React_Native-0.74-58c4dc.svg)](https://reactnative.dev/docs/environment-setup)
-[![Expo](https://img.shields.io/badge/Expo-51.x-000014.svg)](https://docs.expo.dev/tutorial/create-your-first-app/)
+[![React Native](https://img.shields.io/badge/React_Native-0.76-58c4dc.svg)](https://reactnative.dev/docs/environment-setup)
+[![Expo](https://img.shields.io/badge/Expo-52.x-000014.svg)](https://docs.expo.dev/tutorial/create-your-first-app/)
 
 ![Expo](https://img.shields.io/badge/expo-1C1E24?style=for-the-badge&logo=expo&logoColor=#D04A37)
 ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
@@ -26,7 +26,7 @@ $ npm cache clean --force
 $ npm install
 # OR npm install --legacy-peer-deps
 
-TODO: Copy .env credentials
+TODO: copy .env credentials
 
 $ npx expo start -c
 ```
@@ -43,4 +43,4 @@ Coming soon
 
 ## Screenshots
 
-![Social Preview](./assets/screenshots/screenshot.png)
+![Social Preview](./assets/social-preview.png)
