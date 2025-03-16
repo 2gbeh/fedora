@@ -6,4 +6,8 @@ export const PROTOTYPING = {
     formData: 0,
     action: 0,
   },
+  auth: {
+    formData: 1,
+    action: 1,
+  },
 } as const;

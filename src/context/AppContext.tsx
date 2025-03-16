@@ -16,6 +16,9 @@ interface IAppContext {
   setIsLoading: Dispatch<SetStateAction<boolean>>;
   isAuthenticated: boolean;
   setIsAuthenticated: Dispatch<SetStateAction<boolean>>;
+  isDarkMode: boolean;
+  setIsDarkMode: Dispatch<SetStateAction<boolean>>;
+  toggleDarkMode: () => void;
 }
 
 const AppContext = createContext<IAppContext | undefined>(undefined);
@@ -31,9 +34,11 @@ export function useAppContext() {
 }
 
 export const AppContextProvider: React.FC<PropsWithChildren> = ({children}) => {
+  // GLOBAL STATES
   // LOCAL STATES
   const [isLoading, setIsLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   // COMPUTED VALUES
   const value = useMemo(
     () => ({
@@ -41,19 +46,22 @@ export const AppContextProvider: React.FC<PropsWithChildren> = ({children}) => {
       setIsLoading,
       isAuthenticated,
       setIsAuthenticated,
+      isDarkMode,
+      setIsDarkMode,
+      toggleDarkMode,
     }),
-    [isLoading, isAuthenticated],
+    [isLoading, isAuthenticated, isDarkMode],
   );
   // SIDE EFFECTS
   useEffect(() => {
     (async () => {
-      await sleep();
+      // await sleep();
       setIsLoading(false);
       setIsAuthenticated(false);
     })();
   }, []);
   // ACTIONS
+  const toggleDarkMode = () => setIsDarkMode(prev => !prev);
   // RENDER
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
-
