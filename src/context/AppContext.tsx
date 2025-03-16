@@ -38,7 +38,7 @@ export const AppContextProvider: React.FC<PropsWithChildren> = ({children}) => {
   // LOCAL STATES
   const [isLoading, setIsLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   // COMPUTED VALUES
   const value = useMemo(
     () => ({
