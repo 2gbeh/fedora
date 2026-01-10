@@ -7,9 +7,11 @@ interface Props extends PropsWithChildren {
 
 export const AuthLayout = ({ children, pageTitle }: Props) => {
   return (
-    <div className="flex-centered p-6 md:p-10">
+    <>
       <PageTitle title={pageTitle} />
-      <div className="w-full max-w-sm">{children}</div>
-    </div>
+      <div className="flex-centered p-6 md:p-10">
+        <div className="w-full max-w-sm">{children}</div>
+      </div>
+    </>
   );
 };
