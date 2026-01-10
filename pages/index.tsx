@@ -1,3 +1,5 @@
+import Link from "next/link";
+//
 import {
   Card,
   CardContent,
@@ -5,20 +7,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/shadcn/ui/card";
-import {
-  Field,
-  FieldDescription,
-  FieldGroup,
-  FieldLabel,
-} from "@/components/shadcn/ui/field";
+import { Field, FieldGroup, FieldLabel } from "@/components/shadcn/ui/field";
 import { Input } from "@/components/shadcn/ui/input";
 import { Button } from "@/components/shadcn/ui/button";
+//
 import { AuthLayout } from "@/components/species/auth/ui/auth-layout";
-import Link from "next/link";
 
 export default function LoginPage() {
   return (
-    <AuthLayout>
+    <AuthLayout pageTitle="Log in">
       <Card>
         <CardHeader>
           <CardTitle>Login to your account</CardTitle>

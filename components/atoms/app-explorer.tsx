@@ -11,7 +11,7 @@ import {
 } from "@/components/shadcn/ui/dropdown-menu";
 import { PATH } from "@/constants/PATH";
 
-export const Explorer = () => {
+export const AppExplorer = () => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
 

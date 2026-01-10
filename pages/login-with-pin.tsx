@@ -11,19 +11,18 @@ import {
   FieldGroup,
   FieldLabel,
 } from "@/components/shadcn/ui/field";
-import { Input } from "@/components/shadcn/ui/input";
-import { Button } from "@/components/shadcn/ui/button";
-import { AuthLayout } from "@/components/species/auth/ui/auth-layout";
 import {
   InputOTP,
   InputOTPGroup,
-  InputOTPSeparator,
   InputOTPSlot,
 } from "@/components/shadcn/ui/input-otp";
+import { Button } from "@/components/shadcn/ui/button";
+// 
+import { AuthLayout } from "@/components/species/auth/ui/auth-layout";
 
 export default function LoginWithPinPage() {
   return (
-    <AuthLayout>
+    <AuthLayout pageTitle="Welcome back">
       <Card>
         <CardHeader>
           <CardTitle>Enter verification code</CardTitle>
