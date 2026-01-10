@@ -1,0 +1,11 @@
+@tailwind utilities;
+
+@layer utilities {
+  .flex-centered {
+    @apply flex min-h-svh w-full items-center justify-center;
+  }
+
+  .flex-center-center {
+    @apply flex items-center justify-center;
+  }
+}
