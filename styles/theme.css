@@ -1,0 +1,30 @@
+@tailwind base;
+
+@layer base {
+  :root {
+    /* #0092dd */
+    --primary: 200 100% 43%;
+    --primary-foreground: 0 0% 100%;
+
+    /* #dd4b00 */
+    --accent: 20 100% 43%;
+    --accent-foreground: 0 0% 100%;
+
+    --ring: 200 100% 43%;
+  }
+}
+
+@layer base {
+  .dark {
+
+    /* #0092dd */
+    --primary: 200 100% 43%;  
+    --primary-foreground: 0 0% 100%;
+
+    /* #dd4b00 */
+    --accent: 20 100% 43%; 
+    --accent-foreground: 0 0% 100%;
+
+    --ring: 200 100% 43%;
+  }
+}

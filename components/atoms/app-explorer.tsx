@@ -19,13 +19,13 @@ export const AppExplorer = () => {
     <DropdownMenu open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger asChild>
         <button
-          className="flex-center-center fixed right-4 bottom-4 h-8 w-8 rounded-md bg-primary text-primary-foreground shadow-md transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 z-[99]"
-          aria-label="Add"
+          className="flex-center-center fixed right-4 bottom-4 h-8 w-8 rounded-md text-primary-foreground shadow-md transition-colors hover:bg-black/90 bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 z-[99]"
+          aria-label="Explore"
         >
           {open ? <FolderOpenIcon size={14} /> : <FolderIcon size={14} />}
         </button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="" align="start">
+      <DropdownMenuContent className="" align="end">
         {Object.entries(PATH).map(([name, path]) => (
           <DropdownMenuItem key={name} onClick={() => router.push(path)}>
             {startCase(name)}

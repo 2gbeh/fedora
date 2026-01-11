@@ -1,7 +1,15 @@
 export const PATH = {
   home: "/",
   login: "/",
-  loginWithPin: "/login-with-pin",
+  loginWithPin: "/auth",
+  profile: "/auth/me",
+  // 
   dashboard: "/dashboard",
-  ledger: "/ledger",
+  transactions: "/transactions",
+  ledgers: "/ledgers",
+  contacts: "/contacts",
+  // 
+  settings: "/settings",
+  categories: "/settings/categories",
+  wallets: "/settings/wallets",
 };
