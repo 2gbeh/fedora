@@ -1,11 +1,41 @@
 @tailwind utilities;
 
 @layer utilities {
+  .debug {
+    @apply border border-rose-500;
+  }
+
+  .debug2 {
+    @apply border border-emerald-500;
+  }
+  
+  .debug3 {
+    @apply border border-indigo-500;
+  }
+  
+  .debug4 {
+    @apply border border-amber-500;
+  }
+}
+
+@layer utilities {
   .flex-centered {
     @apply flex min-h-svh w-full items-center justify-center;
   }
 
+  .flex-center-start {
+    @apply flex items-center justify-start;
+  }
+
+  .flex-center-end {
+    @apply flex items-center justify-end;
+  }
+
   .flex-center-center {
     @apply flex items-center justify-center;
+  }
+
+  .flex-center-between {
+    @apply flex items-center justify-between;
   }
 }

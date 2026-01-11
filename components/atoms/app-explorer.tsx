@@ -19,7 +19,7 @@ export const AppExplorer = () => {
     <DropdownMenu open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger asChild>
         <button
-          className="flex-center-center fixed left-4 top-4 h-8 w-8 rounded-md bg-primary text-primary-foreground shadow-md transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+          className="flex-center-center fixed right-4 bottom-4 h-8 w-8 rounded-md bg-primary text-primary-foreground shadow-md transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 z-[99]"
           aria-label="Add"
         >
           {open ? <FolderOpenIcon size={14} /> : <FolderIcon size={14} />}
