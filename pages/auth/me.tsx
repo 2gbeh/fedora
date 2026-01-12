@@ -7,11 +7,11 @@ import { SearchBar } from "@/components/species/dashboard/ui/search-bar";
 import { Button } from "@/components/shadcn/ui/button";
 import { PlusIcon } from "lucide-react";
 
-export default function LedgerPage() {
+export default function ProfilePage() {
   return (
     <DashboardLayout
-      pageTitle="Ledger"
-      pageDisplayTitle="Ledger"
+      pageTitle="Profile"
+      pageDisplayTitle="Profile"
       breadcrumbs={[
         { label: "Building Your Application", path: "/dashboard" },
         { label: "Data Fetching" },

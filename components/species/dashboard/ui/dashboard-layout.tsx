@@ -48,7 +48,7 @@ export const DashboardLayout = ({
               />
               {pageDisplayTitle ? (
                 <a href="" title="Reload">
-                  <h1 className="text-base font-medium">{pageDisplayTitle}</h1>
+                  <h1 className="text-base font-medium hover:underline">{pageDisplayTitle}</h1>
                 </a>
               ) : null}
             {breadcrumbs ? (
@@ -66,13 +66,13 @@ export const DashboardLayout = ({
                             <BreadcrumbLink asChild>
                               <Link
                                 href={path}
-                                className="text-primary hover:text-foreground"
+                                className="hover:underline"
                               >
                                 {label}
                               </Link>
                             </BreadcrumbLink>
                           ) : (
-                            <BreadcrumbPage className="text-muted-foreground">
+                            <BreadcrumbPage className="text-muted-foreground cursor-default">
                               {label}
                             </BreadcrumbPage>
                           )}

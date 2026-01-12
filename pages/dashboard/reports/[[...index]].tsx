@@ -4,11 +4,11 @@ import { ChartAreaInteractive } from "@/components/species/dashboard/ui/chart-ar
 import { DataTable } from "@/components/species/dashboard/ui/data-table";
 import data from "@/components/species/dashboard/data.json";
 
-export default function LedgerPage() {
+export default function ReportsPage() {
   return (
     <DashboardLayout
-      pageTitle="Ledger"
-      pageDisplayTitle="Ledger"
+      pageTitle="Reports"
+      pageDisplayTitle="Reports"
       breadcrumbs={[
         { label: "Building Your Application", path: "/dashboard" },
         { label: "Data Fetching" },

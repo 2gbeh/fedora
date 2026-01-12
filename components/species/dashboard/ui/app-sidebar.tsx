@@ -28,55 +28,20 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/shadcn/ui/sidebar";
-
-const data = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
-  navMain: [
-    {
-      title: "Dashboard",
-      url: "/dashboard",
-      icon: LayoutDashboardIcon,
-    },
-    {
-      title: "Transactions",
-      url: "/transactions",
-      icon: ListIcon,
-    },
-    {
-      title: "Ledgers",
-      url: "/ledgers",
-      icon: BarChartIcon,
-    },
-    {
-      title: "Contacts",
-      url: "/contacts",
-      icon: FolderIcon,
-    },
-  ],
-  navSecondary: [
-    {
-      title: "Settings",
-      url: "#",
-      icon: SettingsIcon,
-    },
-  ],
-};
+import { PATH } from "@/constants/PATH";
+import { MENU } from "@/constants/MENU";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader className="h-16 border-b border-sidebar-border">
-        <NavUser user={data.user} />
+        <NavUser />
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
+        <NavMain items={MENU.primary} />
       </SidebarContent>
       <SidebarFooter>
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
+        <NavSecondary items={MENU.secondary} className="mt-auto" />
       </SidebarFooter>
     </Sidebar>
   );

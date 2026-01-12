@@ -4,11 +4,15 @@ import { ChartAreaInteractive } from "@/components/species/dashboard/ui/chart-ar
 import { DataTable } from "@/components/species/dashboard/ui/data-table";
 import data from "@/components/species/dashboard/data.json";
 
-export default function DashboardPage() {
+export default function ContactsPage() {
   return (
     <DashboardLayout
-      pageTitle="Dashboard"
-      pageDisplayTitle="Dashboard"
+      pageTitle="Contacts"
+      pageDisplayTitle="Contacts"
+      breadcrumbs={[
+        { label: "Building Your Application", path: "/dashboard" },
+        { label: "Data Fetching" },
+      ]}
     >
       <SectionCards />
       <div className="px-4 lg:px-6">

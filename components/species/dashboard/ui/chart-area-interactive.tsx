@@ -136,7 +136,7 @@ const chartConfig = {
 
 export function ChartAreaInteractive() {
   const isMobile = useIsMobile();
-  const [timeRange, setTimeRange] = useState("30d");
+  const [timeRange, setTimeRange] = useState("7d");
 
   useEffect(() => {
     if (isMobile) {
@@ -161,12 +161,9 @@ export function ChartAreaInteractive() {
   return (
     <Card className="@container/card">
       <CardHeader className="relative">
-        <CardTitle>Total Visitors</CardTitle>
+        <CardTitle>Income & Expense Summary</CardTitle>
         <CardDescription>
-          <span className="@[540px]/card:block hidden">
-            Total for the last 3 months
-          </span>
-          <span className="@[540px]/card:hidden">Last 3 months</span>
+          Sun, Jan 1st - Sat, Dec 31st, 2025.
         </CardDescription>
         <div className="absolute right-4 top-4">
           <ToggleGroup
@@ -174,34 +171,34 @@ export function ChartAreaInteractive() {
             value={timeRange}
             onValueChange={setTimeRange}
             variant="outline"
-            className="@[767px]/card:flex hidden"
+            className="hidden md:flex"
           >
             <ToggleGroupItem value="90d" className="h-8 px-2.5">
-              Last 3 months
+              Weekly
             </ToggleGroupItem>
             <ToggleGroupItem value="30d" className="h-8 px-2.5">
-              Last 30 days
+              Monthly
             </ToggleGroupItem>
             <ToggleGroupItem value="7d" className="h-8 px-2.5">
-              Last 7 days
+              Annually
             </ToggleGroupItem>
           </ToggleGroup>
           <Select value={timeRange} onValueChange={setTimeRange}>
             <SelectTrigger
-              className="@[767px]/card:hidden flex w-40"
+              className="flex w-40 md:hidden"
               aria-label="Select a value"
             >
               <SelectValue placeholder="Last 3 months" />
             </SelectTrigger>
             <SelectContent className="rounded-xl">
               <SelectItem value="90d" className="rounded-lg">
-                Last 3 months
+                Weekly
               </SelectItem>
               <SelectItem value="30d" className="rounded-lg">
-                Last 30 days
+                Monthly
               </SelectItem>
               <SelectItem value="7d" className="rounded-lg">
-                Last 7 days
+                Annually
               </SelectItem>
             </SelectContent>
           </Select>

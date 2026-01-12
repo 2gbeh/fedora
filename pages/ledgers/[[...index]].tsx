@@ -3,30 +3,21 @@ import { SectionCards } from "@/components/species/dashboard/ui/section-cards";
 import { ChartAreaInteractive } from "@/components/species/dashboard/ui/chart-area-interactive";
 import { DataTable } from "@/components/species/dashboard/ui/data-table";
 import data from "@/components/species/dashboard/data.json";
-import { SearchBar } from "@/components/species/dashboard/ui/search-bar";
-import { Button } from "@/components/shadcn/ui/button";
-import { PlusIcon } from "lucide-react";
 
-export default function LedgerPage() {
+export default function LedgersPage() {
   return (
     <DashboardLayout
-      pageTitle="Ledger"
-      pageDisplayTitle="Ledger"
+      pageTitle="Ledgers"
+      pageDisplayTitle="Ledgers"
       breadcrumbs={[
         { label: "Building Your Application", path: "/dashboard" },
         { label: "Data Fetching" },
       ]}
-      rightSection={
-        <>
-          <SearchBar className="w-full sm:ml-auto sm:w-auto" />
-          <Button variant="destructive" size="sm">
-            <PlusIcon />
-            <span className="hidden lg:inline">Add New</span>
-          </Button>
-        </>
-      }
     >
       <SectionCards />
+      <div className="px-4 lg:px-6">
+        <ChartAreaInteractive />
+      </div>
       <DataTable data={data} />
     </DashboardLayout>
   );
