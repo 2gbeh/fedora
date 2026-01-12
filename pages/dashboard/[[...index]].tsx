@@ -23,6 +23,7 @@ export default function DashboardPage() {
     <DashboardLayout
       pageTitle="Dashboard"
       pageDisplayTitle="Dashboard"
+      breadcrumbs={[{ label: "Year 2025" }]}
       rightSection={
         <div className="flex-center-start gap-4">
           <Select value={timeRange} onValueChange={setTimeRange}>
@@ -55,7 +56,7 @@ export default function DashboardPage() {
       <div className="flex flex-col gap-6 px-4 lg:px-6">
         <ChartAreaInteractive />
       </div>
-      <h1 className="font-semibold leading-none tracking-tight px-6">
+      <h1 className="px-6 font-semibold leading-none tracking-tight">
         Recent Transactions
       </h1>
       <DataTable data={data} />

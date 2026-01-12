@@ -1,33 +1,20 @@
+import { useState } from "react";
+// 
 import { DashboardLayout } from "@/components/species/dashboard/ui/dashboard-layout";
-import { SectionCards } from "@/components/species/dashboard/ui/section-cards";
-import { ChartAreaInteractive } from "@/components/species/dashboard/ui/chart-area-interactive";
-import { DataTable } from "@/components/species/dashboard/ui/data-table";
+import { DataTable } from "@/components/species/transactions/ui/data-table";
 import data from "@/components/species/dashboard/data.json";
-import { SearchBar } from "@/components/species/dashboard/ui/search-bar";
-import { Button } from "@/components/shadcn/ui/button";
-import { PlusIcon } from "lucide-react";
+import { CreateTransactionOffcanvas } from "@/components/species/transactions/ui/create-transaction-offcanvas";
 
 export default function TransactionsPage() {
+  const [open, setOpen] = useState(false);
   return (
     <DashboardLayout
       pageTitle="Transactions"
       pageDisplayTitle="Transactions"
-      breadcrumbs={[
-        { label: "Building Your Application", path: "/dashboard" },
-        { label: "Data Fetching" },
-      ]}
-      rightSection={
-        <>
-          <SearchBar className="w-full sm:ml-auto sm:w-auto" />
-          <Button size="sm">
-            <PlusIcon />
-            <span className="hidden lg:inline">Add New</span>
-          </Button>
-        </>
-      }
+      breadcrumbs={[{ label: "Default Ledger" }]}
     >
-      <SectionCards />
-      <DataTable data={data} />
+      <DataTable data={data} onCreate={() => setOpen(true)} />
+      <CreateTransactionOffcanvas open={open} onClose={() => setOpen(false)} />
     </DashboardLayout>
   );
 }

@@ -206,7 +206,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "target",
-    header: () => <div className="w-full _text-right">Amount</div>,
+    header: () => <div className="_text-right w-full">Amount</div>,
     cell: ({ row }) => (
       <form
         onSubmit={(e) => {
@@ -231,7 +231,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "limit",
-    header: () => <div className="w-full _text-right">Narration</div>,
+    header: () => <div className="_text-right w-full">Narration</div>,
     cell: ({ row }) => (
       <form
         onSubmit={(e) => {
@@ -340,8 +340,10 @@ function DraggableRow({ row }: { row: Row<z.infer<typeof schema>> }) {
 
 export function DataTable({
   data: initialData,
+  onCreate = () => undefined,
 }: {
   data: z.infer<typeof schema>[];
+  onCreate?: () => void;
 }) {
   const [data, setData] = useState(() => initialData);
   const [rowSelection, setRowSelection] = useState({});
@@ -421,8 +423,9 @@ export function DataTable({
               <SelectContent>
                 <SelectItem value="outline">Default</SelectItem>
                 <SelectItem value="house-project">House Project</SelectItem>
-                <SelectItem value="First-fruit">First Fruit</SelectItem>
-                <SelectItem value="education">Kids Education</SelectItem>
+                <SelectItem value="car-maintenance">Car Maintenance</SelectItem>
+                <SelectItem value="first-fruit">First Fruit</SelectItem>
+                <SelectItem value="kids-education">Kids Education</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -455,11 +458,10 @@ export function DataTable({
                 <SelectItem value="self-care">Self Care</SelectItem>
                 <SelectItem value="cash">Cash</SelectItem>
 
-                 {/* church support groceries (food, toiletries) utils (water,
+                {/* church support groceries (food, toiletries) utils (water,
                 gas, fuel, gen, nepa, data, airtime) house car social 
                 clothes  loan investment emergency, misc, self care, fun, cash
                 fun frivolous  healthcare personal */}
-                
               </SelectContent>
             </Select>
           </div>
@@ -485,7 +487,7 @@ export function DataTable({
         </div>
         <div className="flex-center-start gap-4">
           <SearchInput className="w-full sm:ml-auto sm:w-auto" />
-          <Button size="sm">
+          <Button size="sm" onClick={onCreate}>
             <PlusIcon />
             <span className="hidden lg:inline">Add New</span>
           </Button>
