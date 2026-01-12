@@ -8,8 +8,6 @@ export const PATH = {
   reports: "/dashboard/reports",
   // 
   settings: "/settings",
-  categories: "/settings/categories",
-  wallets: "/settings/wallets",
   // 
   transactions: "/transactions",
   ledgers: "/ledgers",

@@ -168,17 +168,17 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   //   enableSorting: false,
   //   enableHiding: false,
   // },
-  {
-    accessorKey: "header",
-    header: "Date",
-    cell: ({ row }) => {
-      return <TableCellViewer item={row.original} />;
-    },
-    enableHiding: false,
-  },
+  // {
+  //   accessorKey: "header",
+  //   header: "Date",
+  //   cell: ({ row }) => {
+  //     return <TableCellViewer item={row.original} />;
+  //   },
+  //   enableHiding: false,
+  // },
   {
     accessorKey: "type",
-    header: "Category",
+    header: "Avatar",
     cell: ({ row }) => (
       <div className="w-32">
         <Badge variant="outline" className="px-1.5 text-muted-foreground">
@@ -206,7 +206,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "target",
-    header: () => <div className="_text-right w-full">Amount</div>,
+    header: () => <div className="_text-right w-full">Display Name</div>,
     cell: ({ row }) => (
       <form
         onSubmit={(e) => {
@@ -231,7 +231,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "limit",
-    header: () => <div className="_text-right w-full">Narration</div>,
+    header: () => <div className="_text-right w-full">Telephone</div>,
     cell: ({ row }) => (
       <form
         onSubmit={(e) => {
@@ -302,11 +302,8 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-32">
-          <DropdownMenuItem>View</DropdownMenuItem>
           <DropdownMenuItem>Edit</DropdownMenuItem>
           <DropdownMenuItem>Delete</DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>Duplicate</DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     ),
@@ -338,7 +335,7 @@ function DraggableRow({ row }: { row: Row<z.infer<typeof schema>> }) {
   );
 }
 
-export function DataTable({
+export function ContactsTable({
   data: initialData,
   onCreate = () => undefined,
 }: {
@@ -405,66 +402,11 @@ export function DataTable({
   return (
     <Tabs
       defaultValue="outline"
-      className="flex w-full flex-col justify-start gap-6"
+      className="flex w-full flex-col justify-start gap-4"
     >
       <div className="flex-center-between px-4 lg:px-6">
+        <SearchInput className="w-full sm:w-auto" />
         <div className="flex-center-start gap-4">
-          <div className="flex-center-start gap-2">
-            <Label htmlFor="view-selector" className="font-medium">
-              Ledger:
-            </Label>
-            <Select defaultValue="outline">
-              <SelectTrigger
-                className="@4xl/main:hidden flex w-fit"
-                id="view-selector"
-              >
-                <SelectValue placeholder="Select a view" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="outline">Default</SelectItem>
-                <SelectItem value="house-project">House Project</SelectItem>
-                <SelectItem value="car-maintenance">Car Maintenance</SelectItem>
-                <SelectItem value="first-fruit">First Fruit</SelectItem>
-                <SelectItem value="kids-education">Kids Education</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-          <div className="flex-center-start gap-2">
-            <Label htmlFor="view-selector" className="font-medium">
-              Category:
-            </Label>
-            <Select defaultValue="outline">
-              <SelectTrigger
-                className="@4xl/main:hidden flex w-fit"
-                id="view-selector"
-              >
-                <SelectValue placeholder="Select a view" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="outline">All</SelectItem>
-                <SelectItem value="church">Church</SelectItem>
-                <SelectItem value="support">Support</SelectItem>
-                <SelectItem value="groceries">Groceries</SelectItem>
-                <SelectItem value="toiletries">Toiletries</SelectItem>
-                <SelectItem value="utilities">Utilities</SelectItem>
-                <SelectItem value="house">House</SelectItem>
-                <SelectItem value="car">Car</SelectItem>
-                <SelectItem value="social">Social</SelectItem>
-                <SelectItem value="wardrobe">Wardrobe</SelectItem>
-                <SelectItem value="investment">Investment</SelectItem>
-                <SelectItem value="loan">Loan</SelectItem>
-                <SelectItem value="misc">Miscellaneous</SelectItem>
-                <SelectItem value="emergency">Emergency</SelectItem>
-                <SelectItem value="self-care">Self Care</SelectItem>
-                <SelectItem value="cash">Cash</SelectItem>
-
-                {/* church support groceries (food, toiletries) utils (water,
-                gas, fuel, gen, nepa, data, airtime) house car social 
-                clothes  loan investment emergency, misc, self care, fun, cash
-                fun frivolous  healthcare personal */}
-              </SelectContent>
-            </Select>
-          </div>
           <div className="flex-center-start gap-2">
             <Label htmlFor="view-selector" className="font-medium">
               Sort by:
@@ -484,13 +426,6 @@ export function DataTable({
               </SelectContent>
             </Select>
           </div>
-        </div>
-        <div className="flex-center-start gap-4">
-          <SearchInput className="w-full sm:ml-auto sm:w-auto" />
-          <Button size="sm" onClick={onCreate}>
-            <PlusIcon />
-            <span className="hidden lg:inline">Add New</span>
-          </Button>
         </div>
       </div>
       <TabsContent

@@ -1,9 +1,12 @@
 import { useState } from "react";
-// 
+import { PlusIcon } from "lucide-react";
+//
+import { Button } from "@/components/shadcn/ui/button";
+//
 import { DashboardLayout } from "@/components/species/dashboard/ui/dashboard-layout";
-import { DataTable } from "@/components/species/transactions/ui/data-table";
-import data from "@/components/species/dashboard/data.json";
+import { TransactionsTable } from "@/components/species/transactions/ui/transactions-table";
 import { CreateTransactionOffcanvas } from "@/components/species/transactions/ui/create-transaction-offcanvas";
+import data from "@/components/species/dashboard/data.json";
 
 export default function TransactionsPage() {
   const [open, setOpen] = useState(false);
@@ -12,8 +15,14 @@ export default function TransactionsPage() {
       pageTitle="Transactions"
       pageDisplayTitle="Transactions"
       breadcrumbs={[{ label: "Default Ledger" }]}
+      rightSection={
+        <Button size="sm" onClick={() => setOpen(true)}>
+          <PlusIcon />
+          <span className="hidden lg:inline">Add New</span>
+        </Button>
+      }
     >
-      <DataTable data={data} onCreate={() => setOpen(true)} />
+      <TransactionsTable data={data} />
       <CreateTransactionOffcanvas open={open} onClose={() => setOpen(false)} />
     </DashboardLayout>
   );

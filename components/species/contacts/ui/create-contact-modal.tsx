@@ -18,7 +18,7 @@ interface Props {
   onClose?: () => void;
 }
 
-export function CreateTransactionModal({
+export function CreateContactModal({
   open,
   onClose = () => undefined,
 }: Props) {
@@ -27,20 +27,27 @@ export function CreateTransactionModal({
       <form>
         <DialogContent className="bg-white sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Edit profile</DialogTitle>
+            <DialogTitle>Add Contact</DialogTitle>
             <DialogDescription>
-              Make changes to your profile here. Click save when you&apos;re
-              done.
+              Required fields are marked with asterisks(*)
             </DialogDescription>
           </DialogHeader>
           <div className="grid gap-4">
             <div className="grid gap-3">
-              <Label htmlFor="name-1">Name</Label>
-              <Input id="name-1" name="name" defaultValue="Pedro Duarte" />
+              <Label htmlFor="username-1">Upload Avatar</Label>
+              <Input id="username-1" name="username" placeholder="Select file" />
             </div>
             <div className="grid gap-3">
-              <Label htmlFor="username-1">Username</Label>
-              <Input id="username-1" name="username" defaultValue="@peduarte" />
+              <Label htmlFor="name-1">Display Name *</Label>
+              <Input id="name-1" name="name" placeholder="Ex. Jubilee Chapel" />
+            </div>
+            <div className="grid gap-3">
+              <Label htmlFor="name-1">Account Name</Label>
+              <Input id="name-1" name="name" placeholder="Ex. Corel Ministry Int'l" />
+            </div>
+            <div className="grid gap-3">
+              <Label htmlFor="name-1">Telephone No.</Label>
+              <Input id="name-1" name="name" placeholder="(+234)" />
             </div>
           </div>
           <DialogFooter>

@@ -1,24 +1,28 @@
+import { useState } from "react";
+import { PlusIcon } from "lucide-react";
+// 
+import { Button } from "@/components/shadcn/ui/button";
+// 
 import { DashboardLayout } from "@/components/species/dashboard/ui/dashboard-layout";
-import { SectionCards } from "@/components/species/dashboard/ui/section-cards";
-import { ChartAreaInteractive } from "@/components/species/dashboard/ui/chart-area-interactive";
-import { DataTable } from "@/components/species/dashboard/ui/data-table";
+import { ContactsTable } from "@/components/species/contacts/ui/contacts-table";
+import { CreateContactModal } from "@/components/species/contacts/ui/create-contact-modal";
 import data from "@/components/species/dashboard/data.json";
 
 export default function ContactsPage() {
+  const [open, setOpen] = useState(false);
   return (
     <DashboardLayout
       pageTitle="Contacts"
       pageDisplayTitle="Contacts"
-      breadcrumbs={[
-        { label: "Building Your Application", path: "/dashboard" },
-        { label: "Data Fetching" },
-      ]}
+      rightSection={
+        <Button size="sm" onClick={() => setOpen(true)}>
+          <PlusIcon />
+          <span className="hidden lg:inline">Add New</span>
+        </Button>
+      }
     >
-      <SectionCards />
-      <div className="px-4 lg:px-6">
-        <ChartAreaInteractive />
-      </div>
-      <DataTable data={data} />
+      <ContactsTable data={data} onCreate={() => setOpen(true)} />
+      <CreateContactModal open={open} onClose={() => setOpen(false)} />
     </DashboardLayout>
   );
 }

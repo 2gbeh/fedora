@@ -36,7 +36,7 @@ export function CreateTransactionOffcanvas({
             <Input id="sheet-demo-name" defaultValue="Default" />
           </div>
           <div className="grid gap-3">
-            <Label htmlFor="sheet-demo-name">Select Wallet</Label>
+            <Label htmlFor="sheet-demo-name">Select Wallet *</Label>
             <Input id="sheet-demo-name" defaultValue="OPay" />
           </div>
           <div className="grid gap-3">
@@ -51,19 +51,19 @@ export function CreateTransactionOffcanvas({
             <Input id="sheet-demo-name" defaultValue="Expense" />
           </div>
           <div className="grid gap-3">
-            <Label htmlFor="sheet-demo-username">Contact Name</Label>
+            <Label htmlFor="sheet-demo-username">Contact Name *</Label>
             <Input id="sheet-demo-username" placeholder="Adua Daam" />
           </div>
           <div className="grid gap-3">
-            <Label htmlFor="sheet-demo-name">Amount</Label>
+            <Label htmlFor="sheet-demo-name">Amount *</Label>
             <Input id="sheet-demo-name" placeholder="20000" />
           </div>
           <div className="grid gap-3">
-            <Label htmlFor="sheet-demo-username">Narration</Label>
+            <Label htmlFor="sheet-demo-username">Narration *</Label>
             <Input id="sheet-demo-username" placeholder="Ex. Fuel" />
           </div>
           <div className="grid gap-3">
-            <Label htmlFor="sheet-demo-username">Select Categories</Label>
+            <Label htmlFor="sheet-demo-username">Select Categories *</Label>
             <Input
               id="sheet-demo-username"
               placeholder="Ex. Church, Support, Groceries, Toiletries, Utilities"

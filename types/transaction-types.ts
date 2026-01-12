@@ -7,7 +7,7 @@ export enum TransactionCategory {
   CAR = "Car",
   CASH = "Cash",
   CHURCH = "Church",
-  EMERGENCY = "Emergency",
+  HEALTH_WELLNESS = "Health & Wellness",
   GROCERIES = "Groceries",
   HOUSE = "House",
   INVESTMENT = "Investment",
@@ -30,6 +30,7 @@ enum Wallet {
 
 enum Ledger {
   DEFAULT = "Default",
+  OFFSHORE = "Offshore",
   HOUSE_PROJECT = "House Project",
   CAR_MAINTENANCE = "Car Maintenance",
   FIRST_FRUIT = "First Fruit",

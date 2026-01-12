@@ -48,43 +48,42 @@ export const DashboardLayout = ({
               />
               {pageDisplayTitle ? (
                 <a href="" title="Reload">
-                  <h1 className="text-base font-medium hover:underline">{pageDisplayTitle}</h1>
+                  <h1 className="text-base font-medium hover:underline">
+                    {pageDisplayTitle}
+                  </h1>
                 </a>
               ) : null}
-            {breadcrumbs ? (
-              <Breadcrumb>
-                <BreadcrumbList>
-                  {breadcrumbs.map(({ label, path }, i) => {
-                    const isNotLastItem = i < breadcrumbs.length;
-                    return (
-                      <Fragment key={i}>
-                        {isNotLastItem && (
-                          <BreadcrumbSeparator className="hidden md:block" />
-                        )}
-                        <BreadcrumbItem className="hidden md:block">
-                          {path ? (
-                            <BreadcrumbLink asChild>
-                              <Link
-                                href={path}
-                                className="hover:underline"
-                              >
-                                {label}
-                              </Link>
-                            </BreadcrumbLink>
-                          ) : (
-                            <BreadcrumbPage className="text-muted-foreground cursor-default">
-                              {label}
-                            </BreadcrumbPage>
+              {breadcrumbs ? (
+                <Breadcrumb>
+                  <BreadcrumbList>
+                    {breadcrumbs.map(({ label, path }, i) => {
+                      const isNotLastItem = i < breadcrumbs.length;
+                      return (
+                        <Fragment key={i}>
+                          {isNotLastItem && (
+                            <BreadcrumbSeparator className="hidden md:block" />
                           )}
-                        </BreadcrumbItem>
-                      </Fragment>
-                    );
-                  })}
-                </BreadcrumbList>
-              </Breadcrumb>
-            ) : null}
+                          <BreadcrumbItem className="hidden md:block">
+                            {path ? (
+                              <BreadcrumbLink asChild>
+                                <Link href={path} className="hover:underline">
+                                  {label}
+                                </Link>
+                              </BreadcrumbLink>
+                            ) : (
+                              <BreadcrumbPage className="cursor-default text-muted-foreground">
+                                {label}
+                              </BreadcrumbPage>
+                            )}
+                          </BreadcrumbItem>
+                        </Fragment>
+                      );
+                    })}
+                  </BreadcrumbList>
+                </Breadcrumb>
+              ) : null}
             </div>
-            {rightSection}
+            <div className="flex-center-start gap-4">{rightSection}</div>
           </header>
           <div className="flex flex-1 flex-col">
             <div className="@container/main flex flex-1 flex-col gap-2">
