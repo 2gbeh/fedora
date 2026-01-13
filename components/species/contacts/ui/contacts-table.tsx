@@ -178,7 +178,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   // },
   {
     accessorKey: "type",
-    header: "Avatar",
+    header: "Avatar/Name, Account Name",
     cell: ({ row }) => (
       <div className="w-32">
         <Badge variant="outline" className="px-1.5 text-muted-foreground">
@@ -189,7 +189,24 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "status",
-    header: "Contact Name",
+    header: "Telephone No.(s)",
+    cell: ({ row }) => (
+      <Badge
+        variant="outline"
+        className="flex gap-1 px-1.5 text-muted-foreground [&_svg]:size-3"
+      >
+        {row.original.status === "Done" ? (
+          <CheckCircle2Icon className="text-green-500 dark:text-green-400" />
+        ) : (
+          <LoaderIcon />
+        )}
+        {row.original.status}
+      </Badge>
+    ),
+  },
+  {
+    accessorKey: "status",
+    header: "Start Date",
     cell: ({ row }) => (
       <Badge
         variant="outline"
@@ -206,7 +223,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "target",
-    header: () => <div className="_text-right w-full">Display Name</div>,
+    header: () => <div className="_text-right w-full">Total Income</div>,
     cell: ({ row }) => (
       <form
         onSubmit={(e) => {
@@ -231,7 +248,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "limit",
-    header: () => <div className="_text-right w-full">Telephone</div>,
+    header: () => <div className="_text-right w-full">Total Expense</div>,
     cell: ({ row }) => (
       <form
         onSubmit={(e) => {
@@ -254,39 +271,39 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
       </form>
     ),
   },
-  // {
-  //   accessorKey: "reviewer",
-  //   header: "Reviewer",
-  //   cell: ({ row }) => {
-  //     const isAssigned = row.original.reviewer !== "Assign reviewer";
+  {
+    accessorKey: "reviewer",
+    header: "Balance",
+    cell: ({ row }) => {
+      const isAssigned = row.original.reviewer !== "Assign reviewer";
 
-  //     if (isAssigned) {
-  //       return row.original.reviewer;
-  //     }
+      if (isAssigned) {
+        return row.original.reviewer;
+      }
 
-  //     return (
-  //       <>
-  //         <Label htmlFor={`${row.original.id}-reviewer`} className="sr-only">
-  //           Reviewer
-  //         </Label>
-  //         <Select>
-  //           <SelectTrigger
-  //             className="h-8 w-40"
-  //             id={`${row.original.id}-reviewer`}
-  //           >
-  //             <SelectValue placeholder="Assign reviewer" />
-  //           </SelectTrigger>
-  //           <SelectContent align="end">
-  //             <SelectItem value="Eddie Lake">Eddie Lake</SelectItem>
-  //             <SelectItem value="Jamik Tashpulatov">
-  //               Jamik Tashpulatov
-  //             </SelectItem>
-  //           </SelectContent>
-  //         </Select>
-  //       </>
-  //     );
-  //   },
-  // },
+      return (
+        <>
+          <Label htmlFor={`${row.original.id}-reviewer`} className="sr-only">
+            Reviewer
+          </Label>
+          <Select>
+            <SelectTrigger
+              className="h-8 w-40"
+              id={`${row.original.id}-reviewer`}
+            >
+              <SelectValue placeholder="Assign reviewer" />
+            </SelectTrigger>
+            <SelectContent align="end">
+              <SelectItem value="Eddie Lake">Eddie Lake</SelectItem>
+              <SelectItem value="Jamik Tashpulatov">
+                Jamik Tashpulatov
+              </SelectItem>
+            </SelectContent>
+          </Select>
+        </>
+      );
+    },
+  },
   {
     id: "actions",
     cell: () => (

@@ -178,7 +178,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   // },
   {
     accessorKey: "type",
-    header: "Name",
+    header: "Name (Visibility)",
     cell: ({ row }) => (
       <div className="w-32">
         <Badge variant="outline" className="px-1.5 text-muted-foreground">
@@ -189,7 +189,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "status",
-    header: "Visibility",
+    header: "Description",
     cell: ({ row }) => (
       <Badge
         variant="outline"

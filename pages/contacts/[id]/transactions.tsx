@@ -9,16 +9,27 @@ import { LedgersTable } from "@/components/species/ledgers/ui/ledgers-table";
 import { CreateLedgerModal } from "@/components/species/ledgers/ui/create-ledger-modal";
 import data from "@/components/species/dashboard/data.json";
 import { PATH } from "@/constants/PATH";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/shadcn/ui/avatar";
 import { CreateTransactionOffcanvas } from "@/components/species/transactions/ui/create-transaction-offcanvas";
 
-export default function LedgerTransactionsPage() {
+export default function ContactTransactionsPage() {
   const [open, setOpen] = useState(false);
+  const user = {
+    name: "Aduwa Daam",
+    email: "etugbeh@outlook.com",
+    avatar: "https://github.com/shadcn.png",
+  };
+
   return (
     <DashboardLayout
-      pageTitle="Ledger Transactions"
-      pageDisplayTitle="Ledgers"
+      pageTitle="Contact Transactions"
+      pageDisplayTitle="Contacts"
       breadcrumbs={[
-        { label: "Default", path: PATH.ledgers },
+        { label: "Aduwa Daam", path: PATH.contacts },
         { label: "Transactions" },
       ]}
       rightSection={
@@ -29,10 +40,21 @@ export default function LedgerTransactionsPage() {
       }
     >
       <section className="grid grid-cols-3 gap-4 px-6">
+        <div className="flex-center-start gap-4">
+          <Avatar className="h-16 w-16 rounded-full">
+            <AvatarImage src={user.avatar} alt={user.name} />
+            <AvatarFallback className="rounded-lg">AA</AvatarFallback>
+          </Avatar>
+          <div>
+            <p>Name: Sunday Bike</p>
+            <p>Phone No.: 09162443891 (copy)</p>
+            <p>Mobile No.: n/A</p>
+          </div>
+        </div>
         <div>
-          <p>Name: House Project (public)</p>
-          <p>Description: Ex. 27 Omoruyi Street, Benin City, 300102</p>
-          <p>Start Date: 13/01/2026</p>
+          <p>Bank Name: UBA</p>
+          <p>Account Name: Aduwa Daam</p>
+          <p>Account No.: 0131988214 (copy)</p>
         </div>
         <div>
           <p>Total Income:</p>
