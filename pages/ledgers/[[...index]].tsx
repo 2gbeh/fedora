@@ -1,24 +1,28 @@
+import { useState } from "react";
+import { PlusIcon } from "lucide-react";
+// 
+import { Button } from "@/components/shadcn/ui/button";
+// 
 import { DashboardLayout } from "@/components/species/dashboard/ui/dashboard-layout";
-import { SectionCards } from "@/components/species/dashboard/ui/section-cards";
-import { ChartAreaInteractive } from "@/components/species/dashboard/ui/chart-area-interactive";
-import { DataTable } from "@/components/species/dashboard/ui/data-table";
+import { LedgersTable } from "@/components/species/ledgers/ui/ledgers-table";
+import { CreateLedgerModal } from "@/components/species/ledgers/ui/create-ledger-modal";
 import data from "@/components/species/dashboard/data.json";
 
 export default function LedgersPage() {
+  const [open, setOpen] = useState(false);
   return (
     <DashboardLayout
       pageTitle="Ledgers"
       pageDisplayTitle="Ledgers"
-      breadcrumbs={[
-        { label: "Building Your Application", path: "/dashboard" },
-        { label: "Data Fetching" },
-      ]}
+      rightSection={
+        <Button size="sm" onClick={() => setOpen(true)}>
+          <PlusIcon />
+          <span className="hidden lg:inline">Add New</span>
+        </Button>
+      }
     >
-      <SectionCards />
-      <div className="px-4 lg:px-6">
-        <ChartAreaInteractive />
-      </div>
-      <DataTable data={data} />
+      <LedgersTable data={data} onCreate={() => setOpen(true)} />
+      <CreateLedgerModal open={open} onClose={() => setOpen(false)} />
     </DashboardLayout>
   );
 }

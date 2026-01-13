@@ -1,5 +1,5 @@
 import { Trash2Icon } from "lucide-react";
-// 
+//
 import { Label } from "@/components/shadcn/ui/label";
 import { Input } from "@/components/shadcn/ui/input";
 import { Button } from "@/components/shadcn/ui/button";
@@ -52,6 +52,14 @@ export default function ProfilePage() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-6">
+                <div className="grid gap-3">
+                  <Label htmlFor="username-1">Upload Avatar</Label>
+                  <Input
+                    id="username-1"
+                    name="username"
+                    placeholder="Select file"
+                  />
+                </div>
                 <div className="grid gap-3">
                   <Label htmlFor="sheet-demo-name">Name *</Label>
                   <Input id="sheet-demo-name" defaultValue="Emmanuel Tugbeh" />

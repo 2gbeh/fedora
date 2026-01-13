@@ -66,7 +66,7 @@ export function CreateTransactionOffcanvas({
             <Label htmlFor="sheet-demo-username">Select Categories *</Label>
             <Input
               id="sheet-demo-username"
-              placeholder="Ex. Church, Support, Groceries, Toiletries, Utilities"
+              placeholder="Ex. Church | Support | Groceries | Toiletries | Utilities*"
             />
           </div>
           <div className="grid gap-3">
@@ -77,7 +77,7 @@ export function CreateTransactionOffcanvas({
             <Label htmlFor="sheet-demo-name">Select Tags</Label>
             <Input
               id="sheet-demo-name"
-              placeholder="Ex. isDraft, isFrivolousSpend"
+              placeholder="Ex. Draft | Frivolous"
             />
           </div>
         </div>

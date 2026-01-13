@@ -168,17 +168,17 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   //   enableSorting: false,
   //   enableHiding: false,
   // },
-  {
-    accessorKey: "header",
-    header: "Date",
-    cell: ({ row }) => {
-      return <TableCellViewer item={row.original} />;
-    },
-    enableHiding: false,
-  },
+  // {
+  //   accessorKey: "header",
+  //   header: "Date",
+  //   cell: ({ row }) => {
+  //     return <TableCellViewer item={row.original} />;
+  //   },
+  //   enableHiding: false,
+  // },
   {
     accessorKey: "type",
-    header: "Category",
+    header: "Name",
     cell: ({ row }) => (
       <div className="w-32">
         <Badge variant="outline" className="px-1.5 text-muted-foreground">
@@ -189,7 +189,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "status",
-    header: "Contact Name",
+    header: "Visibility",
     cell: ({ row }) => (
       <Badge
         variant="outline"
@@ -206,7 +206,32 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "target",
-    header: () => <div className="_text-right w-full">Amount</div>,
+    header: () => <div className="_text-right w-full">Start Date</div>,
+    cell: ({ row }) => (
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          toast.promise(new Promise((resolve) => setTimeout(resolve, 1000)), {
+            loading: `Saving ${row.original.header}`,
+            success: "Done",
+            error: "Error",
+          });
+        }}
+      >
+        <Label htmlFor={`${row.original.id}-target`} className="sr-only">
+          Target
+        </Label>
+        <Input
+          className="h-8 w-16 border-transparent bg-transparent text-right shadow-none hover:bg-input/30 focus-visible:border focus-visible:bg-background"
+          defaultValue={row.original.target}
+          id={`${row.original.id}-target`}
+        />
+      </form>
+    ),
+  },
+  {
+    accessorKey: "target",
+    header: () => <div className="_text-right w-full">Total Income</div>,
     cell: ({ row }) => (
       <form
         onSubmit={(e) => {
@@ -231,7 +256,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "limit",
-    header: () => <div className="_text-right w-full">Narration</div>,
+    header: () => <div className="_text-right w-full">Total Expense</div>,
     cell: ({ row }) => (
       <form
         onSubmit={(e) => {
@@ -254,39 +279,39 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
       </form>
     ),
   },
-  // {
-  //   accessorKey: "reviewer",
-  //   header: "Reviewer",
-  //   cell: ({ row }) => {
-  //     const isAssigned = row.original.reviewer !== "Assign reviewer";
+  {
+    accessorKey: "reviewer",
+    header: "Balance",
+    cell: ({ row }) => {
+      const isAssigned = row.original.reviewer !== "Assign reviewer";
 
-  //     if (isAssigned) {
-  //       return row.original.reviewer;
-  //     }
+      if (isAssigned) {
+        return row.original.reviewer;
+      }
 
-  //     return (
-  //       <>
-  //         <Label htmlFor={`${row.original.id}-reviewer`} className="sr-only">
-  //           Reviewer
-  //         </Label>
-  //         <Select>
-  //           <SelectTrigger
-  //             className="h-8 w-40"
-  //             id={`${row.original.id}-reviewer`}
-  //           >
-  //             <SelectValue placeholder="Assign reviewer" />
-  //           </SelectTrigger>
-  //           <SelectContent align="end">
-  //             <SelectItem value="Eddie Lake">Eddie Lake</SelectItem>
-  //             <SelectItem value="Jamik Tashpulatov">
-  //               Jamik Tashpulatov
-  //             </SelectItem>
-  //           </SelectContent>
-  //         </Select>
-  //       </>
-  //     );
-  //   },
-  // },
+      return (
+        <>
+          <Label htmlFor={`${row.original.id}-reviewer`} className="sr-only">
+            Reviewer
+          </Label>
+          <Select>
+            <SelectTrigger
+              className="h-8 w-40"
+              id={`${row.original.id}-reviewer`}
+            >
+              <SelectValue placeholder="Assign reviewer" />
+            </SelectTrigger>
+            <SelectContent align="end">
+              <SelectItem value="Eddie Lake">Eddie Lake</SelectItem>
+              <SelectItem value="Jamik Tashpulatov">
+                Jamik Tashpulatov
+              </SelectItem>
+            </SelectContent>
+          </Select>
+        </>
+      );
+    },
+  },
   {
     id: "actions",
     cell: () => (
@@ -302,11 +327,10 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-32">
-          <DropdownMenuItem disabled>Receipt</DropdownMenuItem>
           <DropdownMenuItem>Edit</DropdownMenuItem>
           <DropdownMenuItem>Delete</DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>Duplicate</DropdownMenuItem>
+          <DropdownMenuItem>Transactions</DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     ),
@@ -338,10 +362,12 @@ function DraggableRow({ row }: { row: Row<z.infer<typeof schema>> }) {
   );
 }
 
-export function TransactionsTable({
+export function LedgersTable({
   data: initialData,
+  onCreate = () => undefined,
 }: {
   data: z.infer<typeof schema>[];
+  onCreate?: () => void;
 }) {
   const [data, setData] = useState(() => initialData);
   const [rowSelection, setRowSelection] = useState({});
@@ -410,63 +436,6 @@ export function TransactionsTable({
         <div className="flex-center-start gap-4">
           <div className="flex-center-start gap-2">
             <Label htmlFor="view-selector" className="font-medium">
-              Ledger:
-            </Label>
-            <Select defaultValue="outline">
-              <SelectTrigger
-                className="@4xl/main:hidden flex w-fit"
-                id="view-selector"
-              >
-                <SelectValue placeholder="Select a view" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="outline">Default</SelectItem>
-                <SelectItem value="offshore-account">Offshore Account</SelectItem>
-                <SelectItem value="house-project">House Project</SelectItem>
-                <SelectItem value="car-maintenance">Car Maintenance</SelectItem>
-                <SelectItem value="first-fruit">First Fruit</SelectItem>
-                <SelectItem value="kids-education">Kids Education</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-          <div className="flex-center-start gap-2">
-            <Label htmlFor="view-selector" className="font-medium">
-              Category:
-            </Label>
-            <Select defaultValue="outline">
-              <SelectTrigger
-                className="@4xl/main:hidden flex w-fit"
-                id="view-selector"
-              >
-                <SelectValue placeholder="Select a view" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="outline">All</SelectItem>
-                <SelectItem value="church">Church</SelectItem>
-                <SelectItem value="support">Support</SelectItem>
-                <SelectItem value="groceries">Groceries</SelectItem>
-                <SelectItem value="toiletries">Toiletries</SelectItem>
-                <SelectItem value="utilities">Utilities</SelectItem>
-                <SelectItem value="house">House</SelectItem>
-                <SelectItem value="car">Car</SelectItem>
-                <SelectItem value="social">Social</SelectItem>
-                <SelectItem value="wardrobe">Wardrobe</SelectItem>
-                <SelectItem value="investment">Investment</SelectItem>
-                <SelectItem value="loan">Loan</SelectItem>
-                <SelectItem value="misc">Miscellaneous</SelectItem>
-                <SelectItem value="emergency">Emergency</SelectItem>
-                <SelectItem value="self-care">Self Care</SelectItem>
-                <SelectItem value="cash">Cash</SelectItem>
-
-                {/* church support groceries (food, toiletries) utils (water,
-                gas, fuel, gen, nepa, data, airtime) house car social 
-                clothes  loan investment emergency, misc, self care, fun, cash
-                fun frivolous  healthcare personal */}
-              </SelectContent>
-            </Select>
-          </div>
-          <div className="flex-center-start gap-2">
-            <Label htmlFor="view-selector" className="font-medium">
               Sort by:
             </Label>
             <Select defaultValue="outline">
@@ -477,10 +446,8 @@ export function TransactionsTable({
                 <SelectValue placeholder="Select a view" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="outline">Date</SelectItem>
-                <SelectItem value="type">Type</SelectItem>
-                <SelectItem value="contact-name">Contact Name</SelectItem>
-                <SelectItem value="amount">Amount</SelectItem>
+                <SelectItem value="outline">Name</SelectItem>
+                <SelectItem value="date">Date</SelectItem>
               </SelectContent>
             </Select>
           </div>
