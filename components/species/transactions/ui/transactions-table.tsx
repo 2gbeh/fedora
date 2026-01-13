@@ -477,9 +477,9 @@ export function TransactionsTable({
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="outline">Date</SelectItem>
-                <SelectItem value="key-personnel-2">Type</SelectItem>
-                <SelectItem value="focus-documents">Contact Name</SelectItem>
-                <SelectItem value="key-personnel">Amount</SelectItem>
+                <SelectItem value="type">Type</SelectItem>
+                <SelectItem value="contact-name">Contact Name</SelectItem>
+                <SelectItem value="amount">Amount</SelectItem>
               </SelectContent>
             </Select>
           </div>

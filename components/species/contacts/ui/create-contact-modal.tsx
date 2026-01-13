@@ -1,3 +1,5 @@
+import { Label } from "@/components/shadcn/ui/label";
+import { Input } from "@/components/shadcn/ui/input";
 import { Button } from "@/components/shadcn/ui/button";
 import {
   Dialog,
@@ -7,12 +9,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/shadcn/ui/dialog";
-import { Input } from "@/components/shadcn/ui/input";
-import { Label } from "@/components/shadcn/ui/label";
-import { PropsWithChildren } from "react";
-
 interface Props {
   open?: boolean;
   onClose?: () => void;

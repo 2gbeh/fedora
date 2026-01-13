@@ -419,10 +419,8 @@ export function ContactsTable({
                 <SelectValue placeholder="Select a view" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="outline">Date</SelectItem>
-                <SelectItem value="key-personnel-2">Type</SelectItem>
-                <SelectItem value="focus-documents">Contact Name</SelectItem>
-                <SelectItem value="key-personnel">Amount</SelectItem>
+                <SelectItem value="outline">Name</SelectItem>
+                <SelectItem value="date">Date</SelectItem>
               </SelectContent>
             </Select>
           </div>

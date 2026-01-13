@@ -1,33 +1,54 @@
-import { DashboardLayout } from "@/components/species/dashboard/ui/dashboard-layout";
-import { SectionCards } from "@/components/species/dashboard/ui/section-cards";
-import { ChartAreaInteractive } from "@/components/species/dashboard/ui/chart-area-interactive";
-import { DataTable } from "@/components/species/dashboard/ui/data-table";
-import data from "@/components/species/dashboard/data.json";
-import { SearchBar } from "@/components/species/dashboard/ui/search-bar";
+import { Label } from "@/components/shadcn/ui/label";
+import { Input } from "@/components/shadcn/ui/input";
 import { Button } from "@/components/shadcn/ui/button";
-import { PlusIcon } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/shadcn/ui/card";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/shadcn/ui/tabs";
+//
+import { DashboardLayout } from "@/components/species/dashboard/ui/dashboard-layout";
 
 export default function SettingsPage() {
   return (
-    <DashboardLayout
-      pageTitle="Settings"
-      pageDisplayTitle="Settings"
-      breadcrumbs={[
-        { label: "Building Your Application", path: "/dashboard" },
-        { label: "Data Fetching" },
-      ]}
-      rightSection={
-        <>
-          <SearchBar className="w-full sm:ml-auto sm:w-auto" />
-          <Button variant="destructive" size="sm">
-            <PlusIcon />
-            <span className="hidden lg:inline">Add New</span>
-          </Button>
-        </>
-      }
-    >
-      <SectionCards />
-      <DataTable data={data} />
+    <DashboardLayout pageTitle="Settings" pageDisplayTitle="Settings">
+      <div className="max-w-md px-6">
+        <Card>
+          <CardHeader>
+            <CardTitle>Change Password</CardTitle>
+            <CardDescription>
+              Required fields are marked with asterisks(*)
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="grid gap-6">
+            <div className="grid gap-3">
+              <Label htmlFor="tabs-demo-current">Current password *</Label>
+              <Input id="tabs-demo-current" type="currentPassword" />
+            </div>
+            <div className="grid gap-3">
+              <Label htmlFor="tabs-demo-new">New password *</Label>
+              <Input id="tabs-demo-new" type="password" />
+            </div>
+            <div className="grid gap-3">
+              <Label htmlFor="tabs-demo-new">Retype New password *</Label>
+              <Input id="tabs-demo-new" type="passwordConfirmation" />
+            </div>
+          </CardContent>
+          <CardFooter className="flex-center-end gap-4">
+            <Button variant="outline">Cancel</Button>
+            <Button onClick={undefined}>Save</Button>
+          </CardFooter>
+        </Card>
+      </div>
     </DashboardLayout>
   );
 }
