@@ -26,9 +26,25 @@ export default function DashboardPage() {
     <DashboardLayout
       pageTitle="Dashboard"
       pageDisplayTitle="Dashboard"
-      breadcrumbs={[{ label: "Year 2025" }]}
+      breadcrumbs={[{ label: "Default Ledger" }, { label: "Year 2025" }]}
       rightSection={
         <div className="flex-center-start gap-4">
+          <Select defaultValue="outline">
+            <SelectTrigger
+              className="@4xl/main:hidden flex w-fit"
+              id="view-selector"
+            >
+              <SelectValue placeholder="Select a view" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="outline">Default</SelectItem>
+              <SelectItem value="offshore-account">Offshore Account</SelectItem>
+              <SelectItem value="house-project">House Project</SelectItem>
+              <SelectItem value="car-maintenance">Car Maintenance</SelectItem>
+              <SelectItem value="first-fruit">First Fruit</SelectItem>
+              <SelectItem value="kids-education">Kids Education</SelectItem>
+            </SelectContent>
+          </Select>
           <Select value={timeRange} onValueChange={setTimeRange}>
             <SelectTrigger
               className="@[767px]/card:hidden _w-32 flex"
@@ -37,14 +53,23 @@ export default function DashboardPage() {
               <SelectValue placeholder="Last 3 months" />
             </SelectTrigger>
             <SelectContent className="rounded-xl">
+              <SelectItem value="1d" className="rounded-lg">
+                2021
+              </SelectItem>
+              <SelectItem value="2d" className="rounded-lg">
+                2022
+              </SelectItem>
+              <SelectItem value="3d" className="rounded-lg">
+                2023
+              </SelectItem>
               <SelectItem value="90d" className="rounded-lg">
-                Year 2024
+                2024
               </SelectItem>
               <SelectItem value="30d" className="rounded-lg">
-                Year 2025
+                2025
               </SelectItem>
               <SelectItem value="7d" className="rounded-lg">
-                Year 2026
+                2026
               </SelectItem>
             </SelectContent>
           </Select>
