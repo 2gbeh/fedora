@@ -1,3 +1,5 @@
+import { Trash2Icon } from "lucide-react";
+// 
 import { Label } from "@/components/shadcn/ui/label";
 import { Input } from "@/components/shadcn/ui/input";
 import { Button } from "@/components/shadcn/ui/button";
@@ -20,7 +22,16 @@ import { DashboardLayout } from "@/components/species/dashboard/ui/dashboard-lay
 
 export default function ProfilePage() {
   return (
-    <DashboardLayout pageTitle="Profile" pageDisplayTitle="Profile">
+    <DashboardLayout
+      pageTitle="Profile"
+      pageDisplayTitle="Profile"
+      rightSection={
+        <Button variant={"destructive"} size={"sm"}>
+          <Trash2Icon />
+          Deactivate Account
+        </Button>
+      }
+    >
       <div className="max-w-md px-6">
         <Tabs
           defaultValue="account"

@@ -77,7 +77,7 @@ export function CreateTransactionOffcanvas({
             <Label htmlFor="sheet-demo-name">Select Tags</Label>
             <Input
               id="sheet-demo-name"
-              placeholder="Ex. isDraft, isHiddenCharge, isFrivolousSpend"
+              placeholder="Ex. isDraft, isFrivolousSpend"
             />
           </div>
         </div>

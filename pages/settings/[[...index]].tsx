@@ -1,5 +1,5 @@
 import { Label } from "@/components/shadcn/ui/label";
-import { Input } from "@/components/shadcn/ui/input";
+import { Checkbox } from "@/components/shadcn/ui/checkbox";
 import { Button } from "@/components/shadcn/ui/button";
 import {
   Card,
@@ -9,12 +9,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/shadcn/ui/card";
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/shadcn/ui/tabs";
 //
 import { DashboardLayout } from "@/components/species/dashboard/ui/dashboard-layout";
 
@@ -24,24 +18,25 @@ export default function SettingsPage() {
       <div className="max-w-md px-6">
         <Card>
           <CardHeader>
-            <CardTitle>Change Password</CardTitle>
-            <CardDescription>
-              Required fields are marked with asterisks(*)
-            </CardDescription>
+            <CardTitle>App Settings</CardTitle>
           </CardHeader>
           <CardContent className="grid gap-6">
-            <div className="grid gap-3">
-              <Label htmlFor="tabs-demo-current">Current password *</Label>
-              <Input id="tabs-demo-current" type="currentPassword" />
-            </div>
-            <div className="grid gap-3">
-              <Label htmlFor="tabs-demo-new">New password *</Label>
-              <Input id="tabs-demo-new" type="password" />
-            </div>
-            <div className="grid gap-3">
-              <Label htmlFor="tabs-demo-new">Retype New password *</Label>
-              <Input id="tabs-demo-new" type="passwordConfirmation" />
-            </div>
+            <Label className="flex items-start gap-3 rounded-lg border p-3 hover:bg-accent/50 has-[[aria-checked=true]]:border-blue-600 has-[[aria-checked=true]]:bg-blue-50 dark:has-[[aria-checked=true]]:border-blue-900 dark:has-[[aria-checked=true]]:bg-blue-950">
+              <Checkbox
+                id="toggle-2"
+                defaultChecked
+                className="data-[state=checked]:border-blue-600 data-[state=checked]:bg-blue-600 data-[state=checked]:text-white dark:data-[state=checked]:border-blue-700 dark:data-[state=checked]:bg-blue-700"
+              />
+              <div className="grid gap-1.5 font-normal">
+                <p className="text-sm font-medium leading-none">
+                  Prototyping Mode
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  Switch currency, and sanitize database mutations during demo
+                  presentation.
+                </p>
+              </div>
+            </Label>
           </CardContent>
           <CardFooter className="flex-center-end gap-4">
             <Button variant="outline">Cancel</Button>

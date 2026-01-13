@@ -421,6 +421,7 @@ export function TransactionsTable({
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="outline">Default</SelectItem>
+                <SelectItem value="offshore-account">Offshore Account</SelectItem>
                 <SelectItem value="house-project">House Project</SelectItem>
                 <SelectItem value="car-maintenance">Car Maintenance</SelectItem>
                 <SelectItem value="first-fruit">First Fruit</SelectItem>
