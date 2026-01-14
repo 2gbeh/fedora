@@ -73,7 +73,7 @@ export default function DashboardPage() {
               </SelectItem>
             </SelectContent>
           </Select>
-          <Button size="sm">
+          <Button size="sm" onClick={() => router.push(PATH.reports)}>
             <ChartCandlestickIcon />
             <span className="hidden lg:inline">Generate Report</span>
           </Button>

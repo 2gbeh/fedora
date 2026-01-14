@@ -6,6 +6,7 @@ import {
   UsersIcon,
   SettingsIcon,
   LogOutIcon,
+  ChartCandlestickIcon,
 } from "lucide-react";
 import { PATH } from "./PATH";
 
@@ -39,6 +40,11 @@ export const MENU = {
     },
   ],
   secondary: [
+    {
+      label: "Reports",
+      path: PATH.reports,
+      icon: ChartCandlestickIcon,
+    },
     {
       label: "Settings",
       path: PATH.settings,

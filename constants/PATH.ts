@@ -7,9 +7,8 @@ export const PATH = {
   dashboard: "/dashboard",
   reports: "/dashboard/reports",
   // 
-  settings: "/settings",
-  // 
   transactions: "/transactions",
   ledgers: "/ledgers",
   contacts: "/contacts",
+  settings: "/settings",
 };
