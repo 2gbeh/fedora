@@ -5,7 +5,7 @@ import { Button } from "@/components/shadcn/ui/button";
 // 
 import { DashboardLayout } from "@/components/species/dashboard/ui/dashboard-layout";
 import { ContactsTable } from "@/components/species/contacts/ui/contacts-table";
-import { CreateContactModal } from "@/components/species/contacts/ui/create-contact-modal";
+import { CreateContactOffcanvas } from "@/components/species/contacts/ui/create-contact-offcanvas";
 import data from "@/components/species/dashboard/data.json";
 
 export default function ContactsPage() {
@@ -22,7 +22,7 @@ export default function ContactsPage() {
       }
     >
       <ContactsTable data={data} onCreate={() => setOpen(true)} />
-      <CreateContactModal open={open} onClose={() => setOpen(false)} />
+      <CreateContactOffcanvas open={open} onClose={() => setOpen(false)} />
     </DashboardLayout>
   );
 }

@@ -83,7 +83,7 @@ export function CreateTransactionOffcanvas({
         </div>
         <SheetFooter className="mt-5">
           <SheetClose asChild>
-            <Button variant="outline">Close</Button>
+            <Button variant="outline">Clear</Button>
           </SheetClose>
           <Button onClick={onClose}>Save</Button>
         </SheetFooter>
