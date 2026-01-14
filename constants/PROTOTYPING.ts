@@ -6,6 +6,9 @@ interface IPrototyping {
 }
 
 export const PROTOTYPING: Record<string, IPrototyping> = {
+  splash: {
+    loader: 1,
+  },
   auth: {
     formData: 1,
   },
