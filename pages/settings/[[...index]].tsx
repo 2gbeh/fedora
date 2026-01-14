@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "@/components/shadcn/ui/card";
 //
-import { DashboardLayout } from "@/components/species/dashboard/ui/dashboard-layout";
+import { DashboardLayout } from "@/components/layouts/dashboard-layout";
 
 export default function SettingsPage() {
   return (

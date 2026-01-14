@@ -23,7 +23,7 @@ import {
 import { Button } from "@/components/shadcn/ui/button";
 import { PATH } from "@/constants/PATH";
 //
-import { DashboardLayout } from "@/components/species/dashboard/ui/dashboard-layout";
+import { DashboardLayout } from "@/components/layouts/dashboard-layout";
 import { SectionCards } from "@/components/species/dashboard/ui/section-cards";
 import { SectionCards as SectionCards2 } from "@/components/species/reports/ui/section-cards";
 import { ChartAreaInteractive } from "@/components/species/dashboard/ui/chart-area-interactive";
@@ -39,7 +39,7 @@ export default function ReportsPage() {
     <DashboardLayout
       pageTitle="Reports"
       pageDisplayTitle="Reports"
-      breadcrumbs={[{ label: "Annual Summary" },{ label: "Year 2025" }]}
+      breadcrumbs={[{ label: "Annual Summary" }, { label: "Year 2025" }]}
       rightSection={
         <div className="flex-center-start gap-4">
           <Select value={timeRange} onValueChange={setTimeRange}>
@@ -97,13 +97,13 @@ export default function ReportsPage() {
           </TabsList>
           <TabsContent value="account">
             <SectionCards />
-            <div className="flex flex-col gap-6 _px-4 _lg:px-6">
+            <div className="_px-4 _lg:px-6 flex flex-col gap-6">
               <ChartAreaInteractive />
             </div>
           </TabsContent>
           <TabsContent value="password">
             <SectionCards2 />
-            <div className="flex flex-col gap-6 _px-4 _lg:px-6">
+            <div className="_px-4 _lg:px-6 flex flex-col gap-6">
               <ChartBarClusteredColumn />
             </div>
           </TabsContent>

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { PlusIcon } from "lucide-react";
-// 
+//
 import { Button } from "@/components/shadcn/ui/button";
-// 
-import { DashboardLayout } from "@/components/species/dashboard/ui/dashboard-layout";
+//
+import { DashboardLayout } from "@/components/layouts/dashboard-layout";
 import { ContactsTable } from "@/components/species/contacts/ui/contacts-table";
 import { CreateContactOffcanvas } from "@/components/species/contacts/ui/create-contact-offcanvas";
 import data from "@/components/species/dashboard/data.json";

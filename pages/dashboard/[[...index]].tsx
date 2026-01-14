@@ -12,7 +12,7 @@ import {
 import { Button } from "@/components/shadcn/ui/button";
 import { PATH } from "@/constants/PATH";
 //
-import { DashboardLayout } from "@/components/species/dashboard/ui/dashboard-layout";
+import { DashboardLayout } from "@/components/layouts/dashboard-layout";
 import { SectionCards } from "@/components/species/dashboard/ui/section-cards";
 import { ChartAreaInteractive } from "@/components/species/dashboard/ui/chart-area-interactive";
 import { DataTable } from "@/components/species/dashboard/ui/data-table";

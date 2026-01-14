@@ -1,8 +1,12 @@
 export const PATH = {
   home: "/",
   login: "/",
-  loginWithPin: "/auth/pin",
-  profile: "/auth/me",
+  loginPin: "/login/pin",
+  forgotPassword: "/forgot-password",
+  createPassword: "/create-password",
+  //
+  profile: "/profile",
+  settings: "/settings",
   //
   dashboard: "/dashboard",
   reports: "/dashboard/reports",
@@ -14,6 +18,4 @@ export const PATH = {
   //
   contacts: "/contacts",
   contactTransactions: (id: string) => `/contacts/${id}/transactions`,
-  //
-  settings: "/settings",
 };

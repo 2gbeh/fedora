@@ -15,10 +15,9 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/shadcn/ui/breadcrumb";
-import { PageTitle } from "@/components/atoms/page-title";
+import { PageTitle } from "../atoms/page-title";
+import { AppSidebar } from "../species/dashboard/ui/app-sidebar";
 //
-import { AppSidebar } from "./app-sidebar";
-import { SearchBar } from "./search-bar";
 interface Props extends PropsWithChildren {
   pageTitle?: string;
   pageDisplayTitle?: string;

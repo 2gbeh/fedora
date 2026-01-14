@@ -7,35 +7,17 @@ import { PATH } from "@/constants/PATH";
 //
 import { AuthLayout } from "@/components/layouts/auth-layout";
 
-export default function LoginPage() {
+export default function CreatePasswordPage() {
   return (
     <AuthLayout
-      pageTitle="Log in"
+      pageTitle="Create Password"
       h1="Login to your account"
       p="Enter your email below to login to your account"
     >
       <form>
         <FieldGroup>
           <Field className="gap-2">
-            <FieldLabel htmlFor="email">Email</FieldLabel>
-            <Input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Ex. example@domain.com"
-              required
-            />
-          </Field>
-          <Field>
-            <div className="flex items-center">
-              <FieldLabel htmlFor="password">Password</FieldLabel>
-              <Link
-                href={PATH.forgotPassword}
-                className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-              >
-                Forgot your password?
-              </Link>
-            </div>
+            <FieldLabel htmlFor="password">Password</FieldLabel>
             <Input
               type="password"
               id="password"
@@ -44,8 +26,18 @@ export default function LoginPage() {
               required
             />
           </Field>
+          <Field className="gap-2">
+            <FieldLabel htmlFor="passwordConfirmation">Confirm Password</FieldLabel>
+            <Input
+              type="password"
+              id="passwordConfirmation"
+              name="passwordConfirmation"
+              placeholder="**** ****"
+              required
+            />
+          </Field>
           <Field>
-            <Button type="submit">Log in</Button>
+            <Button type="submit">Create</Button>
           </Field>
         </FieldGroup>
       </form>

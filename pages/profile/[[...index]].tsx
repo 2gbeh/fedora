@@ -18,7 +18,7 @@ import {
   TabsTrigger,
 } from "@/components/shadcn/ui/tabs";
 //
-import { DashboardLayout } from "@/components/species/dashboard/ui/dashboard-layout";
+import { DashboardLayout } from "@/components/layouts/dashboard-layout";
 
 export default function ProfilePage() {
   return (
