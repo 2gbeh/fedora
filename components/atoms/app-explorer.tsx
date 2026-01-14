@@ -10,6 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/shadcn/ui/dropdown-menu";
 import { PATH } from "@/constants/PATH";
+import { Url } from "next/dist/shared/lib/router/router";
 
 export const AppExplorer = () => {
   const router = useRouter();
@@ -27,7 +28,7 @@ export const AppExplorer = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="" align="end">
         {Object.entries(PATH).map(([name, path]) => (
-          <DropdownMenuItem key={name} onClick={() => router.push(path)}>
+          <DropdownMenuItem key={name} onClick={() => router.push(path as Url)}>
             {startCase(name)}
           </DropdownMenuItem>
         ))}
