@@ -1,9 +1,9 @@
-export enum TransactionType {
+export enum TransactionTypeEnum {
   INCOME = "Income",
   EXPENSE = "Expense",
 }
 
-export enum TransactionCategory {
+export enum TransactionCategoryEnum {
   CAR = "Car",
   CASH = "Cash",
   CHURCH = "Church",
@@ -21,18 +21,19 @@ export enum TransactionCategory {
   WARDROBE = "Wardrobe",
 }
 
-enum Wallet {
+enum WalletEnum {
   CASH = "Cash",
   FBN = "First Bank",
   GTB = "GTBank",
   OPAY = "OPay",
 }
 
-enum Ledger {
+enum LedgerEnum {
   DEFAULT = "Default",
-  OFFSHORE = "Offshore",
+  SINGAPORE = "Singapore",
   HOUSE_PROJECT = "House Project",
-  CAR_MAINTENANCE = "Car Maintenance",
   FIRST_FRUIT = "First Fruit",
+  HOME_DECOR = "House Decor",
+  CAR_MAINTENANCE = "Car Maintenance",
   KIDS_EDUCATION = "Kids Education",
 }

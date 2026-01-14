@@ -34,16 +34,17 @@ export default function ProfilePage() {
     >
       <div className="max-w-md px-6">
         <Tabs
-          defaultValue="account"
+          defaultValue="profile"
           className="flex flex-col justify-start gap-4"
         >
           <TabsList className="justify-start text-foreground">
-            <TabsTrigger value="account" className="!bg-white">
+            <TabsTrigger value="profile" className="!bg-white">
               Edit Profile
             </TabsTrigger>
             <TabsTrigger value="password">Change Password</TabsTrigger>
+            <TabsTrigger value="pin">Update Pin</TabsTrigger>
           </TabsList>
-          <TabsContent value="account">
+          <TabsContent value="profile">
             <Card>
               <CardHeader>
                 <CardTitle>Edit Profile</CardTitle>
@@ -63,6 +64,10 @@ export default function ProfilePage() {
                 <div className="grid gap-3">
                   <Label htmlFor="sheet-demo-name">Name *</Label>
                   <Input id="sheet-demo-name" defaultValue="Emmanuel Tugbeh" />
+                </div>
+                <div className="grid gap-3">
+                  <Label htmlFor="sheet-demo-name">Display Name</Label>
+                  <Input id="sheet-demo-name" defaultValue="2gbeh" />
                 </div>
                 <div className="grid gap-3">
                   <Label htmlFor="sheet-demo-name">Email *</Label>
@@ -94,15 +99,59 @@ export default function ProfilePage() {
               <CardContent className="grid gap-6">
                 <div className="grid gap-3">
                   <Label htmlFor="tabs-demo-current">Current password *</Label>
-                  <Input id="tabs-demo-current" type="currentPassword" />
+                  <Input
+                    id="tabs-demo-current"
+                    type="password"
+                    name="currentPassword"
+                  />
                 </div>
                 <div className="grid gap-3">
                   <Label htmlFor="tabs-demo-new">New password *</Label>
-                  <Input id="tabs-demo-new" type="password" />
+                  <Input id="tabs-demo-new" type="password" name="password" />
                 </div>
                 <div className="grid gap-3">
                   <Label htmlFor="tabs-demo-new">Retype New password *</Label>
-                  <Input id="tabs-demo-new" type="passwordConfirmation" />
+                  <Input
+                    id="tabs-demo-new"
+                    type="password"
+                    name="passwordConfirmation"
+                  />
+                </div>
+              </CardContent>
+              <CardFooter className="flex-center-end gap-4">
+                <Button variant="outline">Cancel</Button>
+                <Button onClick={undefined}>Save</Button>
+              </CardFooter>
+            </Card>
+          </TabsContent>
+          <TabsContent value="pin">
+            <Card>
+              <CardHeader>
+                <CardTitle>Update Pin</CardTitle>
+                <CardDescription>
+                  Required fields are marked with asterisks(*)
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="grid gap-6">
+                <div className="grid gap-3">
+                  <Label htmlFor="tabs-demo-current">Current pin *</Label>
+                  <Input
+                    id="tabs-demo-current"
+                    type="password"
+                    name="currentPassword"
+                  />
+                </div>
+                <div className="grid gap-3">
+                  <Label htmlFor="tabs-demo-new">New pin *</Label>
+                  <Input id="tabs-demo-new" type="password" name="password" />
+                </div>
+                <div className="grid gap-3">
+                  <Label htmlFor="tabs-demo-new">Retype New pin *</Label>
+                  <Input
+                    id="tabs-demo-new"
+                    type="password"
+                    name="passwordConfirmation"
+                  />
                 </div>
               </CardContent>
               <CardFooter className="flex-center-end gap-4">
