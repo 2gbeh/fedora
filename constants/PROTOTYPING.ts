@@ -5,7 +5,7 @@ interface IPrototyping {
   portal?: number | boolean;
 }
 
-export const PROTOTYPING: Record<string, IPrototyping> = {
+export const PROTOTYPING = {
   splash: {
     loader: 0,
   },

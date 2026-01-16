@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { ArrowUpRightIcon, ChartCandlestickIcon, Router } from "lucide-react";
+import { ArrowUpRightIcon, ChartCandlestickIcon } from "lucide-react";
 //
 import {
   Select,

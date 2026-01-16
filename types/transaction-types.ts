@@ -37,3 +37,37 @@ enum LedgerEnum {
   CAR_MAINTENANCE = "Car Maintenance",
   KIDS_EDUCATION = "Kids Education",
 }
+
+enum AccountStatusEnum {
+  ACTIVE = "Active",
+  INACTIVE = "Inactive",
+  SUSPENDED = "Suspended",
+  DEACTIVATED = "Deactivated",
+}
+
+enum UserRoleEnum {
+  SUPER_ADMIN = "Super Admin",
+  ADMIN = "Admin",
+  USER = "User",
+  OWNER = "Owner",
+  MANAGER = "Manager",
+  EMPLOYEE = "Employee",
+  CUSTOMER = "Customer",
+}
+
+export interface GeolocationValueObject {
+  latitude: number;
+  longitude: number;
+  accuracy?: number;
+  altitude?: number;
+  altitudeAccuracy?: number;
+  heading?: number;
+  speed?: number;
+}
+
+export interface DeviceValueObject {
+  ipAddress?: string;
+  userAgent?: string;
+  geolocation?: GeolocationValueObject;
+  lastSeen?: string | null;
+}

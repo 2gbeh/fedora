@@ -1,37 +1,26 @@
-import {
-  BellIcon,
-  CreditCardIcon,
-  LogOutIcon,
-  UserPenIcon,
-  UserCircleIcon,
-} from "lucide-react";
-
+import { useRouter } from "next/router";
+import { UserPenIcon } from "lucide-react";
+import { User } from "firebase/auth";
+//
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
 } from "@/components/shadcn/ui/avatar";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/shadcn/ui/dropdown-menu";
-import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  useSidebar,
 } from "@/components/shadcn/ui/sidebar";
+import { Skeleton } from "@/components/shadcn/ui/skeleton";
+import { useAuthContext } from "@/hooks/use-auth-context";
 import { PATH } from "@/constants/PATH";
-import { useRouter } from "next/router";
+import { UNKNOWN } from "@/constants/LOCALE";
 
 export function NavUser() {
   const router = useRouter();
-
+  const authContext = useAuthContext();
+  //
   return (
     <SidebarMenu>
       <SidebarMenuItem>
@@ -40,7 +29,9 @@ export function NavUser() {
           size="lg"
           className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
         >
-          {renderProfileSummary()}
+          {authContext.loading
+            ? renderProfileSkeleton()
+            : renderProfileSummary(authContext.data)}
           <UserPenIcon className="ml-auto size-4" />
         </SidebarMenuButton>
       </SidebarMenuItem>
@@ -48,24 +39,36 @@ export function NavUser() {
   );
 }
 
-const renderProfileSummary = () => {
-  const user = {
-    name: "2gbeh",
-    email: "etugbeh@outlook.com",
-    avatar: "https://github.com/2gbeh.png",
-  };
-
+const renderProfileSummary = (user: User | null) => {
   return (
     <>
       <Avatar className="h-8 w-8 rounded-full">
-        <AvatarImage src={user.avatar} alt={user.name} />
-        <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+        <AvatarImage src={user?.photoURL || undefined} />
+        <AvatarFallback className="rounded-lg">
+          {(user?.displayName || UNKNOWN).slice(0, 2).toUpperCase()}
+        </AvatarFallback>
       </Avatar>
       <div className="grid flex-1 text-left text-sm leading-tight">
-        <span className="truncate font-medium">{user.name}</span>
-        <span className="truncate text-xs text-muted-foreground">
-          {user.email}
+        <span className="truncate font-medium">
+          {user?.displayName || UNKNOWN}
         </span>
+        <span className="truncate text-xs text-muted-foreground">
+          {user?.email || UNKNOWN}
+        </span>
+      </div>
+    </>
+  );
+};
+
+const renderProfileSkeleton = () => {
+  return (
+    <>
+      <div className="flex-center-start space-x-3">
+        <Skeleton className="h-9 w-9 rounded-full" />
+        <div className="space-y-2">
+          <Skeleton className="h-3 w-[80px] rounded-sm" />
+          <Skeleton className="h-3 w-[120px] rounded-sm" />
+        </div>
       </div>
     </>
   );
