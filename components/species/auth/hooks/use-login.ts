@@ -32,10 +32,7 @@ export function useLogin() {
     defaultValues,
   });
   //
-  const [showPassword, setShowPassword] = useState(false);
   const [submitting, setSubmitting] = useState(false);
-  //
-  const toggleShowPassword = () => setShowPassword((prev) => !prev);
   //
   async function onSubmit(formData: FormSchemaType) {
     // console.log("🚀 ~ onSubmit ~ formData:", formData);
@@ -58,9 +55,7 @@ export function useLogin() {
 
   return {
     form,
-    showPassword,
     submitting,
-    toggleShowPassword,
     onSubmit,
   };
 }
