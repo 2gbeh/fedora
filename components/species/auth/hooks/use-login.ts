@@ -4,12 +4,12 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { UserCredential } from "firebase/auth";
 //
+import { useToast } from "@/hooks/use-toast";
 import { authService } from "@/services/auth-service";
 import { firebaseUtil } from "@/lib/firebase/utils";
 import { z, zodUtil } from "@/utils/zod-util";
 import { PATH } from "@/constants/PATH";
 import { PROTOTYPING } from "@/constants/PROTOTYPING";
-import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   email: zodUtil.email,

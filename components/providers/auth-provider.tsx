@@ -1,29 +1,20 @@
 import { ReactNode, createContext, useEffect, useState } from "react";
-import { onAuthStateChanged, User } from "firebase/auth";
+import { User } from "firebase/auth";
 //
-import { firebaseAuth } from "@/lib/firebase/config";
+import { authService, SessionDto } from "@/services/auth-service";
 
-const initialValues: IAuthContext = {
+const initialValues: SessionDto = {
   data: null,
   loading: true,
 };
 
-export interface IAuthContext {
-  data: User | null;
-  loading: boolean;
-}
-
-export const AuthContext = createContext<IAuthContext | undefined>(undefined);
+export const AuthContext = createContext<SessionDto | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [value, setValue] = useState<IAuthContext>(initialValues);
+  const [value, setValue] = useState<SessionDto>(initialValues);
 
   useEffect(() => {
-    const unsub = onAuthStateChanged(firebaseAuth, (user) => {
-      // console.log("🚀 ~ AuthProvider ~ user:", user);
-      setValue({ data: user, loading: false });
-    });
-
+    const unsub = authService.getSession(setValue);
     return () => unsub();
   }, []);
 

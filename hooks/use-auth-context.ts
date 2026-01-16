@@ -1,13 +1,11 @@
 import { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 //
-import {
-  AuthContext,
-  IAuthContext,
-} from "@/components/providers/auth-provider";
+import { AuthContext } from "@/components/providers/auth-provider";
+import { SessionDto } from "@/services/auth-service";
 import { PATH } from "@/constants/PATH";
 
-export function useAuthContext(): IAuthContext {
+export function useAuthContext(): SessionDto {
   const router = useRouter();
   const ctx = useContext(AuthContext);
 
