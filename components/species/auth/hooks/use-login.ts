@@ -2,14 +2,14 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { toast } from "sonner";
+import { UserCredential } from "firebase/auth";
 //
-import { signInWithEmailAndPassword, UserCredential } from "firebase/auth";
-import { firebaseAuth } from "@/lib/firebase/config";
+import { authService } from "@/services/auth-service";
 import { firebaseUtil } from "@/lib/firebase/utils";
 import { z, zodUtil } from "@/utils/zod-util";
 import { PATH } from "@/constants/PATH";
 import { PROTOTYPING } from "@/constants/PROTOTYPING";
+import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   email: zodUtil.email,
@@ -27,6 +27,7 @@ const defaultValues = PROTOTYPING.auth.formData
 
 export function useLogin() {
   const router = useRouter();
+  const toast = useToast();
   const form = useForm<FormSchemaType>({
     resolver: zodResolver(formSchema),
     defaultValues,
@@ -36,9 +37,10 @@ export function useLogin() {
   //
   async function onSubmit(formData: FormSchemaType) {
     // console.log("🚀 ~ onSubmit ~ formData:", formData);
-
     setSubmitting(true);
-    signInWithEmailAndPassword(firebaseAuth, formData.email, formData.password)
+
+    authService
+      .signIn(formData)
       .then((res: UserCredential) => {
         // console.log("🚀 ~ onSubmit ~ res:", res);
         toast.success("Log in successful");
@@ -46,7 +48,7 @@ export function useLogin() {
       })
       .catch((err) => {
         const message = firebaseUtil.translateError(err);
-        toast.error(message, { duration: 5000 });
+        toast.error(message);
       })
       .finally(() => {
         setSubmitting(false);
