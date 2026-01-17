@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ControlledForm } from "@/components/atoms/forms/ui/controlled-form";
 import { ControlledInput } from "@/components/atoms/forms/ui/controlled-input";
 import { ControlledPasswordInput } from "@/components/atoms/forms/ui/controlled-password-input";
-import { SubmitButton } from "@/components/atoms/forms/ui/submit-button";
+import { SubmitButton } from "@/components/atoms/buttons/submit-button";
 import { PATH } from "@/constants/PATH";
 //
 import { AuthLayout } from "@/components/layouts/auth-layout";

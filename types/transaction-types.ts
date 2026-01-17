@@ -28,7 +28,7 @@ enum WalletEnum {
   OPAY = "OPay",
 }
 
-enum LedgerEnum {
+export enum LedgerEnum {
   DEFAULT = "Default",
   SINGAPORE = "Singapore",
   HOUSE_PROJECT = "House Project",

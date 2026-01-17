@@ -17,7 +17,7 @@ export function AppSidebarMenu({ menu }: { menu: IMenu[] }) {
     <SidebarGroup>
       <SidebarGroupContent className="flex flex-col gap-2">
         <SidebarMenu>
-          {menu.map((item) => {
+          {menu.map(({ Icon, ...item }) => {
             const isActive = router.asPath === item.path;
             return (
               <SidebarMenuItem key={item.label}>
@@ -30,7 +30,7 @@ export function AppSidebarMenu({ menu }: { menu: IMenu[] }) {
                         : "hover:bg-muted"
                     }`}
                   >
-                    <item.icon />
+                    <Icon />
                     <span>{item.label}</span>
                   </Link>
                 </SidebarMenuButton>

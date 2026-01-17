@@ -13,7 +13,7 @@ import { PATH } from "./PATH";
 export interface IMenu {
   label: string;
   path: string;
-  icon: LucideIcon;
+  Icon: LucideIcon;
 }
 
 export const MENU = {
@@ -21,39 +21,39 @@ export const MENU = {
     {
       label: "Dashboard",
       path: PATH.dashboard,
-      icon: HouseIcon,
+      Icon: HouseIcon,
     },
     {
       label: "Transactions",
       path: PATH.transactions,
-      icon: ReceiptIcon,
+      Icon: ReceiptIcon,
     },
     {
       label: "Ledgers",
       path: PATH.ledgers,
-      icon: FolderOpenIcon,
+      Icon: FolderOpenIcon,
     },
     {
       label: "Contacts",
       path: PATH.contacts,
-      icon: UsersIcon,
+      Icon: UsersIcon,
     },
   ],
   secondary: [
     {
       label: "Reports",
       path: PATH.reports,
-      icon: ChartCandlestickIcon,
+      Icon: ChartCandlestickIcon,
     },
     {
       label: "Settings",
       path: PATH.settings,
-      icon: SettingsIcon,
+      Icon: SettingsIcon,
     },
     {
       label: "Sign out",
       path: PATH.login,
-      icon: LogOutIcon,
+      Icon: LogOutIcon,
     },
   ],
 };
