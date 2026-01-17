@@ -1,7 +1,6 @@
+import { useRouter } from "next/router";
 import Link from "next/link";
-import { type LucideIcon, PlusCircleIcon } from "lucide-react";
-
-import { Button } from "@/components/shadcn/ui/button";
+//
 import {
   SidebarGroup,
   SidebarGroupContent,
@@ -10,16 +9,15 @@ import {
   SidebarMenuItem,
 } from "@/components/shadcn/ui/sidebar";
 import { IMenu } from "@/constants/MENU";
-import { useRouter } from "next/router";
 
-export function NavMain({ items }: { items: IMenu[] }) {
+export function AppSidebarMenu({ menu }: { menu: IMenu[] }) {
   const router = useRouter();
-
+  //
   return (
     <SidebarGroup>
       <SidebarGroupContent className="flex flex-col gap-2">
         <SidebarMenu>
-          {items.map((item) => {
+          {menu.map((item) => {
             const isActive = router.asPath === item.path;
             return (
               <SidebarMenuItem key={item.label}>
