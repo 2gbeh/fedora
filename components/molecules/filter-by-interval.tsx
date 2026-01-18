@@ -23,7 +23,7 @@ const data = [
 ];
 
 export const FilterByInterval = ({
-  value = "this-year",
+  value = "this-week",
   onChange = () => undefined,
   placeholder = "Interval",
 }: Props) => {

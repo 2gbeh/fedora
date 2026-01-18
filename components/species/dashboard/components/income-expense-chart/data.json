@@ -1,30 +1,30 @@
 {
-  "2026-01-18": [
+  "2026-01-11": [
     { "label": "Income", "value": 0 },
-    { "label": "Expense", "value": 137500 }
+    { "label": "Expense", "value": 0 }
   ],
-  "2026-01-19": [
+  "2026-01-12": [
     { "label": "Income", "value": 0 },
-    { "label": "Expense", "value": 137500 }
+    { "label": "Expense", "value": 9000 }
   ],
-  "2026-01-20": [
+  "2026-01-13": [
     { "label": "Income", "value": 0 },
-    { "label": "Expense", "value": 137500 }
+    { "label": "Expense", "value": 12000 }
   ],
-  "2026-01-21": [
+  "2026-01-14": [
     { "label": "Income", "value": 0 },
-    { "label": "Expense", "value": 137500 }
+    { "label": "Expense", "value": 20000 }
   ],
-  "2026-01-22": [
-    { "label": "Income", "value": 0 },
-    { "label": "Expense", "value": 137500 }
+  "2026-01-15": [
+    { "label": "Income", "value": 100000 },
+    { "label": "Expense", "value": 0 }
   ],
-  "2026-01-23": [
-    { "label": "Income", "value": 0 },
-    { "label": "Expense", "value": 137500 }
+  "2026-01-16": [
+    { "label": "Income", "value": 500000 },
+    { "label": "Expense", "value": 0 }
   ],
-  "2026-01-24": [
+  "2026-01-17": [
     { "label": "Income", "value": 0 },
-    { "label": "Expense", "value": 137500 }
+    { "label": "Expense", "value": 80300 }
   ]
 }

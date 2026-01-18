@@ -12,7 +12,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/shadcn/ui/sidebar";
-import { Skeleton } from "@/components/shadcn/ui/skeleton";
+import { SkeletonUI } from "@/components/atoms/skeleton-ui";
 import { useAuthContext } from "@/hooks/use-auth-context";
 import { PATH } from "@/constants/PATH";
 import { UNKNOWN } from "@/constants/LOCALE";
@@ -63,10 +63,10 @@ const renderProfileSummary = (user: User | null) => {
 const renderProfileSkeleton = () => {
   return (
     <div className="flex-center-start space-x-3">
-      <Skeleton className="h-9 w-9 rounded-full" />
+      <SkeletonUI.Avatar />
       <div className="space-y-2">
-        <Skeleton className="h-3 w-[80px] rounded-sm" />
-        <Skeleton className="h-3 w-[120px] rounded-sm" />
+        <SkeletonUI.Text className="w-[80px]" />
+        <SkeletonUI.Text className="w-[120px]" />
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ export const IncomeExpenseChart = () => {
     <AreaChart
       header={{
         title: "Income & Expense Summary",
-        subtitle: "Sun, Jan 1st - Sat, Dec 31st, 2025.",
+        subtitle: "Sun, Jan 11th - Sat, Jan 17th, 2026",
         rightSection: <FilterByInterval />,
       }}
       config={{
