@@ -1,39 +1,40 @@
-type MoneyHelperConfig = {
+export type MoneyHelperArgs = {
   conversionRate?: number;
   isPrototyping?: boolean;
 };
 
-const CURRENCY = {
+export const CURRENCY = {
   NGN: "₦ ",
   USD: "$ ",
 } as const;
 
 export class MoneyHelper {
-  private readonly conversionRate: number;
-  private readonly isPrototyping: boolean;
+  private readonly _conversionRate: number;
+  private readonly _isPrototyping: boolean;
 
-  constructor({ conversionRate = 1420, isPrototyping = false }: MoneyHelperConfig = {}) {
-    this.conversionRate = conversionRate;
-    this.isPrototyping = isPrototyping;
+  constructor({ conversionRate = 1420, isPrototyping = false }: MoneyHelperArgs = {}) {
+    this._conversionRate = conversionRate;
+    this._isPrototyping = isPrototyping;
   }
 
-  toNumber(input: unknown): number {
+  sanitize(input: unknown): number {
     if (!input) return 0;
     const sanitized = String(input).split(".")[0]?.replaceAll(",", "") ?? "0";
     return Number(sanitized);
   }
 
-  toCSV(input: unknown): string {
-    return this.toNumber(input).toLocaleString();
+  format(input: unknown): string {
+    return this.sanitize(input).toLocaleString();
   }
 
   toNGN(input: unknown): string {
-    return CURRENCY.NGN + this.toCSV(input);
+    if (this._isPrototyping) return this.toUSD(input);
+    return CURRENCY.NGN + this.format(input);
   }
 
   toUSD(input: unknown): string {
-    const ngnValue = this.toNumber(input);
-    const usdValue = ngnValue > 0 ? ngnValue / this.conversionRate : 0;
+    const ngnValue = this.sanitize(input);
+    const usdValue = ngnValue > 0 ? ngnValue / this._conversionRate : 0;
     const [whole, decimal = "00"] = usdValue.toFixed(2).split(".");
     return `${CURRENCY.USD}${Number(whole).toLocaleString()}.${decimal}`;
   }

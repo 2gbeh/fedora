@@ -5,11 +5,9 @@ export const PATH = {
   forgotPassword: "/forgot-password",
   createPassword: "/create-password",
   //
+  dashboard: "/dashboard",
   profile: "/profile",
   settings: "/settings",
-  //
-  dashboard: "/dashboard",
-  reports: "/dashboard/reports",
   //
   transactions: "/transactions",
   //
@@ -18,4 +16,6 @@ export const PATH = {
   //
   contacts: "/contacts",
   contactTransactions: (id: string) => `/contacts/${id}/transactions`,
+  // 
+  reports: "/reports",
 };

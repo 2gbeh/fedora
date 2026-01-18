@@ -1,4 +1,10 @@
-import { ListType, SeriesType, EnumType, ModelType } from "@/types/common-types";
+import { ListType, SeriesType, EnumType } from "@/types/common-types";
+
+type ModelType = {
+  id: number | string;
+  name?: string;
+  title?: string;
+};
 
 function fromList(arr: ListType | SeriesType) {
   return arr.map((item) => ({
@@ -15,7 +21,10 @@ function fromIndexedList(arr: ListType | SeriesType) {
 }
 
 function fromEnum(obj: EnumType) {
-  return Object.entries(obj).map(([key, value]) => ({ value: key, label: String(value), }));
+  return Object.entries(obj).map(([key, value]) => ({
+    value: key,
+    label: String(value),
+  }));
 }
 
 function fromCollection(arr: ModelType[]) {
@@ -38,4 +47,4 @@ export const selectorUtil = {
   fromEnum,
   fromCollection,
   fromCollectionWithTitle,
-}
+};

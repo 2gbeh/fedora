@@ -1,18 +1,20 @@
-import { KpiCard } from "@/components/atoms/charts/kpi-card";
+import { TrendingDownIcon, TrendingUpIcon } from "lucide-react";
+import { KpiCardContainer, KpiCard } from "@/components/atoms/charts/kpi-card";
 import { MoneyHelper } from "@/utils/helpers/money-helper";
 
 export const KpiCards = () => {
-  const money = new MoneyHelper({
-    // conversionRate: 1450,
-    // isPrototyping: false,
-  });
+  const money = new MoneyHelper({ isPrototyping: false });
   //
   return (
-    <div className="*:data-[slot=card]:shadow-xs grid grid-cols-1 gap-4 px-4 py-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card md:grid-cols-2 lg:grid-cols-4 lg:px-6">
+    <KpiCardContainer>
       <KpiCard
         label="Annual Income"
         value={money.toNGN(9600000)}
-        badge={{ value: "+1.5%", negative: false }}
+        badge={{
+          value: "+1.5%",
+          variant: "success",
+          Icon: TrendingUpIcon,
+        }}
         meta={{
           label: "Average monthly income",
           value: money.toNGN(800000),
@@ -21,7 +23,11 @@ export const KpiCards = () => {
       <KpiCard
         label="Annual Expense"
         value={money.toNGN(6600000)}
-        badge={{ value: "-0.9%", negative: true }}
+        badge={{
+          value: "-0.9%",
+          variant: "danger",
+          Icon: TrendingDownIcon,
+        }}
         meta={{
           label: "Average monthly expense",
           value: money.toNGN(550000),
@@ -30,7 +36,11 @@ export const KpiCards = () => {
       <KpiCard
         label="Monthly Income"
         value={money.toNGN(800000)}
-        badge={{ value: "+1.9%", negative: false }}
+        badge={{
+          value: "+1.9%",
+          variant: "success",
+          Icon: TrendingUpIcon,
+        }}
         meta={{
           label: "Average hourly rate",
           value: `${money.toNGN(5000)} (~${money.toUSD(5000)})`,
@@ -39,12 +49,21 @@ export const KpiCards = () => {
       <KpiCard
         label="Monthly Expense"
         value={money.toNGN(480000)}
-        badge={{ value: "+9.2%", negative: false }}
+        badge={{
+          value: "+9.2%",
+          variant: "success",
+          Icon: TrendingUpIcon,
+        }}
         meta={{
-          label: "Essential % Unplanned",
-          value: `${money.toNGN(455000)} % ${money.toCSV(25000)}`,
+          label: "Actual vs. Unplanned",
+          value: (
+            <div className="flex-center-start gap-2">
+              <span className="text-indigo-500">{money.toNGN(455000)}</span>
+              <span className="text-amber-500">{money.format(25000)}</span>
+            </div>
+          ),
         }}
       />
-    </div>
+    </KpiCardContainer>
   );
 };

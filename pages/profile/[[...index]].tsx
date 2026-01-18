@@ -32,12 +32,12 @@ export default function ProfilePage() {
         </Button>
       }
     >
-      <div className="max-w-md px-6">
+      <div className="max-w-md _px-6">
         <Tabs
           defaultValue="profile"
-          className="flex flex-col justify-start gap-4"
+          className=""
         >
-          <TabsList className="justify-start text-foreground">
+          <TabsList className="justify-start text-foreground mb-2.5">
             <TabsTrigger value="profile" className="!bg-white">
               Edit Profile
             </TabsTrigger>

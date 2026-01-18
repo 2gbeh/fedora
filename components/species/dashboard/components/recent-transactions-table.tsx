@@ -12,7 +12,7 @@ export const RecentTransactionsTable = () => {
   //
   return (
     <div className="grid gap-2">
-      <div className="flex-center-between px-6">
+      <div className="flex-center-between _px-6">
         <h1 className="font-semibold leading-none tracking-tight">
           Recent Transactions
         </h1>
