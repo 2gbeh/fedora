@@ -12,7 +12,7 @@ export const FilterByYear = ({ onChange }: Props) => {
     <SelectInput
       options={[{ value: "All", label: "All" }, ...mockOptions]}
       defaultValue="2025"
-      placeholder="Ledger"
+      placeholder="Year"
     />
   );
 };
