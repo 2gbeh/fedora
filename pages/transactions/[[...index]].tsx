@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { PlusIcon } from "lucide-react";
-
-//
-import { Button } from "@/components/shadcn/ui/button";
-
-//
+// 
 import { DashboardLayout } from "@/components/layouts/dashboard-layout";
+import { ActionButton } from "@/components/atoms/buttons/action-button";
+// 
 import { TransactionsTable } from "@/components/species/transactions/ui/transactions-table";
 import { CreateTransactionOffcanvas } from "@/components/species/transactions/ui/create-transaction-offcanvas";
 import data from "@/data/fake-transactions.json";
@@ -18,10 +16,11 @@ export default function TransactionsPage() {
       pageDisplayTitle="Transactions"
       breadcrumbs={[{ label: "Default Ledger" }]}
       rightSection={
-        <Button size="sm" onClick={() => setOpen(true)}>
-          <PlusIcon />
-          <span className="hidden lg:inline">Add New</span>
-        </Button>
+        <ActionButton
+          onClick={() => setOpen(true)}
+          LeftIcon={PlusIcon}
+          label="Add New"
+        />
       }
     >
       <TransactionsTable data={data} />

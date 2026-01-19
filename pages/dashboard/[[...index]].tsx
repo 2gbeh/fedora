@@ -54,7 +54,7 @@ export default function DashboardPage() {
       }
     >
       <KpiCards />
-      {/* <LazyIncomeExpenseChart /> */}
+      <LazyIncomeExpenseChart />
       <LazyRecentTransactionsTable />
     </DashboardLayout>
   );

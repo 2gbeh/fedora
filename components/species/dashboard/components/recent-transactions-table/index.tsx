@@ -20,7 +20,7 @@ export const RecentTransactionsTable = () => {
   const router = useRouter();
   //
   return (
-    <div className="grid gap-4">
+    <div className="grid gap-2.5">
       <div className="flex-center-between">
         <h1 className="font-semibold leading-none tracking-tight">
           Recent Transactions
@@ -33,22 +33,20 @@ export const RecentTransactionsTable = () => {
       </div>
       <TableUI.Container>
         <TableUI.HeaderRow hasAction>
-          <TableHead>Date</TableHead>
           <TableHead>Contact Name</TableHead>
           <TableHead className="text-right">Amount</TableHead>
           <TableHead>Narration</TableHead>
           <TableHead>Category</TableHead>
+          <TableHead>Date</TableHead>
         </TableUI.HeaderRow>
         <TableBody>
           {data.map((item, i) => (
             <TableRow key={item.invoice}>
-              <TableCell className="h-12">{item.invoice}</TableCell>
-              <TableCell className="font-medium">
-                {item.paymentMethod}
-              </TableCell>
+              <TableUI.CellAvatarBio name="Sunday Bike" email="Aduwa Daam" />
               <TableCell className="text-right">{item.totalAmount}</TableCell>
               <TableCell>{item.paymentMethod}</TableCell>
               <TableUI.CellBadge>{item.paymentStatus}</TableUI.CellBadge>
+              <TableCell className="h-12">{item.invoice}</TableCell>
               <TableCellAction
                 menu={[
                   { label: "Receipt", value: "Receipt", disabled: true },

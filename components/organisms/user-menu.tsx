@@ -15,7 +15,7 @@ import {
 import { SkeletonUI } from "@/components/atoms/skeleton-ui";
 import { useAuthContext } from "@/hooks/use-auth-context";
 import { PATH } from "@/constants/PATH";
-import { UNKNOWN } from "@/constants/LOCALE";
+import { UNKNOWN, HYPHENS } from "@/constants/LOCALE";
 
 export function UserMenu() {
   const router = useRouter();
@@ -42,19 +42,21 @@ export function UserMenu() {
 const renderProfileSummary = (user: User | null) => {
   return (
     <>
-      <Avatar className="h-8 w-8 rounded-full">
+      <Avatar className="size-8 rounded-full">
         <AvatarImage src={user?.photoURL || undefined} />
-        <AvatarFallback className="rounded-lg">
-          {(user?.displayName || UNKNOWN).slice(0, 2).toUpperCase()}
+        <AvatarFallback>
+          {(user?.displayName || UNKNOWN).charAt(0).toUpperCase()}
         </AvatarFallback>
       </Avatar>
-      <div className="grid flex-1 text-left text-sm leading-tight">
+      <div className="grid text-sm leading-tight">
         <span className="truncate font-medium">
-          {user?.displayName || UNKNOWN}
+          {user?.displayName || HYPHENS}
         </span>
-        <span className="truncate text-xs text-muted-foreground">
-          {user?.email || UNKNOWN}
-        </span>
+        {user?.email ? (
+          <span className="truncate text-xs text-muted-foreground">
+            {user.email}
+          </span>
+        ) : null}
       </div>
     </>
   );
