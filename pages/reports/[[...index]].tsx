@@ -14,8 +14,8 @@ import { KpiCards } from "@/components/species/dashboard/components/kpi-cards";
 import { IncomeExpenseChart } from "@/components/species/dashboard/components/income-expense-chart";
 import { PATH } from "@/constants/PATH";
 //
-import { ChartBarClusteredColumn } from "@/components/species/dashboard/ui/chart-clustered-column";
 import { KpiCards as ReportsKpiCards } from "@/components/species/reports/components/kpi-cards";
+import { ClusteredColumnChart } from "@/components/atoms/charts/clustered-column-chart";
 
 export default function ReportsPage() {
   const router = useRouter();
@@ -50,7 +50,7 @@ export default function ReportsPage() {
         </TabsContent>
         <TabsContent value="password" className="grid gap-4 lg:gap-6">
           <ReportsKpiCards />
-          <ChartBarClusteredColumn />
+          <ClusteredColumnChart />
         </TabsContent>
       </Tabs>
     </DashboardLayout>

@@ -8,7 +8,7 @@ import { Button } from "@/components/shadcn/ui/button";
 import { DashboardLayout } from "@/components/layouts/dashboard-layout";
 import { TransactionsTable } from "@/components/species/transactions/ui/transactions-table";
 import { CreateTransactionOffcanvas } from "@/components/species/transactions/ui/create-transaction-offcanvas";
-import data from "@/components/species/dashboard/data.json";
+import data from "@/data/fake-transactions.json";
 
 export default function TransactionsPage() {
   const [open, setOpen] = useState(false);

@@ -44,7 +44,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function ChartBarClusteredColumn() {
+export function ClusteredColumnChart() {
   return (
     <Card>
       <CardHeader>

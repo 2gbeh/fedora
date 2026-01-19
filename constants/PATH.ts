@@ -4,6 +4,7 @@ export const PATH = {
   loginPin: "/login/pin",
   forgotPassword: "/forgot-password",
   createPassword: "/create-password",
+  verifyEmail: "/verify-email",
   //
   dashboard: "/dashboard",
   profile: "/profile",
