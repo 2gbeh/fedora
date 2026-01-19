@@ -12,7 +12,7 @@ import { PaginationPageSelector } from "@/components/atoms/tables/pagination-pag
 interface TransactionDto {
   invoice: string;
   paymentStatus: string;
-  totalAmount: string;
+  totalAmount: number;
   paymentMethod: string;
 }
 
@@ -35,7 +35,11 @@ export const TransactionsTable = ({ data }: Props) => {
           {data.map((item, i) => (
             <TableRow key={item.invoice}>
               <TableUI.CellAvatarBio name="Sunday Bike" email="Aduwa Daam" />
-              <TableCell className="text-right">{item.totalAmount}</TableCell>
+              <TableUI.CellAmount
+                variant={item.totalAmount > 500 ? "success" : undefined}
+              >
+                {item.totalAmount}
+              </TableUI.CellAmount>
               <TableCell>{item.paymentMethod}</TableCell>
               <TableUI.CellBadge>{item.paymentStatus}</TableUI.CellBadge>
               <TableCell className="h-12">{item.invoice}</TableCell>

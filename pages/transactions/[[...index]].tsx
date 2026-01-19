@@ -30,9 +30,9 @@ export default function TransactionsPage() {
       <div className="flex-center-between">
         <SearchInput className="w-full sm:w-auto" />
         <div className="flex-center-start gap-4">
-          <FilterByLedger />
-          <FilterByCategory />
-          <SortByTransactionField />
+          <FilterByLedger withLabel />
+          <FilterByCategory withLabel />
+          <SortByTransactionField withLabel />
         </div>
       </div>
       <TransactionsTable data={data} />

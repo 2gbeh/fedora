@@ -58,8 +58,8 @@ export const KpiCards = () => {
           label: "Actual vs. Unplanned",
           value: (
             <div className="flex-center-start gap-2">
-              <span className="text-indigo-500">{money.toNGN(455000)}</span>
-              <span className="text-amber-500">{money.format(25000)}</span>
+              <span className="text-indigo-600">{money.toNGN(455000)}</span>
+              <span className="text-amber-600">{money.format(25000)}</span>
             </div>
           ),
         }}

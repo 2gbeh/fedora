@@ -14,12 +14,12 @@ const Container = ({ children }: PropsWithChildren) => {
   );
 };
 
-interface Props {
+interface SelectedRowsCaptionProps {
   selected?: number;
   total?: number;
 }
 
-const SelectedRowsCaption = ({ selected = 1, total = 10 }: Props) => {
+const SelectedRowsCaption = ({ selected = 1, total = 10 }: SelectedRowsCaptionProps) => {
   return (
     <div className="hidden text-sm text-muted-foreground lg:flex">
       {selected} of {total} row(s) selected.
@@ -29,11 +29,11 @@ const SelectedRowsCaption = ({ selected = 1, total = 10 }: Props) => {
 
 const PAGE_SIZES = [10, 25, 50, 75, 100];
 
-interface Props {
+interface SizeSelectorProps {
   defaultValue?: (typeof PAGE_SIZES)[number];
 }
 
-const SizeSelector = ({ defaultValue = 10 }: Props) => {
+const SizeSelector = ({ defaultValue = 10 }: SizeSelectorProps) => {
   return (
     <div className="hidden items-center gap-2 lg:flex">
       <Label htmlFor="rows-per-page" className="text-sm text-muted-foreground">

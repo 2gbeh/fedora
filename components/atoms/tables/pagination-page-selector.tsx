@@ -62,7 +62,7 @@ export const PaginationPageSelector = ({ page = 1, pages = 10 }: Props) => {
   );
 };
 
-interface Props extends PropsWithChildren {
+interface PaginationItemButtonProps extends PropsWithChildren {
   title?: string;
   onClick?: () => void;
   disabled?: boolean;
@@ -73,7 +73,7 @@ const PaginationItemButton = ({
   title,
   disabled,
   onClick,
-}: Props) => {
+}: PaginationItemButtonProps) => {
   return (
     <PaginationItem>
       <Button
