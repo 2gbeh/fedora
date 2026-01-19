@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { PlusIcon } from "lucide-react";
-// 
+//
 import { DashboardLayout } from "@/components/layouts/dashboard-layout";
 import { ActionButton } from "@/components/atoms/buttons/action-button";
-// 
-import { TransactionsTable } from "@/components/species/transactions/ui/transactions-table";
-import { CreateTransactionOffcanvas } from "@/components/species/transactions/ui/create-transaction-offcanvas";
-import data from "@/data/fake-transactions.json";
+import { SearchInput } from "@/components/atoms/forms/ui/search-input";
+import { FilterByLedger } from "@/components/molecules/filter-by-ledger";
+import { FilterByCategory } from "@/components/molecules/filter-by-category";
+import { SortByTransactionField } from "@/components/molecules/sort-by-transaction-field";
+//
+import { TransactionsTable } from "@/components/molecules/transactions-table";
+import { CreateTransactionOffcanvas } from "@/components/species/transactions/components/create-transaction-offcanvas";
+import data from "@/data/fake-transactions-page-1.json";
 
 export default function TransactionsPage() {
   const [open, setOpen] = useState(false);
@@ -23,6 +27,14 @@ export default function TransactionsPage() {
         />
       }
     >
+      <div className="flex-center-between">
+        <SearchInput className="w-full sm:w-auto" />
+        <div className="flex-center-start gap-4">
+          <FilterByLedger />
+          <FilterByCategory />
+          <SortByTransactionField />
+        </div>
+      </div>
       <TransactionsTable data={data} />
       <CreateTransactionOffcanvas open={open} onClose={() => setOpen(false)} />
     </DashboardLayout>

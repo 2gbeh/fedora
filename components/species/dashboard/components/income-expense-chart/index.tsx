@@ -1,6 +1,6 @@
 import { AreaChart } from "@/components/atoms/charts/area-chart";
-import { FilterByInterval } from "@/components/molecules/filter-by-interval";
-import data from "./data.json";
+import { FilterByTimePeriod } from "@/components/molecules/filter-by-time-period";
+import data from "@/data/fake-transactions-weekly.json";
 
 export const IncomeExpenseChart = () => {
   return (
@@ -8,7 +8,7 @@ export const IncomeExpenseChart = () => {
       header={{
         title: "Income & Expense Summary",
         subtitle: "Sun, Jan 11th - Sat, Jan 17th, 2026",
-        rightSection: <FilterByInterval />,
+        rightSection: <FilterByTimePeriod />,
       }}
       config={{
         Income: "hsl(var(--chart-2))",

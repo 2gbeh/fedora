@@ -2,14 +2,14 @@ import { useState } from "react";
 import { PlusIcon } from "lucide-react";
 //
 import { Button } from "@/components/shadcn/ui/button";
-import { TransactionsTable } from "@/components/species/transactions/ui/transactions-table";
+import { TransactionsTable } from "@/components/species/transactions/components/transactions-table";
 //
 import { DashboardLayout } from "@/components/layouts/dashboard-layout";
 import { LedgersTable } from "@/components/species/ledgers/ui/ledgers-table";
 import { CreateLedgerModal } from "@/components/species/ledgers/ui/create-ledger-modal";
 import data from "@/components/species/dashboard/data.json";
 import { PATH } from "@/constants/PATH";
-import { CreateTransactionOffcanvas } from "@/components/species/transactions/ui/create-transaction-offcanvas";
+import { CreateTransactionOffcanvas } from "@/components/species/transactions/components/create-transaction-offcanvas";
 
 export default function LedgerTransactionsPage() {
   const [open, setOpen] = useState(false);

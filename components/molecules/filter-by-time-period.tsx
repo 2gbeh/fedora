@@ -22,7 +22,7 @@ const data = [
   { value: "this-year", label: "This Year" },
 ];
 
-export const FilterByInterval = ({
+export const FilterByTimePeriod = ({
   value = "this-week",
   onChange = () => undefined,
   placeholder = "Interval",

@@ -1,3 +1,10 @@
+export enum TransactionFieldEnum {
+  DATE = "Date",
+  TYPE = "Type",
+  CONTACT_NAME = "Contact Name",
+  AMOUNT = "Amount",
+}
+
 export enum TransactionTypeEnum {
   INCOME = "Income",
   EXPENSE = "Expense",

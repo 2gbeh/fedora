@@ -2,7 +2,7 @@ import { useState } from "react";
 import { PlusIcon } from "lucide-react";
 //
 import { Button } from "@/components/shadcn/ui/button";
-import { TransactionsTable } from "@/components/species/transactions/ui/transactions-table";
+import { TransactionsTable } from "@/components/species/transactions/components/transactions-table";
 //
 import { DashboardLayout } from "@/components/layouts/dashboard-layout";
 import { LedgersTable } from "@/components/species/ledgers/ui/ledgers-table";
@@ -14,7 +14,7 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/components/shadcn/ui/avatar";
-import { CreateTransactionOffcanvas } from "@/components/species/transactions/ui/create-transaction-offcanvas";
+import { CreateTransactionOffcanvas } from "@/components/species/transactions/components/create-transaction-offcanvas";
 
 export default function ContactTransactionsPage() {
   const [open, setOpen] = useState(false);
