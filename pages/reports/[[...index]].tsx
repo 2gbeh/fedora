@@ -9,13 +9,13 @@ import {
 } from "@/components/shadcn/ui/tabs";
 import { DashboardLayout } from "@/components/layouts/dashboard-layout";
 import { ActionButton } from "@/components/atoms/buttons/action-button";
-import { FilterByYear } from "@/components/molecules/filter-by-year";
+import { ClusteredColumnChart } from "@/components/atoms/charts/clustered-column-chart";
 import { KpiCards } from "@/components/species/dashboard/components/kpi-cards";
 import { IncomeExpenseChart } from "@/components/species/dashboard/components/income-expense-chart";
+import { FilterByYear } from "@/components/species/transactions/components/filter-by-year";
 import { PATH } from "@/constants/PATH";
 //
 import { KpiCards as ReportsKpiCards } from "@/components/species/reports/components/kpi-cards";
-import { ClusteredColumnChart } from "@/components/atoms/charts/clustered-column-chart";
 
 export default function ReportsPage() {
   const router = useRouter();

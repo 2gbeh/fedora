@@ -1,5 +1,5 @@
 import { AreaChart } from "@/components/atoms/charts/area-chart";
-import { FilterByTimePeriod } from "@/components/molecules/filter-by-time-period";
+import { FilterByTimePeriod } from "../filter-by-time-period";
 import data from "@/data/fake-transactions-weekly.json";
 
 export const IncomeExpenseChart = () => {

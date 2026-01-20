@@ -5,7 +5,7 @@ interface IPrototyping {
   portal?: number | boolean;
 }
 
-export const PROTOTYPING = {
+export const MOCK = {
   splash: {
     loader: 0,
   },

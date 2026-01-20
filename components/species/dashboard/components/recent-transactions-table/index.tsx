@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { ArrowUpRightIcon } from "lucide-react";
 //
 import { ActionButton } from "@/components/atoms/buttons/action-button";
-import { TransactionsTable } from "@/components/molecules/transactions-table";
+import { TransactionsTable } from "@/components/species/transactions/components/transactions-table";
 import { PATH } from "@/constants/PATH";
 //
 import data from "@/data/fake-transactions-page-1.json";

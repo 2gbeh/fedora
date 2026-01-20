@@ -25,7 +25,7 @@ const defaultValues = MOCK.auth.formData
     }
   : { email: "", password: "" };
 
-export function useLogin() {
+export function useCreateTransaction() {
   const router = useRouter();
   const toast = useToast();
   const form = useForm<FormSchemaType>({

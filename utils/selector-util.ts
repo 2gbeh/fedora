@@ -1,4 +1,4 @@
-import { ListType, SeriesType, EnumType } from "@/types/common-types";
+import { ListType, SeriesType, EnumType } from "@/types";
 
 type ModelType = {
   id: number | string;

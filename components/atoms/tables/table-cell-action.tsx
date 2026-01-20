@@ -10,7 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/shadcn/ui/dropdown-menu";
-import { OptionType } from "@/types/common-types";
+import { OptionType } from "@/types";
 
 type MenuType = OptionType & { separator?: boolean };
 

@@ -36,19 +36,11 @@ export function CreateTransactionOffcanvas({
             <Input id="sheet-demo-name" defaultValue="Default" />
           </div>
           <div className="grid gap-3">
-            <Label htmlFor="sheet-demo-name">Select Wallet *</Label>
-            <Input id="sheet-demo-name" defaultValue="OPay" />
-          </div>
-          <div className="grid gap-3">
             <Label htmlFor="sheet-demo-name">Transaction Date</Label>
             <Input
               id="sheet-demo-name"
               defaultValue={new Date().toISOString().slice(0, 10)}
             />
-          </div>
-          <div className="grid gap-3">
-            <Label htmlFor="sheet-demo-name">Select Type</Label>
-            <Input id="sheet-demo-name" defaultValue="Expense" />
           </div>
           <div className="grid gap-3">
             <Label htmlFor="sheet-demo-username">Contact Name *</Label>
@@ -63,6 +55,10 @@ export function CreateTransactionOffcanvas({
             <Input id="sheet-demo-username" placeholder="Ex. Fuel" />
           </div>
           <div className="grid gap-3">
+            <Label htmlFor="sheet-demo-name">Select Type</Label>
+            <Input id="sheet-demo-name" defaultValue="Expense" />
+          </div>
+          <div className="grid gap-3">
             <Label htmlFor="sheet-demo-username">Select Categories *</Label>
             <Input
               id="sheet-demo-username"
@@ -70,15 +66,19 @@ export function CreateTransactionOffcanvas({
             />
           </div>
           <div className="grid gap-3">
-            <Label htmlFor="sheet-demo-name">Upload Receipt</Label>
-            <Input id="sheet-demo-name" placeholder="Select file" />
-          </div>
-          <div className="grid gap-3">
             <Label htmlFor="sheet-demo-name">Select Tags</Label>
             <Input
               id="sheet-demo-name"
               placeholder="Ex. Draft | Frivolous"
             />
+          </div>
+          <div className="grid gap-3">
+            <Label htmlFor="sheet-demo-name">Select Wallet *</Label>
+            <Input id="sheet-demo-name" defaultValue="OPay" />
+          </div>
+          <div className="grid gap-3">
+            <Label htmlFor="sheet-demo-name">Upload Receipt</Label>
+            <Input id="sheet-demo-name" placeholder="Select file" />
           </div>
         </div>
         <SheetFooter className="mt-5">

@@ -6,7 +6,7 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/shadcn/ui/select";
-import { OptionType } from "@/types/common-types";
+import { OptionType } from "@/types";
 
 interface Props {
   name: string;
@@ -31,10 +31,7 @@ export const SelectInput = ({
         </Label>
       ) : null}
       <Select defaultValue={defaultValue}>
-        <SelectTrigger
-          className="@4xl/main:hidden flex w-fit"
-          id={name}
-        >
+        <SelectTrigger className="@4xl/main:hidden flex w-fit" id={name}>
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
         <SelectContent>

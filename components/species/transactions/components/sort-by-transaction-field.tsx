@@ -1,6 +1,6 @@
-import { SelectInput } from "../atoms/forms/ui/select-input";
+import { SelectInput } from "@/components/atoms/forms/ui/select-input";
+import { TransactionFieldEnum } from "@/types/enums/transaction-enum";
 import { selectorUtil } from "@/utils/selector-util";
-import { TransactionFieldEnum } from "@/types/transaction-types";
 
 const mockOptions = selectorUtil.fromEnum(TransactionFieldEnum);
 

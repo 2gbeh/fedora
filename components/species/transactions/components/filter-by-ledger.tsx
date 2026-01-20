@@ -1,8 +1,8 @@
-import { SelectInput } from "../atoms/forms/ui/select-input";
+import { SelectInput } from "@/components/atoms/forms/ui/select-input";
 import { selectorUtil } from "@/utils/selector-util";
-import { LedgerEnum } from "@/types/transaction-types";
+import { LedgerNameEnum } from "@/types/enums/ledger-enum";
 
-const mockOptions = selectorUtil.fromEnum(LedgerEnum);
+const mockOptions = selectorUtil.fromEnum(LedgerNameEnum);
 
 interface Props {
   withLabel?: boolean;
