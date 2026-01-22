@@ -4,6 +4,7 @@
 
 @import "./theme.css";
 @import "./container.css";
+@import "./scrollbar.css";
 
 :root {
   --background: #ffffff;

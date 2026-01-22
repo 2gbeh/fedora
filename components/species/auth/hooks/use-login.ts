@@ -12,8 +12,8 @@ import { PATH } from "@/constants/PATH";
 import { MOCK } from "@/constants/MOCK";
 
 const formSchema = z.object({
-  email: zodUtil.email,
-  password: zodUtil.generatedPassword,
+  email: zodUtil.email(),
+  password: zodUtil.password(),
 });
 
 type FormSchemaType = z.infer<typeof formSchema>;
@@ -23,7 +23,7 @@ const defaultValues = MOCK.auth.formData
       email: process.env.NEXT_PUBLIC_FIREBASE_USER_EMAIL,
       password: process.env.NEXT_PUBLIC_FIREBASE_USER_PASSWORD,
     }
-  : { email: "", password: "" };
+  : {};
 
 export function useLogin() {
   const router = useRouter();

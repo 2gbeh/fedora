@@ -9,7 +9,7 @@ interface Props extends PropsWithChildren {
 
 export const SubmitButton = ({ children, submitting }: Props) => {
   return (
-    <Button type="submit">
+    <Button>
       {submitting && <Spinner />}
       {children}
     </Button>

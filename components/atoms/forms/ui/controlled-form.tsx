@@ -10,7 +10,7 @@ export const ControlledForm = ({ children, onSubmit, disabled }: Props) => {
   return (
     <form onSubmit={onSubmit}>
       <fieldset disabled={disabled}>
-        <FieldGroup>{children} </FieldGroup>
+        <FieldGroup>{children}</FieldGroup>
       </fieldset>
     </form>
   );

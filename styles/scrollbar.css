@@ -1,0 +1,30 @@
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #cecdd0;
+  border-radius: 10px;
+  height: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: #a1a0a3;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #cfcfcf;
+  border-radius: 10px;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Handle on hover */
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: #a1a0a3;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: #a1a0a3;
+}

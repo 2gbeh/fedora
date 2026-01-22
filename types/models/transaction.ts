@@ -8,7 +8,7 @@ import { BaseAuditModel } from "./base";
 
 export interface TransactionModel extends BaseAuditModel {
   date: string;
-  ledgerId: string;
+  ledgerId?: string | null;
   contactId: string;
   type: TransactionTypeEnum;
   amount: number;
@@ -17,7 +17,7 @@ export interface TransactionModel extends BaseAuditModel {
   categories: TransactionCategoryEnum[]; // church, utilities
   tags?: TransactionTagEnum[] | null; // draft, unplanned
   wallet?: WalletEnum | null;
-  receiptId?: string | null;
+  receiptUrl?: string | null;
 }
 
 interface AmountSplit {

@@ -1,4 +1,5 @@
 import { Control, FieldValues, Path } from "react-hook-form";
+import { OptionType } from "@/types";
 
 export interface ControlledInputProps<T extends FieldValues> {
   control: Control<T>;
@@ -6,4 +7,8 @@ export interface ControlledInputProps<T extends FieldValues> {
   label: string;
   type?: string;
   placeholder?: string;
+  // 
+  required?: boolean;
+  options?: OptionType[];
+  datalist?: string[];
 }

@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Controller, FieldValues } from "react-hook-form";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
-// 
+//
 import { Field, FieldError, FieldLabel } from "@/components/shadcn/ui/field";
 import { Input } from "@/components/shadcn/ui/input";
 //
+import { ControlledLabel } from "./controlled-label";
 import { ControlledInputProps } from "../types";
 
 interface Props<T extends FieldValues> extends ControlledInputProps<T> {
@@ -17,10 +18,11 @@ export const ControlledPasswordInput = <T extends FieldValues>({
   label,
   labelRightSection,
   placeholder = "**** ****",
+  required,
 }: Props<T>) => {
   const [showPassword, setShowPassword] = useState(false);
   const toggleShowPassword = () => setShowPassword((prev) => !prev);
-// 
+  //
   return (
     <Controller
       name={name}
@@ -28,7 +30,9 @@ export const ControlledPasswordInput = <T extends FieldValues>({
       render={({ field, fieldState }) => (
         <Field className="gap-2">
           <div className="flex-center-between">
-            <FieldLabel htmlFor={name}>{label}</FieldLabel>
+            <ControlledLabel name={name} required={required}>
+              {label}
+            </ControlledLabel>
             {labelRightSection}
           </div>
           <div className="relative">

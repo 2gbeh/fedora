@@ -1,24 +1,40 @@
 import { z } from "zod";
+import { IMAGE_FILE_SIZE, IMAGE_MIME_TYPE } from "@/constants/LOCALE";
+
 export { z } from "zod";
 
 export const zodUtil = {
-  email: z.email("Invalid email address."),
-  strongPassword: z
-    .string()
-    .min(8, "Password must be at least 8 characters.")
-    .regex(/[A-Z]/, "Password must contain at least one uppercase letter.")
-    .regex(/[a-z]/, "Password must contain at least one lowercase letter.")
-    .regex(/[0-9]/, "Password must contain at least one number.")
-    .regex(
-      /[^A-Za-z0-9]/,
-      "Password must contain at least one special character.",
-    ),
-  generatedPassword: z
-    .string()
-    .min(8, "Password must be at least 8 characters.")
-    .regex(/[A-Z]/, "Password must contain at least one uppercase letter.")
-    .regex(/[a-z]/, "Password must contain at least one lowercase letter.")
-    .regex(/[0-9]/, "Password must contain at least one number.")
+  email: () => z.email("Invalid email address."),
+  password: () =>
+    z
+      .string()
+      .min(8, "Password must be at least 8 characters.")
+      .regex(/[A-Z]/, "Password must contain at least one uppercase letter.")
+      .regex(/[a-z]/, "Password must contain at least one lowercase letter.")
+      .regex(/[0-9]/, "Password must contain at least one number."),
+  strongPassword: () =>
+    z
+      .string()
+      .min(8, "Password must be at least 8 characters.")
+      .regex(/[A-Z]/, "Password must contain at least one uppercase letter.")
+      .regex(/[a-z]/, "Password must contain at least one lowercase letter.")
+      .regex(/[0-9]/, "Password must contain at least one number.")
+      .regex(
+        /[^A-Za-z0-9]/,
+        "Password must contain at least one special character.",
+      ),
+  imageFile: () =>
+    z
+      .instanceof(File)
+      .optional()
+      .refine(
+        (file) => !file || file.size <= IMAGE_FILE_SIZE,
+        `Image file size is greater than ${IMAGE_FILE_SIZE}MB`,
+      )
+      .refine(
+        (file) => !file || IMAGE_MIME_TYPE.includes(file.type),
+        "Only (.jpeg, .png) file extension allowed",
+      ),
 };
 
 /**
@@ -27,7 +43,7 @@ z.string().nullish();
 
 z.string().nullable(); 
 // Accepts: "hello", null ❌ Not undefined
-*/
+
 
 class ZodFacade {
   static text(options?: { minLen?: number; maxLen?: number }) {
@@ -40,11 +56,6 @@ class ZodFacade {
     return z.string().min(minLen).max(maxLen);
   }
 
-  static email(options?: { message?: string }) {
-    const { message = "Invalid email address" } = options ?? {};
-    return z.string().email({ message });
-  }
-
   static tel(options?: { message?: string }) {
     const { message = "Invalid telephone number" } = options ?? {};
     return z
@@ -52,18 +63,6 @@ class ZodFacade {
       .min(10, { message: "Phone number is too short" })
       .max(15, { message: "Phone number is too long" })
       .regex(/^\+?[0-9]+$/, { message });
-  }
-
-  static strongPassword(options?: {}) {
-    return z
-      .string()
-      .min(8, { message: "Password must be at least 8 characters" })
-      .regex(/[a-z]/, { message: "Password must include a lowercase letter" })
-      .regex(/[A-Z]/, { message: "Password must include an uppercase letter" })
-      .regex(/[0-9]/, { message: "Password must include a number" })
-      .regex(/[^a-zA-Z0-9]/, {
-        message: "Password must include a special character",
-      });
   }
 
   static money(options?: { message?: string }) {
@@ -102,21 +101,6 @@ class ZodFacade {
       .refine((url) => /\.(jpg|jpeg|png|gif|bmp|webp|svg)$/i.test(url));
   }
 
-  static imageFile(options?: { size?: number }) {
-    const { size = 5 } = options ?? {};
-    return z
-      .instanceof(File)
-      .refine((file) => file.size > 0, {
-        message: "File is required",
-      })
-      .refine((file) => file.size <= size * 1024 * 1024, {
-        message: "Invalid file size",
-      })
-      .refine((file) => file.type.startsWith("image/"), {
-        message: "Invalid file type",
-      });
-  }
-
   static reactNativeFile(options?: { size?: number }) {
     const { size = 5 } = options ?? {};
     return z.object({
@@ -127,3 +111,4 @@ class ZodFacade {
     });
   }
 }
+*/
