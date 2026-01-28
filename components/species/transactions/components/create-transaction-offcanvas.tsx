@@ -21,7 +21,7 @@ import {
   useCreateTransaction,
 } from "../hooks/use-create-transaction";
 import { ControlledForm } from "@/components/atoms/forms/ui/controlled-form";
-import { CUR_DATE, DEFAULT_LEDGER, NAIRA } from "@/constants/LOCALE";
+import { CUR_DATE, LedgerNameMap, NAIRA } from "@/constants/LOCALE";
 import { ControlledInput } from "@/components/atoms/forms/ui/controlled-input";
 import { Spinner } from "@/components/shadcn/ui/spinner";
 
@@ -54,7 +54,7 @@ export function CreateTransactionOffcanvas({
               control={form.control}
               name="ledgerId"
               label="Select Ledger"
-              options={[DEFAULT_LEDGER]}
+              options={[LedgerNameMap.DEFAULT]}
             />
             <ControlledInput
               type="date"

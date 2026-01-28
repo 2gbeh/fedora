@@ -7,7 +7,7 @@ import { TransactionsTable } from "@/components/species/transactions/components/
 import { DashboardLayout } from "@/components/layouts/dashboard-layout";
 import { LedgersTable } from "@/components/species/ledgers/ui/ledgers-table";
 import { CreateLedgerModal } from "@/components/species/ledgers/ui/create-ledger-modal";
-import data from "@/components/species/dashboard/data.json";
+import data from "@/data/fake-transactions-page-1.json";
 import { PATH } from "@/constants/PATH";
 import {
   Avatar,

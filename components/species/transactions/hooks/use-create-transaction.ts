@@ -18,7 +18,7 @@ import { PATH } from "@/constants/PATH";
 import { MOCK } from "@/constants/MOCK";
 import { selectorUtil } from "@/utils/selector-util";
 import { LedgerNameEnum } from "@/types/enums/ledger-enum";
-import { CUR_DATE, DEFAULT_LEDGER } from "@/constants/LOCALE";
+import { CUR_DATE, LedgerNameMap } from "@/constants/LOCALE";
 import { sleep } from "@/utils";
 
 const amountSplitSchema = z.object({
@@ -47,7 +47,7 @@ type FormSchemaType = z.infer<typeof formSchema>;
 const defaultValues = MOCK.transactions.formData
   ? {
       date: CUR_DATE,
-      ledgerId: DEFAULT_LEDGER.value,
+      ledgerId: LedgerNameMap.DEFAULT.value,
       contactId: "Sunday Bike",
       type: TransactionTypeEnum.EXPENSE,
       amount: 20000,
@@ -57,7 +57,7 @@ const defaultValues = MOCK.transactions.formData
     }
   : {
       date: CUR_DATE,
-      ledgerId: DEFAULT_LEDGER.value,
+      ledgerId: LedgerNameMap.DEFAULT.value,
       type: TransactionTypeEnum.EXPENSE,
       wallet: WalletEnum.OPAY,
     };
