@@ -38,4 +38,12 @@
   .flex-center-between {
     @apply flex items-center justify-between;
   }
+
+  .flex-col-start-between {
+    @apply flex flex-col items-start justify-between;
+  }
+
+  .flex-col-end-between {
+    @apply flex flex-col items-end justify-between;
+  }
 }

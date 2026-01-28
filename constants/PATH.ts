@@ -19,4 +19,5 @@ export const PATH = {
   contactTransactions: (id: string) => `/contacts/${id}/transactions`,
   // 
   reports: "/reports",
+  zentryAI: "/zentry-ai",
 };
