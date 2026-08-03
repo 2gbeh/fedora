@@ -19,8 +19,19 @@ Tip:
 > npm install
 ⠧
 
+✅ Your project is ready!
+
+To run your project, navigate to the directory and run one of the following npm commands.
+
 cd app
+
 npx eas-cli@latest login
+
 npx eas-cli@latest init
+√ Which account should own this project? » 2gbeh
+√ Would you like to create a project for @2gbeh/app? ... yes
+✔ Created @2gbeh/app: https://expo.dev/accounts/2gbeh/projects/app
+√ Project successfully linked (ID: fdb0e40a-165c-420b-adad-ee491457736f) (modified app.json)
+
 npx expo start
 ```
