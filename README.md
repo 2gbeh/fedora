@@ -1,4 +1,4 @@
-# Administrator App
+# ExpoCBT Admin App
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-6.x-007ACC.svg)
 ![React](https://img.shields.io/badge/React-19.x-61DAFB.svg)
