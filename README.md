@@ -12,9 +12,20 @@
 ```sh
 git clone https://github.com/expo-cbt/app.git
 cd app
+```
 
+```sh
 npm install
 npx expo start
+```
+
+## Build
+
+#### EAS Development Build (Android)
+
+```sh
+eas build --profile development --platform android
+npx expo start --dev-client
 ```
 
 ## Resources

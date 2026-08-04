@@ -49,8 +49,8 @@ eas build --profile development --platform android
 npx expo start --dev-client
 
 - Open the installed dev client app on your phone and connect to the dev server (scan QR or enter URL manually)
-- If eas.json doesn't have a "development" profile yet, run this first to set it up:
 
+- If eas.json doesn't have a "development" profile yet, run this first to set it up:
 eas build:configure
 
 You only need to run eas build again if you:
