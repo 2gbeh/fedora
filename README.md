@@ -19,6 +19,7 @@ cd app
 ```sh
 npm install
 npx expo start
+npx expo start -c --web
 ```
 
 ## Build
