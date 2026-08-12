@@ -1,11 +1,18 @@
 import { BaseDto } from "../base/types";
 
-export interface CategoryDto extends BaseDto {
-  name: string;
+export interface ContactDto extends BaseDto {
+  avatar?: string;
+  name?: string;
+  displayName: string;
+  tel?: string;
+  email?: string;
+  notes?: string;
+  isFavorite?: boolean;
+  isTemp?: boolean;
 }
 
-export type QueryCategoryDto = {};
+export type QueryContactDto = {};
 
-export type CreateCategoryDto = {};
+export type CreateContactDto = {};
 
-export type UpdateCategoryDto = {};
+export type UpdateContactDto = {};

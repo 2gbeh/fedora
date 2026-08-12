@@ -1,0 +1,10 @@
+[
+  {
+    "name": "debug",
+    "value": false
+  },
+  {
+    "name": "incognito",
+    "value": true
+  }
+]

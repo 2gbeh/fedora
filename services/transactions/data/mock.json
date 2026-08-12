@@ -1,0 +1,377 @@
+[
+  {
+    "id": "e4e9fc02-b5f8-4022-a084-819f91e25042",
+    "createdAt": "2026-07-18T02:30:43.000Z",
+    "contactId": "5dfd97dd-ef0b-4ad6-a2fa-9b4564420023",
+    "transactionDate": "2026-07-18T02:30:43.000Z",
+    "amount": 115829.23,
+    "narration": "Freelance project payment",
+    "walletId": "08798b2f-6afb-4055-93e3-a09739f9e60d",
+    "categoryIds": [
+      "08f86a9a-f1ac-403c-9fda-6c219c2e03b5"
+    ],
+    "isDraft": false,
+    "isIncognito": false,
+    "isTemp": false
+  },
+  {
+    "id": "02f0c7fe-194d-4745-8a40-f4cf38356343",
+    "createdAt": "2026-08-07T09:07:43.000Z",
+    "contactId": "5dfd97dd-ef0b-4ad6-a2fa-9b4564420023",
+    "transactionDate": "2026-08-07T09:07:43.000Z",
+    "amount": 8220.47,
+    "narration": "Gift from friend",
+    "walletId": "35ba76d3-5b20-43fc-9f03-2b9e2d08dd2b",
+    "categoryIds": [
+      "08f86a9a-f1ac-403c-9fda-6c219c2e03b5"
+    ],
+    "isDraft": false,
+    "isIncognito": false,
+    "isTemp": false
+  },
+  {
+    "id": "dc04ef61-111d-4214-9857-5268fdc2b223",
+    "createdAt": "2026-07-29T01:53:43.000Z",
+    "contactId": "393f9a05-5b71-4198-8c14-dc8f2f9cb69a",
+    "transactionDate": "2026-07-29T01:53:43.000Z",
+    "amount": -2495.21,
+    "narration": "Laundry service",
+    "walletId": "91ad90f6-0667-4c9b-84c9-6f36179d9450",
+    "categoryIds": [
+      "9725e920-f223-433d-ac2b-fff80dff5b90"
+    ],
+    "isDraft": false,
+    "isIncognito": false,
+    "isTemp": false
+  },
+  {
+    "id": "60c2d91d-ee85-4ca6-9647-f0b7eb810ada",
+    "createdAt": "2026-08-04T13:07:43.000Z",
+    "contactId": "6eebe9b4-28bc-4617-b77f-b2de00d88bc7",
+    "transactionDate": "2026-08-04T13:07:43.000Z",
+    "amount": -8652.16,
+    "narration": "Dinner at Cactus Restaurant",
+    "walletId": "08798b2f-6afb-4055-93e3-a09739f9e60d",
+    "categoryIds": [
+      "f297fae4-43f6-4b74-892e-7877ca9a6d11"
+    ],
+    "isDraft": false,
+    "isIncognito": false,
+    "isTemp": false
+  },
+  {
+    "id": "40bfd2de-69ce-4c74-9882-9d029564ba2e",
+    "createdAt": "2026-07-07T02:21:43.000Z",
+    "contactId": "e6eb19c0-3519-4832-9bdc-e10e90071bec",
+    "transactionDate": "2026-07-07T02:21:43.000Z",
+    "amount": 170611.14,
+    "narration": "Salary payment",
+    "walletId": "91ad90f6-0667-4c9b-84c9-6f36179d9450",
+    "categoryIds": [
+      "08f86a9a-f1ac-403c-9fda-6c219c2e03b5"
+    ],
+    "isDraft": false,
+    "isIncognito": true,
+    "isTemp": false
+  },
+  {
+    "id": "a472b5e2-771d-4525-8a23-30b7710d78c3",
+    "createdAt": "2026-07-12T00:59:43.000Z",
+    "contactId": "22f7c029-fba6-45e4-8728-f65ecdd42178",
+    "transactionDate": "2026-07-12T00:59:43.000Z",
+    "amount": -3090.34,
+    "narration": "Uber ride to office",
+    "walletId": "9e7e7527-227b-4af6-aeb5-52636d09bc51",
+    "categoryIds": [
+      "563e9c32-50d3-4857-b315-6f69e47337e7"
+    ],
+    "isDraft": false,
+    "isIncognito": false,
+    "isTemp": false
+  },
+  {
+    "id": "c20a95c2-119f-438a-ad1e-f9497f38de04",
+    "createdAt": "2026-07-31T23:44:43.000Z",
+    "contactId": "f641c36b-4cce-4ca2-9764-4a52cb85e192",
+    "transactionDate": "2026-07-31T23:44:43.000Z",
+    "amount": -3748.25,
+    "narration": "Pharmacy purchase",
+    "walletId": "91ad90f6-0667-4c9b-84c9-6f36179d9450",
+    "categoryIds": [
+      "e7cc04b5-e4cf-41da-8789-20f59ce82e08"
+    ],
+    "isDraft": false,
+    "isIncognito": false,
+    "isTemp": false
+  },
+  {
+    "id": "307ab5d0-5b5d-4558-9821-fcc56316fe9b",
+    "createdAt": "2026-07-25T03:29:43.000Z",
+    "contactId": "5dfd97dd-ef0b-4ad6-a2fa-9b4564420023",
+    "transactionDate": "2026-07-25T03:29:43.000Z",
+    "amount": 98355.62,
+    "narration": "Freelance project payment",
+    "walletId": "08798b2f-6afb-4055-93e3-a09739f9e60d",
+    "categoryIds": [
+      "08f86a9a-f1ac-403c-9fda-6c219c2e03b5"
+    ],
+    "isDraft": false,
+    "isIncognito": false,
+    "isTemp": false
+  },
+  {
+    "id": "40c15954-0c98-415e-8bce-b3e3bb197134",
+    "createdAt": "2026-07-17T20:51:43.000Z",
+    "contactId": "5dfd97dd-ef0b-4ad6-a2fa-9b4564420023",
+    "transactionDate": "2026-07-17T20:51:43.000Z",
+    "amount": -383317.55,
+    "narration": "Rent payment",
+    "walletId": "08798b2f-6afb-4055-93e3-a09739f9e60d",
+    "categoryIds": [
+      "ba937d23-55c2-4b9e-a329-c8e4dde24dde"
+    ],
+    "isDraft": false,
+    "isIncognito": false,
+    "isTemp": false
+  },
+  {
+    "id": "c5b5625e-0f27-41df-ac06-18130e5d3581",
+    "createdAt": "2026-07-21T03:02:43.000Z",
+    "contactId": "393f9a05-5b71-4198-8c14-dc8f2f9cb69a",
+    "transactionDate": "2026-07-21T03:02:43.000Z",
+    "amount": 67209.79,
+    "narration": "Freelance project payment",
+    "walletId": "9cac5d2d-17a9-47b3-bf19-4eb4dd3814c3",
+    "categoryIds": [
+      "08f86a9a-f1ac-403c-9fda-6c219c2e03b5"
+    ],
+    "isDraft": true,
+    "isIncognito": true,
+    "isTemp": false
+  },
+  {
+    "id": "a4e6c782-ee4e-4621-ad0c-a220e4d9c3ec",
+    "createdAt": "2026-07-01T20:30:43.000Z",
+    "contactId": "787d43b6-be9d-492e-a12f-90b153bb33c8",
+    "transactionDate": "2026-07-01T20:30:43.000Z",
+    "amount": -19481.97,
+    "narration": "Fuel at Mobil filling station",
+    "walletId": "08798b2f-6afb-4055-93e3-a09739f9e60d",
+    "categoryIds": [
+      "563e9c32-50d3-4857-b315-6f69e47337e7"
+    ],
+    "isDraft": false,
+    "isIncognito": false,
+    "isTemp": false
+  },
+  {
+    "id": "badde2b7-d74e-4e33-b273-b9dda9ee371c",
+    "createdAt": "2026-07-01T11:32:43.000Z",
+    "contactId": "9a1540e2-47c2-44b9-9c94-8defb67d48e6",
+    "transactionDate": "2026-07-01T11:32:43.000Z",
+    "amount": -2291.57,
+    "narration": "Airtime top-up (MTN)",
+    "walletId": "9e7e7527-227b-4af6-aeb5-52636d09bc51",
+    "categoryIds": [
+      "ba937d23-55c2-4b9e-a329-c8e4dde24dde"
+    ],
+    "isDraft": false,
+    "isIncognito": false,
+    "isTemp": false
+  },
+  {
+    "id": "c1aaf833-2d8b-4156-bb5d-17b0d4f58eb2",
+    "createdAt": "2026-07-25T17:46:43.000Z",
+    "contactId": "f641c36b-4cce-4ca2-9764-4a52cb85e192",
+    "transactionDate": "2026-07-25T17:46:43.000Z",
+    "amount": -1607.37,
+    "narration": "Uber ride to office",
+    "walletId": "9cac5d2d-17a9-47b3-bf19-4eb4dd3814c3",
+    "categoryIds": [
+      "563e9c32-50d3-4857-b315-6f69e47337e7"
+    ],
+    "isDraft": false,
+    "isIncognito": false,
+    "isTemp": false
+  },
+  {
+    "id": "b5d71692-cc98-4d1f-87b1-d5e8409c5e41",
+    "createdAt": "2026-07-18T05:16:43.000Z",
+    "contactId": "6eebe9b4-28bc-4617-b77f-b2de00d88bc7",
+    "transactionDate": "2026-07-18T05:16:43.000Z",
+    "amount": -7495.49,
+    "narration": "Electricity bill payment (PHCN)",
+    "walletId": "9cac5d2d-17a9-47b3-bf19-4eb4dd3814c3",
+    "categoryIds": [
+      "ba937d23-55c2-4b9e-a329-c8e4dde24dde"
+    ],
+    "isDraft": false,
+    "isIncognito": false,
+    "isTemp": false
+  },
+  {
+    "id": "9be0f19d-5610-47a8-9091-b1913d06da91",
+    "createdAt": "2026-06-30T10:19:43.000Z",
+    "contactId": "6eebe9b4-28bc-4617-b77f-b2de00d88bc7",
+    "transactionDate": "2026-06-30T10:19:43.000Z",
+    "amount": -14932.34,
+    "narration": "Gym membership renewal",
+    "walletId": "91ad90f6-0667-4c9b-84c9-6f36179d9450",
+    "categoryIds": [
+      "e7cc04b5-e4cf-41da-8789-20f59ce82e08"
+    ],
+    "isDraft": false,
+    "isIncognito": false,
+    "isTemp": false
+  },
+  {
+    "id": "9a4c63ff-86cc-45ce-b80b-30939644548d",
+    "createdAt": "2026-07-06T17:17:43.000Z",
+    "contactId": "787d43b6-be9d-492e-a12f-90b153bb33c8",
+    "transactionDate": "2026-07-06T17:17:43.000Z",
+    "amount": -8168.88,
+    "narration": "Dinner at Cactus Restaurant",
+    "walletId": "91ad90f6-0667-4c9b-84c9-6f36179d9450",
+    "categoryIds": [
+      "f297fae4-43f6-4b74-892e-7877ca9a6d11"
+    ],
+    "isDraft": false,
+    "isIncognito": false,
+    "isTemp": false
+  },
+  {
+    "id": "a0ad69c0-699d-4948-8973-0011fafb2b12",
+    "createdAt": "2026-08-03T23:39:43.000Z",
+    "contactId": "54afaa59-c908-48ac-bec5-db764cd35873",
+    "transactionDate": "2026-08-03T23:39:43.000Z",
+    "amount": -3135.27,
+    "narration": "Cab fare (Bolt)",
+    "walletId": "08798b2f-6afb-4055-93e3-a09739f9e60d",
+    "categoryIds": [
+      "563e9c32-50d3-4857-b315-6f69e47337e7"
+    ],
+    "isDraft": false,
+    "isIncognito": false,
+    "isTemp": false
+  },
+  {
+    "id": "eb55977f-b1b3-4f96-8b79-1835c3c3b745",
+    "createdAt": "2026-06-30T05:08:43.000Z",
+    "contactId": "22f7c029-fba6-45e4-8728-f65ecdd42178",
+    "transactionDate": "2026-06-30T05:08:43.000Z",
+    "amount": 9196.26,
+    "narration": "Refund from Jumia",
+    "walletId": "9cac5d2d-17a9-47b3-bf19-4eb4dd3814c3",
+    "categoryIds": [
+      "9725e920-f223-433d-ac2b-fff80dff5b90"
+    ],
+    "isDraft": false,
+    "isIncognito": false,
+    "isTemp": false
+  },
+  {
+    "id": "c4d9c2ea-ec0d-456b-bc9e-ed24d2da7134",
+    "createdAt": "2026-08-08T16:05:43.000Z",
+    "contactId": "6eebe9b4-28bc-4617-b77f-b2de00d88bc7",
+    "transactionDate": "2026-08-08T16:05:43.000Z",
+    "amount": -7489.91,
+    "narration": "Jumia online order",
+    "walletId": "91ad90f6-0667-4c9b-84c9-6f36179d9450",
+    "categoryIds": [
+      "9725e920-f223-433d-ac2b-fff80dff5b90"
+    ],
+    "isDraft": false,
+    "isIncognito": true,
+    "isTemp": false
+  },
+  {
+    "id": "9136fa3a-290a-4a3f-adfe-cbbbcdda0bca",
+    "createdAt": "2026-07-09T19:10:43.000Z",
+    "contactId": "393f9a05-5b71-4198-8c14-dc8f2f9cb69a",
+    "transactionDate": "2026-07-09T19:10:43.000Z",
+    "amount": -15469.24,
+    "narration": "Grocery shopping at Shoprite",
+    "walletId": "91ad90f6-0667-4c9b-84c9-6f36179d9450",
+    "categoryIds": [
+      "f297fae4-43f6-4b74-892e-7877ca9a6d11"
+    ],
+    "isDraft": true,
+    "isIncognito": false,
+    "isTemp": false
+  },
+  {
+    "id": "604a53ac-4b20-42f8-b4be-a5e87a2380b2",
+    "createdAt": "2026-07-27T10:55:43.000Z",
+    "contactId": "e6eb19c0-3519-4832-9bdc-e10e90071bec",
+    "transactionDate": "2026-07-27T10:55:43.000Z",
+    "amount": -10942.02,
+    "narration": "Jumia online order",
+    "walletId": "9cac5d2d-17a9-47b3-bf19-4eb4dd3814c3",
+    "categoryIds": [
+      "9725e920-f223-433d-ac2b-fff80dff5b90"
+    ],
+    "isDraft": false,
+    "isIncognito": false,
+    "isTemp": false
+  },
+  {
+    "id": "eab0df39-14a6-4553-827f-af0615e07211",
+    "createdAt": "2026-07-24T20:24:43.000Z",
+    "contactId": "5dfd97dd-ef0b-4ad6-a2fa-9b4564420023",
+    "transactionDate": "2026-07-24T20:24:43.000Z",
+    "amount": 5843.16,
+    "narration": "Refund from Jumia",
+    "walletId": "9e7e7527-227b-4af6-aeb5-52636d09bc51",
+    "categoryIds": [
+      "9725e920-f223-433d-ac2b-fff80dff5b90"
+    ],
+    "isDraft": false,
+    "isIncognito": false,
+    "isTemp": false
+  },
+  {
+    "id": "62aaa2ba-1a70-489c-b3d0-889d675d9a86",
+    "createdAt": "2026-07-30T06:10:43.000Z",
+    "contactId": "6eebe9b4-28bc-4617-b77f-b2de00d88bc7",
+    "transactionDate": "2026-07-30T06:10:43.000Z",
+    "amount": 253266.9,
+    "narration": "Salary payment",
+    "walletId": "08798b2f-6afb-4055-93e3-a09739f9e60d",
+    "categoryIds": [
+      "08f86a9a-f1ac-403c-9fda-6c219c2e03b5"
+    ],
+    "isDraft": false,
+    "isIncognito": false,
+    "isTemp": false
+  },
+  {
+    "id": "fb5d3b72-7f3e-4e06-a055-5afbb34ad8c9",
+    "createdAt": "2026-08-06T23:39:43.000Z",
+    "contactId": "787d43b6-be9d-492e-a12f-90b153bb33c8",
+    "transactionDate": "2026-08-06T23:39:43.000Z",
+    "amount": -2946.25,
+    "narration": "Airtime top-up (MTN)",
+    "walletId": "08798b2f-6afb-4055-93e3-a09739f9e60d",
+    "categoryIds": [
+      "ba937d23-55c2-4b9e-a329-c8e4dde24dde"
+    ],
+    "isDraft": false,
+    "isIncognito": false,
+    "isTemp": false
+  },
+  {
+    "id": "29a3b103-6b8a-4d7e-8b8f-88fdcfb8a57c",
+    "createdAt": "2026-07-11T11:53:43.000Z",
+    "contactId": "f641c36b-4cce-4ca2-9764-4a52cb85e192",
+    "transactionDate": "2026-07-11T11:53:43.000Z",
+    "amount": -15456.29,
+    "narration": "Dinner at Cactus Restaurant",
+    "walletId": "08798b2f-6afb-4055-93e3-a09739f9e60d",
+    "categoryIds": [
+      "f297fae4-43f6-4b74-892e-7877ca9a6d11"
+    ],
+    "isDraft": false,
+    "isIncognito": false,
+    "isTemp": false
+  }
+]

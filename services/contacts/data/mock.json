@@ -1,0 +1,102 @@
+[
+  {
+    "id": "12c30d1b-1fe1-40fd-8096-afd9096fc1d7",
+    "createdAt": "2026-04-19T22:51:52.000Z",
+    "name": "Chioma Okafor",
+    "displayName": "Chioma Okafor",
+    "tel": "09177893287",
+    "email": "chioma.okafor@gmail.com",
+    "isFavorite": false,
+    "isTemp": false
+  },
+  {
+    "id": "a910ffe9-62db-40a2-a480-6965ddb37636",
+    "createdAt": "2026-07-19T22:51:52.000Z",
+    "name": "Emeka Nwosu",
+    "displayName": "Emeka Nwosu",
+    "tel": "08121809679",
+    "email": "emeka.nwosu@gmail.com",
+    "isFavorite": false,
+    "isTemp": false
+  },
+  {
+    "id": "b5162c96-8b91-4daa-b487-4872b83f7f48",
+    "createdAt": "2026-03-30T22:51:52.000Z",
+    "name": "Aisha Bello",
+    "displayName": "Aisha Bello",
+    "tel": "07003390757",
+    "email": "aisha.bello@gmail.com",
+    "isFavorite": true,
+    "isTemp": false
+  },
+  {
+    "id": "a9114814-2b41-4e09-8118-ad4109c6f623",
+    "createdAt": "2026-06-14T22:51:52.000Z",
+    "name": "Tunde Adewale",
+    "displayName": "Tunde Adewale",
+    "tel": "08170174681",
+    "email": "tunde.adewale@gmail.com",
+    "isFavorite": false,
+    "isTemp": false
+  },
+  {
+    "id": "7d9823aa-420b-475e-afe0-dee18c742381",
+    "createdAt": "2026-06-15T22:51:52.000Z",
+    "name": "Ngozi Eze",
+    "displayName": "Ngozi Eze",
+    "tel": "+2348101916146",
+    "email": "ngozi.eze@gmail.com",
+    "isFavorite": true,
+    "isTemp": false
+  },
+  {
+    "id": "186b6700-b3ec-4c64-b42e-eb29e8e6c65e",
+    "createdAt": "2026-02-18T22:51:52.000Z",
+    "name": "Ibrahim Musa",
+    "displayName": "Ibrahim Musa",
+    "tel": "08030766619",
+    "email": "ibrahim.musa@gmail.com",
+    "isFavorite": false,
+    "isTemp": false
+  },
+  {
+    "id": "23819f01-8760-465c-9771-44951ea97065",
+    "createdAt": "2026-06-04T22:51:52.000Z",
+    "name": "Funke Ajayi",
+    "displayName": "Funke Ajayi",
+    "tel": "+2347045061231",
+    "email": "funke.ajayi@gmail.com",
+    "isFavorite": false,
+    "isTemp": false
+  },
+  {
+    "id": "196a7977-a80b-4cb1-a94c-059188c3a6a7",
+    "createdAt": "2026-04-10T22:51:52.000Z",
+    "name": "Segun Okonkwo",
+    "displayName": "Segun Okonkwo",
+    "tel": "+2349137832661",
+    "email": "segun.okonkwo@gmail.com",
+    "isFavorite": false,
+    "isTemp": false
+  },
+  {
+    "id": "73419dca-f4dc-4b79-934b-d5d0a589ac0b",
+    "createdAt": "2026-08-12T22:51:52.000Z",
+    "name": "Blessing Udo",
+    "displayName": "Blessing Udo",
+    "tel": "+2349140326991",
+    "email": "blessing.udo@gmail.com",
+    "isFavorite": true,
+    "isTemp": false
+  },
+  {
+    "id": "70018686-7ed7-43b8-9813-f9852ee4d2fc",
+    "createdAt": "2026-04-21T22:51:52.000Z",
+    "name": "Kelechi Obi",
+    "displayName": "Kelechi Obi",
+    "tel": "07095461113",
+    "email": "kelechi.obi@gmail.com",
+    "isFavorite": true,
+    "isTemp": false
+  }
+]

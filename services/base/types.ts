@@ -1,5 +1,7 @@
+export type BasePK = string;
+
 export interface BaseDto {
-  id: string;
+  id: BasePK;
   createdAt: string;
   updatedAt?: string;
   deletedAt?: string;

@@ -1,4 +1,4 @@
-export class ContactsService  {
+export class CategoriesService  {
   static findAll() {}
   static findById() {}
   static create() {}

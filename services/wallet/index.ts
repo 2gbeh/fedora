@@ -1,4 +1,4 @@
-export class ContactsService  {
+export class WalletsService  {
   static findAll() {}
   static findById() {}
   static create() {}

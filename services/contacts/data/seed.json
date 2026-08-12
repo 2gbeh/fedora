@@ -1,0 +1,31 @@
+[
+  {
+    "displayName": "Dad"
+  },
+  {
+    "displayName": "Mom",
+    "isFavorite": true
+  },
+  {
+    "displayName": "Jackson"
+  },
+  {
+    "displayName": "Roosevelt"
+  },
+  {
+    "name": "Sandra Ehiaghe",
+    "displayName": "Semo",
+    "isFavorite": true
+  },
+  {
+    "displayName": "Obi"
+  },
+  {
+    "displayName": "Jerry"
+  },
+  {
+    "name": "Stella Kambia",
+    "displayName": "sk",
+    "tel": "+2348039359898"
+  }
+]

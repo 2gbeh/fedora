@@ -1,0 +1,63 @@
+[
+  {
+    "name": "Business"
+  },
+  {
+    "name": "Car"
+  },
+  {
+    "name": "Church"
+  },
+  {
+    "name": "Debt"
+  },
+  {
+    "name": "Education"
+  },
+  {
+    "name": "Entertainment"
+  },
+  {
+    "name": "Fashion"
+  },
+  {
+    "name": "Fuel"
+  },
+  {
+    "name": "Healthcare"
+  },
+  {
+    "name": "House"
+  },
+  {
+    "name": "Investment"
+  },
+  {
+    "name": "Job"
+  },
+  {
+    "name": "Loan"
+  },
+  {
+    "name": "Market",
+    "description": "food, groceries, toiletries"
+  },
+  {
+    "name": "Misc"
+  },
+  {
+    "name": "Office"
+  },
+  {
+    "name": "Personal Care",
+    "description": "haircuts, makeup, skincare"
+  },
+  {
+    "name": "Support",
+    "description": "charity, fun"
+  },
+  {
+    "name": "Utilities",
+    "description": "water, gas, gen, nepa, data, airtime"
+  }
+]

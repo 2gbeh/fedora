@@ -1,16 +1,16 @@
-import { BaseDto } from "../base/types";
+import { BaseDto, BasePK } from "../base/types";
 
 export interface TransactionDto extends BaseDto {
-  receipt?: string;
-  date: string;
-  type: string;
+  contactId: BasePK;
+  transactionDate: string;
+  walletId: BasePK;
   amount: number;
   narration: string;
-  wallet: string;
-  tags?: string[];
+  categoryIds?: BasePK[];
   isDraft?: boolean;
   isIncognito?: boolean;
   isTemp?: boolean;
+  receipt?: string;
 }
 
 export type QueryTransactionDto = {};

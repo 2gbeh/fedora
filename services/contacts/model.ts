@@ -1,8 +1,8 @@
 import { Base } from "../base/model";
-import { CategoryDto } from "./types";
+import { ContactDto } from "./types";
 
-export class Category extends Base {
-  constructor(_: CategoryDto) {
+export class Contact extends Base {
+  constructor(_: ContactDto) {
     super(_);
   }
 }
