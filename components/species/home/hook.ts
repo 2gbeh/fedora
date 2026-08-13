@@ -1,1 +1,1 @@
-export function useHome() {}
+export function useHomeScreen() {}

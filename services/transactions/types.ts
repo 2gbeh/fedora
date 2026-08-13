@@ -4,20 +4,19 @@ import { ContactDto } from "../contacts/types";
 import { WalletDto } from "../wallet/types";
 
 export interface TransactionDto extends BaseDto {
-  transactionDate: string;
+  contactId: BasePK;
+  contact?: ContactDto;
   amount: number;
   narration: string;
+  categoryIds: BasePK[];
+  categories?: CategoryDto[];
+  walletId: BasePK;
+  wallet?: WalletDto;
+  receipt?: string;
   isDraft?: boolean;
   isIncognito?: boolean;
   isTemp?: boolean;
-  receipt?: string;
-  //
-  walletId: BasePK;
-  wallet: WalletDto;
-  contactId: BasePK;
-  contact: ContactDto;
-  categoriesIds?: BasePK[];
-  categories?: CategoryDto[];
+  entryDate: string;
 }
 
 export type QueryTransactionDto = {};

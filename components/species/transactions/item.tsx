@@ -7,7 +7,7 @@ import { flexStyles as fx } from "@/styles/flex";
 
 interface Props {
   transaction: Transaction;
-  contact: Contact;
+  contact?: Contact;
 }
 
 export const TransactionListItem = memo(({

@@ -2,6 +2,7 @@ import { BaseDto } from "../base/types";
 
 export interface WalletDto extends BaseDto {
   name: string;
+  description?: string;
 }
 
 export type QueryWalletDto = {};

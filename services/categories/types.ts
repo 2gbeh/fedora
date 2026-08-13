@@ -2,7 +2,7 @@ import { BaseDto } from "../base/types";
 
 export interface CategoryDto extends BaseDto {
   name: string;
-  description: string;
+  description?: string;
 }
 
 export type QueryCategoryDto = {};
