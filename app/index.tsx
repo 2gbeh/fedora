@@ -1,24 +1,22 @@
-import { Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 //
+import { TransactionList } from "@/components/molecules/transaction/list";
+import { AppBar } from "@/components/organisms/app-bar";
+import { SearchBar } from "@/components/organisms/search-bar";
+import { SectionHeader } from "@/components/organisms/section-header";
+import { FAB } from "@/components/organisms/fab";
+// 
 import { homeStyles as sx } from "@/components/species/home/styles";
-import { useState } from "react";
+import { containerStyles } from "@/styles/container";
 
 export default function HomeScreen() {
-  const [number, setNumber] = useState('');
-
   return (
-    <SafeAreaView style={sx.safeArea}>
-      <TextInput
-        keyboardType="web-search"
-        placeholder="Search transactions"
-        value={number}
-        onChangeText={setNumber}
-        style={sx.input}
-      />
-      <View style={sx._}>
-        <Text style={sx._}>HomeScreen</Text>
-      </View>
+    <SafeAreaView style={containerStyles.safeArea}>
+      <AppBar />
+      <SearchBar />
+      <SectionHeader />
+      <TransactionList />
+      <FAB />
     </SafeAreaView>
   );
 }
