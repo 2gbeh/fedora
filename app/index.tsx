@@ -48,11 +48,13 @@ export default function HomeScreen() {
               src={item?.contact?._?.avatar}
               alt={item?.contact?._?.displayName}
             />
-            <View style={flexStyles.flex1}>
+            <View style={flexStyles.flex_1}>
               <Text style={{ fontSize: 16, fontWeight: "400" }}>
                 {item?.contact?._?.displayName}
               </Text>
-              <Text style={{color:COLOR.mutedForeground}}>{item?.transaction?._?.narration}</Text>
+              <Text style={{ color: COLOR.mutedForeground }}>
+                {item?.transaction?._?.narration}
+              </Text>
             </View>
             <View style={flexStyles.colEnd}>
               <Text

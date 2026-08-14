@@ -2,8 +2,13 @@ import { StyleSheet } from "react-native";
 
 export const flexStyles = StyleSheet.create({
   _: {},
-  flex1: {
+  flex_1: {
     flex: 1,
+  },
+  centered: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
   rowCenter: {
     flexDirection: "row",

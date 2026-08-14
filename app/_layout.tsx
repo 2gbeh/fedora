@@ -1,10 +1,11 @@
-import { AppBar } from "@/components/organisms/app-bar";
-import { Tabs, useRouter } from "expo-router";
-import { MaterialIcons } from "@expo/vector-icons";
 import type { ComponentProps } from "react";
 import { TouchableOpacity } from "react-native";
-import { flexStyles } from "@/styles/flex";
+import { Tabs, useRouter } from "expo-router";
+import { MaterialIcons } from "@expo/vector-icons";
 import { BottomTabNavigationOptions } from "expo-router/build/react-navigation/bottom-tabs";
+// 
+import { AppBar } from "@/components/organisms/app-bar";
+import { flexStyles } from "@/styles/flex";
 
 type MaterialIconName = ComponentProps<typeof MaterialIcons>["name"];
 
