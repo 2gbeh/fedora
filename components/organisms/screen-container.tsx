@@ -13,7 +13,7 @@ export const ScreenContainer = ({ children }: Props) => {
   
   return (
     <SafeAreaView style={sx.container}>
-      <Text style={styles.title}>ContactsScreen</Text>
+      <Text style={sx._}>ContactsScreen</Text>
     </SafeAreaView>
   );
 };

@@ -3,12 +3,11 @@ import { Avatar } from "../atoms/avatar";
 import { flexStyles } from "@/styles/flex";
 import { APP } from "@/constants/APP";
 import { COLOR } from "@/constants/COLOR";
+import { MaterialIcons } from "@expo/vector-icons";
 
 export const AppBar = () => {
   return (
-    <View
-      style={flexStyles.rowCenterBetween}
-    >
+    <View style={sx.container}>
       <View style={sx.figure}>
         <Avatar
           src={require("@/assets/images/favicon.png")}
@@ -21,6 +20,11 @@ export const AppBar = () => {
         </View>
       </View>
       <Pressable style={sx.iconContainer}>
+        <MaterialIcons
+          name="notifications"
+          size={18}
+          color={"#79747E"}
+        />
         <View style={sx.indicator} />
       </Pressable>
     </View>
@@ -29,6 +33,11 @@ export const AppBar = () => {
 
 const sx = StyleSheet.create({
   _: {},
+  container: {
+    ...flexStyles.rowCenterBetween,
+    padding: 16,
+    paddingBottom: 0,
+  },
   figure: {
     ...flexStyles.rowCenter,
     gap: 8,
@@ -45,16 +54,17 @@ const sx = StyleSheet.create({
     fontSize: 16,
   },
   iconContainer: {
-    backgroundColor: COLOR.border,
-    borderRadius: 24,
-    width: 24,
-    height: 24,
+    backgroundColor: COLOR.input,
+    borderRadius: 28,
+    width: 28,
+    height: 28,
+    ...flexStyles.colCenterCenter,
   },
   indicator: {
     backgroundColor: COLOR.destructive,
-    borderRadius: 10,
-    width: 10,
-    height: 10,
+    borderRadius: 8,
+    width: 8,
+    height: 8,
     position: "absolute",
     right: 0,
     top: 0,

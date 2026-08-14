@@ -4,6 +4,7 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import { TransactionsService } from "@/services/transactions";
 import { COLOR } from "@/constants/COLOR";
 import { flexStyles } from "@/styles/flex";
+import { MaterialIcons } from "@expo/vector-icons";
 
 export const Hero = () => {
   const [showExpense, setShowExpense] = useState(false);
@@ -24,7 +25,10 @@ export const Hero = () => {
     <View style={sx.container}>
       <View>
         <Text style={sx.label}>Total Income</Text>
-        <Pressable onPress={() => setShowExpense((p) => !p)}>
+        <Pressable
+          onPress={() => setShowExpense((p) => !p)}
+          style={{ ...flexStyles.rowCenter, gap: 8 }}
+        >
           <Text
             style={[
               sx.value,
@@ -37,13 +41,20 @@ export const Hero = () => {
           >
             N{(showExpense ? expense : income).toLocaleString()}
           </Text>
+          <MaterialIcons
+            name={showExpense ? "visibility" : "visibility-off"}
+            size={16}
+            color={COLOR.muted}
+          />
         </Pressable>
       </View>
       <View style={[flexStyles.rowCenterBetween, { gap: 8 }]}>
         <Pressable style={sx.btn}>
+          <MaterialIcons name="trending-up" size={16} color={COLOR.muted} />
           <Text style={sx.btnText}>Income</Text>
         </Pressable>
         <Pressable style={[sx.btn, sx.btnSec]}>
+          <MaterialIcons name="trending-down" size={16} color={COLOR.muted} />
           <Text style={sx.btnText}>Expense</Text>
         </Pressable>
       </View>
@@ -69,9 +80,10 @@ const sx = StyleSheet.create({
   },
   btn: {
     backgroundColor: COLOR.chart2,
-    borderRadius: 4,
+    borderRadius: 8,
     height: 40,
-    ...flexStyles.colCenterCenter,
+    ...flexStyles.rowCenterCenter,
+    gap: 8,
     flex: 1,
   },
   btnSec: {

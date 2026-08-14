@@ -9,6 +9,11 @@ export const flexStyles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
+  rowCenterCenter: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
   rowCenterBetween: {
     flexDirection: "row",
     alignItems: "center",

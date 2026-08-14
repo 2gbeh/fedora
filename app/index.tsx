@@ -11,6 +11,7 @@ import { TransactionDto } from "@/services/transactions/types";
 import { Transaction } from "@/services/transactions/model";
 import { Contact } from "@/services/contacts/model";
 import { flexStyles } from "@/styles/flex";
+import { COLOR } from "@/constants/COLOR";
 
 export default function HomeScreen() {
   const [data, setData] = useState<TransactionDto[]>([]);
@@ -32,7 +33,6 @@ export default function HomeScreen() {
 
   return (
     <ScreenContainer>
-      <AppBar />
       <Hero />
       <SectionHeader
         text="Recent Transactions"
@@ -43,16 +43,16 @@ export default function HomeScreen() {
         keyExtractor={(item) => item.id}
         contentContainerStyle={{ gap: 16 }}
         renderItem={({ item }) => (
-          <View style={[flexStyles.rowCenterBetween, { gap: 16 }]}>
+          <View style={[flexStyles.rowCenterBetween, { gap: 8 }]}>
             <Avatar
               src={item?.contact?._?.avatar}
               alt={item?.contact?._?.displayName}
             />
             <View style={flexStyles.flex1}>
-              <Text style={{ fontSize: 16 }}>
+              <Text style={{ fontSize: 16, fontWeight: "400" }}>
                 {item?.contact?._?.displayName}
               </Text>
-              <Text>{item?.transaction?._?.narration}</Text>
+              <Text style={{color:COLOR.mutedForeground}}>{item?.transaction?._?.narration}</Text>
             </View>
             <View style={flexStyles.colEnd}>
               <Text

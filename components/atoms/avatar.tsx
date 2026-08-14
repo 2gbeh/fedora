@@ -32,7 +32,7 @@ export const Avatar = ({ src, alt, size = 40, relativePath }: Props) => {
 
   return (
     <View style={[imageStyles, sx.container]}>
-      <Text style={sx.text}>{extractInitials(alt)}</Text>
+      <Text style={sx.text}>{extractInitials(alt)}</Text> 
     </View>
   );
 };
@@ -53,7 +53,7 @@ const sx = StyleSheet.create({
   },
   text: {
     color: COLOR.primaryForeground,
-    fontSize: 18,
-    fontWeight: "600",
+    fontSize: 16,
+    fontWeight: "400",
   },
 });
