@@ -18,7 +18,7 @@ export const SectionHeader = ({ text, action }: Props) => {
         ...flexStyles.rowCenterBetween,
       }}
     >
-      <Text style={{ fontSize: 18, fontWeight: "600" }}>{text}</Text>
+      <Text style={{ fontSize: 16, fontWeight: "500" }}>{text}</Text>
       {action ? (
         <Pressable
           onPress={() => router.push(action.path)}
@@ -27,7 +27,11 @@ export const SectionHeader = ({ text, action }: Props) => {
           <Text style={{ color: COLOR.mutedForeground, fontWeight: "500" }}>
             {action.text || "See all"}
           </Text>
-          <MaterialIcons name="chevron-right" size={18} color={COLOR.primary} />
+          <MaterialIcons
+            name="chevron-right"
+            size={18}
+            color={COLOR.mutedForeground}
+          />
         </Pressable>
       ) : null}
     </View>

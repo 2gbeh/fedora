@@ -12,6 +12,7 @@ import { Transaction } from "@/services/transactions/model";
 import { Contact } from "@/services/contacts/model";
 import { flexStyles } from "@/styles/flex";
 import { COLOR } from "@/constants/COLOR";
+import { ChipFilter } from "@/components/molecules/projects";
 
 export default function HomeScreen() {
   const [data, setData] = useState<TransactionDto[]>([]);
@@ -34,6 +35,11 @@ export default function HomeScreen() {
   return (
     <ScreenContainer>
       <Hero />
+      <SectionHeader
+        text="Expense Accounts"
+        action={{ path: "/transactions" }}
+      />
+      <ChipFilter />
       <SectionHeader
         text="Recent Transactions"
         action={{ path: "/transactions" }}
