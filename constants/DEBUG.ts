@@ -7,6 +7,9 @@ interface MockParams {
 }
 
 export const DEBUG = {
+  auth: {
+    router: 1,
+  },
   transactions: {
     loader: 1,
   },

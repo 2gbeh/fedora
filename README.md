@@ -50,7 +50,7 @@ npx expo start --dev-client
 - - Forgot Password
 - Home (Dashboard)
 - Analytics
-- \<Manage Modules\>
+- [Manage Modules]()
 
 #### Entity Relationship Diagram
 
@@ -58,19 +58,19 @@ npx expo start --dev-client
 erDiagram
     BASE {
         string id PK
-        int createdBy
-        int updatedBy
-        int deletedBy
+        datetime createdAt
+        datetime updatedAt
+        datetime deletedAt
     }
 
    TRANSACTION {        
-        string receipt
+        binary receipt
         number amount
         string narration
         boolean isDraft
         boolean isIncognito
         boolean isTemp
-        string entryDate
+        date entryDate
         
         %% Foreign Keys (FK)
         string contactId FK
@@ -80,7 +80,7 @@ erDiagram
     }
 
    CONTACT {
-        string avatar
+        binary avatar
         string name
         string displayName
         string tel

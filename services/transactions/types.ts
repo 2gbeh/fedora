@@ -19,7 +19,7 @@ export interface TransactionDto extends BaseDto {
   categories?: CategoryDto[];
   walletId: BasePK;
   wallet?: WalletDto;
-  projectId: BasePK;
+  projectId?: BasePK;
   project?: ProjectDto;
 }
 
