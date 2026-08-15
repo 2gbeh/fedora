@@ -15,18 +15,18 @@ export const AppBar = () => {
           relativePath
         />
         <View style={sx.figcaption}>
-          <Text style={sx.text}>Good morning,</Text>
+          <Text style={sx.text}>Hello,</Text>
           <Text style={sx.subtext}>Emanuel</Text>
         </View>
       </View>
-      <Pressable style={sx.iconContainer}>
-        <MaterialIcons
-          name="notifications"
-          size={18}
-          color={"#79747E"}
-        />
-        <View style={sx.indicator} />
-      </Pressable>
+      <View style={sx.rightSection}>
+        <Pressable style={sx.iconContainer}>
+          <MaterialIcons name="search" size={18} color={"#79747E"} />
+        </Pressable>
+        <Pressable style={sx.iconContainer}>
+          <MaterialIcons name="bar-chart" size={18} color={"#79747E"} />
+        </Pressable>
+      </View>
     </View>
   );
 };
@@ -52,6 +52,10 @@ const sx = StyleSheet.create({
   subtext: {
     color: COLOR.foreground,
     fontSize: 16,
+  },
+  rightSection: {
+    ...flexStyles.rowCenter,
+    gap: 16,
   },
   iconContainer: {
     backgroundColor: COLOR.input,

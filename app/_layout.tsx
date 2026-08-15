@@ -3,23 +3,43 @@ import { TouchableOpacity } from "react-native";
 import { Tabs, useRouter } from "expo-router";
 import { MaterialIcons } from "@expo/vector-icons";
 import { BottomTabNavigationOptions } from "expo-router/build/react-navigation/bottom-tabs";
-// 
+//
 import { AppBar } from "@/components/organisms/app-bar";
 import { flexStyles } from "@/styles/flex";
 
 type MaterialIconName = ComponentProps<typeof MaterialIcons>["name"];
 
 interface TabConfig {
-  name: string;
+  pathname: string;
   title?: string;
-  icon?: MaterialIconName;
+  tabTitle?: string;
+  tabIcon?: MaterialIconName;
+  hide?: boolean;
 }
 
 const tabs: TabConfig[] = [
-  { name: "index" },
-  { name: "contacts", icon: "perm-contact-calendar" },
-  { name: "transactions", icon: "account-balance-wallet" },
-  { name: "settings", icon: "settings" },
+  { pathname: "index" },
+  // {
+  //   pathname: "transactions",
+  //   tabTitle: "Transactions",
+  //   tabIcon: "account-balance-wallet",
+  // },
+  // {
+  //   pathname: "transactions/create",
+  //   title: "Add Transaction",
+  //   tabTitle: "Add",
+  //   tabIcon: "add-circle",
+  // },
+  { pathname: "contacts", tabIcon: "perm-contact-calendar" },
+  { pathname: "contacts/create", hide: true },
+  { pathname: "transactions", hide: true },
+  { pathname: "transactions/create", tabTitle: "Add", tabIcon: "add-circle" },
+  { pathname: "projects", tabIcon: "settings" },
+  { pathname: "transactions/wallets", hide: true },
+  { pathname: "transactions/categories", hide: true },
+  { pathname: "projects/create", hide: true },
+  { pathname: "settings", tabIcon: "settings" },
+  { pathname: "analytics", hide: true },
 ];
 
 export default function TabLayout() {
@@ -27,20 +47,24 @@ export default function TabLayout() {
   //
   return (
     <Tabs screenOptions={screenOptions}>
-      {tabs.map(({ name, ...item }) => {
-        const isIndex = name === "index";
-        const title = isIndex ? "Home" : item.title || name;
+      {tabs.map(({ pathname, ...item }) => {
+        const isIndex = pathname === "index";
+        const title = isIndex ? "Home" : item.tabTitle || pathname;
+        const headerTitle = isIndex
+          ? "Fedora"
+          : item.title || item.tabTitle || pathname;
         //
         return (
           <Tabs.Screen
-            name={name}
+            name={pathname}
             options={{
               title,
-              headerTitle: title,
+              headerTitle,
+              ...(item.hide ? { href: null } : {}),
               ...renderHeader(isIndex),
               tabBarIcon: ({ focused }) => (
                 <MaterialIcons
-                  name={item.icon || "home"}
+                  name={item.tabIcon || "home"}
                   color={focused ? "#111" : "#79747E"}
                   size={24}
                 />

@@ -1,22 +1,26 @@
 import { BaseDto, BasePK } from "../base/types";
 import { CategoryDto } from "../categories/types";
 import { ContactDto } from "../contacts/types";
-import { WalletDto } from "../wallet/types";
+import { ProjectDto } from "../projects/types";
+import { WalletDto } from "../wallets/types";
 
 export interface TransactionDto extends BaseDto {
-  contactId: BasePK;
-  contact?: ContactDto;
   amount: number;
   narration: string;
-  categoryIds: BasePK[];
-  categories?: CategoryDto[];
-  walletId: BasePK;
-  wallet?: WalletDto;
   receipt?: string;
   isDraft?: boolean;
   isIncognito?: boolean;
   isTemp?: boolean;
   entryDate: string;
+  // 
+  contactId: BasePK;
+  contact?: ContactDto;
+  categoryIds: BasePK[];
+  categories?: CategoryDto[];
+  walletId: BasePK;
+  wallet?: WalletDto;
+  projectId: BasePK;
+  project?: ProjectDto;
 }
 
 export type QueryTransactionDto = {};
