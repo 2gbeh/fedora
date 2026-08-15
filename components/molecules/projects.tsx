@@ -19,6 +19,7 @@ const chips: Chip[] = [
   { id: "2", label: "UBTH" },
   { id: "3", label: "House" },
   { id: "4", label: "Decor" },
+  { id: "6", label: "+" },
 ];
 
 export function ChipFilter() {

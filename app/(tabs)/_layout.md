@@ -1,3 +1,4 @@
+```ts
 import type { ComponentProps } from "react";
 import { TouchableOpacity } from "react-native";
 import { Tabs, useRouter } from "expo-router";
@@ -97,6 +98,7 @@ const renderHeader = (isIndex?: boolean) =>
       };
 
 const screenOptions: BottomTabNavigationOptions = {
+  headerShown: true,
   headerStyle: {
     shadowOpacity: 0, // iOS
     elevation: 0, // Android

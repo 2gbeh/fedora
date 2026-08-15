@@ -11,7 +11,7 @@ export class TransactionsService {
   static findById() {}
   static async recent(): Promise<TransactionDto[]> {
     if (Debug.loader) {
-      await sleep();
+      // await sleep();
       return mockData.slice(0, 10);
     }
     return [];
@@ -20,7 +20,7 @@ export class TransactionsService {
     const res = { income: 0, expense: 0 };
 
     if (Debug.loader) {
-      await sleep();
+      // await sleep();
       mockData.forEach(({ amount }) => {
         amount < 0 ? res.expense += amount : res.income += amount;
       });

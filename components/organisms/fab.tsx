@@ -1,34 +1,44 @@
-import { StyleSheet, Pressable, Text } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
+//
+import { flexStyles } from "@/styles/flex";
+import { COLOR } from "@/constants/COLOR";
 
-export const FAB = () => {
+interface Props {
+  action?: () => void;
+  tab?: boolean;
+}
+
+export const FAB = ({ action, tab }: Props) => {
   return (
-    <Pressable style={sx.fab} onPress={() => console.log("FAB pressed")}>
-      <Text style={sx.fabIcon}>+</Text>
-    </Pressable>
+    <TouchableOpacity onPress={action} style={flexStyles.centerCenter}>
+      <View style={[sx.container, tab ? sx.tabFab : sx.fab]}>
+        <MaterialIcons name="add" size={24} color={COLOR.primaryForeground} />
+      </View>
+    </TouchableOpacity>
   );
 };
 
 const sx = StyleSheet.create({
   _: {},
-  fab: {
-    position: "absolute",
-    bottom: 24,
-    right: 24,
+  container: {
+    ...flexStyles.centerCenter,
+    backgroundColor: COLOR.primary,
+    borderRadius: 16,
     width: 56,
     height: 56,
-    borderRadius: 28,
-    backgroundColor: "#6750A4",
-    justifyContent: "center",
-    alignItems: "center",
     elevation: 4,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 4,
   },
-  fabIcon: {
-    color: "#fff",
-    fontSize: 28,
-    lineHeight: 28,
+  fab: {
+    position: "absolute",
+    bottom: 24,
+    right: 24,
+  },
+  tabFab: {
+    marginTop: -8,
   },
 });

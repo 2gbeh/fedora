@@ -13,7 +13,7 @@ export default function RootLayout() {
     if (!isLoggedIn && !inAuthGroup) {
       router.replace("/(auth)/login");
     } else if (isLoggedIn && inAuthGroup) {
-      router.replace("/(tabs)/index");
+      router.replace("/(tabs)");
     }
   }, [isLoggedIn, segments]);
 
@@ -22,7 +22,7 @@ export default function RootLayout() {
       <Stack.Screen name="(auth)" />
       <Stack.Screen name="(tabs)" />
       <Stack.Screen
-        name="transactions/create"
+        name="transaction/create"
         options={{ presentation: "modal" }}
       />
       <Stack.Screen name="analytics/index" />
