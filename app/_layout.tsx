@@ -1,21 +1,14 @@
-import { useEffect } from "react";
-import { Stack, useRouter, useSegments } from "expo-router";
-import { DEBUG } from "@/constants/DEBUG";
+import { Stack } from "expo-router";
+import { useAppFont } from "@/hooks/use-app-font";
+import { useAuthGuard } from "@/hooks/use-auth-guard";
 
 export default function RootLayout() {
-  const router = useRouter();
-  const segments = useSegments();
-  const isLoggedIn = Boolean(DEBUG.auth.router || 0);
+  const { fontsLoaded, fontError } = useAppFont();
+  const { authenticating } = useAuthGuard();
 
-  useEffect(() => {
-    const inAuthGroup = segments[0] === "(auth)";
-
-    if (!isLoggedIn && !inAuthGroup) {
-      router.replace("/(auth)/login");
-    } else if (isLoggedIn && inAuthGroup) {
-      router.replace("/(tabs)");
-    }
-  }, [isLoggedIn, segments]);
+  if ((!fontsLoaded && !fontError) || authenticating) {
+    return null;
+  }
 
   return (
     <Stack screenOptions={{ headerShown: false }}>

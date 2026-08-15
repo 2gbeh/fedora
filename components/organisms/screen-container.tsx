@@ -19,11 +19,10 @@ export const ScreenContainer = ({ children }: Props) => {
 
 export const sx = StyleSheet.create({
   _: {},
-  template: {
-
-  },
+  template: {},
   container: {
     padding: 16,
+    paddingBottom: 0,
     flex: 1,
     gap: 16,
   },

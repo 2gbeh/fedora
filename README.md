@@ -34,7 +34,7 @@ npx expo start --dev-client
 
 ## Documentation
 
-#### Modules
+### Modules
 
 - Contacts
 - Transactions
@@ -43,16 +43,70 @@ npx expo start --dev-client
 - Projects
 - Settings
 
-#### Screens
+### Screens
 
 - Auth
 - - Log in
 - - Forgot Password
 - Home (Dashboard)
 - Analytics
-- [Manage Modules]()
+- CRUD Modules
 
-#### Entity Relationship Diagram
+### Settings
+
+- Toggle Balance
+- Toggle Debug
+- Toggle Incognito
+- Manage Categories
+- Manage Wallets
+- Manage Amount Options
+- - 2k | 5k | 10k
+- - 18k | 20k | 50k
+- - 200k | 400k | 800k
+- Manage Narration Options
+- - %month Salary
+- - %month Tithe
+- - %month Market
+- Clear TempData (isTemp)
+
+### Transaction Wizard
+
+**Select Recipient:**
+
+- Recent | Favorites
+- [Cancel][Add New]
+- `Transaction History`
+
+**Enter Amount:**
+
+- - Amount Options
+- Narration
+- - Narration Options
+- Categories
+- [Back][Continue]
+- `Transaction Statement`
+
+**Transaction Details (form or widget):**
+
+- Transaction Date (calendar)
+- Wallet Options
+- Project Options
+- Upload Receipt
+- [Back][Preview]
+
+**Preview Sheet:**
+
+- Mark as Draft
+- Mark as Incognito
+- [Back][Save]
+
+**Success Modal:**
+
+- [Select Receipt]
+- [Enter Amount]
+- [Close]
+
+### Entity Relationship Diagram
 
 ```mermaid
 erDiagram
@@ -63,7 +117,7 @@ erDiagram
         datetime deletedAt
     }
 
-   TRANSACTION {        
+   TRANSACTION {
         binary receipt
         number amount
         string narration
@@ -71,7 +125,7 @@ erDiagram
         boolean isIncognito
         boolean isTemp
         date entryDate
-        
+
         %% Foreign Keys (FK)
         string contactId FK
         string[] categoryIds FK
@@ -99,11 +153,3 @@ erDiagram
 ## Resources
 
 - https://expo.dev/new/develop
-
-<!--
-# Settings
-
-- Toggle Debug
-- Toggle Incognito
-- [Clear TempData]
- -->

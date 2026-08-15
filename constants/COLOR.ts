@@ -1,20 +1,28 @@
 import "@/styles/global.css";
 
 export const COLOR = {
-  background: "var(--background)",
-  foreground: "var(--foreground)",
-  primary: "var(--primary)",
-  primaryForeground: "var(--primary-foreground)",
-  secondary: "var(--secondary)",
-  secondaryForeground: "var(--secondary-foreground)",
-  muted: "var(--muted)",
-  mutedForeground: "var(--muted-foreground)",
-  destructive: "var(--destructive)",
-  border: "var(--border)",
-  input: "var(--input)",
-  chart1: "var(--chart-1)", // Red
-  chart2: "var(--chart-2)", // Green
-  chart3: "var(--chart-3)", // Blue
-  chart4: "var(--chart-4)", // Yellow
-  chart5: "var(--chart-5)", // Orange
+  white: "#FFF",
+  black: "#000",
+  black10: "#0000001A",
+  background: "#F3F4F6",
+  primary: "#1D1C28",
+  primaryDisabled: "#D1D5DB",
+  secondary: "#6B7280",
+  muted: "#9CA3AF",
+  icon: "#374151",
+  border: "#E5E7EB",
+  link: "#1A56DB",
+  star: "#FACA15",
+  rated: "#FFD536",
+  rating: "#C0C0C0",
+  // CONTEXTUAL
+  info: "",
+  infoContainer: "",
+  success: "#0E9F6E",
+  successContainer: "#DEF7EC",
+  successContainerLighter: "#F3FAF7",
+  warning: "#C27803",
+  warningContainer: "#FDF6B2",
+  danger: "#E02424",
+  dangerContainer: "#FDF2F2",
 } as const;

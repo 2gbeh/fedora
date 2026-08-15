@@ -5,40 +5,15 @@ import { MaterialIcons } from "@expo/vector-icons";
 //
 import { AppBar } from "@/components/organisms/app-bar";
 import { FAB } from "@/components/organisms/fab";
-import { TouchableOpacity, View } from "react-native";
-import { flexStyles } from "@/styles/flex";
+import { COLOR } from "@/constants/COLOR";
 
 type MaterialIconName = ComponentProps<typeof MaterialIcons>["name"];
 const renderTabBarIcon = (focused: boolean, name?: MaterialIconName) => (
   <MaterialIcons
     name={name || "home"}
     size={24}
-    color={focused ? "#111" : "#79747E"}
+    color={focused ? COLOR.primary : COLOR.muted}
   />
-);
-const renderHeaderRight = () => (
-  <View style={[flexStyles.rowCenterCenter, { gap: 8, marginRight: 16 }]}>
-    <TouchableOpacity
-      style={{
-        // borderWidth: 1,
-        width: 24,
-        height: 24,
-        ...flexStyles.rowCenterCenter,
-      }}
-    >
-      <MaterialIcons name="search" size={18} />
-    </TouchableOpacity>
-    <TouchableOpacity
-      style={{
-        // borderWidth: 1,
-        width: 24,
-        height: 24,
-        ...flexStyles.rowCenterCenter,
-      }}
-    >
-      <MaterialIcons name="more-vert" size={18} />
-    </TouchableOpacity>
-  </View>
 );
 
 const hiddenScreens = ["projects/create", "contacts/create"];
@@ -62,8 +37,8 @@ export default function TabLayout() {
       <Tabs.Screen
         name="transactions"
         options={{
-          title: "Transactions",
-          headerRight: renderHeaderRight,
+          title: "Ledger",
+          headerRight: () => <AppBar rightSection />,
           tabBarIcon: ({ focused }) =>
             renderTabBarIcon(focused, "account-balance-wallet"),
         }}
@@ -80,7 +55,7 @@ export default function TabLayout() {
         name="projects"
         options={{
           title: "Projects",
-          headerRight: renderHeaderRight,
+          headerRight: () => <AppBar rightSection />,
           tabBarIcon: ({ focused }) => renderTabBarIcon(focused, "category"),
         }}
       />
@@ -88,7 +63,7 @@ export default function TabLayout() {
         name="contacts"
         options={{
           title: "Contacts",
-          headerRight: renderHeaderRight,
+          headerRight: () => <AppBar rightSection />,
           tabBarIcon: ({ focused }) =>
             renderTabBarIcon(focused, "perm-contact-calendar"),
         }}
@@ -110,12 +85,14 @@ const screenOptions: BottomTabNavigationOptions = {
   tabBarActiveTintColor: "#111",
   tabBarInactiveTintColor: "#79747E",
   tabBarStyle: {
-    backgroundColor: "#FFFBFE",
-    height: 64,
+    backgroundColor: COLOR.white,
     borderTopWidth: 0,
-    // elevation: 3,
-    elevation: 0, // Android shadow
-    shadowOpacity: 0, // iOS shadow
+    height: 64,
+    elevation: 4, // Android shadow
+    shadowOpacity: 0.1, // iOS shadow
+    shadowOffset: { width: 0, height: -2 },
+    shadowRadius: 10.4,
+    shadowColor: COLOR.black10,
   },
   tabBarLabelStyle: {
     fontSize: 12,

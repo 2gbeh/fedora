@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { FlatList, Text, View } from "react-native";
 //
 import { ScreenContainer } from "@/components/organisms/screen-container";
-import { AppBar } from "@/components/organisms/app-bar";
 import { Hero } from "@/components/molecules/hero";
 import { SectionHeader } from "@/components/organisms/section-header";
 import { Avatar } from "@/components/atoms/avatar";
@@ -47,7 +46,7 @@ export default function HomeScreen() {
       <FlatList
         data={transformedData}
         keyExtractor={(item) => item.id}
-        contentContainerStyle={{ gap: 16 }}
+        contentContainerStyle={{ gap: 16, backgroundColor:'green' }}
         renderItem={({ item }) => (
           <View style={[flexStyles.rowCenterBetween, { gap: 8 }]}>
             <Avatar
