@@ -7,17 +7,17 @@ import { RecentTransactions } from "@/components/species/home/ui/recent-transact
 
 export default function HomeScreen() {
   return (
-    <Screen>
-      <Spacing t={8} />
+    <Screen title="Dashboard">
+      <Spacing top={8} />
       <Hero />
-      <Spacing t={16} />
+      <Spacing top={16} />
       <SectionHeader
         label="Expense Accounts"
         action={{ path: "/transactions" }}
       />
-      <Spacing t={16} />
+      <Spacing top={16} />
       <ProjectsFilterBar />
-      <Spacing t={16} />
+      <Spacing top={16} />
       <SectionHeader
         label="Recent Transactions"
         action={{ path: "/transactions" }}
