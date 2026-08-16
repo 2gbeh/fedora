@@ -1,6 +1,7 @@
 import { Stack } from "expo-router";
 import { useAppFont } from "@/hooks/use-app-font";
 import { useAuthGuard } from "@/hooks/use-auth-guard";
+import { COLOR } from "@/constants/COLOR";
 
 export default function RootLayout() {
   const { fontsLoaded, fontError } = useAppFont();
@@ -11,7 +12,12 @@ export default function RootLayout() {
   }
 
   return (
-    <Stack screenOptions={{ headerShown: false }}>
+    <Stack
+      screenOptions={{
+        headerShown: false,
+        contentStyle: { backgroundColor: COLOR.background },
+      }}
+    >
       <Stack.Screen name="(auth)" />
       <Stack.Screen name="(tabs)" />
       <Stack.Screen

@@ -1,12 +1,14 @@
 import { StyleSheet } from "react-native";
 import { flexStyles } from "@/styles/flex";
 import { COLOR } from "@/constants/COLOR";
+import { FONT } from "@/constants/FONT";
 
 export const appBarStyles = StyleSheet.create({
   _: {},
   container: {
-    borderWidth: 1,
-    paddingHorizontal: 4,
+    backgroundColor: COLOR.white,
+    // borderWidth: 1,
+    paddingLeft: 16,
     height: 64,
     ...flexStyles.rowCenterBetween,
     gap: 8,
@@ -15,36 +17,28 @@ export const appBarStyles = StyleSheet.create({
     ...flexStyles.rowCenter,
     gap: 8,
   },
-  figcaption: {
-    // ...flexStyles.colStart,
+  greeting: {
+    color: COLOR.secondary,
+    fontFamily: FONT.regular,
+    fontSize: 14,
+    // lineHeight: 22,
+    letterSpacing: 0.12,
   },
-  text: {
-    color: COLOR.foreground,
+  username: {
+    color: COLOR.primary,
+    fontFamily: FONT.bold,
     fontSize: 16,
-    fontWeight: "700",
+    // lineHeight: 24,
+    letterSpacing: 0.12,
   },
-  subtext: {
-    color: COLOR.foreground,
-    fontSize: 16,
-  },
-  rightSection: {
+  right: {
     ...flexStyles.rowCenter,
-    gap: 16,
+    paddingRight: 4,
   },
   iconContainer: {
-    backgroundColor: COLOR.input,
-    borderRadius: 28,
-    width: 28,
-    height: 28,
-    ...flexStyles.colCenterCenter,
-  },
-  indicator: {
-    backgroundColor: COLOR.destructive,
-    borderRadius: 8,
-    width: 8,
-    height: 8,
-    position: "absolute",
-    right: 0,
-    top: 0,
+    // borderWidth: 1,
+    width: 48,
+    height: 48,
+    ...flexStyles.centerCenter,
   },
 });

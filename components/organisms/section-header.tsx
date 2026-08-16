@@ -1,39 +1,56 @@
-import { COLOR } from "@/constants/COLOR";
-import { flexStyles } from "@/styles/flex";
-import { MaterialIcons } from "@expo/vector-icons";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { Href, useRouter } from "expo-router";
-import { Pressable, Text, View } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
+//
+import { flexStyles } from "@/styles/flex";
+import { COLOR } from "@/constants/COLOR";
+import { FONT } from "@/constants/FONT";
 
 interface Props {
-  text: string;
-  action?: { text?: string; path: Href };
+  label: string;
+  action?: {
+    label?: string;
+    path: Href;
+  };
 }
 
-export const SectionHeader = ({ text, action }: Props) => {
+export const SectionHeader = ({ label, action }: Props) => {
   const router = useRouter();
 
   return (
-    <View
-      style={{
-        ...flexStyles.rowCenterBetween,
-      }}
-    >
-      <Text style={{ fontSize: 16, fontWeight: "500" }}>{text}</Text>
+    <View style={sx.container}>
+      <Text style={sx.text}>{label}</Text>
       {action ? (
-        <Pressable
-          onPress={() => router.push(action.path)}
-          style={{ ...flexStyles.rowCenter, gap: 2 }}
-        >
-          <Text style={{ color: COLOR.mutedForeground, fontWeight: "500" }}>
-            {action.text || "See all"}
-          </Text>
-          <MaterialIcons
-            name="chevron-right"
-            size={18}
-            color={COLOR.mutedForeground}
-          />
+        <Pressable onPress={() => router.push(action.path)} style={sx.right}>
+          <Text style={sx.subtext}>{action.label || "See all"}</Text>
+          <MaterialIcons name="chevron-right" size={18} color={COLOR.secondary} />
         </Pressable>
       ) : null}
     </View>
   );
 };
+
+const sx = StyleSheet.create({
+  _: {},
+  container: {
+    ...flexStyles.rowCenterBetween,
+  },
+  text: {
+    color: COLOR.primary,
+    fontFamily: FONT.medium,
+    fontSize: 16,
+    lineHeight: 24,
+    letterSpacing: 0.12,
+  },
+  subtext: {
+    color: COLOR.secondary,
+    fontFamily: FONT.regular,
+    fontSize: 14,
+    lineHeight: 18,
+    letterSpacing: 0.12,
+  },
+  right: {
+    ...flexStyles.rowCenter,
+    gap: 2,
+  },
+});

@@ -1,4 +1,3 @@
-import type { ComponentProps } from "react";
 import { Tabs, useRouter } from "expo-router";
 import { BottomTabNavigationOptions } from "expo-router/build/react-navigation/bottom-tabs";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -6,25 +5,18 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { AppBar } from "@/components/organisms/app-bar";
 import { FAB } from "@/components/organisms/fab";
 import { COLOR } from "@/constants/COLOR";
+import { FONT } from "@/constants/FONT";
+import { MaterialIconName } from "@/types/react";
 
-type MaterialIconName = ComponentProps<typeof MaterialIcons>["name"];
-const renderTabBarIcon = (focused: boolean, name?: MaterialIconName) => (
-  <MaterialIcons
-    name={name || "home"}
-    size={24}
-    color={focused ? COLOR.primary : COLOR.muted}
-  />
-);
-
-const hiddenScreens = ["projects/create", "contacts/create"];
+const ignoreScreens = ["projects/create", "contacts/create"];
 
 export default function TabLayout() {
   const router = useRouter();
   //
   return (
     <Tabs screenOptions={screenOptions}>
-      {hiddenScreens.map((name) => (
-        <Tabs.Screen name={name} options={{ href: null }} />
+      {ignoreScreens.map((name) => (
+        <Tabs.Screen key={name} name={name} options={{ href: null }} />
       ))}
       <Tabs.Screen
         name="index"
@@ -38,13 +30,13 @@ export default function TabLayout() {
         name="transactions"
         options={{
           title: "Ledger",
-          headerRight: () => <AppBar rightSection />,
+          headerRight: () => <AppBar menu />,
           tabBarIcon: ({ focused }) =>
             renderTabBarIcon(focused, "account-balance-wallet"),
         }}
       />
       <Tabs.Screen
-        name="fab"
+        name="transactions/create_"
         options={{
           tabBarButton: () => (
             <FAB action={() => router.push("/transaction/create")} tab />
@@ -55,7 +47,7 @@ export default function TabLayout() {
         name="projects"
         options={{
           title: "Projects",
-          headerRight: () => <AppBar rightSection />,
+          headerRight: () => <AppBar menu />,
           tabBarIcon: ({ focused }) => renderTabBarIcon(focused, "category"),
         }}
       />
@@ -63,7 +55,7 @@ export default function TabLayout() {
         name="contacts"
         options={{
           title: "Contacts",
-          headerRight: () => <AppBar rightSection />,
+          headerRight: () => <AppBar menu />,
           tabBarIcon: ({ focused }) =>
             renderTabBarIcon(focused, "perm-contact-calendar"),
         }}
@@ -72,31 +64,40 @@ export default function TabLayout() {
   );
 }
 
+
+const renderTabBarIcon = (focused: boolean, name?: MaterialIconName) => (
+  <MaterialIcons
+    name={name || "home"}
+    size={24}
+    color={focused ? COLOR.primary : COLOR.muted}
+  />
+);
+
 const screenOptions: BottomTabNavigationOptions = {
   headerStyle: {
+    borderWidth: 0,
     shadowOpacity: 0, // iOS
     elevation: 0, // Android
-    borderBottomWidth: 0,
   },
   headerTitleStyle: {
-    textTransform: "capitalize",
+    fontFamily: FONT.medium,
+    fontSize: 18,
   },
-  sceneStyle: { backgroundColor: "white" },
-  tabBarActiveTintColor: "#111",
-  tabBarInactiveTintColor: "#79747E",
+  sceneStyle: { backgroundColor: COLOR.white },
+  tabBarActiveTintColor: COLOR.primary,
+  tabBarInactiveTintColor: COLOR.muted,
   tabBarStyle: {
     backgroundColor: COLOR.white,
     borderTopWidth: 0,
     height: 64,
-    elevation: 4, // Android shadow
-    shadowOpacity: 0.1, // iOS shadow
+    elevation: 4,
+    shadowOpacity: 0.1,
     shadowOffset: { width: 0, height: -2 },
     shadowRadius: 10.4,
     shadowColor: COLOR.black10,
   },
   tabBarLabelStyle: {
+    fontFamily: FONT.regular,
     fontSize: 12,
-    fontWeight: "500",
-    textTransform: "capitalize",
   },
 };

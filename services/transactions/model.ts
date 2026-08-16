@@ -13,7 +13,7 @@ export class Transaction extends Base {
   }
 
   amountColor() {
-    return { color: this._.amount < 0 ? COLOR.primary : COLOR.chart2 };
+    return { color: this._.amount < 0 ? COLOR.danger : COLOR.success };
   }
 
   get entryDate() {

@@ -1,22 +1,30 @@
 import { View, Text, StyleSheet } from "react-native";
 import { Image } from "expo-image";
 //
-import { COLOR } from "@/constants/COLOR";
 import { flexStyles } from "@/styles/flex";
+import { COLOR } from "@/constants/COLOR";
+import { FONT } from "@/constants/FONT";
 
 interface Props {
   src?: string;
   alt?: string;
   size?: number;
+  radius?: number;
   relativePath?: boolean;
 }
 
-export const Avatar = ({ src, alt, size = 40, relativePath }: Props) => {
+export const Avatar = ({
+  src,
+  alt,
+  size = 40,
+  radius,
+  relativePath,
+}: Props) => {
   const source = relativePath ? src : { uri: src };
   const imageStyles = {
     width: size,
     height: size,
-    borderRadius: size / 2,
+    borderRadius: radius || size,
   };
 
   if (src) {
@@ -32,7 +40,7 @@ export const Avatar = ({ src, alt, size = 40, relativePath }: Props) => {
 
   return (
     <View style={[imageStyles, sx.container]}>
-      <Text style={sx.text}>{extractInitials(alt)}</Text> 
+      <Text style={sx.text}>{extractInitials(alt)}</Text>
     </View>
   );
 };
@@ -49,11 +57,12 @@ const sx = StyleSheet.create({
   _: {},
   container: {
     backgroundColor: COLOR.primary,
-    ...flexStyles.colCenterCenter,
+    ...flexStyles.centerCenter,
   },
   text: {
-    color: COLOR.primaryForeground,
+    color: COLOR.white,
+    fontFamily: FONT.medium,
     fontSize: 16,
-    fontWeight: "400",
+    letterSpacing: 0.15,
   },
 });

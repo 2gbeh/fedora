@@ -54,7 +54,7 @@ npx expo start --dev-client
 
 ### Settings
 
-- Toggle Balance
+- Toggle Mask Balance
 - Toggle Debug
 - Toggle Incognito
 - Manage Categories

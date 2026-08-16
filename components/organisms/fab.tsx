@@ -11,18 +11,17 @@ interface Props {
 
 export const FAB = ({ action, tab }: Props) => {
   return (
-    <TouchableOpacity onPress={action} style={[flexStyles.centerCenter,{backgroundColor:'red'}]}>
-      <View style={[sx.container, tab ? sx.tabFab : sx.fab]}>
-        <MaterialIcons name="add" size={24} color={COLOR.primaryForeground} />
-      </View>
-    </TouchableOpacity>
+    <View style={[flexStyles.centerCenter, tab ? sx.tabFab : sx.fab]}>
+      <TouchableOpacity onPress={action} style={sx.container}>
+        <MaterialIcons name="add" size={24} color={COLOR.white} />
+      </TouchableOpacity>
+    </View>
   );
 };
 
 const sx = StyleSheet.create({
   _: {},
   container: {
-    ...flexStyles.centerCenter,
     backgroundColor: COLOR.primary,
     borderRadius: 16,
     width: 56,
@@ -32,11 +31,12 @@ const sx = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 4,
     shadowColor: COLOR.black,
+    ...flexStyles.centerCenter,
   },
   fab: {
     position: "absolute",
-    bottom: 24,
-    right: 24,
+    bottom: 16,
+    right: 16,
   },
   tabFab: {
     marginTop: -8,
