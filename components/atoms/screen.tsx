@@ -1,14 +1,14 @@
 import { PropsWithChildren } from "react";
 import { StyleSheet, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-// 
+//
 import { flexStyles } from "@/styles/flex";
 import { COLOR } from "@/constants/COLOR";
 import { FONT } from "@/constants/FONT";
 
 interface Props extends PropsWithChildren {}
 
-export const ScreenContainer = ({ children }: Props) => {
+export const Screen = ({ children }: Props) => {
   if (typeof children === "string") {
     return (
       <SafeAreaView style={flexStyles.centered}>
@@ -23,10 +23,9 @@ export const ScreenContainer = ({ children }: Props) => {
 export const sx = StyleSheet.create({
   _: {},
   container: {
-    padding: 16,
+    paddingHorizontal: 16,
     paddingBottom: 0,
     flex: 1,
-    gap: 16,
   },
   text: {
     color: COLOR.primary,

@@ -29,13 +29,13 @@ export function ProjectsFilterBar() {
   const transformedData = [{ id: "0", label: "All" }, ...data];
 
   return (
-    <View style={sx.__.container}>
+    <View>
       <FlatList
         data={transformedData}
         keyExtractor={(item) => item.id}
         horizontal
         showsHorizontalScrollIndicator={false}
-        contentContainerStyle={sx.__.listContainer}
+        contentContainerStyle={sx.__.container}
         renderItem={({ item }) => {
           const active = item.id === selected;
           return (
@@ -64,13 +64,6 @@ const sx = {
   _: {},
   __: StyleSheet.create({
     container: {
-      backgroundColor: COLOR.white,
-      borderRadius: 16,
-      padding: 4,
-    },
-    listContainer: {
-      borderRadius: 16,
-      overflow: "hidden",
       gap: 8,
     },
   }),

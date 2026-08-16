@@ -7,7 +7,7 @@ export const appBarStyles = StyleSheet.create({
   _: {},
   container: {
     backgroundColor: COLOR.white,
-    // borderWidth: 1,
+    borderWidth: 0,
     paddingLeft: 16,
     height: 64,
     ...flexStyles.rowCenterBetween,

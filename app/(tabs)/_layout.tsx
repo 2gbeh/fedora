@@ -64,7 +64,6 @@ export default function TabLayout() {
   );
 }
 
-
 const renderTabBarIcon = (focused: boolean, name?: MaterialIconName) => (
   <MaterialIcons
     name={name || "home"}
@@ -83,7 +82,9 @@ const screenOptions: BottomTabNavigationOptions = {
     fontFamily: FONT.medium,
     fontSize: 18,
   },
-  sceneStyle: { backgroundColor: COLOR.white },
+  sceneStyle: {
+    backgroundColor: COLOR.white,
+  },
   tabBarActiveTintColor: COLOR.primary,
   tabBarInactiveTintColor: COLOR.muted,
   tabBarStyle: {

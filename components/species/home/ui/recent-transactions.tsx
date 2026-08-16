@@ -32,9 +32,8 @@ export const RecentTransactions = () => {
     <FlatList
       data={transformedData}
       keyExtractor={(item) => item.id}
-      contentContainerStyle={sx.container}
       renderItem={({ item }) => (
-        <View style={sx.listItem}>
+        <View style={sx.container}>
           <Avatar
             src={item?.contact?._?.avatar}
             alt={item?.contact?._?.displayName}
@@ -58,10 +57,6 @@ export const RecentTransactions = () => {
 const sx = StyleSheet.create({
   _: {},
   container: {
-    backgroundColor: COLOR.white,
-    borderRadius: 12,
-  },
-  listItem: {
     borderBottomColor: COLOR.border,
     borderBottomWidth: 1,
     // paddingHorizontal: 16,

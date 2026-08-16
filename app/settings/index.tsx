@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { ScreenContainer } from "@/components/organisms/screen-container";
+import { Screen } from "@/components/atoms/screen";
 
 export default function SettingsScreen() {
-  return <ScreenContainer>SettingsScreen</ScreenContainer>;
+  return <Screen>SettingsScreen</Screen>;
 }
