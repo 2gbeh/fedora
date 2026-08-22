@@ -1,8 +1,8 @@
-import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 //
-import { flexStyles } from "@/styles/flex";
 import { COLOR } from "@/constants/COLOR";
+import { flexStyles } from "@/styles/flex-styles";
 
 interface Props {
   action?: () => void;

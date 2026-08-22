@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 //
 import { Avatar } from "@/components/atoms/avatar";
-import { TransactionsService } from "@/services/transactions";
-import { TransactionDto } from "@/services/transactions/types";
-import { Transaction } from "@/services/transactions/model";
-import { Contact } from "@/services/contacts/model";
-import { flexStyles } from "@/styles/flex";
 import { COLOR } from "@/constants/COLOR";
 import { FONT } from "@/constants/FONT";
+import { Contact } from "@/services/contacts/model";
+import { TransactionsService } from "@/services/transactions";
+import { Transaction } from "@/services/transactions/model";
+import { TransactionDto } from "@/services/transactions/types";
+import { flexStyles } from "@/styles/flex-styles";
 
 export const RecentTransactions = () => {
   const [data, setData] = useState<TransactionDto[]>([]);

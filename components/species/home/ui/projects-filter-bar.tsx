@@ -1,19 +1,19 @@
+import { MaterialIcons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 import { useState } from "react";
 import {
   FlatList,
-  TouchableOpacity,
-  Text,
-  View,
   StyleSheet,
-  ViewStyle,
+  Text,
   TextStyle,
+  TouchableOpacity,
+  View,
+  ViewStyle,
 } from "react-native";
-import { useRouter } from "expo-router";
-import { MaterialIcons } from "@expo/vector-icons";
 //
-import { flexStyles } from "@/styles/flex";
 import { COLOR } from "@/constants/COLOR";
 import { FONT } from "@/constants/FONT";
+import { flexStyles } from "@/styles/flex-styles";
 
 const data = [
   { id: "3", label: "HWP" },

@@ -1,10 +1,10 @@
+import { MaterialIcons } from "@expo/vector-icons";
 import { useEffect, useState } from "react";
 import { Pressable, Text, TouchableOpacity, View } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
 //
-import { flexStyles } from "@/styles/flex";
-import { TransactionsService } from "@/services/transactions";
 import { COLOR } from "@/constants/COLOR";
+import { TransactionsService } from "@/services/transactions";
+import { flexStyles } from "@/styles/flex-styles";
 //
 import { heroStyles as sx } from "./styles";
 

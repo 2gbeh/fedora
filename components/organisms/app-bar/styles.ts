@@ -1,7 +1,7 @@
-import { StyleSheet } from "react-native";
-import { flexStyles } from "@/styles/flex";
 import { COLOR } from "@/constants/COLOR";
 import { FONT } from "@/constants/FONT";
+import { flexStyles } from "@/styles/flex-styles";
+import { StyleSheet } from "react-native";
 
 export const appBarStyles = StyleSheet.create({
   _: {},

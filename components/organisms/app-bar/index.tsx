@@ -6,6 +6,7 @@ import { APP } from "@/constants/APP";
 import { COLOR } from "@/constants/COLOR";
 //
 import { appBarStyles as sx } from "./styles";
+import { useRouter } from "expo-router";
 
 interface Props {
   menu?: boolean;
@@ -14,13 +15,18 @@ interface Props {
 const iconProps = { size: 24, color: COLOR.secondary };
 
 export const AppBar = ({ menu }: Props) => {
+  const router = useRouter();
+  //
   if (menu) {
     return (
       <View style={sx.right}>
         <TouchableOpacity style={sx.iconContainer}>
           <MaterialIcons name="search" {...iconProps} />
         </TouchableOpacity>
-        <TouchableOpacity style={sx.iconContainer}>
+        <TouchableOpacity
+          onPress={() => router.push("/(tabs)")}
+          style={sx.iconContainer}
+        >
           <MaterialIcons name="more-vert" {...iconProps} />
         </TouchableOpacity>
       </View>

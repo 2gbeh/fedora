@@ -1,10 +1,10 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
-import { Href, useRouter } from "expo-router";
 import { MaterialIcons } from "@expo/vector-icons";
+import { Href, useRouter } from "expo-router";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 //
-import { flexStyles } from "@/styles/flex";
 import { COLOR } from "@/constants/COLOR";
 import { FONT } from "@/constants/FONT";
+import { flexStyles } from "@/styles/flex-styles";
 
 interface Props {
   label: string;
@@ -23,7 +23,11 @@ export const SectionHeader = ({ label, action }: Props) => {
       {action ? (
         <Pressable onPress={() => router.push(action.path)} style={sx.right}>
           <Text style={sx.subtext}>{action.label || "See all"}</Text>
-          <MaterialIcons name="chevron-right" size={18} color={COLOR.secondary} />
+          <MaterialIcons
+            name="chevron-right"
+            size={18}
+            color={COLOR.secondary}
+          />
         </Pressable>
       ) : null}
     </View>

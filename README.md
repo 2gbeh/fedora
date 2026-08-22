@@ -102,7 +102,7 @@ npx expo start --dev-client
 
 **Success Modal:**
 
-- [Select Receipt]
+- [Select Recipient]
 - [Enter Amount]
 - [Close]
 

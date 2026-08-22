@@ -1,9 +1,9 @@
-import { View, Text, StyleSheet } from "react-native";
 import { Image } from "expo-image";
+import { StyleSheet, Text, View } from "react-native";
 //
-import { flexStyles } from "@/styles/flex";
 import { COLOR } from "@/constants/COLOR";
 import { FONT } from "@/constants/FONT";
+import { flexStyles } from "@/styles/flex-styles";
 
 interface Props {
   src?: string;
