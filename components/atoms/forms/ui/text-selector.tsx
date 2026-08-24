@@ -1,18 +1,19 @@
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { Dropdown } from "react-native-element-dropdown";
 //
-import { formStyles as sx } from "../styles";
-import { InputProps } from "../types";
+import { OptionType } from "@/types";
+import { textStyles } from "@/styles/text-styles";
+import { COLOR } from "@/constants/COLOR";
+//
 import { AppLabel } from "./app-label";
-
-interface OptionType {
-  label: string;
-  value: string;
-}
+import { inputStyles } from "../styles";
+import { InputProps } from "../types";
 
 interface Props extends Omit<InputProps, "onChange"> {
   data?: OptionType[];
   onChange?: (item: OptionType) => void;
+  searchable?: boolean;
+  searchPlaceholder?: string;
 }
 
 export const TextSelector = (props: Props) => {
@@ -21,7 +22,7 @@ export const TextSelector = (props: Props) => {
   };
   //
   return (
-    <View style={sx.fieldContainer}>
+    <View style={inputStyles.fieldContainer}>
       {props.label ? <AppLabel>{props.label}</AppLabel> : null}
       <Dropdown
         data={props.data || []}
@@ -30,49 +31,33 @@ export const TextSelector = (props: Props) => {
         placeholder={props.placeholder}
         value={props.value}
         onChange={onChange}
-        search
-        searchPlaceholder="Search..."
-        style={sx.input}
-        placeholderStyle={styles.placeholder}
+        search={props.searchable}
+        searchPlaceholder={props.searchPlaceholder}
+        style={inputStyles.input}
+        placeholderStyle={inputStyles.placeholder}
         selectedTextStyle={textStyles.input}
-        inputSearchStyle={[sx.input, styles.searchInput]}
+        containerStyle={{ maxHeight: 250 }}
+        inputSearchStyle={[inputStyles.input, sx.searchInput]}
+        itemContainerStyle={sx.itemContainerStyle}
         itemTextStyle={textStyles.input}
-        itemContainerStyle={styles.itemContainer}
       />
-      {/* <Picker
-        selectedValue={props.value}
-        onValueChange={props.onChange}
-        style={sx.input}
-        placeholder="suybjlj"
-      >
-        {props.data?.map((item) => (
-          <Picker.Item label={item.name} value={item.value} />
-        ))}
-      </Picker> */}
     </View>
   );
 };
 
-import { COLOR } from "@/constants/COLOR";
-import { textStyles } from "@/styles/text-styles";
-import { StyleSheet } from "react-native";
-
-const styles = StyleSheet.create({
-  placeholder: {
-    color: COLOR.muted,
-    ...textStyles.input,
-  },
+const sx = StyleSheet.create({
   searchInput: {
     backgroundColor: COLOR.nil,
     borderWidth: 0,
     borderBottomWidth: 1,
     borderRadius: 0,
     margin: 0,
-    padding: 0,
-    height: 40,
+    // marginBottom: 0,
+    paddingHorizontal: 8,
   },
-  itemContainer: {
-    borderRadius: 8,
-    // maxHeight: 250,
+  itemContainerStyle: {
+    backgroundColor: COLOR.nil,
+    height: 40,
+    justifyContent: "center",
   },
 });

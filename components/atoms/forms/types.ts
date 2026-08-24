@@ -1,3 +1,4 @@
+import { PropsWithChildren } from "react";
 import { KeyboardTypeOptions } from "react-native";
 
 export const KEYBOARD_TYPE_MAP = {
@@ -11,7 +12,7 @@ export const KEYBOARD_TYPE_MAP = {
   tel: "phone-pad",
   url: "url",
   username: "twitter",
-  password: "visible-password",
+  password: "visible-password", // secureTextEntry
 } satisfies Record<string, KeyboardTypeOptions>;
 
 export type InputType = keyof typeof KEYBOARD_TYPE_MAP;
@@ -25,4 +26,15 @@ export interface InputProps {
   required?: boolean;
   disabled?: boolean;
   readOnly?: boolean;
+}
+
+export interface ButtonProps extends PropsWithChildren {
+  onClick?: () => void;
+  disabled?: boolean;
+  loading?: boolean;
+  variant?: "solid" | "outline";
+}
+
+export interface ButtonGroupProps extends PropsWithChildren {
+  variant?: "flex" | "grid";
 }

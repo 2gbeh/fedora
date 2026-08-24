@@ -1,6 +1,6 @@
 import { COLOR } from "@/constants/COLOR";
 import { TextInput, View } from "react-native";
-import { formStyles as sx } from "../styles";
+import { inputStyles as sx } from "../styles";
 import { InputProps, KEYBOARD_TYPE_MAP } from "../types";
 import { AppLabel } from "./app-label";
 

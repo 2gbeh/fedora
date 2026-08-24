@@ -2,14 +2,17 @@ import { MaterialIcons } from "@expo/vector-icons";
 import * as ImagePicker from "expo-image-picker";
 import { StyleSheet, Text, View } from "react-native";
 //
-import { COLOR } from "@/constants/COLOR";
+import { AppLabel } from "./app-label";
+import { InputSelector } from "./input-selector";
 import { flexStyles } from "@/styles/flex-styles";
 import { textStyles } from "@/styles/text-styles";
-import { formStyles } from "../styles";
+import { inputStyles } from "../styles";
 import { InputProps } from "../types";
-import { AppLabel } from "./app-label";
+import { COLOR } from "@/constants/COLOR";
 
-interface Props extends InputProps {}
+interface Props extends InputProps {
+  large?: boolean;
+}
 
 export const ImageSelector = (props: Props) => {
   const pickImage = async () => {
@@ -18,18 +21,22 @@ export const ImageSelector = (props: Props) => {
   };
 
   return (
-    <View style={formStyles.fieldContainer}>
+    <View style={inputStyles.fieldContainer}>
       {props.label ? <AppLabel>{props.label}</AppLabel> : null}
-      <View style={sx.container}>
-        <View style={sx.iconContainer}>
-          <MaterialIcons
-            name="photo-camera"
-            size={24}
-            color={COLOR.secondary}
-          />
+      {props.large ? (
+        <View style={sx.container}>
+          <View style={sx.iconContainer}>
+            <MaterialIcons
+              name="photo-camera"
+              size={24}
+              color={COLOR.secondary}
+            />
+          </View>
+          <Text style={sx.text}>{props?.placeholder}</Text>
         </View>
-        <Text style={sx.text}>{props?.placeholder}</Text>
-      </View>
+      ) : (
+        <InputSelector {...props} icon="cloud-upload" />
+      )}
     </View>
   );
 };

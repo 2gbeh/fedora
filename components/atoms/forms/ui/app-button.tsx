@@ -1,17 +1,9 @@
-import { COLOR } from "@/constants/COLOR";
-import { flexStyles } from "@/styles/flex-styles";
-import { textStyles } from "@/styles/text-styles";
-import { PropsWithChildren } from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
+//
+import { ButtonGroupProps, ButtonProps } from "../types";
+import { buttonStyles as sx } from "../styles";
 
-type Variant = "solid" | "outline";
-
-interface Props extends PropsWithChildren {
-  onClick?: () => void;
-  disabled?: boolean;
-  loading?: boolean;
-  variant?: Variant;
-}
+interface Props extends ButtonProps {}
 
 export const AppButton = ({
   children,
@@ -20,33 +12,21 @@ export const AppButton = ({
   variant = "solid",
 }: Props) => {
   return (
-    <TouchableOpacity
-      onPress={alert}
-      disabled={disabled}
-      style={sx({ disabled, variant }).container}
-    >
-      <Text style={sx({ variant }).text}>{children}</Text>
-    </TouchableOpacity>
+    <View style={{ flex: 1 }}>
+      <TouchableOpacity
+        onPress={alert}
+        disabled={disabled}
+        style={sx.container({ disabled, variant })}
+      >
+        <Text style={sx.text({ variant })}>{children}</Text>
+      </TouchableOpacity>
+    </View>
   );
 };
 
-const sx = (params: Props) =>
-  StyleSheet.create({
-    _: {},
-    container: {
-      backgroundColor: params.disabled
-        ? COLOR.primaryDisabled
-        : params.variant === "outline"
-          ? COLOR.nil
-          : COLOR.primary,
-      borderColor: params.disabled ? COLOR.primaryDisabled : COLOR.primary,
-      borderWidth: 1,
-      borderRadius: 100,
-      height: 44,
-      ...flexStyles.centerCenter,
-    },
-    text: {
-      color: params.variant === "outline" ? COLOR.primary : COLOR.white,
-      ...textStyles.button,
-    },
-  });
+export const ButtonGroup = ({
+  children,
+  variant = "flex",
+}: ButtonGroupProps) => (
+  <View style={sx.buttonGroup({ variant })}>{children}</View>
+);

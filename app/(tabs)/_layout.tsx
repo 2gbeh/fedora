@@ -6,7 +6,7 @@ import { AppBar } from "@/components/organisms/app-bar";
 import { FAB } from "@/components/organisms/fab";
 import { COLOR } from "@/constants/COLOR";
 import { FONT } from "@/constants/FONT";
-import { MaterialIconName } from "@/types/react";
+import { MaterialIconName } from "@/types/react-types";
 
 const ignoreScreens = ["projects/create", "contacts/create"];
 

@@ -1,12 +1,11 @@
 import { Text, TouchableOpacity, View } from "react-native";
+import { useRouter } from "expo-router";
 import { MaterialIcons } from "@expo/vector-icons";
 //
 import { Avatar } from "@/components/atoms/avatar";
+import { appBarStyles as sx } from "./styles";
 import { APP } from "@/constants/APP";
 import { COLOR } from "@/constants/COLOR";
-//
-import { appBarStyles as sx } from "./styles";
-import { useRouter } from "expo-router";
 
 interface Props {
   menu?: boolean;
