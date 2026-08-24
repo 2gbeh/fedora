@@ -1,20 +1,17 @@
 import { AppScreen } from "@/components/atoms/app-screen";
 import { AppScrollView } from "@/components/atoms/app-scroll-view";
 import { AppButton, ButtonGroup } from "@/components/atoms/forms/ui/app-button";
-import { ImageSelector } from "@/components/atoms/forms/ui/image-selector";
 import { TextField } from "@/components/atoms/forms/ui/text-field";
-import { TextSelector } from "@/components/atoms/forms/ui/text-selector";
-import * as DocumentPicker from "expo-document-picker";
-import * as ImagePicker from "expo-image-picker";
+import { ListSelector } from "@/components/atoms/forms/ui/list-selector";
 import { useState } from "react";
 import { StyleSheet, useWindowDimensions, View } from "react-native";
-import DateTimePicker from "@react-native-community/datetimepicker";
 
 import seedContacts from "@/services/contacts/data/seed.json";
 import seedCategories from "@/services/categories/data/seed.json";
 import seedWallets from "@/services/wallets/data/seed.json";
 import seedProjects from "@/services/projects/data/seed.json";
 import { DateTimeSelector } from "@/components/atoms/forms/ui/datetime-selector";
+import { FileSelector } from "@/components/atoms/forms/ui/file-selector";
 /**
 **Select Recipient:**
 - Upload Receipt
@@ -52,16 +49,6 @@ export default function CreateTransactionScreen() {
   const [pickerVal, setPickerVal] = useState("");
   const [checked, setChecked] = useState(false);
 
-  const pickImage = async () => {
-    const result = await ImagePicker.launchImageLibraryAsync();
-    console.log(result);
-  };
-
-  const pickDocument = async () => {
-    const result = await DocumentPicker.getDocumentAsync();
-    console.log(result);
-  };
-
   return (
     <AppScreen
       title="Add Transaction"
@@ -73,8 +60,8 @@ export default function CreateTransactionScreen() {
       }
     >
       <AppScrollView>
-        <ImageSelector label="Receipt" placeholder="Attach receipt" /> 
-        <TextSelector
+        <FileSelector label="Receipt" placeholder="Attach receipt" /> 
+        <ListSelector
           label="Contact"
           placeholder="Select contact"
           data={seedContacts.map((item, i) => ({
@@ -86,7 +73,7 @@ export default function CreateTransactionScreen() {
         />
         <TextField label="Amount" type="decimal" placeholder="Enter amount" />
         <TextField label="Narration" placeholder="Enter description" />
-        <TextSelector
+        <ListSelector
           label="Categories"
           placeholder="Select categories"
           data={seedCategories.map((item, i) => ({
@@ -96,7 +83,7 @@ export default function CreateTransactionScreen() {
           searchable
           searchPlaceholder="Search categories"
         />
-        <TextSelector
+        <ListSelector
           label="Wallet"
           placeholder="Select wallet"
           data={seedWallets.map((item, i) => ({
@@ -104,7 +91,7 @@ export default function CreateTransactionScreen() {
             value: String(i),
           }))}
         />
-        <TextSelector
+        <ListSelector
           label="Project"
           placeholder="Select project"
           data={seedProjects.map((item, i) => ({

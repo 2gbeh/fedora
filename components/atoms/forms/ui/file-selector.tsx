@@ -1,5 +1,6 @@
 import { MaterialIcons } from "@expo/vector-icons";
 import * as ImagePicker from "expo-image-picker";
+import * as DocumentPicker from "expo-document-picker";
 import { StyleSheet, Text, View } from "react-native";
 //
 import { AppLabel } from "./app-label";
@@ -14,11 +15,17 @@ interface Props extends InputProps {
   large?: boolean;
 }
 
-export const ImageSelector = (props: Props) => {
+export const FileSelector = (props: Props) => {
   const pickImage = async () => {
     const result = await ImagePicker.launchImageLibraryAsync();
     console.log(result);
   };
+
+  const pickDocument = async () => {
+    const result = await DocumentPicker.getDocumentAsync();
+    console.log(result);
+  };
+  //
 
   return (
     <View style={inputStyles.fieldContainer}>

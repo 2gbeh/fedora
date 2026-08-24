@@ -16,7 +16,7 @@ interface Props extends Omit<InputProps, "onChange"> {
   searchPlaceholder?: string;
 }
 
-export const TextSelector = (props: Props) => {
+export const ListSelector = (props: Props) => {
   const onChange = (item: OptionType) => {
     props.onChange?.(item);
   };

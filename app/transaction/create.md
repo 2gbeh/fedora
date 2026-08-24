@@ -3,7 +3,6 @@ import { TextField } from "@/components/atoms/forms/ui/text-field";
 import { Screen } from "@/components/atoms/screen";
 import { COLOR } from "@/constants/COLOR";
 import { FONT } from "@/constants/FONT";
-import DateTimePicker from "@react-native-community/datetimepicker";
 import Slider from "@react-native-community/slider";
 import { Picker } from "@react-native-picker/picker";
 import Checkbox from "expo-checkbox";
