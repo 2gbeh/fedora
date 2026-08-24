@@ -4,14 +4,14 @@ export const KEYBOARD_TYPE_MAP = {
   text: "default",
   search: "web-search",
   alphanumeric: "name-phone-pad",
-  number: "number-pad",
-  money: "decimal-pad",
-  password: "visible-password",
+  number: "numbers-and-punctuation",
+  integer: "number-pad",
+  decimal: "decimal-pad",
   email: "email-address",
   tel: "phone-pad",
   url: "url",
-  slug: "numbers-and-punctuation",
   username: "twitter",
+  password: "visible-password",
 } satisfies Record<string, KeyboardTypeOptions>;
 
 export type InputType = keyof typeof KEYBOARD_TYPE_MAP;

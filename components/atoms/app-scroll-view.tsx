@@ -12,6 +12,7 @@ export const AppScrollView = ({ children, styles }: Props) => {
   return (
     <ScrollView
       keyboardShouldPersistTaps="handled"
+      showsVerticalScrollIndicator={false}
       style={{ flex: 1, ...styles?.container }}
       contentContainerStyle={{ gap: 12, ...styles?.content }}
     >

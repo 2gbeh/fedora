@@ -1,7 +1,9 @@
 import { AppScreen } from "@/components/atoms/app-screen";
 import { AppScrollView } from "@/components/atoms/app-scroll-view";
 import { AppButton } from "@/components/atoms/forms/ui/app-button";
-import { AppTextInput } from "@/components/atoms/forms/ui/app-text-input";
+import { ImageSelector } from "@/components/atoms/forms/ui/image-selector";
+import { TextField } from "@/components/atoms/forms/ui/text-field";
+import { TextSelector } from "@/components/atoms/forms/ui/text-selector";
 import * as DocumentPicker from "expo-document-picker";
 import * as ImagePicker from "expo-image-picker";
 import { useState } from "react";
@@ -56,21 +58,24 @@ export default function CreateTransactionScreen() {
   return (
     <AppScreen title="Add Transaction">
       <AppScrollView>
-        {[
-          "Receipt",
-          "Recipient",
-          "Amount",
-          "Narration",
-          "Categories",
-          "Project",
-          "Wallet",
-          "Date",
-        ].map((label, i) => (
-          <AppTextInput key={i} label={label} />
+        <ImageSelector label="Receipt" placeholder="Select image" />
+        <TextSelector
+          label="Contact"
+          placeholder="Select contact"
+          data={[
+            { label: "Item 1", value: "1" },
+            { label: "Item 2", value: "2" },
+            { label: "Item 3", value: "3" },
+          ]}
+        />
+        <TextField label="Amount" type="decimal" placeholder="Enter amount" />
+        <TextField label="Narration" placeholder="Enter description" />
+        {["Categories", "Project", "Wallet", "Date"].map((label, i) => (
+          <TextField key={i} label={label} />
         ))}
       </AppScrollView>
       <View style={sx.footer}>
-        <AppButton>Confirm</AppButton>
+        <AppButton disabled>Confirm</AppButton>
       </View>
     </AppScreen>
   );

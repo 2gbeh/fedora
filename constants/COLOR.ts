@@ -1,7 +1,9 @@
 import "@/styles/global.css";
 
 export const COLOR = {
+  nil: "transparent",
   white: "#FFF",
+  offWhite: "#F9FAFB",
   black: "#000",
   black10: "#0000001A",
   background: "#F3F4F6",

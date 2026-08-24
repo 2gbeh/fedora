@@ -5,31 +5,48 @@ import { PropsWithChildren } from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
 type Variant = "solid" | "outline";
+
 interface Props extends PropsWithChildren {
+  onClick?: () => void;
+  disabled?: boolean;
+  loading?: boolean;
   variant?: Variant;
 }
 
-export const AppButton = ({ children, variant = "solid" }: Props) => {
+export const AppButton = ({
+  children,
+  disabled,
+  loading,
+  variant = "solid",
+}: Props) => {
   return (
-    <TouchableOpacity style={sx(variant).container}>
-      <Text style={sx(variant).text}>{children}</Text>
+    <TouchableOpacity
+      onPress={alert}
+      disabled={disabled}
+      style={sx({ disabled, variant }).container}
+    >
+      <Text style={sx({ variant }).text}>{children}</Text>
     </TouchableOpacity>
   );
 };
 
-const sx = (variant: Variant) =>
+const sx = (params: Props) =>
   StyleSheet.create({
     _: {},
     container: {
-      backgroundColor: variant === "outline" ? "transparent" : COLOR.primary,
-      borderColor: COLOR.primary,
+      backgroundColor: params.disabled
+        ? COLOR.primaryDisabled
+        : params.variant === "outline"
+          ? COLOR.nil
+          : COLOR.primary,
+      borderColor: params.disabled ? COLOR.primaryDisabled : COLOR.primary,
       borderWidth: 1,
       borderRadius: 100,
       height: 44,
       ...flexStyles.centerCenter,
     },
     text: {
-      color: variant === "outline" ? COLOR.primary : COLOR.white,
+      color: params.variant === "outline" ? COLOR.primary : COLOR.white,
       ...textStyles.button,
     },
   });

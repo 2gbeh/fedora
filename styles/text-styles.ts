@@ -5,6 +5,12 @@ import { StyleSheet } from "react-native";
 export const textStyles = StyleSheet.create({
   _: {},
   label: {
+    fontFamily: FONT.regular,
+    fontSize: 12,
+    lineHeight: 18,
+    letterSpacing: 0.12,
+  },
+  labelMedium: {
     fontFamily: FONT.medium,
     fontSize: 12,
     lineHeight: 18,

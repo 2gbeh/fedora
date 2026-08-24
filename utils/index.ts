@@ -35,3 +35,10 @@ export const isValidIp = (ip: string) => {
 
   return ipv4.test(ip) || ipv6.test(ip);
 };
+
+export const sanitizeDecimal = (text: string) => {
+  const cleaned = text.replace(/[^0-9.]/g, "");
+  const parts = cleaned.split(".");
+  if (parts.length <= 2) return cleaned;
+  return parts[0] + "." + parts.slice(1).join("");
+};
