@@ -26,6 +26,7 @@ export interface InputProps {
   required?: boolean;
   disabled?: boolean;
   readOnly?: boolean;
+  loading?: boolean;
 }
 
 export interface ButtonProps extends PropsWithChildren {

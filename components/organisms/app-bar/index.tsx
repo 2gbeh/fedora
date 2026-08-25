@@ -19,9 +19,9 @@ export const AppBar = ({ menu }: Props) => {
   if (menu) {
     return (
       <View style={sx.right}>
-        <TouchableOpacity style={sx.iconContainer}>
+        {/* <TouchableOpacity style={sx.iconContainer}>
           <MaterialIcons name="search" {...iconProps} />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <TouchableOpacity
           onPress={() => router.push("/(tabs)")}
           style={sx.iconContainer}

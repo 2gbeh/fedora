@@ -1,66 +1,44 @@
 import { AppScreen } from "@/components/atoms/app-screen";
 import { AppScrollView } from "@/components/atoms/app-scroll-view";
-import { AppButton, ButtonGroup } from "@/components/atoms/forms/ui/app-button";
 import { TextField } from "@/components/atoms/forms/ui/text-field";
-import { ListSelector } from "@/components/atoms/forms/ui/list-selector";
-import { useState } from "react";
-import { StyleSheet, useWindowDimensions, View } from "react-native";
-
-import seedContacts from "@/services/contacts/data/seed.json";
-import seedCategories from "@/services/categories/data/seed.json";
-import seedWallets from "@/services/wallets/data/seed.json";
-import seedProjects from "@/services/projects/data/seed.json";
-import { DateTimeSelector } from "@/components/atoms/forms/ui/datetime-selector";
 import { FileSelector } from "@/components/atoms/forms/ui/file-selector";
+import { ListSelector } from "@/components/atoms/forms/ui/list-selector";
+import { DateTimeSelector } from "@/components/atoms/forms/ui/datetime-selector";
+import { AppButton } from "@/components/atoms/forms/ui/app-button";
+//
+import useCreateTransaction from "@/components/species/transactions/hooks/use-create-transaction";
 /**
-**Select Recipient:**
-- Upload Receipt
-- Enter Amount
+# Form
+- Contact
+- Receipt
+- Amount
 - Narration
 - Categories
-- Project Options
-- Wallet Options
-- Transaction Date (calendar)
+- Wallet
+- Project
+- Date (calendar)
+- [Back|Reset][Save]
 
-**Preview Sheet:**
+# Preview Sheet
 - Mark as Draft
 - Mark as Incognito
-- [Back][Save]
+- [Cancel][Confirm]
 
-**Success Modal:**
-- [Select Receipt]
-- [Enter Amount]
-- [Close]
+# Success Modal
+- [Back][Close]
  */
 
 export default function CreateTransactionScreen() {
-  const layout = useWindowDimensions();
-  const [index, setIndex] = useState(0);
-  const [routes] = useState([
-    { key: "posts", title: "Recents" },
-    { key: "about", title: "Favorites" },
-  ]);
-
-  const [text, setText] = useState("");
-  const [number, setNumber] = useState("");
-  const [isEnabled, setIsEnabled] = useState(false);
-  const [sliderVal, setSliderVal] = useState(0);
-  const [date, setDate] = useState(new Date());
-  const [pickerVal, setPickerVal] = useState("");
-  const [checked, setChecked] = useState(false);
-
+  const { seedContacts, seedCategories, seedWallets, seedProjects } =
+    useCreateTransaction();
+  //
   return (
     <AppScreen
       title="Add Transaction"
-      footer={
-        <ButtonGroup variant="flex">
-          <AppButton variant="outline">Cancel</AppButton>
-          <AppButton disabled>Confirm</AppButton>
-        </ButtonGroup>
-      }
+      footer={<AppButton disabled>Confirm</AppButton>}
     >
       <AppScrollView>
-        <FileSelector label="Receipt" placeholder="Attach receipt" /> 
+        <FileSelector label="Receipt" placeholder="Attach receipt" />
         <ListSelector
           label="Contact"
           placeholder="Select contact"
@@ -104,8 +82,3 @@ export default function CreateTransactionScreen() {
     </AppScreen>
   );
 }
-
-const sx = StyleSheet.create({
-  _: {},
-  container: {},
-});

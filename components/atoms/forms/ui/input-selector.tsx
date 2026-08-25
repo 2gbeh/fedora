@@ -17,7 +17,11 @@ export const InputSelector = ({ icon, ...props }: Props) => {
       <Text style={props.value ? inputStyles.value : inputStyles.placeholder}>
         {props.value || props.placeholder}
       </Text>
-      <MaterialIcons name={icon} size={18} color={COLOR.secondary} />
+      <MaterialIcons
+        name={icon}
+        size={18}
+        color={props.value ? COLOR.secondary : COLOR.muted}
+      />
     </TouchableOpacity>
   );
 };
