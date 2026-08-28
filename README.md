@@ -105,7 +105,6 @@ flowchart TD
     Step5Next1[/Select contact/]
     Step5Next2[/Enter amount/]
     Step5Next3[/Done/]
-    EndRef((Goto: End))
     End(End)
 
     Start --> Step1
@@ -114,9 +113,10 @@ flowchart TD
     AddContact --> Step1Next
     Contact --> Step1Next
     Step1Next -- Yes --> Step2
-    Step1Next -- No --> EndRef
+    Step1Next -- No --> Start
     Step2 --> Step2Form
     Step2 --> History
+    History --> Step2
     Step2Form --> Step2Next
     Step2Form --> AddCategory
     AddCategory --> Step2Form
@@ -143,6 +143,12 @@ flowchart TD
     Step5Next2 --> Step2Ref
     Step5Next3 --> End 
 ```
+
+A few structural issues:
+
+- **Inconsistent node shapes**: Step1–3 use hexagons `{{}}`, but Step4 uses a rectangle `[]` and Step5 uses a decision diamond `{}` — same conceptual role (process steps), different shapes.
+- **Step5 diamond has 3 unlabeled edges**: A decision node (`{}`) implies mutually exclusive branching, but Step5→Next1/Next2/Next3 have no labels, implying they all fire at once — contradicts diamond semantics. Should either be a rectangle (process) fanning out to options, or the edges need labels.
+- **Inconsistent back-navigation pattern**: Step4Next "No" routes through `Step3Ref` (goto anchor), but Step2Next "No" and Step3Next "No" jump directly to `Step1`/`Step2` nodes — pick one pattern.
 
 ### Core Modules
 

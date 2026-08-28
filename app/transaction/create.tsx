@@ -1,12 +1,14 @@
 import { AppScreen } from "@/components/atoms/app-screen";
 import { AppScrollView } from "@/components/atoms/app-scroll-view";
 import { TextField } from "@/components/atoms/forms/ui/text-field";
-import { FileSelector } from "@/components/atoms/forms/ui/file-selector";
+import { AmountField } from "@/components/atoms/forms/ui/amount-field";
 import { ListSelector } from "@/components/atoms/forms/ui/list-selector";
+import { FileSelector } from "@/components/atoms/forms/ui/file-selector";
 import { DateTimeSelector } from "@/components/atoms/forms/ui/datetime-selector";
 import { AppButton } from "@/components/atoms/forms/ui/app-button";
 //
 import useCreateTransaction from "@/components/species/transactions/hooks/use-create-transaction";
+import { ModalContainer } from "@/components/atoms/modal-container";
 /**
 # Form
 - Contact
@@ -38,6 +40,9 @@ export default function CreateTransactionScreen() {
       footer={<AppButton disabled>Confirm</AppButton>}
     >
       <AppScrollView>
+        <ModalContainer bottomSheet>
+          <FileSelector label="Receipt" placeholder="Attach receipt" large />
+        </ModalContainer>
         <FileSelector label="Receipt" placeholder="Attach receipt" />
         <ListSelector
           label="Contact"
@@ -49,7 +54,7 @@ export default function CreateTransactionScreen() {
           searchable
           searchPlaceholder="Search contacts"
         />
-        <TextField label="Amount" type="decimal" placeholder="Enter amount" />
+        <AmountField label="Amount" placeholder="Enter amount" />
         <TextField label="Narration" placeholder="Enter description" />
         <ListSelector
           label="Categories"

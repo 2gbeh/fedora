@@ -2,16 +2,15 @@ import { TextStyle, ViewStyle } from "react-native";
 //
 import { flexStyles } from "@/styles/flex-styles";
 import { textStyles } from "@/styles/text-styles";
-import { COLOR } from "@/constants/COLOR";
-//
+import { PositionType } from "@/types";
 import { ButtonGroupProps, ButtonProps } from "./types";
+import { COLOR } from "@/constants/COLOR";
 
 export const inputStyles = {
   _: {},
   fieldContainer: {
     gap: 4,
   },
-  inputContainer: {},
   input: {
     color: COLOR.primary,
     backgroundColor: COLOR.background,
@@ -29,6 +28,11 @@ export const inputStyles = {
   value: {
     color: COLOR.primary,
     ...textStyles.input,
+  },
+  clear: {
+    position: "absolute" as PositionType,
+    top: 14,
+    right: 16,
   },
 };
 

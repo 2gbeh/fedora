@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Platform, View } from "react-native";
 import DateTimePicker from "@react-native-community/datetimepicker";
 //
-import { AppLabel } from "./app-label";
-import { InputSelector } from "./input-selector";
+import { AppLabel } from "./builder";
+import { InputAlias } from "./builder";
 import { inputStyles as sx } from "../styles";
 import { InputProps } from "../types";
 import { COLOR } from "@/constants/COLOR";
@@ -17,7 +17,7 @@ export const DateTimeSelector = (props: Props) => {
   if (Platform.OS === "web") {
     return (
       <View style={sx.fieldContainer}>
-        {props.label ? <AppLabel>{props.label}</AppLabel> : null}
+        <AppLabel text={props.label} />
         <input
           type="date"
           // value={date.toISOString().split("T")[0]}
@@ -35,7 +35,7 @@ export const DateTimeSelector = (props: Props) => {
 
   return (
     <View style={sx.fieldContainer}>
-      {props.label ? <AppLabel>{props.label}</AppLabel> : null}
+      <AppLabel text={props.label} />
       {show && (
         <DateTimePicker
           mode="date"
@@ -48,7 +48,7 @@ export const DateTimeSelector = (props: Props) => {
         />
       )}
       {/*  onPress={() => setShow(true)} */}
-      <InputSelector {...props} icon="event" />
+      <InputAlias {...props} icon="event" />
     </View>
   );
 };

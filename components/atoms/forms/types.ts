@@ -6,7 +6,7 @@ export const KEYBOARD_TYPE_MAP = {
   search: "web-search",
   alphanumeric: "name-phone-pad",
   number: "numbers-and-punctuation",
-  integer: "number-pad",
+  integer: "number-pad", // otp
   decimal: "decimal-pad",
   email: "email-address",
   tel: "phone-pad",
@@ -22,7 +22,7 @@ export interface InputProps {
   label?: string;
   placeholder?: string;
   value?: string;
-  onChange?: () => void;
+  onChange?: (value?: string | null) => void;
   required?: boolean;
   disabled?: boolean;
   readOnly?: boolean;

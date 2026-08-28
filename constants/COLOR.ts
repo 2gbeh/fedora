@@ -2,6 +2,7 @@ import "@/styles/global.css";
 
 export const COLOR = {
   nil: "transparent",
+  overlay: "rgba(0,0,0,0.4)",
   white: "#FFF",
   offWhite: "#F9FAFB",
   black: "#000",

@@ -3,8 +3,8 @@ import * as ImagePicker from "expo-image-picker";
 import * as DocumentPicker from "expo-document-picker";
 import { StyleSheet, Text, View } from "react-native";
 //
-import { AppLabel } from "./app-label";
-import { InputSelector } from "./input-selector";
+import { AppLabel } from "./builder";
+import { InputAlias } from "./builder";
 import { flexStyles } from "@/styles/flex-styles";
 import { textStyles } from "@/styles/text-styles";
 import { inputStyles } from "../styles";
@@ -29,7 +29,7 @@ export const FileSelector = (props: Props) => {
 
   return (
     <View style={inputStyles.fieldContainer}>
-      {props.label ? <AppLabel>{props.label}</AppLabel> : null}
+      <AppLabel text={props.label} />
       {props.large ? (
         <View style={sx.container}>
           <View style={sx.iconContainer}>
@@ -42,7 +42,11 @@ export const FileSelector = (props: Props) => {
           <Text style={sx.text}>{props?.placeholder}</Text>
         </View>
       ) : (
-        <InputSelector {...props} icon="cloud-upload" />
+        <InputAlias
+          value={props.value}
+          placeholder={props.placeholder}
+          icon="cloud-upload"
+        />
       )}
     </View>
   );
