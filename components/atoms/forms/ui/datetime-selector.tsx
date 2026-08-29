@@ -27,6 +27,7 @@ export const DateTimeSelector = (props: Props) => {
             border: `1px solid ${COLOR.border}`,
             paddingLeft: 16,
             paddingRight: 16,
+            width: "100%",
           }}
         />
       </View>

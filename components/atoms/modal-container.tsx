@@ -64,6 +64,7 @@ const sx = (bottomSheet?: boolean) =>
             borderBottomLeftRadius: 16,
             width: "80%",
           }),
+      gap: 12,
     },
     notch: {
       backgroundColor: COLOR.muted,

@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { ActivityIndicator, Text, TouchableOpacity, View } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 //
 import { textStyles } from "@/styles/text-styles";
@@ -26,10 +26,29 @@ export const InputWrapper = ({ children, ...props }: InputWrapperProps) => (
         onPress={() => {
           if (props.onChange) props?.onChange("");
         }}
-        style={inputStyles.clear}
+        style={inputStyles.rightSection}
       >
         <MaterialIcons name="cancel" size={18} color={COLOR.secondary} />
       </TouchableOpacity>
+    ) : null}
+  </View>
+);
+
+interface InputWrapperLoadingProps
+  extends PropsWithChildren, Pick<InputProps, "loading"> {}
+
+export const InputWrapperLoading = ({
+  children,
+  ...props
+}: InputWrapperLoadingProps) => (
+  <View>
+    {children}
+    {props.loading ? (
+      <ActivityIndicator
+        size={18}
+        color={COLOR.secondary}
+        style={inputStyles.rightSection}
+      />
     ) : null}
   </View>
 );

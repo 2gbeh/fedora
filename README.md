@@ -40,10 +40,11 @@ npx expo start --dev-client
 ```mermaid
 erDiagram
    TRANSACTION {
-        binary receipt
+        string type
         number amount
         string narration
         date entryDate
+        binary receipt
         boolean isDraft
         boolean isIncognito
         boolean isTemp
@@ -87,7 +88,7 @@ flowchart TD
     Step2Ref((Goto: Step 2))
     Step2{{Step 2: Fetch categories}}
     History[[Transaction history]]
-    Step2Form[/Amount Narration Categories Date/]
+    Step2Form[/Type Amount Narration Categories Date/]
     AddCategory[[Add category]]
     Step2Next{Continue}
     Step3Ref((Goto: Step 3))
@@ -171,10 +172,11 @@ A few structural issues:
 ### App Settings
 
 - Toggle Mask Balance
-- Toggle Debug
-- Toggle Incognito
+- Toggle Debug Mode
+<!-- - Toggle Incognito -->
 - Manage Categories
 - Manage Wallets
+- Set Default Wallet
 - Manage Amount Options
 - - 2k | 5k | 10k
 - - 18k | 20k | 50k
@@ -192,16 +194,17 @@ A few structural issues:
 ```sh
 # Form Sheet
 - Contact
-- Receipt
+- Type
 - Amount
 - Narration
 - Categories
-- Wallet
-- Project
 - Date (calendar)
 - [Back|Reset][Save]
 
 # Bottom Sheet
+- Wallet
+- Project
+- Receipt
 - Mark as Draft
 - Mark as Incognito
 - [Cancel][Confirm]
@@ -213,29 +216,27 @@ A few structural issues:
 **V1**
 
 ```sh
-# Step 1
+# Step 1 (form)
 / Add Contact
 - Select Contact
 - Recent | Favorites
 - [Back][Continue]
 
-# Step 2
+# Step 2 (form)
 / Transaction History
+- Type (sheet)
 - Amount
 - - Amount Options (chips)
 - Narration
 - - Narration Options (chips)
 - Categories (sheet)
 - Date (calendar)
-- [Back][Continue]
+- [Back|Reset]][Save]
 
-# Step 3
+# Step 3 (sheet)
 - Wallet (sheet)
 - Project (sheet)
 - Attach Receipt
-- [Back][Save]
-
-# Step 4 (sheet)
 - Mark as Draft
 - Mark as Incognito
 - [Cancel][Confirm]

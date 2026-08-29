@@ -1,17 +1,20 @@
-import { StyleSheet, View } from "react-native";
-import { Dropdown } from "react-native-element-dropdown";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { MultiSelect } from "react-native-element-dropdown";
 //
-import { OptionType, OptionTypeOnChange } from "@/types";
+import { OptionsTypeOnChange, OptionType } from "@/types";
 import { textStyles } from "@/styles/text-styles";
-import { COLOR } from "@/constants/COLOR";
 //
 import { AppLabel, InputWrapperLoading } from "./builder";
 import { inputStyles, selectorStyles } from "../styles";
 import { InputProps } from "../types";
+import { MaterialIcons } from "@expo/vector-icons";
+import { COLOR } from "@/constants/COLOR";
+import { flexStyles } from "@/styles/flex-styles";
 
-interface Props extends Omit<InputProps, "onChange"> {
+interface Props extends Omit<InputProps, "value" | "onChange"> {
   data?: OptionType[];
-  onChange?: OptionTypeOnChange;
+  value?: string[];
+  onChange?: OptionsTypeOnChange;
   searchable?: boolean;
   searchPlaceholder?: string;
   canCreate?: boolean;
@@ -19,7 +22,7 @@ interface Props extends Omit<InputProps, "onChange"> {
 
 const defaultData = { label: "-- Add New --", value: "_create" };
 
-export const ListSelector = (props: Props) => {
+export const ListsSelector = (props: Props) => {
   const data = props.data
     ? props.canCreate
       ? [defaultData, ...props.data]
@@ -28,20 +31,20 @@ export const ListSelector = (props: Props) => {
       ? [defaultData]
       : [];
 
-  const onChange = (item: OptionType) => {
-    props.onChange?.(item.value, item);
+  const onChange = (items: string[]) => {
+    props.onChange?.(items);
   };
   //
   return (
     <View style={inputStyles.fieldContainer}>
       <AppLabel text={props.label} />
       <InputWrapperLoading loading={props.loading}>
-        <Dropdown
+        <MultiSelect
           placeholder={props.loading ? "Please wait ..." : props.placeholder}
           labelField="label"
           valueField="value"
           data={data}
-          value={props.value}
+          value={props.value ?? []}
           onChange={onChange}
           disable={props.disabled}
           search={props.searchable}
@@ -53,8 +56,33 @@ export const ListSelector = (props: Props) => {
           inputSearchStyle={[inputStyles.input, selectorStyles.searchInput]}
           itemContainerStyle={selectorStyles.itemContainer}
           itemTextStyle={textStyles.input}
+          renderSelectedItem={(item, unSelect) => (
+            <TouchableOpacity onPress={() => unSelect?.(item)} style={sx.chip}>
+              <Text style={sx.chipText}>{item.label}</Text>
+              <MaterialIcons name="close" color={COLOR.secondary} />
+            </TouchableOpacity>
+          )}
         />
       </InputWrapperLoading>
     </View>
   );
 };
+
+const sx = StyleSheet.create({
+  chip: {
+    backgroundColor: COLOR.white,
+    borderColor: COLOR.border,
+    borderWidth: 1,
+    borderRadius: 16,
+    marginVertical: 8,
+    marginHorizontal: 4,
+    paddingVertical: 2,
+    paddingHorizontal: 8,
+    ...flexStyles.rowCenter,
+    gap: 4,
+  },
+  chipText: {
+    color: COLOR.primary,
+    ...textStyles.label,
+  },
+});

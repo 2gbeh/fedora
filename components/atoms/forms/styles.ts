@@ -1,12 +1,11 @@
-import { TextStyle, ViewStyle } from "react-native";
+import { StyleSheet, TextStyle, ViewStyle } from "react-native";
 //
 import { flexStyles } from "@/styles/flex-styles";
 import { textStyles } from "@/styles/text-styles";
-import { PositionType } from "@/types";
 import { ButtonGroupProps, ButtonProps } from "./types";
 import { COLOR } from "@/constants/COLOR";
 
-export const inputStyles = {
+export const inputStyles = StyleSheet.create({
   _: {},
   fieldContainer: {
     gap: 4,
@@ -29,12 +28,33 @@ export const inputStyles = {
     color: COLOR.primary,
     ...textStyles.input,
   },
-  clear: {
-    position: "absolute" as PositionType,
+  rightSection: {
+    position: "absolute",
     top: 14,
     right: 16,
   },
-};
+});
+
+export const selectorStyles = StyleSheet.create({
+  _: {},
+  container: {
+    maxHeight: 250,
+  },
+  searchInput: {
+    backgroundColor: COLOR.nil,
+    borderWidth: 0,
+    borderBottomWidth: 1,
+    borderRadius: 0,
+    margin: 0,
+    // marginBottom: 0,
+    paddingHorizontal: 8,
+  },
+  itemContainer: {
+    backgroundColor: COLOR.nil,
+    height: 40,
+    justifyContent: "center",
+  },
+});
 
 export const buttonStyles = {
   _: {},

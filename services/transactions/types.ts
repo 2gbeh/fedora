@@ -5,6 +5,7 @@ import { ProjectDto } from "../projects/types";
 import { WalletDto } from "../wallets/types";
 
 export interface TransactionDto extends BaseDto {
+  type: "cr" | "dr";
   amount: number;
   narration: string;
   receipt?: string;
@@ -12,7 +13,7 @@ export interface TransactionDto extends BaseDto {
   isIncognito?: boolean;
   isTemp?: boolean;
   entryDate: string;
-  // 
+  //
   contactId: BasePK;
   contact?: ContactDto;
   categoryIds: BasePK[];
@@ -28,3 +29,8 @@ export type QueryTransactionDto = {};
 export type CreateTransactionDto = {};
 
 export type UpdateTransactionDto = {};
+
+export const TransactionTypeOptions = [
+  { label: "Credit", value: "cr" },
+  { label: "Debit", value: "dr" },
+];
