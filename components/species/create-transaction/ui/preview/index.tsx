@@ -1,7 +1,7 @@
-import { AppButton } from "@/components/atoms/forms/ui/app-button";
+import { Spacing } from "@/components/atoms/spacing";
+import { AppButton, ButtonGroup } from "@/components/atoms/forms/ui/app-button";
 import { ListSelector } from "@/components/atoms/forms/ui/list-selector";
 import { FileSelector } from "@/components/atoms/forms/ui/file-selector";
-import { LabelledSwitch } from "@/components/atoms/forms/ui/labelled-switch";
 import { LabelledSwitchV2 } from "@/components/atoms/forms/ui/labelled-switch-v2";
 import { ModalContainer } from "@/components/atoms/modal-container";
 //
@@ -21,53 +21,45 @@ export const CreateTransactionPreview = ({
   open,
   onClose,
 }: Props) => {
-  const { seedWallets, seedProjects } = useCreateTransactionPreview();
+  const { walletsList, projectsList } = useCreateTransactionPreview();
 
   return (
     <ModalContainer open={open} bottomSheet>
+      <PreviewCard/>
       <ListSelector
         label="Wallet"
         placeholder="Select wallet"
-        data={seedWallets.map((item, i) => ({
-          label: item.name,
-          value: String(i + 1),
-        }))}
+        data={walletsList}
+        value={formData.walletId}
+        onChange={(walletId) => mutateFormData({ walletId })}
+        loading={!walletsList}
+        disabled={!walletsList}
       />
       <ListSelector
         label="Project"
         placeholder="Select project"
-        data={seedProjects.map((item, i) => ({
-          label: item.name,
-          value: String(i + 1),
-        }))}
+        data={projectsList}
+        value={formData.projectId}
+        onChange={(projectId) => mutateFormData({ projectId })}
+        loading={!projectsList}
+        disabled={!projectsList}
       />
       <FileSelector label="Receipt" placeholder="Attach receipt" />
-      <LabelledSwitch
+      <LabelledSwitchV2
         label="Mark as draft"
         value={formData.isDraft}
         onChange={(isDraft) => mutateFormData({ isDraft })}
       />
-      <LabelledSwitch
+      <LabelledSwitchV2
         label="Mark as incognito"
         value={formData.isIncognito}
         onChange={(isIncognito) => mutateFormData({ isIncognito })}
       />
-      <LabelledSwitchV2
-        label="Mark as stub"
-        value={formData.isIncognito}
-        onChange={(isIncognito) => mutateFormData({ isIncognito })}
-      />
-      <AppButton>Confirm</AppButton>
+      <Spacing />
+      <ButtonGroup>
+        <AppButton variant="outline">Back</AppButton>
+        <AppButton variant="success">Confirm</AppButton>
+      </ButtonGroup>
     </ModalContainer>
   );
 };
-
-/**
-# Bottom Sheet
-- Wallet
-- Project
-- Receipt
-- Mark as Draft
-- Mark as Incognito
-- [Cancel][Confirm]
- */

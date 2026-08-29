@@ -1,6 +1,4 @@
-import { PropsWithChildren } from "react";
 import { KeyboardTypeOptions } from "react-native";
-// 
 import { OptionType } from "@/types";
 
 export const KEYBOARD_TYPE_MAP = {
@@ -36,15 +34,4 @@ export interface SelectorProps extends InputProps {
   searchable?: boolean;
   searchPlaceholder?: string;
   canCreate?: boolean;
-}
-
-export interface ButtonProps extends PropsWithChildren {
-  onClick?: () => void;
-  disabled?: boolean;
-  loading?: boolean;
-  variant?: "solid" | "outline";
-}
-
-export interface ButtonGroupProps extends PropsWithChildren {
-  variant?: "flex" | "grid";
 }

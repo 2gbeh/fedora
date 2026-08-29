@@ -9,8 +9,15 @@ interface MockParams {
 export const DEBUG = {
   auth: {
     loader: 1,
+    formData: 1,
   },
   transactions: {
     loader: 1,
   },
+  createTransaction: {
+    formData: 1,
+  },
+  createTransactionPreview: {
+    portal: 1,
+  },  
 } as const satisfies Record<string, MockParams>;

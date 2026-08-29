@@ -2,9 +2,10 @@ import { useState, useRef, useEffect } from "react";
 import {
   TouchableOpacity,
   Animated,
-  StyleSheet,
   View,
   Text,
+  ViewStyle,
+  TextStyle,
 } from "react-native";
 //
 import { flexStyles } from "@/styles/flex-styles";
@@ -19,7 +20,7 @@ interface Props extends Omit<InputProps, "value" | "onChange"> {
 
 export const LabelledSwitchV2 = (props: Props) => {
   const anim = useRef(new Animated.Value(0)).current;
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(props.value);
 
   const trackColor = anim.interpolate({
     inputRange: [0, 1],
@@ -39,46 +40,57 @@ export const LabelledSwitchV2 = (props: Props) => {
     }).start();
   }, [checked]);
 
+  const handleChange = () => {
+    setChecked(!checked);
+    if (props.onChange) props.onChange(!checked);
+  };
+
   return (
     <View style={sx.container}>
       <Text style={sx.text}>{props.label}</Text>
-      <TouchableOpacity
-        onPress={() => setChecked(!checked)}
-        activeOpacity={0.8}
-      >
-        <Animated.View style={[sx.track, { backgroundColor: trackColor }]}>
-          <Animated.View style={[sx.thumb, { left: thumbPosition }]} />
+      <TouchableOpacity onPress={handleChange} activeOpacity={0.8}>
+        <Animated.View
+          style={[sx.track(checked), { backgroundColor: trackColor }]}
+        >
+          <Animated.View
+            style={[sx.thumb, { borderColor: trackColor, left: thumbPosition }]}
+          />
         </Animated.View>
       </TouchableOpacity>
     </View>
   );
 };
 
-const sx = StyleSheet.create({
+const sx = {
   _: {},
   container: {
-    marginVertical: 4,
+    // borderWidth: 1,
+    height: 40,
     ...flexStyles.rowCenterBetween,
-  },
+  } as ViewStyle,
   text: {
     color: COLOR.primary,
     ...textStyles.label_medium,
-  },
-  track: {
-    borderRadius: 14,
-    justifyContent: "center",
-    width: 48,
-    height: 28,
-  },
+  } as TextStyle,
+  track: (checked?: boolean) =>
+    ({
+      borderColor: checked ? COLOR.primary : COLOR.border,
+      borderWidth: 1,
+      borderRadius: 14,
+      justifyContent: "center",
+      width: 48,
+      height: 26,
+    }) as ViewStyle,
   thumb: {
-    backgroundColor: COLOR.offWhite,
+    backgroundColor: COLOR.white,
+    borderWidth: 1,
     borderRadius: 12,
     elevation: 2,
     shadowColor: "#000",
     shadowOpacity: 0.2,
     shadowRadius: 2,
     width: 24,
-    height: 24,
+    height: 22,
     position: "absolute",
-  },
-});
+  } as ViewStyle,
+};

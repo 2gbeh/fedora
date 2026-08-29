@@ -218,7 +218,7 @@ A few structural issues:
 - Receipt
 - Mark as Draft
 - Mark as Incognito
-- [Cancel][Confirm]
+- [Back][Confirm]
 
 # Modal
 - [Back][Close]

@@ -9,10 +9,4 @@ export class ContactsService {
       value: String(i + 1),
     }));
   }
-
-  static async getAll() {}
-  static async getById() {}
-  static async create() {}
-  static async update() {}
-  static async delete() {}
 }

@@ -1,10 +1,27 @@
-import { useState } from "react";
-import seedWallets from "@/services/wallets/data/seed.json";
-import seedProjects from "@/services/projects/data/seed.json";
-
+import { useEffect, useState } from "react";
+// 
+import { WalletsService } from "@/services/wallets";
+import { ProjectsService } from "@/services/projects";
+import { OptionType } from "@/types";
 
 export function useCreateTransactionPreview() {
-  // const [formData, setFormData] = useState<IFormData>(defaultValues);
-  //
-  return {  seedWallets, seedProjects };
+  const [walletsList, setContactsList] = useState<OptionType[]>();
+  const [projectsList, setCategoriesList] = useState<OptionType[]>();
+
+  useEffect(() => {
+    fetchContactsList();
+    fetchCategoriesList();
+  }, []);
+
+  const fetchContactsList = async () => {
+    const res = await WalletsService.getListOptions();
+    setContactsList(res);
+  };
+
+  const fetchCategoriesList = async () => {
+    const res = await ProjectsService.getListOptions();
+    setCategoriesList(res);
+  };
+
+  return { walletsList, projectsList };
 }

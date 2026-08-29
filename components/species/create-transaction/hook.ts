@@ -5,7 +5,7 @@ import { ContactsService } from "@/services/contacts";
 import { CategoriesService } from "@/services/categories";
 import { OptionType } from "@/types";
 import { CUR_DATE } from "@/constants";
-import { MOCK } from "@/constants/MOCK";
+import { DEBUG } from "@/constants/DEBUG";
 
 export type CreateTransactionFormSchema = FormSchema;
 
@@ -24,7 +24,7 @@ interface FormSchema {
   isIncognito?: boolean;
 }
 
-const defaultValues: FormSchema = MOCK.createTransaction.formData
+const defaultValues: FormSchema = DEBUG.createTransaction.formData
   ? {
       type: "dr",
       contactId: "8",
@@ -46,7 +46,7 @@ export function useCreateTransaction() {
   const [contactsList, setContactsList] = useState<OptionType[]>();
   const [categoriesList, setCategoriesList] = useState<OptionType[]>();
   const [openPreview, setOpenPreview] = useState(
-    Boolean(MOCK.createTransactionPreview.portal),
+    Boolean(DEBUG.createTransactionPreview.portal),
   );
 
   const canSave =
