@@ -3,9 +3,11 @@ import type { ImagePickerAsset } from "expo-image-picker";
 //
 import { ContactsService } from "@/services/contacts";
 import { CategoriesService } from "@/services/categories";
+import { WalletsService } from "@/services/wallets";
+import { ProjectsService } from "@/services/projects";
 import { OptionType } from "@/types";
-import { CUR_DATE } from "@/constants";
 import { DEBUG } from "@/constants/DEBUG";
+import { CUR_DATE } from "@/constants";
 
 export type CreateTransactionFormSchema = FormSchema;
 
@@ -45,6 +47,8 @@ export function useCreateTransaction() {
   const [formData, setFormData] = useState<FormSchema>(defaultValues);
   const [contactsList, setContactsList] = useState<OptionType[]>();
   const [categoriesList, setCategoriesList] = useState<OptionType[]>();
+  const [walletsList, setWalletsList] = useState<OptionType[]>();
+  const [projectsList, setProjectsList] = useState<OptionType[]>();
   const [openPreview, setOpenPreview] = useState(
     Boolean(DEBUG.createTransactionPreview.portal),
   );
@@ -61,6 +65,8 @@ export function useCreateTransaction() {
   useEffect(() => {
     fetchContactsList();
     fetchCategoriesList();
+    fetchWalletsList();
+    fetchProjectsList();
   }, []);
 
   useEffect(() => {
@@ -85,6 +91,16 @@ export function useCreateTransaction() {
     setCategoriesList(res);
   };
 
+  const fetchWalletsList = async () => {
+    const res = await WalletsService.getListOptions();
+    setWalletsList(res);
+  };
+
+  const fetchProjectsList = async () => {
+    const res = await ProjectsService.getListOptions();
+    setProjectsList(res);
+  };
+
   const handleSave = () => {
     setOpenPreview(true);
     // resetFormData();
@@ -94,6 +110,8 @@ export function useCreateTransaction() {
     formData,
     contactsList,
     categoriesList,
+    walletsList,
+    projectsList,
     openPreview,
     setOpenPreview,
     canSave,

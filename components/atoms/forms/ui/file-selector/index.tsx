@@ -51,7 +51,7 @@ const sx = StyleSheet.create({
     gap: 4,
   },
   icon_container: {
-    backgroundColor: COLOR.offWhite,
+    backgroundColor: COLOR.infoContainer,
     width: 48,
     height: 48,
     borderRadius: 8,

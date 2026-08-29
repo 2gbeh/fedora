@@ -1,12 +1,17 @@
+import { Text, View } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
+// 
 import { Spacing } from "@/components/atoms/spacing";
 import { AppButton, ButtonGroup } from "@/components/atoms/forms/ui/app-button";
-import { ListSelector } from "@/components/atoms/forms/ui/list-selector";
-import { FileSelector } from "@/components/atoms/forms/ui/file-selector";
 import { LabelledSwitchV2 } from "@/components/atoms/forms/ui/labelled-switch-v2";
 import { ModalContainer } from "@/components/atoms/modal-container";
+import { PreviewList } from "@/components/atoms/list/preview-list";
+import { flexStyles } from "@/styles/flex-styles";
 //
 import { CreateTransactionFormSchema } from "../../hook";
 import { useCreateTransactionPreview } from "./hook";
+import { COLOR } from "@/constants/COLOR";
+import { NAIRA } from "@/constants";
 
 interface Props {
   formData: CreateTransactionFormSchema;
@@ -15,36 +20,60 @@ interface Props {
   onClose?: () => void;
 }
 
+const renderGetDirection = (
+  <View style={{ ...flexStyles.rowCenter, gap: 4 }}>
+    <Text>Attach receipt</Text>
+    <MaterialIcons name="link" color={COLOR.link} size={18} />
+  </View>
+);
+
 export const CreateTransactionPreview = ({
   formData,
   mutateFormData,
   open,
   onClose,
 }: Props) => {
-  const { walletsList, projectsList } = useCreateTransactionPreview();
+  const {  } = useCreateTransactionPreview();
+
+  const data = [
+    {
+      label: "Pyjamas Bonnet (SK)",
+      value: `-${NAIRA} 15,000`,
+      color: COLOR.success,
+    },
+    {
+      label: "Payment date",
+      value: `Dec 14, 2024 | 10:01:16 am`,
+    },
+    {
+      icon: "lock-clock",
+      label: "Thursday - January 2, 2025",
+      color: COLOR.primary,
+    },
+    {
+      icon: "place",
+      iconColor: COLOR.danger,
+      label: "Mushin/Atewolara, Lagos",
+      color: COLOR.primary,
+      // label: ", 102215 Notes: 2 floor house with white fence",
+    },
+    {
+      color: COLOR.link,
+      label: renderGetDirection,
+    },
+  ];
 
   return (
     <ModalContainer open={open} bottomSheet>
-      <PreviewCard/>
-      <ListSelector
-        label="Wallet"
-        placeholder="Select wallet"
-        data={walletsList}
-        value={formData.walletId}
-        onChange={(walletId) => mutateFormData({ walletId })}
-        loading={!walletsList}
-        disabled={!walletsList}
+      <PreviewList
+        title="Transaction details"
+        rightSection={
+          <AppButton variant="warning" asBadge>
+            Need confirmation
+          </AppButton>
+        }
+        data={data}
       />
-      <ListSelector
-        label="Project"
-        placeholder="Select project"
-        data={projectsList}
-        value={formData.projectId}
-        onChange={(projectId) => mutateFormData({ projectId })}
-        loading={!projectsList}
-        disabled={!projectsList}
-      />
-      <FileSelector label="Receipt" placeholder="Attach receipt" />
       <LabelledSwitchV2
         label="Mark as draft"
         value={formData.isDraft}

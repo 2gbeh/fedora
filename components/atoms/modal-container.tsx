@@ -69,7 +69,7 @@ const sx = (bottomSheet?: boolean) =>
     notch: {
       backgroundColor: COLOR.muted,
       borderRadius: 16,
-      marginBottom: 16,
+      // marginBottom: 16,
       width: 84,
       height: 6,
       alignSelf: "center",

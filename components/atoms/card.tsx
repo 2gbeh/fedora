@@ -1,7 +1,8 @@
 import { PropsWithChildren } from "react";
 import { StyleSheet, Text, View, ViewStyle } from "react-native";
+// 
+import { textStyles } from "@/styles/text-styles";
 import { COLOR } from "@/constants/COLOR";
-import { FONT } from "@/constants/FONT";
 
 interface Props extends PropsWithChildren {
   title?: string;
@@ -26,9 +27,6 @@ const sx = StyleSheet.create({
   },
   title: {
     color: COLOR.primary,
-    fontFamily: FONT.medium,
-    fontSize: 16,
-    lineHeight: 24,
-    letterSpacing: 0.12,
+    ...textStyles.button,
   },
 });

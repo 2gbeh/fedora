@@ -4,7 +4,6 @@ export const COLOR = {
   nil: "transparent",
   overlay: "rgba(0,0,0,0.4)",
   white: "#FFF",
-  offWhite: "#F9FAFB",
   black: "#000",
   black10: "#0000001A",
   background: "#F3F4F6",
@@ -19,8 +18,8 @@ export const COLOR = {
   rated: "#FFD536",
   rating: "#C0C0C0",
   // CONTEXTUAL
-  info: "",
-  infoContainer: "",
+  info: "#6B7280",
+  infoContainer: "#F9FAFB",
   success: "#0E9F6E",
   successContainer: "#DEF7EC",
   successContainerLighter: "#F3FAF7",

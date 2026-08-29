@@ -27,7 +27,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="transactions"
+        name="ledger"
         options={{
           title: "Ledger",
           headerRight: () => <AppBar menu />,
@@ -36,7 +36,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="transactions/create_"
+        name="add"
         options={{
           tabBarButton: () => (
             <FAB action={() => router.push("/transaction/create")} tab />

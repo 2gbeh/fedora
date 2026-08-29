@@ -18,16 +18,16 @@ export default function RootLayout() {
       <Stack.Screen name="(auth)" options={{ headerShown: false }} />
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen
-        name="transaction/create"
+        name="transactions/create"
         options={{
           headerTitle: "Add Transaction",
-          presentation: "modal",
+          // presentation: "modal",
           headerRight: () => <AppBar menu />,
         }}
       />
-      <Stack.Screen name="analytics/index" />
+      {/* <Stack.Screen name="analytics/index" />
       <Stack.Screen name="profile/index" />
-      <Stack.Screen name="settings/index" />
+      <Stack.Screen name="settings/index" /> */}
     </Stack>
   );
 }

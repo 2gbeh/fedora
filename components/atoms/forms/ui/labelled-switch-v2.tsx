@@ -16,6 +16,7 @@ import { COLOR } from "@/constants/COLOR";
 interface Props extends Omit<InputProps, "value" | "onChange"> {
   value?: boolean;
   onChange?: (value?: boolean) => void;
+  height?: number;
 }
 
 export const LabelledSwitchV2 = (props: Props) => {
@@ -46,7 +47,7 @@ export const LabelledSwitchV2 = (props: Props) => {
   };
 
   return (
-    <View style={sx.container}>
+    <View style={sx.container(props.height)}>
       <Text style={sx.text}>{props.label}</Text>
       <TouchableOpacity onPress={handleChange} activeOpacity={0.8}>
         <Animated.View
@@ -63,11 +64,12 @@ export const LabelledSwitchV2 = (props: Props) => {
 
 const sx = {
   _: {},
-  container: {
-    // borderWidth: 1,
-    height: 40,
-    ...flexStyles.rowCenterBetween,
-  } as ViewStyle,
+  container: (height?: number) =>
+    ({
+      // borderWidth: 1,
+      height: height || 32,
+      ...flexStyles.rowCenterBetween,
+    }) as ViewStyle,
   text: {
     color: COLOR.primary,
     ...textStyles.label_medium,

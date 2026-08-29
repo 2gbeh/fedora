@@ -81,6 +81,7 @@ export default function CreateTransactionScreen() {
           value={formData.entryDate}
           onChange={(entryDate) => mutateFormData({ entryDate })}
         />
+        
       </AppScrollView>
       {openPreview && <CreateTransactionPreview
         formData={formData}

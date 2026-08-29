@@ -1,9 +1,14 @@
-import { COLOR } from "@/constants/COLOR";
-import { FONT } from "@/constants/FONT";
 import { StyleSheet } from "react-native";
+import { FONT } from "@/constants/FONT";
 
 export const textStyles = StyleSheet.create({
   _: {},
+  title: {
+    fontFamily: FONT.bold,
+    fontSize: 16,
+    lineHeight: 24,
+    letterSpacing: 0.12,
+  },
   label: {
     fontFamily: FONT.regular,
     fontSize: 12,

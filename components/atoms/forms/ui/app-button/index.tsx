@@ -18,23 +18,18 @@ interface Props extends PropsWithChildren {
   disabled?: boolean;
   loading?: boolean;
   variant?: AppButtonVariant;
+  asBadge?: boolean;
 }
 
-export const AppButton = ({
-  children,
-  onClick,
-  disabled,
-  loading,
-  variant = "solid",
-}: Props) => {
+export const AppButton = ({ children, ...props }: Props) => {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={!props.asBadge && { flex: 1 }}>
       <TouchableOpacity
-        onPress={onClick}
-        disabled={disabled}
-        style={sx.container({ disabled, variant })}
+        onPress={props.onClick}
+        disabled={props.disabled}
+        style={sx.container(props)}
       >
-        <Text style={sx.text({ variant })}>{children}</Text>
+        <Text style={sx.text(props)}>{children}</Text>
       </TouchableOpacity>
     </View>
   );
@@ -60,13 +55,15 @@ export const sx = {
         : ux.getVariantStyles(params.variant).borderColor,
       borderWidth: 1,
       borderRadius: 100,
-      height: 44,
+      paddingVertical: 6,
+      paddingHorizontal: 12,
+      height: params.asBadge ? 30 : 44,
       ...flexStyles.centerCenter,
     }) as ViewStyle,
   text: (params: Props) =>
     ({
       color: ux.getVariantStyles(params.variant).color,
-      ...textStyles.button,
+      ...(params.asBadge ? textStyles.label : textStyles.button),
     }) as TextStyle,
   btn_group: (grid: ButtonGroupProps["grid"]) =>
     ({
