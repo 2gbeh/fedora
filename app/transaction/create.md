@@ -1,14 +1,7 @@
 ```tsx
-import { TextField } from "@/components/atoms/forms/ui/text-field";
-import { Screen } from "@/components/atoms/screen";
-import { COLOR } from "@/constants/COLOR";
-import { FONT } from "@/constants/FONT";
 import Slider from "@react-native-community/slider";
 import { Picker } from "@react-native-picker/picker";
 import Checkbox from "expo-checkbox";
-import _ as DocumentPicker from "expo-document-picker";
-import _ as ImagePicker from "expo-image-picker";
-import { useState } from "react";
 import {
 StyleSheet,
 Switch,
@@ -29,13 +22,6 @@ const [routes] = useState([
 
 return (
   <>
-    {/* Number input */}
-    <TextInput
-      value={number}
-      onChangeText={(t) => setNumber(t.replace(/[^0-9]/g, ""))}
-      keyboardType="numeric"
-      placeholder="Number"
-    />
 
     {/* Multiline / textarea */}
     <TextInput
@@ -65,8 +51,6 @@ return (
       <Picker.Item label="Option 1" value="1" />
       <Picker.Item label="Option 2" value="2" />
     </Picker>
-
-    <Dropdown />
 
     <Card styles={{ padding: 0 }}>
       <SectionTabs />

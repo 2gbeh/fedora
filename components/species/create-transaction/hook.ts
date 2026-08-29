@@ -5,10 +5,13 @@ import { ContactsService } from "@/services/contacts";
 import { CategoriesService } from "@/services/categories";
 import { OptionType } from "@/types";
 import { CUR_DATE } from "@/constants";
+import { MOCK } from "@/constants/MOCK";
+
+export type CreateTransactionFormSchema = FormSchema;
 
 interface FormSchema {
-  contactId?: string;
   type: string;
+  contactId?: string;
   amount?: string;
   narration?: string;
   categoryIds?: string[];
@@ -21,17 +24,30 @@ interface FormSchema {
   isIncognito?: boolean;
 }
 
-const defaultValues: FormSchema = {
-  type: "dr",
-  amount: "150000.528988525.896",
-  entryDate: CUR_DATE,
-  walletId: "3",
-};
+const defaultValues: FormSchema = MOCK.createTransaction.formData
+  ? {
+      type: "dr",
+      contactId: "8",
+      amount: "15000",
+      narration: "Pyjamas Bonnet",
+      categoryIds: ["18"],
+      entryDate: CUR_DATE,
+      walletId: "3",
+      isIncognito: true,
+    }
+  : {
+      type: "dr",
+      entryDate: CUR_DATE,
+      walletId: "3",
+    };
 
 export function useCreateTransaction() {
   const [formData, setFormData] = useState<FormSchema>(defaultValues);
   const [contactsList, setContactsList] = useState<OptionType[]>();
   const [categoriesList, setCategoriesList] = useState<OptionType[]>();
+  const [openPreview, setOpenPreview] = useState(
+    Boolean(MOCK.createTransactionPreview.portal),
+  );
 
   const canSave =
     formData.contactId?.trim().length &&
@@ -70,13 +86,16 @@ export function useCreateTransaction() {
   };
 
   const handleSave = () => {
-    resetFormData();
+    setOpenPreview(true);
+    // resetFormData();
   };
 
   return {
     formData,
     contactsList,
     categoriesList,
+    openPreview,
+    setOpenPreview,
     canSave,
     canConfirm,
     mutateFormData,

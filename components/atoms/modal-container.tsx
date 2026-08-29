@@ -3,7 +3,7 @@ import { Modal, Pressable, StyleSheet, TouchableOpacity } from "react-native";
 import { COLOR } from "@/constants/COLOR";
 
 interface Props extends PropsWithChildren {
-  show?: boolean;
+  open?: boolean;
   onClose?: () => void;
   forceClose?: boolean;
   bottomSheet?: boolean;
@@ -11,7 +11,7 @@ interface Props extends PropsWithChildren {
 
 export const ModalContainer = ({
   children,
-  show,
+  open,
   onClose,
   forceClose,
   bottomSheet,
@@ -22,7 +22,7 @@ export const ModalContainer = ({
 
   return (
     <Modal
-      visible={show}
+      visible={open}
       onRequestClose={handleClose}
       animationType={bottomSheet ? "slide" : "fade"}
       transparent

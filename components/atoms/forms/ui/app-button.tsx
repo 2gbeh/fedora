@@ -7,6 +7,7 @@ interface Props extends ButtonProps {}
 
 export const AppButton = ({
   children,
+  onClick,
   disabled,
   loading,
   variant = "solid",
@@ -14,7 +15,7 @@ export const AppButton = ({
   return (
     <View style={{ flex: 1 }}>
       <TouchableOpacity
-        onPress={alert}
+        onPress={onClick}
         disabled={disabled}
         style={sx.container({ disabled, variant })}
       >

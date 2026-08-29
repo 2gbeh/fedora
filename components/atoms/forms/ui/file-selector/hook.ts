@@ -3,13 +3,13 @@ import * as DocumentPicker from "expo-document-picker";
 import { InputProps } from "../../types";
 
 export interface FileSelectorProps extends InputProps {
-  variant: "img" | "doc";
+  variant?: "img" | "doc";
   large?: boolean;
 }
 
 export function useFileSelector(params: FileSelectorProps) {
   const handleClick = async () => {
-    params.variant === "img" ? await selectImage() : await selectDocument();
+    params.variant === "doc" ? await selectDocument() : await selectImage();
   };
 
   const selectImage = async () => {

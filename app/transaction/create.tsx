@@ -4,17 +4,20 @@ import { AppButton } from "@/components/atoms/forms/ui/app-button";
 import { TextField } from "@/components/atoms/forms/ui/text-field";
 import { AmountField } from "@/components/atoms/forms/ui/amount-field";
 import { ListSelector } from "@/components/atoms/forms/ui/list-selector";
+import { ListsSelector } from "@/components/atoms/forms/ui/lists-selector";
+import { DateSelector } from "@/components/atoms/forms/ui/date-selector";
 import { TransactionTypeOptions } from "@/services/transactions/types";
 //
 import { useCreateTransaction } from "@/components/species/create-transaction/hook";
-import { ListsSelector } from "@/components/atoms/forms/ui/lists-selector";
-import { DateSelector } from "@/components/atoms/forms/ui/date-selector";
+import { CreateTransactionPreview } from "@/components/species/create-transaction/ui/preview";
 
 export default function CreateTransactionScreen() {
   const {
     formData,
     contactsList,
     categoriesList,
+    openPreview,
+    setOpenPreview,
     canSave,
     canConfirm,
     mutateFormData,
@@ -79,6 +82,12 @@ export default function CreateTransactionScreen() {
           onChange={(entryDate) => mutateFormData({ entryDate })}
         />
       </AppScrollView>
+      <CreateTransactionPreview
+        formData={formData}
+        mutateFormData={mutateFormData}
+        open={openPreview}
+        onClose={() => setOpenPreview(false)}
+      />
     </AppScreen>
   );
 }
