@@ -28,5 +28,5 @@ export const ButtonGroup = ({
   children,
   variant = "flex",
 }: ButtonGroupProps) => (
-  <View style={sx.buttonGroup({ variant })}>{children}</View>
+  <View style={sx.btn_group({ variant })}>{children}</View>
 );

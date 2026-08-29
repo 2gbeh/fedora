@@ -1,23 +1,18 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { MultiSelect } from "react-native-element-dropdown";
-//
-import { OptionsTypeOnChange, OptionType } from "@/types";
-import { textStyles } from "@/styles/text-styles";
+import { MaterialIcons } from "@expo/vector-icons";
 //
 import { AppLabel, InputWrapperLoading } from "./builder";
+import { textStyles } from "@/styles/text-styles";
 import { inputStyles, selectorStyles } from "../styles";
-import { InputProps } from "../types";
-import { MaterialIcons } from "@expo/vector-icons";
-import { COLOR } from "@/constants/COLOR";
 import { flexStyles } from "@/styles/flex-styles";
+import { OptionsTypeOnChange } from "@/types";
+import { SelectorProps } from "../types";
+import { COLOR } from "@/constants/COLOR";
 
-interface Props extends Omit<InputProps, "value" | "onChange"> {
-  data?: OptionType[];
+interface Props extends Omit<SelectorProps, "value" | "onChange"> {
   value?: string[];
   onChange?: OptionsTypeOnChange;
-  searchable?: boolean;
-  searchPlaceholder?: string;
-  canCreate?: boolean;
 }
 
 const defaultData = { label: "-- Add New --", value: "_create" };
@@ -36,7 +31,7 @@ export const ListsSelector = (props: Props) => {
   };
   //
   return (
-    <View style={inputStyles.fieldContainer}>
+    <View style={inputStyles.field_container}>
       <AppLabel text={props.label} />
       <InputWrapperLoading loading={props.loading}>
         <MultiSelect
@@ -53,12 +48,12 @@ export const ListsSelector = (props: Props) => {
           placeholderStyle={inputStyles.placeholder}
           selectedTextStyle={textStyles.input}
           containerStyle={selectorStyles.container}
-          inputSearchStyle={[inputStyles.input, selectorStyles.searchInput]}
-          itemContainerStyle={selectorStyles.itemContainer}
+          inputSearchStyle={[inputStyles.input, selectorStyles.search_input]}
+          itemContainerStyle={selectorStyles.item_container}
           itemTextStyle={textStyles.input}
           renderSelectedItem={(item, unSelect) => (
             <TouchableOpacity onPress={() => unSelect?.(item)} style={sx.chip}>
-              <Text style={sx.chipText}>{item.label}</Text>
+              <Text style={sx.chip_text}>{item.label}</Text>
               <MaterialIcons name="close" color={COLOR.secondary} />
             </TouchableOpacity>
           )}
@@ -74,14 +69,14 @@ const sx = StyleSheet.create({
     borderColor: COLOR.border,
     borderWidth: 1,
     borderRadius: 16,
-    marginVertical: 8,
+    marginTop: 8,
     marginHorizontal: 4,
     paddingVertical: 2,
     paddingHorizontal: 8,
     ...flexStyles.rowCenter,
     gap: 4,
   },
-  chipText: {
+  chip_text: {
     color: COLOR.primary,
     ...textStyles.label,
   },

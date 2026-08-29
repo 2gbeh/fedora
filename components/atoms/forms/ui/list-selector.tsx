@@ -1,20 +1,14 @@
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import { Dropdown } from "react-native-element-dropdown";
 //
-import { OptionType, OptionTypeOnChange } from "@/types";
-import { textStyles } from "@/styles/text-styles";
-import { COLOR } from "@/constants/COLOR";
-//
 import { AppLabel, InputWrapperLoading } from "./builder";
+import { textStyles } from "@/styles/text-styles";
 import { inputStyles, selectorStyles } from "../styles";
-import { InputProps } from "../types";
+import { OptionType, OptionTypeOnChange } from "@/types";
+import { SelectorProps } from "../types";
 
-interface Props extends Omit<InputProps, "onChange"> {
-  data?: OptionType[];
+interface Props extends Omit<SelectorProps, "onChange"> {
   onChange?: OptionTypeOnChange;
-  searchable?: boolean;
-  searchPlaceholder?: string;
-  canCreate?: boolean;
 }
 
 const defaultData = { label: "-- Add New --", value: "_create" };
@@ -33,7 +27,7 @@ export const ListSelector = (props: Props) => {
   };
   //
   return (
-    <View style={inputStyles.fieldContainer}>
+    <View style={inputStyles.field_container}>
       <AppLabel text={props.label} />
       <InputWrapperLoading loading={props.loading}>
         <Dropdown
@@ -50,8 +44,8 @@ export const ListSelector = (props: Props) => {
           placeholderStyle={inputStyles.placeholder}
           selectedTextStyle={textStyles.input}
           containerStyle={selectorStyles.container}
-          inputSearchStyle={[inputStyles.input, selectorStyles.searchInput]}
-          itemContainerStyle={selectorStyles.itemContainer}
+          inputSearchStyle={[inputStyles.input, selectorStyles.search_input]}
+          itemContainerStyle={selectorStyles.item_container}
           itemTextStyle={textStyles.input}
         />
       </InputWrapperLoading>

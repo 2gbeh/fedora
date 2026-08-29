@@ -1,38 +1,29 @@
-import { useState } from "react";
-import { View } from "react-native";
-import MaskInput, { createNumberMask } from "react-native-mask-input";
+import { TextInput, View } from "react-native";
 //
-import { InputProps } from "../types";
+import { AppLabel, InputWrapper } from "./builder";
 import { inputStyles as sx } from "../styles";
+import { InputProps } from "../types";
 import { COLOR } from "@/constants/COLOR";
 import { NAIRA } from "@/constants";
-import { AppLabel, InputWrapper } from "./builder";
 
 interface Props extends InputProps {}
 
-const currencyMask = createNumberMask({
-  prefix: [NAIRA + " "],
-  delimiter: ",",
-  separator: ".",
-  precision: 2,
-});
-
 export const AmountField = (props: Props) => {
-  const [value, setValue] = useState(props.value);
+  const handleChange = (text: string) => {
+    const sanitized = text.replace(NAIRA, "").replace(/,/g, "").trim();
 
-  const handleChange = (formatted: string, raw: string) => {
-    setValue(formatted);
-    if (props.onChange) props?.onChange(raw);
+    if (!/^[0-9.]*$/.test(sanitized)) return;
+    if ((sanitized.match(/\./g) || []).length > 1) return;
+    if (props.onChange) props.onChange(sanitized);
   };
 
   return (
-    <View style={sx.fieldContainer}>
+    <View style={sx.field_container}>
       <AppLabel text={props.label} />
       <InputWrapper value={props.value} onChange={props.onChange}>
-        <MaskInput
+        <TextInput
           keyboardType="decimal-pad"
-          mask={currencyMask}
-          value={value}
+          value={transform(props.value)}
           onChangeText={handleChange}
           editable={!props.disabled && !props.readOnly}
           placeholder={props.placeholder}
@@ -42,4 +33,21 @@ export const AmountField = (props: Props) => {
       </InputWrapper>
     </View>
   );
+};
+
+const transform = (value?: string) => {
+  if (!value) return "";
+
+  const [int, ...dec] = value.split(".");
+  const intSafe = int.replace(/[^0-9]/g, "");
+  const csv = intSafe.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+  if (dec.length === 0) return `${NAIRA} ${csv}`;
+
+  const dp = dec
+    .join("")
+    .replace(/[^0-9]/g, "")
+    .slice(0, 2);
+
+  return `${NAIRA} ${csv}.${dp}`;
 };

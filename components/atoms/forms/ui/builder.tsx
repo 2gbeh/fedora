@@ -12,7 +12,9 @@ import { COLOR } from "@/constants/COLOR";
 interface InputWrapperProps extends PropsWithChildren {}
 
 export const AppLabel = ({ text }: { text?: string }) => (
-  <Text style={[{ color: COLOR.primary }, textStyles.labelMedium]}>{text}</Text>
+  <Text style={[{ color: COLOR.primary }, textStyles.label_medium]}>
+    {text}
+  </Text>
 );
 
 interface InputWrapperProps
@@ -26,7 +28,7 @@ export const InputWrapper = ({ children, ...props }: InputWrapperProps) => (
         onPress={() => {
           if (props.onChange) props?.onChange("");
         }}
-        style={inputStyles.rightSection}
+        style={inputStyles.right_section}
       >
         <MaterialIcons name="cancel" size={18} color={COLOR.secondary} />
       </TouchableOpacity>
@@ -34,8 +36,9 @@ export const InputWrapper = ({ children, ...props }: InputWrapperProps) => (
   </View>
 );
 
-interface InputWrapperLoadingProps
-  extends PropsWithChildren, Pick<InputProps, "loading"> {}
+interface InputWrapperLoadingProps extends PropsWithChildren {
+  loading?: boolean;
+}
 
 export const InputWrapperLoading = ({
   children,
@@ -47,7 +50,7 @@ export const InputWrapperLoading = ({
       <ActivityIndicator
         size={18}
         color={COLOR.secondary}
-        style={inputStyles.rightSection}
+        style={inputStyles.right_section}
       />
     ) : null}
   </View>
@@ -55,10 +58,12 @@ export const InputWrapperLoading = ({
 
 interface InputAliasProps extends Pick<InputProps, "value" | "placeholder"> {
   icon?: MaterialIconName;
+  onClick?: () => void;
 }
 
-export const InputAlias = ({ icon, ...props }: InputAliasProps) => (
+export const InputAlias = ({ icon, onClick, ...props }: InputAliasProps) => (
   <TouchableOpacity
+    onPress={onClick}
     style={{
       ...inputStyles.input,
       ...flexStyles.rowCenterBetween,

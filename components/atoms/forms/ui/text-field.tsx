@@ -8,11 +8,11 @@ interface Props extends InputProps {}
 
 export const TextField = (props: Props) => {
   return (
-    <View style={sx.fieldContainer}>
+    <View style={sx.field_container}>
       <AppLabel text={props.label} />
       <TextInput
         keyboardType={KEYBOARD_TYPE_MAP[props.type || "text"]}
-        value={props.value}
+        value={props.value || ""}
         onChangeText={props.onChange}
         editable={!props.disabled && !props.readOnly}
         clearButtonMode="while-editing"

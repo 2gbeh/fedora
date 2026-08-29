@@ -1,22 +1,18 @@
-import { MaterialIcons } from "@expo/vector-icons";
 import * as ImagePicker from "expo-image-picker";
 import * as DocumentPicker from "expo-document-picker";
-import { StyleSheet, Text, View } from "react-native";
-//
-import { AppLabel } from "./builder";
-import { InputAlias } from "./builder";
-import { flexStyles } from "@/styles/flex-styles";
-import { textStyles } from "@/styles/text-styles";
-import { inputStyles } from "../styles";
-import { InputProps } from "../types";
-import { COLOR } from "@/constants/COLOR";
+import { InputProps } from "../../types";
 
-interface Props extends InputProps {
+export interface FileSelectorProps extends InputProps {
+  variant: "img" | "doc";
   large?: boolean;
 }
 
-export const FileSelector = (props: Props) => {
-  const pickImage = async () => {
+export function useFileSelector(params: FileSelectorProps) {
+  const handleClick = async () => {
+    params.variant === "img" ? await selectImage() : await selectDocument();
+  };
+
+  const selectImage = async () => {
     const result = await ImagePicker.launchImageLibraryAsync();
     console.log(result);
 
@@ -45,7 +41,7 @@ export const FileSelector = (props: Props) => {
     }
   };
 
-  const pickDocument = async () => {
+  const selectDocument = async () => {
     const result = await DocumentPicker.getDocumentAsync();
     console.log(result);
 
@@ -73,52 +69,6 @@ export const FileSelector = (props: Props) => {
       console.log(uploadResponse.status, data);
     }
   };
-  //
 
-  return (
-    <View style={inputStyles.fieldContainer}>
-      <AppLabel text={props.label} />
-      {props.large ? (
-        <View style={sx.container}>
-          <View style={sx.iconContainer}>
-            <MaterialIcons
-              name="photo-camera"
-              size={24}
-              color={COLOR.secondary}
-            />
-          </View>
-          <Text style={sx.text}>{props?.placeholder}</Text>
-        </View>
-      ) : (
-        <InputAlias
-          value={props.value}
-          placeholder={props.placeholder}
-          icon="cloud-upload"
-        />
-      )}
-    </View>
-  );
-};
-
-const sx = StyleSheet.create({
-  _: {},
-  container: {
-    backgroundColor: COLOR.background,
-    borderRadius: 8,
-    height: 88,
-    ...flexStyles.centerCenter,
-    gap: 4,
-  },
-  iconContainer: {
-    backgroundColor: COLOR.offWhite,
-    width: 48,
-    height: 48,
-    borderRadius: 8,
-    ...flexStyles.centerCenter,
-  },
-  text: {
-    color: COLOR.secondary,
-    ...textStyles.label,
-    // fontFamily: FONT.regular,
-  },
-});
+  return { handleClick };
+}

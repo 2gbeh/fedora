@@ -1,17 +1,15 @@
 import { useEffect, useState } from "react";
 import type { ImagePickerAsset } from "expo-image-picker";
 //
-import seedContacts from "@/services/contacts/data/seed.json";
-import seedCategories from "@/services/categories/data/seed.json";
-import { CUR_DATE } from "@/constants";
 import { ContactsService } from "@/services/contacts";
 import { CategoriesService } from "@/services/categories";
 import { OptionType } from "@/types";
+import { CUR_DATE } from "@/constants";
 
 interface FormSchema {
   contactId?: string;
   type: string;
-  amount: number;
+  amount?: string;
   narration?: string;
   categoryIds?: string[];
   entryDate: string;
@@ -25,7 +23,7 @@ interface FormSchema {
 
 const defaultValues: FormSchema = {
   type: "dr",
-  amount: 0,
+  amount: "150000.528988525.896",
   entryDate: CUR_DATE,
   walletId: "3",
 };
@@ -37,7 +35,7 @@ export function useCreateTransaction() {
 
   const canSave =
     formData.contactId?.trim().length &&
-    formData.amount >= 500 &&
+    Number(formData.amount) >= 500 &&
     formData.narration?.trim().length &&
     formData.categoryIds?.length &&
     formData.entryDate?.trim().length;

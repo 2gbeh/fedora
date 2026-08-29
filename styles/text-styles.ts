@@ -10,7 +10,7 @@ export const textStyles = StyleSheet.create({
     lineHeight: 18,
     letterSpacing: 0.12,
   },
-  labelMedium: {
+  label_medium: {
     fontFamily: FONT.medium,
     fontSize: 12,
     lineHeight: 18,

@@ -1,5 +1,7 @@
 import { PropsWithChildren } from "react";
 import { KeyboardTypeOptions } from "react-native";
+// 
+import { OptionType } from "@/types";
 
 export const KEYBOARD_TYPE_MAP = {
   text: "default",
@@ -22,11 +24,18 @@ export interface InputProps {
   label?: string;
   placeholder?: string;
   value?: string;
-  onChange?: (value?: string | null) => void;
+  onChange?: (value?: string) => void;
   required?: boolean;
   disabled?: boolean;
   readOnly?: boolean;
   loading?: boolean;
+}
+
+export interface SelectorProps extends InputProps {
+  data?: OptionType[];
+  searchable?: boolean;
+  searchPlaceholder?: string;
+  canCreate?: boolean;
 }
 
 export interface ButtonProps extends PropsWithChildren {

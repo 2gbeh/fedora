@@ -4,11 +4,11 @@ import { AppButton } from "@/components/atoms/forms/ui/app-button";
 import { TextField } from "@/components/atoms/forms/ui/text-field";
 import { AmountField } from "@/components/atoms/forms/ui/amount-field";
 import { ListSelector } from "@/components/atoms/forms/ui/list-selector";
-import { DateTimeSelector } from "@/components/atoms/forms/ui/datetime-selector";
 import { TransactionTypeOptions } from "@/services/transactions/types";
 //
 import { useCreateTransaction } from "@/components/species/create-transaction/hook";
 import { ListsSelector } from "@/components/atoms/forms/ui/lists-selector";
+import { DateSelector } from "@/components/atoms/forms/ui/date-selector";
 
 export default function CreateTransactionScreen() {
   const {
@@ -32,6 +32,13 @@ export default function CreateTransactionScreen() {
     >
       <AppScrollView>
         <ListSelector
+          label="Type"
+          placeholder="Select type"
+          data={TransactionTypeOptions}
+          value={formData.type}
+          onChange={(type) => mutateFormData({ type })}
+        />
+        <ListSelector
           label="Contact"
           placeholder="Select contact"
           data={contactsList}
@@ -42,13 +49,18 @@ export default function CreateTransactionScreen() {
           searchable
           searchPlaceholder="Search contacts"
         />
-        <ListSelector
-          label="Type"
-          placeholder="Select type"
-          data={TransactionTypeOptions}
+        <AmountField
+          label="Amount"
+          placeholder="Enter amount"
+          value={formData.amount}
+          onChange={(amount) => mutateFormData({ amount })}
         />
-        <AmountField label="Amount" placeholder="Enter amount" />
-        <TextField label="Narration" placeholder="Enter description" />
+        <TextField
+          label="Narration"
+          placeholder="Enter description"
+          value={formData.narration}
+          onChange={(narration) => mutateFormData({ narration })}
+        />
         <ListsSelector
           label="Categories"
           placeholder="Select categories"
@@ -60,7 +72,12 @@ export default function CreateTransactionScreen() {
           searchable
           searchPlaceholder="Search categories"
         />
-        <DateTimeSelector label="Date" placeholder="Transaction date" />
+        <DateSelector
+          label="Date"
+          placeholder="Transaction date"
+          value={formData.entryDate}
+          onChange={(entryDate) => mutateFormData({ entryDate })}
+        />
       </AppScrollView>
     </AppScreen>
   );

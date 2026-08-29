@@ -7,7 +7,7 @@ import { COLOR } from "@/constants/COLOR";
 
 export const inputStyles = StyleSheet.create({
   _: {},
-  fieldContainer: {
+  field_container: {
     gap: 4,
   },
   input: {
@@ -28,7 +28,7 @@ export const inputStyles = StyleSheet.create({
     color: COLOR.primary,
     ...textStyles.input,
   },
-  rightSection: {
+  right_section: {
     position: "absolute",
     top: 14,
     right: 16,
@@ -40,7 +40,7 @@ export const selectorStyles = StyleSheet.create({
   container: {
     maxHeight: 250,
   },
-  searchInput: {
+  search_input: {
     backgroundColor: COLOR.nil,
     borderWidth: 0,
     borderBottomWidth: 1,
@@ -49,7 +49,7 @@ export const selectorStyles = StyleSheet.create({
     // marginBottom: 0,
     paddingHorizontal: 8,
   },
-  itemContainer: {
+  item_container: {
     backgroundColor: COLOR.nil,
     height: 40,
     justifyContent: "center",
@@ -76,7 +76,7 @@ export const buttonStyles = {
       color: params.variant === "outline" ? COLOR.primary : COLOR.white,
       ...textStyles.button,
     }) as TextStyle,
-  buttonGroup: (params: ButtonGroupProps) =>
+  btn_group: (params: ButtonGroupProps) =>
     ({
       ...(params.variant === "flex" ? flexStyles.rowCenterBetween : {}),
       gap: 12,

@@ -126,9 +126,9 @@ flowchart TD
     Step3 --> Step3Form
     Step3Form --> Step3Next
     Step3Form --> AddWallet
-    AddWallet --> Step3Form    
+    AddWallet --> Step3Form
     Step3Form --> AddProject
-    AddProject --> Step3Form    
+    AddProject --> Step3Form
     Step3Next -- Yes --> Step4
     Step3Next -- No --> Step2
     Step4 --> Step4Form
@@ -137,12 +137,12 @@ flowchart TD
     Step4Next -- No --> Step3Ref
     Storage -- Uploaded --> Database
     Database -- Saved --> Step5
-    Step5 --> Step5Next1 
-    Step5 --> Step5Next2 
-    Step5 --> Step5Next3 
+    Step5 --> Step5Next1
+    Step5 --> Step5Next2
+    Step5 --> Step5Next3
     Step5Next1 --> Step1Ref
     Step5Next2 --> Step2Ref
-    Step5Next3 --> End 
+    Step5Next3 --> End
 ```
 
 A few structural issues:
@@ -151,14 +151,25 @@ A few structural issues:
 - **Step5 diamond has 3 unlabeled edges**: A decision node (`{}`) implies mutually exclusive branching, but Step5→Next1/Next2/Next3 have no labels, implying they all fire at once — contradicts diamond semantics. Should either be a rectangle (process) fanning out to options, or the edges need labels.
 - **Inconsistent back-navigation pattern**: Step4Next "No" routes through `Step3Ref` (goto anchor), but Step2Next "No" and Step3Next "No" jump directly to `Step1`/`Step2` nodes — pick one pattern.
 
-### Core Modules
+### Modules
+
+**MVP**
 
 - Contacts
-- Transactions
+- Transactions (Ledger)
 - - Categories
 - - Wallets
 - Projects
 - Settings
+- Analytics
+
+**V1**
+
+- Timesheet
+- Incognito
+- GroceryList
+- Invoice
+
 
 ### App Screens
 
@@ -193,8 +204,8 @@ A few structural issues:
 
 ```sh
 # Form Sheet
-- Contact
 - Type
+- Contact
 - Amount
 - Narration
 - Categories
