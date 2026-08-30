@@ -39,7 +39,7 @@ export default function TabLayout() {
         name="add"
         options={{
           tabBarButton: () => (
-            <FAB action={() => router.push("/transaction/create")} tab />
+            <FAB action={() => router.push("/transactions/create")} tab />
           ),
         }}
       />

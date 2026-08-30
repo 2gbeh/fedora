@@ -1,4 +1,4 @@
-import { momentUtil } from "@/utils/moment-util";
+import { momentUtils } from "@/utils/moment-utils";
 import { Base } from "../base/model";
 import { TransactionDto } from "./types";
 import { COLOR } from "@/constants/COLOR";
@@ -17,6 +17,6 @@ export class Transaction extends Base {
   }
 
   get entryDate() {
-    return momentUtil.dateShort(this._.entryDate);
+    return momentUtils.dateShort(this._.entryDate);
   }
 }

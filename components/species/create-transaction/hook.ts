@@ -8,27 +8,34 @@ import { ProjectsService } from "@/services/projects";
 import { OptionType } from "@/types";
 import { DEBUG } from "@/constants/DEBUG";
 import { CUR_DATE } from "@/constants";
+import { TRANSACTION_TYPE_MAP } from "@/services/transactions/types";
 
 export type CreateTransactionFormSchema = FormSchema;
 
 interface FormSchema {
   type: string;
+  typeText?: string;
   contactId?: string;
+  contactIdText?: string;
   amount?: string;
   narration?: string;
   categoryIds?: string[];
+  categoryIdsText?: string[];
   entryDate: string;
   //
   walletId: string;
+  walletIdText?: string;
   projectId?: string;
+  projectIdText?: string;
   receipt?: null | ImagePickerAsset;
+  receiptText?: string;
   isDraft?: boolean;
   isIncognito?: boolean;
 }
 
 const defaultValues: FormSchema = DEBUG.createTransaction.formData
   ? {
-      type: "dr",
+      type: TRANSACTION_TYPE_MAP.Debit,
       contactId: "8",
       amount: "15000",
       narration: "Pyjamas Bonnet",
@@ -77,7 +84,10 @@ export function useCreateTransaction() {
     setFormData(defaultValues);
   };
 
-  const mutateFormData = (formData: Partial<FormSchema>) => {
+  const mutateFormData = (
+    formData: Partial<FormSchema>,
+    meta?: OptionType | OptionType[],
+  ) => {
     setFormData((prev) => ({ ...prev, ...formData }));
   };
 

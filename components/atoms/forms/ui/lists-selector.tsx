@@ -26,8 +26,9 @@ export const ListsSelector = (props: Props) => {
       ? [defaultData]
       : [];
 
-  const onChange = (items: string[]) => {
-    props.onChange?.(items);
+  const onChange = (values: string[]) => {
+    const items = data.filter(({ value }) => values.includes(value));
+    props.onChange?.(values, items);
   };
   //
   return (

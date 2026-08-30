@@ -56,7 +56,7 @@ const dateShorter = (dt?: InputType) => fmt("D MMM", dt);
 // 12:00 AM
 const timeStd = (dt?: InputType) => fmt("h:mm A", dt);
 
-export const momentUtil = {
+export const momentUtils = {
   now,
   fmt,
   verbose,

@@ -72,7 +72,7 @@ const sx = {
     }) as ViewStyle,
   text: {
     color: COLOR.primary,
-    ...textStyles.label_medium,
+    ...textStyles.input,
   } as TextStyle,
   track: (checked?: boolean) =>
     ({

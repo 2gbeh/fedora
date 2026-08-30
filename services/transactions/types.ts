@@ -4,6 +4,7 @@ import { ContactDto } from "../contacts/types";
 import { ProjectDto } from "../projects/types";
 import { WalletDto } from "../wallets/types";
 
+
 export interface TransactionDto extends BaseDto {
   type: "cr" | "dr";
   amount: number;
@@ -30,7 +31,14 @@ export type CreateTransactionDto = {};
 
 export type UpdateTransactionDto = {};
 
-export const TransactionTypeOptions = [
+export const TRANSACTION_TYPE_MAP = {
+  Credit: "cr",
+  Debit: "dr",
+  cr: "Credit",
+  dr: "Debit",
+};
+
+export const TRANSACTION_TYPE_OPTIONS = [
   { label: "Credit", value: "cr" },
   { label: "Debit", value: "dr" },
 ];

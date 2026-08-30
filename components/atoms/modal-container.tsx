@@ -56,7 +56,6 @@ const sx = (bottomSheet?: boolean) =>
       borderTopLeftRadius: 16,
       borderTopRightRadius: 16,
       paddingVertical: 16,
-      paddingHorizontal: 16,
       ...(bottomSheet
         ? {}
         : {
@@ -67,9 +66,8 @@ const sx = (bottomSheet?: boolean) =>
       gap: 12,
     },
     notch: {
-      backgroundColor: COLOR.muted,
+      backgroundColor: COLOR.primaryDisabled,
       borderRadius: 16,
-      // marginBottom: 16,
       width: 84,
       height: 6,
       alignSelf: "center",
