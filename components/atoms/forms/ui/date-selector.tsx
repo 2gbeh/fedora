@@ -73,9 +73,9 @@ const sx = {
   _: {},
   web_input: {
     border: `1px solid ${COLOR.border}`,
-    paddingLeft: 16,
-    paddingRight: 16,
-    width: "90%",
+    paddingLeft: 12,
+    paddingRight: 12,
+    width: "92%",
     ...inputStyles.input,
   },
 };

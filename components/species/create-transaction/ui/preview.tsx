@@ -48,7 +48,7 @@ export const CreateTransactionPreview = ({
       valueColor:
         formData.type === TRANSACTION_TYPE_MAP.Debit
           ? COLOR.danger
-          : COLOR.primary,
+          : COLOR.success,
     },
     {
       icon: "chat",
