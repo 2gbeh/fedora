@@ -2,9 +2,10 @@ import { PropsWithChildren } from "react";
 import {
   Text,
   TextStyle,
-  TouchableOpacity,
+  Pressable,
   View,
   ViewStyle,
+  ActivityIndicator,
 } from "react-native";
 //
 import { COLOR } from "@/constants/COLOR";
@@ -16,6 +17,7 @@ import { appButtonUtils as ux, AppButtonVariant } from "./utils";
 interface Props extends PropsWithChildren {
   onClick?: () => void;
   disabled?: boolean;
+  dotting?: boolean;
   loading?: boolean;
   variant?: AppButtonVariant;
   asBadge?: boolean;
@@ -24,13 +26,21 @@ interface Props extends PropsWithChildren {
 export const AppButton = ({ children, ...props }: Props) => {
   return (
     <View style={!props.asBadge && { flex: 1 }}>
-      <TouchableOpacity
+      <Pressable
         onPress={props.onClick}
         disabled={props.disabled}
         style={sx.container(props)}
       >
-        <Text style={sx.text(props)}>{children}</Text>
-      </TouchableOpacity>
+        <Text style={sx.text(props)}>
+          {children} {props.dotting && "..."}
+        </Text>
+        {props.loading && (
+          <ActivityIndicator
+            size={14}
+            color={ux.getVariantStyles(props.variant).color}
+          />
+        )}
+      </Pressable>
     </View>
   );
 };
@@ -58,7 +68,8 @@ export const sx = {
       paddingVertical: 6,
       paddingHorizontal: 12,
       height: params.asBadge ? 30 : 44,
-      ...flexStyles.centerCenter,
+      ...flexStyles.rowCenterCenter,
+      gap: 8,
     }) as ViewStyle,
   text: (params: Props) =>
     ({

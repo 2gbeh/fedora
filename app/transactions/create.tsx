@@ -1,5 +1,6 @@
 import { AppScreen } from "@/components/atoms/app-screen";
 import { AppScrollView } from "@/components/atoms/app-scroll-view";
+import { Spacing } from "@/components/atoms/spacing";
 import { AppButton } from "@/components/atoms/forms/ui/app-button";
 import { TextField } from "@/components/atoms/forms/ui/text-field";
 import { AmountField } from "@/components/atoms/forms/ui/amount-field";
@@ -10,7 +11,6 @@ import { TRANSACTION_TYPE_OPTIONS } from "@/services/transactions/types";
 //
 import { useCreateTransaction } from "@/components/species/create-transaction/hook";
 import { CreateTransactionPreview } from "@/components/species/create-transaction/ui/preview";
-import { Spacing } from "@/components/atoms/spacing";
 
 export default function CreateTransactionScreen() {
   const {
@@ -19,23 +19,35 @@ export default function CreateTransactionScreen() {
     categoriesList,
     walletsList,
     projectsList,
+    submitting,
     openPreview,
     setOpenPreview,
     canSave,
-    canConfirm,
     mutateFormData,
-    handleSave,
+    handleSubmit,
   } = useCreateTransaction();
   //
   return (
     <AppScreen
       title="Add Transaction"
       footer={
-        <AppButton onClick={handleSave} disabled={!canSave}>
+        <AppButton onClick={() => setOpenPreview(true)} disabled={!canSave}>
           Save
         </AppButton>
       }
     >
+      {openPreview && (
+        <CreateTransactionPreview
+          formData={formData}
+          mutateFormData={mutateFormData}
+          open={openPreview}
+          onClose={() => setOpenPreview(false)}
+          onConfirm={() => handleSubmit()}
+          onSaveDraft={() => handleSubmit(true)}
+          canSubmit={!!canSave}
+          submitting={submitting}
+        />
+      )}
       <AppScrollView>
         <ListSelector
           label="Type"
@@ -117,14 +129,6 @@ export default function CreateTransactionScreen() {
         />
         <Spacing />
       </AppScrollView>
-      {openPreview && (
-        <CreateTransactionPreview
-          formData={formData}
-          mutateFormData={mutateFormData}
-          open={openPreview}
-          onClose={() => setOpenPreview(false)}
-        />
-      )}
     </AppScreen>
   );
 }

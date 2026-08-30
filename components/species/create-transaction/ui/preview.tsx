@@ -20,6 +20,10 @@ interface Props {
   mutateFormData: (formData: Partial<CreateTransactionFormSchema>) => void;
   open?: boolean;
   onClose?: () => void;
+  onConfirm?: () => void;
+  onSaveDraft?: () => void;
+  canSubmit?: boolean;
+  submitting?: boolean;
 }
 
 export const CreateTransactionPreview = ({
@@ -27,6 +31,10 @@ export const CreateTransactionPreview = ({
   mutateFormData,
   open,
   onClose,
+  onConfirm,
+  onSaveDraft,
+  canSubmit,
+  submitting,
 }: Props) => {
   const data: PreviewListData[] = [
     {
@@ -84,7 +92,13 @@ export const CreateTransactionPreview = ({
       <PreviewList
         title="Transaction details"
         headerRight={
-          <AppButton variant="info" asBadge>
+          <AppButton
+            variant="info"
+            onClick={onSaveDraft}
+            loading={submitting}
+            disabled={!canSubmit}
+            asBadge
+          >
             Save as draft
           </AppButton>
         }
@@ -102,7 +116,14 @@ export const CreateTransactionPreview = ({
           <AppButton variant="outline" onClick={onClose}>
             Back
           </AppButton>
-          <AppButton variant="success">Confirm</AppButton>
+          <AppButton
+            variant="success"
+            onClick={onConfirm}
+            disabled={!canSubmit || submitting}
+            dotting={submitting}
+          >
+            Confirm
+          </AppButton>
         </ButtonGroup>
       </View>
     </ModalContainer>

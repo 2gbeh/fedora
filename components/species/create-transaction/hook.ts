@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { ImagePickerAsset } from "expo-image-picker";
 //
+import { useAppToast } from "@/hooks/use-app-toast";
 import { ContactsService } from "@/services/contacts";
 import { CategoriesService } from "@/services/categories";
 import { WalletsService } from "@/services/wallets";
@@ -9,6 +10,7 @@ import { OptionType } from "@/types";
 import { DEBUG } from "@/constants/DEBUG";
 import { CUR_DATE } from "@/constants";
 import { TRANSACTION_TYPE_MAP } from "@/services/transactions/types";
+import { sleep } from "@/utils";
 
 export type CreateTransactionFormSchema = FormSchema;
 
@@ -33,29 +35,33 @@ interface FormSchema {
   isIncognito?: boolean;
 }
 
-const defaultValues: FormSchema = DEBUG.createTransaction.formData
-  ? {
-      type: TRANSACTION_TYPE_MAP.Debit,
-      contactId: "8",
-      amount: "15000",
-      narration: "Pyjamas Bonnet",
-      categoryIds: ["18"],
-      entryDate: CUR_DATE,
-      walletId: "3",
-      isIncognito: true,
-    }
-  : {
-      type: "dr",
-      entryDate: CUR_DATE,
-      walletId: "3",
-    };
+const mockValues = {
+  type: TRANSACTION_TYPE_MAP.Debit,
+  contactId: "8",
+  amount: "15000",
+  narration: "Pyjamas Bonnet",
+  categoryIds: ["18"],
+  entryDate: CUR_DATE,
+  walletId: "3",
+  isIncognito: true,
+};
+
+const defaultValues: FormSchema = {
+  type: "dr",
+  entryDate: CUR_DATE,
+  walletId: "3",
+};
 
 export function useCreateTransaction() {
-  const [formData, setFormData] = useState<FormSchema>(defaultValues);
+  const toast = useAppToast();
   const [contactsList, setContactsList] = useState<OptionType[]>();
   const [categoriesList, setCategoriesList] = useState<OptionType[]>();
   const [walletsList, setWalletsList] = useState<OptionType[]>();
   const [projectsList, setProjectsList] = useState<OptionType[]>();
+  const [submitting, setSubmitting] = useState(false);
+  const [formData, setFormData] = useState<FormSchema>(
+    DEBUG.createTransaction.formData ? mockValues : defaultValues,
+  );
   const [openPreview, setOpenPreview] = useState(
     Boolean(DEBUG.createTransactionPreview.portal),
   );
@@ -65,9 +71,8 @@ export function useCreateTransaction() {
     Number(formData.amount) >= 500 &&
     formData.narration?.trim().length &&
     formData.categoryIds?.length &&
-    formData.entryDate?.trim().length;
-
-  const canConfirm = formData.walletId?.trim().length;
+    formData.entryDate?.trim().length &&
+    formData.walletId?.trim().length;
 
   useEffect(() => {
     fetchContactsList();
@@ -80,10 +85,6 @@ export function useCreateTransaction() {
     console.log("🚀 ~ useEffect ~ formData:", formData);
   }, [formData]);
 
-  const resetFormData = () => {
-    setFormData(defaultValues);
-  };
-
   const mutateFormData = (
     formData: Partial<FormSchema>,
     meta?: OptionType | OptionType[],
@@ -92,28 +93,42 @@ export function useCreateTransaction() {
   };
 
   const fetchContactsList = async () => {
-    const res = await ContactsService.getListOptions();
-    setContactsList(res);
+    if (!contactsList) {
+      const res = await ContactsService.getListOptions();
+      setContactsList(res);
+    }
   };
 
   const fetchCategoriesList = async () => {
-    const res = await CategoriesService.getListOptions();
-    setCategoriesList(res);
+    if (!categoriesList) {
+      const res = await CategoriesService.getListOptions();
+      setCategoriesList(res);
+    }
   };
 
   const fetchWalletsList = async () => {
-    const res = await WalletsService.getListOptions();
-    setWalletsList(res);
+    if (!walletsList) {
+      const res = await WalletsService.getListOptions();
+      setWalletsList(res);
+    }
   };
 
   const fetchProjectsList = async () => {
-    const res = await ProjectsService.getListOptions();
-    setProjectsList(res);
+    if (!projectsList) {
+      const res = await ProjectsService.getListOptions();
+      setProjectsList(res);
+    }
   };
 
-  const handleSave = () => {
-    setOpenPreview(true);
-    // resetFormData();
+  const handleSubmit = async (asDraft?: boolean) => {
+    setSubmitting(true);
+    await sleep();
+    asDraft
+      ? toast.info("Transaction saved as draft!")
+      : toast.success("Transaction saved successfully!");
+    setFormData(defaultValues);
+    setOpenPreview(false);
+    setSubmitting(false);
   };
 
   return {
@@ -122,11 +137,11 @@ export function useCreateTransaction() {
     categoriesList,
     walletsList,
     projectsList,
+    submitting,
     openPreview,
     setOpenPreview,
     canSave,
-    canConfirm,
     mutateFormData,
-    handleSave,
+    handleSubmit,
   };
 }
