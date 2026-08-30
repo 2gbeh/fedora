@@ -18,6 +18,6 @@ export const DEBUG = {
     formData: 1,
   },
   createTransactionPreview: {
-    portal: 1,
+    portal: 0,
   },  
 } as const satisfies Record<string, MockParams>;

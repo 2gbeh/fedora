@@ -3,6 +3,8 @@ import { COLOR } from "@/constants/COLOR";
 export type AppButtonVariant =
   | "solid"
   | "outline"
+  | "neutral"
+  | "info"
   | "success"
   | "warning"
   | "danger";
@@ -14,6 +16,18 @@ const getVariantStyles = (variant?: AppButtonVariant) => {
         backgroundColor: COLOR.nil,
         borderColor: COLOR.primary,
         color: COLOR.primary,
+      };
+    case "neutral":
+      return {
+        backgroundColor: COLOR.neutral,
+        borderColor: COLOR.neutral,
+        color: COLOR.secondary,
+      };
+    case "info":
+      return {
+        backgroundColor: COLOR.link,
+        borderColor: COLOR.link,
+        color: COLOR.white,
       };
     case "success":
       return {
